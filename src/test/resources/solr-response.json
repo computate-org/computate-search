@@ -1,0 +1,537 @@
+{
+  "responseHeader": {
+    "zkConnected": true,
+    "status": 0,
+    "QTime": 24,
+    "params": {
+      "facet.range": "{!tag=r1}created_docvalues_date",
+      "facet.range.gap": "+1YEAR",
+      "facet.pivot": "{!range=r1}classSimpleName_docvalues_string,saves_docvalues_strings",
+      "start": "10",
+      "fq": "deleted_docvalues_boolean:false",
+      "rows": "0",
+      "facet.pivot.mincount": "0",
+      "q": "*:*",
+      "facet.mincount": "0",
+      "facet": "true",
+      "facet.sort": "index",
+      "facet.range.start": "2021-01-01T07:00:00Z",
+      "facet.range.end": "2023-01-01T21:41:18.261801999Z"
+    }
+  },
+  "response": {
+    "numFound": 273181,
+    "start": 10,
+    "numFoundExact": true,
+    "docs": []
+  },
+  "facet_counts": {
+    "facet_queries": {},
+    "facet_fields": {},
+    "facet_ranges": {
+      "created_docvalues_date": {
+        "counts": [
+          "2021-01-01T07:00:00Z",
+          4,
+          "2022-01-01T07:00:00Z",
+          273177,
+          "2023-01-01T07:00:00Z",
+          0
+        ],
+        "gap": "+1YEAR",
+        "start": "2021-01-01T07:00:00Z",
+        "end": "2024-01-01T07:00:00Z"
+      }
+    },
+    "facet_intervals": {},
+    "facet_heatmaps": {},
+    "facet_pivot": {
+      "classSimpleName_docvalues_string,saves_docvalues_strings": [
+        {
+          "field": "classSimpleName_docvalues_string",
+          "value": "CurrikiResource",
+          "count": 273177,
+          "ranges": {
+            "created_docvalues_date": {
+              "counts": [
+                "2021-01-01T07:00:00Z",
+                0,
+                "2022-01-01T07:00:00Z",
+                273177,
+                "2023-01-01T07:00:00Z",
+                0
+              ],
+              "gap": "+1YEAR",
+              "start": "2021-01-01T07:00:00Z",
+              "end": "2024-01-01T07:00:00Z"
+            }
+          },
+          "pivot": [
+            {
+              "field": "saves_docvalues_strings",
+              "value": "created",
+              "count": 273177,
+              "ranges": {
+                "created_docvalues_date": {
+                  "counts": [
+                    "2021-01-01T07:00:00Z",
+                    0,
+                    "2022-01-01T07:00:00Z",
+                    273177,
+                    "2023-01-01T07:00:00Z",
+                    0
+                  ],
+                  "gap": "+1YEAR",
+                  "start": "2021-01-01T07:00:00Z",
+                  "end": "2024-01-01T07:00:00Z"
+                }
+              }
+            },
+            {
+              "field": "saves_docvalues_strings",
+              "value": "description",
+              "count": 272722,
+              "ranges": {
+                "created_docvalues_date": {
+                  "counts": [
+                    "2021-01-01T07:00:00Z",
+                    0,
+                    "2022-01-01T07:00:00Z",
+                    272722,
+                    "2023-01-01T07:00:00Z",
+                    0
+                  ],
+                  "gap": "+1YEAR",
+                  "start": "2021-01-01T07:00:00Z",
+                  "end": "2024-01-01T07:00:00Z"
+                }
+              }
+            },
+            {
+              "field": "saves_docvalues_strings",
+              "value": "inheritPk",
+              "count": 273177,
+              "ranges": {
+                "created_docvalues_date": {
+                  "counts": [
+                    "2021-01-01T07:00:00Z",
+                    0,
+                    "2022-01-01T07:00:00Z",
+                    273177,
+                    "2023-01-01T07:00:00Z",
+                    0
+                  ],
+                  "gap": "+1YEAR",
+                  "start": "2021-01-01T07:00:00Z",
+                  "end": "2024-01-01T07:00:00Z"
+                }
+              }
+            },
+            {
+              "field": "saves_docvalues_strings",
+              "value": "sessionId",
+              "count": 0,
+              "ranges": {
+                "created_docvalues_date": {
+                  "counts": [
+                    "2021-01-01T07:00:00Z",
+                    0,
+                    "2022-01-01T07:00:00Z",
+                    0,
+                    "2023-01-01T07:00:00Z",
+                    0
+                  ],
+                  "gap": "+1YEAR",
+                  "start": "2021-01-01T07:00:00Z",
+                  "end": "2024-01-01T07:00:00Z"
+                }
+              }
+            },
+            {
+              "field": "saves_docvalues_strings",
+              "value": "title",
+              "count": 272723,
+              "ranges": {
+                "created_docvalues_date": {
+                  "counts": [
+                    "2021-01-01T07:00:00Z",
+                    0,
+                    "2022-01-01T07:00:00Z",
+                    272723,
+                    "2023-01-01T07:00:00Z",
+                    0
+                  ],
+                  "gap": "+1YEAR",
+                  "start": "2021-01-01T07:00:00Z",
+                  "end": "2024-01-01T07:00:00Z"
+                }
+              }
+            },
+            {
+              "field": "saves_docvalues_strings",
+              "value": "userEmail",
+              "count": 0,
+              "ranges": {
+                "created_docvalues_date": {
+                  "counts": [
+                    "2021-01-01T07:00:00Z",
+                    0,
+                    "2022-01-01T07:00:00Z",
+                    0,
+                    "2023-01-01T07:00:00Z",
+                    0
+                  ],
+                  "gap": "+1YEAR",
+                  "start": "2021-01-01T07:00:00Z",
+                  "end": "2024-01-01T07:00:00Z"
+                }
+              }
+            },
+            {
+              "field": "saves_docvalues_strings",
+              "value": "userFirstName",
+              "count": 0,
+              "ranges": {
+                "created_docvalues_date": {
+                  "counts": [
+                    "2021-01-01T07:00:00Z",
+                    0,
+                    "2022-01-01T07:00:00Z",
+                    0,
+                    "2023-01-01T07:00:00Z",
+                    0
+                  ],
+                  "gap": "+1YEAR",
+                  "start": "2021-01-01T07:00:00Z",
+                  "end": "2024-01-01T07:00:00Z"
+                }
+              }
+            },
+            {
+              "field": "saves_docvalues_strings",
+              "value": "userFullName",
+              "count": 0,
+              "ranges": {
+                "created_docvalues_date": {
+                  "counts": [
+                    "2021-01-01T07:00:00Z",
+                    0,
+                    "2022-01-01T07:00:00Z",
+                    0,
+                    "2023-01-01T07:00:00Z",
+                    0
+                  ],
+                  "gap": "+1YEAR",
+                  "start": "2021-01-01T07:00:00Z",
+                  "end": "2024-01-01T07:00:00Z"
+                }
+              }
+            },
+            {
+              "field": "saves_docvalues_strings",
+              "value": "userId",
+              "count": 0,
+              "ranges": {
+                "created_docvalues_date": {
+                  "counts": [
+                    "2021-01-01T07:00:00Z",
+                    0,
+                    "2022-01-01T07:00:00Z",
+                    0,
+                    "2023-01-01T07:00:00Z",
+                    0
+                  ],
+                  "gap": "+1YEAR",
+                  "start": "2021-01-01T07:00:00Z",
+                  "end": "2024-01-01T07:00:00Z"
+                }
+              }
+            },
+            {
+              "field": "saves_docvalues_strings",
+              "value": "userLastName",
+              "count": 0,
+              "ranges": {
+                "created_docvalues_date": {
+                  "counts": [
+                    "2021-01-01T07:00:00Z",
+                    0,
+                    "2022-01-01T07:00:00Z",
+                    0,
+                    "2023-01-01T07:00:00Z",
+                    0
+                  ],
+                  "gap": "+1YEAR",
+                  "start": "2021-01-01T07:00:00Z",
+                  "end": "2024-01-01T07:00:00Z"
+                }
+              }
+            },
+            {
+              "field": "saves_docvalues_strings",
+              "value": "userName",
+              "count": 0,
+              "ranges": {
+                "created_docvalues_date": {
+                  "counts": [
+                    "2021-01-01T07:00:00Z",
+                    0,
+                    "2022-01-01T07:00:00Z",
+                    0,
+                    "2023-01-01T07:00:00Z",
+                    0
+                  ],
+                  "gap": "+1YEAR",
+                  "start": "2021-01-01T07:00:00Z",
+                  "end": "2024-01-01T07:00:00Z"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "field": "classSimpleName_docvalues_string",
+          "value": "SiteUser",
+          "count": 4,
+          "ranges": {
+            "created_docvalues_date": {
+              "counts": [
+                "2021-01-01T07:00:00Z",
+                4,
+                "2022-01-01T07:00:00Z",
+                0,
+                "2023-01-01T07:00:00Z",
+                0
+              ],
+              "gap": "+1YEAR",
+              "start": "2021-01-01T07:00:00Z",
+              "end": "2024-01-01T07:00:00Z"
+            }
+          },
+          "pivot": [
+            {
+              "field": "saves_docvalues_strings",
+              "value": "created",
+              "count": 4,
+              "ranges": {
+                "created_docvalues_date": {
+                  "counts": [
+                    "2021-01-01T07:00:00Z",
+                    4,
+                    "2022-01-01T07:00:00Z",
+                    0,
+                    "2023-01-01T07:00:00Z",
+                    0
+                  ],
+                  "gap": "+1YEAR",
+                  "start": "2021-01-01T07:00:00Z",
+                  "end": "2024-01-01T07:00:00Z"
+                }
+              }
+            },
+            {
+              "field": "saves_docvalues_strings",
+              "value": "description",
+              "count": 0,
+              "ranges": {
+                "created_docvalues_date": {
+                  "counts": [
+                    "2021-01-01T07:00:00Z",
+                    0,
+                    "2022-01-01T07:00:00Z",
+                    0,
+                    "2023-01-01T07:00:00Z",
+                    0
+                  ],
+                  "gap": "+1YEAR",
+                  "start": "2021-01-01T07:00:00Z",
+                  "end": "2024-01-01T07:00:00Z"
+                }
+              }
+            },
+            {
+              "field": "saves_docvalues_strings",
+              "value": "inheritPk",
+              "count": 0,
+              "ranges": {
+                "created_docvalues_date": {
+                  "counts": [
+                    "2021-01-01T07:00:00Z",
+                    0,
+                    "2022-01-01T07:00:00Z",
+                    0,
+                    "2023-01-01T07:00:00Z",
+                    0
+                  ],
+                  "gap": "+1YEAR",
+                  "start": "2021-01-01T07:00:00Z",
+                  "end": "2024-01-01T07:00:00Z"
+                }
+              }
+            },
+            {
+              "field": "saves_docvalues_strings",
+              "value": "sessionId",
+              "count": 4,
+              "ranges": {
+                "created_docvalues_date": {
+                  "counts": [
+                    "2021-01-01T07:00:00Z",
+                    4,
+                    "2022-01-01T07:00:00Z",
+                    0,
+                    "2023-01-01T07:00:00Z",
+                    0
+                  ],
+                  "gap": "+1YEAR",
+                  "start": "2021-01-01T07:00:00Z",
+                  "end": "2024-01-01T07:00:00Z"
+                }
+              }
+            },
+            {
+              "field": "saves_docvalues_strings",
+              "value": "title",
+              "count": 0,
+              "ranges": {
+                "created_docvalues_date": {
+                  "counts": [
+                    "2021-01-01T07:00:00Z",
+                    0,
+                    "2022-01-01T07:00:00Z",
+                    0,
+                    "2023-01-01T07:00:00Z",
+                    0
+                  ],
+                  "gap": "+1YEAR",
+                  "start": "2021-01-01T07:00:00Z",
+                  "end": "2024-01-01T07:00:00Z"
+                }
+              }
+            },
+            {
+              "field": "saves_docvalues_strings",
+              "value": "userEmail",
+              "count": 4,
+              "ranges": {
+                "created_docvalues_date": {
+                  "counts": [
+                    "2021-01-01T07:00:00Z",
+                    4,
+                    "2022-01-01T07:00:00Z",
+                    0,
+                    "2023-01-01T07:00:00Z",
+                    0
+                  ],
+                  "gap": "+1YEAR",
+                  "start": "2021-01-01T07:00:00Z",
+                  "end": "2024-01-01T07:00:00Z"
+                }
+              }
+            },
+            {
+              "field": "saves_docvalues_strings",
+              "value": "userFirstName",
+              "count": 4,
+              "ranges": {
+                "created_docvalues_date": {
+                  "counts": [
+                    "2021-01-01T07:00:00Z",
+                    4,
+                    "2022-01-01T07:00:00Z",
+                    0,
+                    "2023-01-01T07:00:00Z",
+                    0
+                  ],
+                  "gap": "+1YEAR",
+                  "start": "2021-01-01T07:00:00Z",
+                  "end": "2024-01-01T07:00:00Z"
+                }
+              }
+            },
+            {
+              "field": "saves_docvalues_strings",
+              "value": "userFullName",
+              "count": 4,
+              "ranges": {
+                "created_docvalues_date": {
+                  "counts": [
+                    "2021-01-01T07:00:00Z",
+                    4,
+                    "2022-01-01T07:00:00Z",
+                    0,
+                    "2023-01-01T07:00:00Z",
+                    0
+                  ],
+                  "gap": "+1YEAR",
+                  "start": "2021-01-01T07:00:00Z",
+                  "end": "2024-01-01T07:00:00Z"
+                }
+              }
+            },
+            {
+              "field": "saves_docvalues_strings",
+              "value": "userId",
+              "count": 4,
+              "ranges": {
+                "created_docvalues_date": {
+                  "counts": [
+                    "2021-01-01T07:00:00Z",
+                    4,
+                    "2022-01-01T07:00:00Z",
+                    0,
+                    "2023-01-01T07:00:00Z",
+                    0
+                  ],
+                  "gap": "+1YEAR",
+                  "start": "2021-01-01T07:00:00Z",
+                  "end": "2024-01-01T07:00:00Z"
+                }
+              }
+            },
+            {
+              "field": "saves_docvalues_strings",
+              "value": "userLastName",
+              "count": 4,
+              "ranges": {
+                "created_docvalues_date": {
+                  "counts": [
+                    "2021-01-01T07:00:00Z",
+                    4,
+                    "2022-01-01T07:00:00Z",
+                    0,
+                    "2023-01-01T07:00:00Z",
+                    0
+                  ],
+                  "gap": "+1YEAR",
+                  "start": "2021-01-01T07:00:00Z",
+                  "end": "2024-01-01T07:00:00Z"
+                }
+              }
+            },
+            {
+              "field": "saves_docvalues_strings",
+              "value": "userName",
+              "count": 4,
+              "ranges": {
+                "created_docvalues_date": {
+                  "counts": [
+                    "2021-01-01T07:00:00Z",
+                    4,
+                    "2022-01-01T07:00:00Z",
+                    0,
+                    "2023-01-01T07:00:00Z",
+                    0
+                  ],
+                  "gap": "+1YEAR",
+                  "start": "2021-01-01T07:00:00Z",
+                  "end": "2024-01-01T07:00:00Z"
+                }
+              }
+            }
+          ]
+        }
+      ]
+    }
+  }
+}
