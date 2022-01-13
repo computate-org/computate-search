@@ -54,6 +54,26 @@ public class SearchRequest extends SearchRequestGen<Object> {
 	/**
 	 * {@inheritDoc}
 	 */
+	protected void _start(Integer c) {
+	}
+	public SearchRequest start(Integer start) {
+		setStart(start);
+		return this;
+	}
+
+	/**
+	 * {@inheritDoc}
+	 */
+	protected void _rows(Integer c) {
+	}
+	public SearchRequest rows(Integer rows) {
+		setRows(rows);
+		return this;
+	}
+
+	/**
+	 * {@inheritDoc}
+	 */
 	protected void _queryString(List<String> c) {
 		StringBuilder b = new StringBuilder();
 		try {

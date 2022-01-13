@@ -16,191 +16,64 @@ public class SolrResponse {
 
 	private ResponseHeader responseHeader;
 
-	class ResponseHeader {
+	private Response response;
 
-		public ResponseHeader() {
+	@JsonAlias("facet_counts")
+	private FacetCounts facetCounts;
+
+	public ResponseHeader getResponseHeader() {
+		return responseHeader;
+	}
+
+	public void setResponseHeader(ResponseHeader responseHeader) {
+		this.responseHeader = responseHeader;
+	}
+
+	public Response getResponse() {
+		return response;
+	}
+
+	public void setResponse(Response response) {
+		this.response = response;
+	}
+
+	public FacetCounts getFacetCounts() {
+		return facetCounts;
+	}
+
+	public void setFacetCounts(FacetCounts facetCounts) {
+		this.facetCounts = facetCounts;
+	}
+
+	public class Doc {
+
+		private Map<String, Object> fields = new HashMap<>();
+
+		public Doc() {
 		}
 
-		private Boolean zkConnected;
-		private Integer status;
-		@JsonAlias("QTime")
-		private Integer qTime;
-		private Params params;
-
-		class Params {
-
-			@JsonAlias("facet.range")
-			private String facetRange;
-			@JsonAlias("facet.range.gap")
-			private String facetRangeGap;
-			@JsonAlias("facet.pivot")
-			private String facetPivot;
-			private String start;
-			private String fq;
-			private String rows;
-			@JsonAlias("facet.pivot.mincount")
-			private String facetPivotMinCount;
-			private String q;
-			@JsonAlias("facet.mincount")
-			private String facetMinCount;
-			@JsonAlias("facet")
-			private String facet;
-			@JsonAlias("facet.sort")
-			private String facetSort;
-			@JsonAlias("facet.range.start")
-			private String facetRangeStart;
-			@JsonAlias("facet.range.end")
-			private String facetRangeEnd;
-			
-			public Params() {
-			}
-
-			public String getFacetRange() {
-				return facetRange;
-			}
-
-			public void setFacetRange(String facetRange) {
-				this.facetRange = facetRange;
-			}
-
-			public String getFacetRangeGap() {
-				return facetRangeGap;
-			}
-
-			public void setFacetRangeGap(String facetRangeGap) {
-				this.facetRangeGap = facetRangeGap;
-			}
-
-			public String getFacetPivot() {
-				return facetPivot;
-			}
-
-			public void setFacetPivot(String facetPivot) {
-				this.facetPivot = facetPivot;
-			}
-
-			public String getRows() {
-				return rows;
-			}
-
-			public void setRows(String rows) {
-				this.rows = rows;
-			}
-
-			public String getFacetPivotMinCount() {
-				return facetPivotMinCount;
-			}
-
-			public void setFacetPivotMinCount(String facetPivotMinCount) {
-				this.facetPivotMinCount = facetPivotMinCount;
-			}
-
-			public String getQ() {
-				return q;
-			}
-
-			public void setQ(String q) {
-				this.q = q;
-			}
-
-			public String getFacetMinCount() {
-				return facetMinCount;
-			}
-
-			public void setFacetMinCount(String facetMinCount) {
-				this.facetMinCount = facetMinCount;
-			}
-
-			public String getFacet() {
-				return facet;
-			}
-
-			public void setFacet(String facet) {
-				this.facet = facet;
-			}
-
-			public String getFacetSort() {
-				return facetSort;
-			}
-
-			public void setFacetSort(String facetSort) {
-				this.facetSort = facetSort;
-			}
-
-			public String getFacetRangeStart() {
-				return facetRangeStart;
-			}
-
-			public void setFacetRangeStart(String facetRangeStart) {
-				this.facetRangeStart = facetRangeStart;
-			}
-
-			public String getFacetRangeEnd() {
-				return facetRangeEnd;
-			}
-
-			public void setFacetRangeEnd(String facetRangeEnd) {
-				this.facetRangeEnd = facetRangeEnd;
-			}
-
-			public String getStart() {
-				return start;
-			}
-
-			public void setStart(String start) {
-				this.start = start;
-			}
-
-			public String getFq() {
-				return fq;
-			}
-
-			public void setFq(String fq) {
-				this.fq = fq;
-			}
+		public Map<String, Object> getFields() {
+			return fields;
 		}
 
-		public Boolean getZkConnected() {
-			return zkConnected;
+		@JsonAnySetter
+		public void setFields(String key, Object value) {
+			this.fields = (Map<String, Object>) value;
 		}
-		public void setZkConnected(Boolean zkConnected) {
-			this.zkConnected = zkConnected;
-		}
-		public Integer getStatus() {
-			return status;
-		}
-		public void setStatus(Integer status) {
-			this.status = status;
-		}
-		public Integer getqTime() {
-			return qTime;
-		}
-		public void setqTime(Integer qTime) {
-			this.qTime = qTime;
-		}
-		public Params getParams() {
-			return params;
-		}
-		public void setParams(Params params) {
-			this.params = params;
+
+		public <T> T get(String field) {
+			return (T)fields.get(field);
 		}
 	}
 
-	private Response response;
-	
-	class Response {
+	public class Response {
 
 		private Integer numFound;
 		private Integer start;
 		private Boolean numFoundExact;
-		private List<Docs> docs;
-		
-		class Docs {
-			
-		}
-		
+		private List<Doc> docs;
+
 		public Response() {
-			// TODO Auto-generated constructor stub
 		}
 
 		public Integer getNumFound() {
@@ -227,256 +100,246 @@ public class SolrResponse {
 			this.numFoundExact = numFoundExact;
 		}
 
-		public List<Docs> getDocs() {
+		public List<Doc> getDocs() {
 			return docs;
 		}
 
-		public void setDocs(List<Docs> docs) {
+		public void setDocs(List<Doc> docs) {
 			this.docs = docs;
 		}
 	}
 
-	@JsonAlias("facet_counts")
-	private FacetCounts facetCounts;
+	public class FacetQueries {
 
-	class FacetCounts {
+		public FacetQueries() {
+		}
+	}
+
+	public class FacetFields {
+
+		public FacetFields() {
+		}
+	}
+
+	public class FacetRange {
+
+		public FacetRange() {
+		}
+
+		private List<Object> counts;
+		private String gap;
+		private ZonedDateTime start;
+		private ZonedDateTime end;
+
+		public List<Object> getCounts() {
+			return counts;
+		}
+
+		public void setCounts(List<Object> counts) {
+			this.counts = counts;
+		}
+
+		public String getGap() {
+			return gap;
+		}
+
+		public void setGap(String gap) {
+			this.gap = gap;
+		}
+
+		public ZonedDateTime getStart() {
+			return start;
+		}
+
+		public void setStart(ZonedDateTime start) {
+			this.start = start;
+		}
+
+		public ZonedDateTime getEnd() {
+			return end;
+		}
+
+		public void setEnd(ZonedDateTime end) {
+			this.end = end;
+		}
+	}
+
+	public class FacetRanges {
+
+		public FacetRanges() {
+		}
+
+		private Map<String, FacetRange> ranges = new HashMap<>();
+
+		public Map<String, FacetRange> getRanges() {
+			return ranges;
+		}
+
+		@JsonAnySetter
+		public void setRanges(String key, Object value) {
+			this.ranges = (Map<String, FacetRange>) value;
+		}
+	}
+
+	public class Pivot {
+
+		private String field;
+		private String value;
+		private Integer count;
+		private Map<String, PivotRange> ranges = new HashMap<>();
+
+		public Pivot() {
+		}
+
+		public String getField() {
+			return field;
+		}
+
+		public void setField(String field) {
+			this.field = field;
+		}
+
+		public String getValue() {
+			return value;
+		}
+
+		public void setValue(String value) {
+			this.value = value;
+		}
+
+		public Integer getCount() {
+			return count;
+		}
+
+		public void setCount(Integer count) {
+			this.count = count;
+		}
+
+		@JsonAnySetter
+		public void setRanges(String key, Object value) {
+			this.ranges = (Map<String, PivotRange>) value;
+		}
+
+		public Map<String, PivotRange> getRanges() {
+			return ranges;
+		}
+	}
+
+	public class FacetPivot {
+
+		private String field;
+		private String value;
+		private Integer count;
+		@JsonProperty("ranges")
+		private PivotRanges pivotRanges;
+
+		public FacetPivot() {
+		}
+
+		private List<Pivot> pivot;
+
+		public String getField() {
+			return field;
+		}
+
+		public void setField(String field) {
+			this.field = field;
+		}
+
+		public String getValue() {
+			return value;
+		}
+
+		public void setValue(String value) {
+			this.value = value;
+		}
+
+		public Integer getCount() {
+			return count;
+		}
+
+		public void setCount(Integer count) {
+			this.count = count;
+		}
+
+		public PivotRanges getPivotRanges() {
+			return pivotRanges;
+		}
+
+		public void setPivotRanges(PivotRanges pivotRanges) {
+			this.pivotRanges = pivotRanges;
+		}
+
+		public List<Pivot> getPivot() {
+			return pivot;
+		}
+
+		public void setPivot(List<Pivot> pivot) {
+			this.pivot = pivot;
+		}
+	}
+
+	public class FacetPivots {
+
+		private List<FacetPivot> pivots;
+		private String[] pivotFields;
+
+		public FacetPivots() {
+		}
+
+		public List<FacetPivot> getPivots() {
+			return pivots;
+		}
+
+		@JsonAnySetter
+		public void setPivots(String key, Object value) {
+			setPivotFields(key.split(","));
+			this.pivots = (List<FacetPivot>) value;
+		}
+
+		public String[] getPivotFields() {
+			return pivotFields;
+		}
+
+		public void setPivotFields(String[] pivotFields) {
+			this.pivotFields = pivotFields;
+		}
+	}
+
+	public class FacetIntervals {
+
+		public FacetIntervals() {
+		}
+	}
+
+	public class FacetHeatMaps {
+
+		public FacetHeatMaps() {
+		}
+	}
+
+	public class FacetCounts {
 
 		public FacetCounts() {
 		}
-		
+
 		@JsonAlias("facet_queries")
 		private FacetQueries facetQueries;
-
-		class FacetQueries {
-
-			public FacetQueries() {
-			}
-		}
 
 		@JsonAlias("facet_fields")
 		private FacetFields facetFields;
 
-		class FacetFields {
-			
-			public FacetFields() {
-			}
-		}
-
 		@JsonAlias("facet_ranges")
 		private FacetRanges facetRanges;
-
-		class FacetRanges {
-
-			public FacetRanges() {
-			}
-
-			private Map<String, FacetRange> ranges = new HashMap<>();
-
-			class FacetRange {
-
-				public FacetRange() {
-				}
-				
-				private List<Object> counts;
-				private String gap;
-				private ZonedDateTime start;
-				private ZonedDateTime end;
-
-				public List<Object> getCounts() {
-					return counts;
-				}
-				public void setCounts(List<Object> counts) {
-					this.counts = counts;
-				}
-				public String getGap() {
-					return gap;
-				}
-				public void setGap(String gap) {
-					this.gap = gap;
-				}
-				public ZonedDateTime getStart() {
-					return start;
-				}
-				public void setStart(ZonedDateTime start) {
-					this.start = start;
-				}
-				public ZonedDateTime getEnd() {
-					return end;
-				}
-				public void setEnd(ZonedDateTime end) {
-					this.end = end;
-				}
-			}
-
-			public Map<String, FacetRange> getRanges() {
-				return ranges;
-			}
-
-			@JsonAnySetter
-			public void setRanges(String key, Object value) {
-				this.ranges = (Map<String, FacetRange>)value;
-			}
-		}
 
 		@JsonAlias("facet_intervals")
 		private FacetIntervals facetIntervals;
 
-		class FacetIntervals {
-			
-			public FacetIntervals() {
-			}
-		}
-
 		@JsonAlias("facet_heatmaps")
 		private FacetHeatMaps facetHeatMaps;
 
-		class FacetHeatMaps {
-			
-			public FacetHeatMaps() {
-			}
-		}
-
 		@JsonAlias("facet_pivot")
 		private FacetPivots facetPivots;
-
-		class FacetPivots {
-
-			private List<FacetPivot> pivots;
-			private String[] pivotFields;
-
-			public FacetPivots() {
-			}
-			
-			class FacetPivot {
-
-				private String field;
-				private String value;
-				private Integer count;
-				@JsonProperty("ranges")
-				private PivotRanges pivotRanges;
-
-				public FacetPivot() {
-				}
-
-				class PivotRanges {
-					
-					private Map<String, PivotRange> ranges = new HashMap<>();
-
-					public Map<String, PivotRange> getRanges() {
-						return ranges;
-					}
-
-					@JsonAnySetter
-					public void setRanges(String key, Object value) {
-						this.ranges = (Map<String, PivotRange>)value;
-					}
-				}
-
-				private List<Pivot> pivot;
-
-				class Pivot {
-					
-					private String field;
-					private String value;
-					private Integer count;
-					private Map<String, PivotRange> ranges = new HashMap<>();
-
-					public Pivot() {
-					}
-
-					public String getField() {
-						return field;
-					}
-
-					public void setField(String field) {
-						this.field = field;
-					}
-
-					public String getValue() {
-						return value;
-					}
-
-					public void setValue(String value) {
-						this.value = value;
-					}
-
-					public Integer getCount() {
-						return count;
-					}
-
-					public void setCount(Integer count) {
-						this.count = count;
-					}
-
-					@JsonAnySetter
-					public void setRanges(String key, Object value) {
-						this.ranges = (Map<String, PivotRange>)value;
-					}
-
-					public Map<String, PivotRange> getRanges() {
-						return ranges;
-					}
-				}
-
-				public String getField() {
-					return field;
-				}
-
-				public void setField(String field) {
-					this.field = field;
-				}
-
-				public String getValue() {
-					return value;
-				}
-
-				public void setValue(String value) {
-					this.value = value;
-				}
-
-				public Integer getCount() {
-					return count;
-				}
-
-				public void setCount(Integer count) {
-					this.count = count;
-				}
-
-				public PivotRanges getPivotRanges() {
-					return pivotRanges;
-				}
-
-				public void setPivotRanges(PivotRanges pivotRanges) {
-					this.pivotRanges = pivotRanges;
-				}
-
-				public List<Pivot> getPivot() {
-					return pivot;
-				}
-
-				public void setPivot(List<Pivot> pivot) {
-					this.pivot = pivot;
-				}
-			}
-
-			public List<FacetPivot> getPivots() {
-				return pivots;
-			}
-
-			@JsonAnySetter
-			public void setPivots(String key, Object value) {
-				setPivotFields(key.split(","));
-				this.pivots = (List<FacetPivot>)value;
-			}
-
-			public String[] getPivotFields() {
-				return pivotFields;
-			}
-
-			public void setPivotFields(String[] pivotFields) {
-				this.pivotFields = pivotFields;
-			}
-		}
 
 		public FacetQueries getFacetQueries() {
 			return facetQueries;
@@ -527,65 +390,11 @@ public class SolrResponse {
 		}
 	}
 
-	public ResponseHeader getResponseHeader() {
-		return responseHeader;
-	}
+	public class PivotRanges {
 
-	public void setResponseHeader(ResponseHeader responseHeader) {
-		this.responseHeader = responseHeader;
-	}
-
-	public Response getResponse() {
-		return response;
-	}
-
-	public void setResponse(Response response) {
-		this.response = response;
-	}
-
-	public FacetCounts getFacetCounts() {
-		return facetCounts;
-	}
-
-	public void setFacetCounts(FacetCounts facetCounts) {
-		this.facetCounts = facetCounts;
-	}
-
-	class PivotRanges {
-		
 		private Map<String, PivotRange> ranges = new HashMap<>();
 
-		class PivotRange {
-			
-			private List<Object> counts;
-			private String gap;
-			private String start;
-			private String end;
-
-			public List<Object> getCounts() {
-				return counts;
-			}
-			public void setCounts(List<Object> counts) {
-				this.counts = counts;
-			}
-			public String getGap() {
-				return gap;
-			}
-			public void setGap(String gap) {
-				this.gap = gap;
-			}
-			public String getStart() {
-				return start;
-			}
-			public void setStart(String start) {
-				this.start = start;
-			}
-			public String getEnd() {
-				return end;
-			}
-			public void setEnd(String end) {
-				this.end = end;
-			}
+		public PivotRanges() {
 		}
 
 		public Map<String, PivotRange> getRanges() {
@@ -595,14 +404,15 @@ public class SolrResponse {
 		public void setRanges(Map<String, PivotRange> ranges) {
 			this.ranges = ranges;
 		}
+
 		@JsonAnySetter
 		public void setRanges(String key, Object value) {
-			this.ranges = (Map<String, PivotRange>)value;
+			this.ranges = (Map<String, PivotRange>) value;
 		}
 	}
 
-	class PivotRange {
-		
+	public class PivotRange {
+
 		private List<Object> counts;
 		private String gap;
 		private String start;
@@ -611,26 +421,210 @@ public class SolrResponse {
 		public List<Object> getCounts() {
 			return counts;
 		}
+
 		public void setCounts(List<Object> counts) {
 			this.counts = counts;
 		}
+
 		public String getGap() {
 			return gap;
 		}
+
 		public void setGap(String gap) {
 			this.gap = gap;
 		}
+
 		public String getStart() {
 			return start;
 		}
+
 		public void setStart(String start) {
 			this.start = start;
 		}
+
 		public String getEnd() {
 			return end;
 		}
+
 		public void setEnd(String end) {
 			this.end = end;
+		}
+	}
+
+	public class Params {
+
+		@JsonAlias("facet.range")
+		private String facetRange;
+		@JsonAlias("facet.range.gap")
+		private String facetRangeGap;
+		@JsonAlias("facet.pivot")
+		private String facetPivot;
+		private String start;
+		private String fq;
+		private String rows;
+		@JsonAlias("facet.pivot.mincount")
+		private String facetPivotMinCount;
+		private String q;
+		@JsonAlias("facet.mincount")
+		private String facetMinCount;
+		@JsonAlias("facet")
+		private String facet;
+		@JsonAlias("facet.sort")
+		private String facetSort;
+		@JsonAlias("facet.range.start")
+		private String facetRangeStart;
+		@JsonAlias("facet.range.end")
+		private String facetRangeEnd;
+
+		public Params() {
+		}
+
+		public String getFacetRange() {
+			return facetRange;
+		}
+
+		public void setFacetRange(String facetRange) {
+			this.facetRange = facetRange;
+		}
+
+		public String getFacetRangeGap() {
+			return facetRangeGap;
+		}
+
+		public void setFacetRangeGap(String facetRangeGap) {
+			this.facetRangeGap = facetRangeGap;
+		}
+
+		public String getFacetPivot() {
+			return facetPivot;
+		}
+
+		public void setFacetPivot(String facetPivot) {
+			this.facetPivot = facetPivot;
+		}
+
+		public String getRows() {
+			return rows;
+		}
+
+		public void setRows(String rows) {
+			this.rows = rows;
+		}
+
+		public String getFacetPivotMinCount() {
+			return facetPivotMinCount;
+		}
+
+		public void setFacetPivotMinCount(String facetPivotMinCount) {
+			this.facetPivotMinCount = facetPivotMinCount;
+		}
+
+		public String getQ() {
+			return q;
+		}
+
+		public void setQ(String q) {
+			this.q = q;
+		}
+
+		public String getFacetMinCount() {
+			return facetMinCount;
+		}
+
+		public void setFacetMinCount(String facetMinCount) {
+			this.facetMinCount = facetMinCount;
+		}
+
+		public String getFacet() {
+			return facet;
+		}
+
+		public void setFacet(String facet) {
+			this.facet = facet;
+		}
+
+		public String getFacetSort() {
+			return facetSort;
+		}
+
+		public void setFacetSort(String facetSort) {
+			this.facetSort = facetSort;
+		}
+
+		public String getFacetRangeStart() {
+			return facetRangeStart;
+		}
+
+		public void setFacetRangeStart(String facetRangeStart) {
+			this.facetRangeStart = facetRangeStart;
+		}
+
+		public String getFacetRangeEnd() {
+			return facetRangeEnd;
+		}
+
+		public void setFacetRangeEnd(String facetRangeEnd) {
+			this.facetRangeEnd = facetRangeEnd;
+		}
+
+		public String getStart() {
+			return start;
+		}
+
+		public void setStart(String start) {
+			this.start = start;
+		}
+
+		public String getFq() {
+			return fq;
+		}
+
+		public void setFq(String fq) {
+			this.fq = fq;
+		}
+	}
+
+	public class ResponseHeader {
+
+		public ResponseHeader() {
+		}
+
+		private Boolean zkConnected;
+		private Integer status;
+		@JsonAlias("QTime")
+		private Integer qTime;
+		private Params params;
+
+		public Boolean getZkConnected() {
+			return zkConnected;
+		}
+
+		public void setZkConnected(Boolean zkConnected) {
+			this.zkConnected = zkConnected;
+		}
+
+		public Integer getStatus() {
+			return status;
+		}
+
+		public void setStatus(Integer status) {
+			this.status = status;
+		}
+
+		public Integer getqTime() {
+			return qTime;
+		}
+
+		public void setqTime(Integer qTime) {
+			this.qTime = qTime;
+		}
+
+		public Params getParams() {
+			return params;
+		}
+
+		public void setParams(Params params) {
+			this.params = params;
 		}
 	}
 }
