@@ -54,7 +54,7 @@ public class SearchRequest extends SearchRequestGen<Object> {
 	/**
 	 * {@inheritDoc}
 	 */
-	protected void _start(Integer c) {
+	protected void _start(Wrap<Integer> w) {
 	}
 	public SearchRequest start(Integer start) {
 		setStart(start);
@@ -64,7 +64,7 @@ public class SearchRequest extends SearchRequestGen<Object> {
 	/**
 	 * {@inheritDoc}
 	 */
-	protected void _rows(Integer c) {
+	protected void _rows(Wrap<Integer> w) {
 	}
 	public SearchRequest rows(Integer rows) {
 		setRows(rows);

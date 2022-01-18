@@ -2,33 +2,28 @@ package org.computate.search.request;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Arrays;
+import org.slf4j.Logger;
 import com.fasterxml.jackson.databind.ser.std.ToStringSerializer;
+import java.math.MathContext;
 import org.slf4j.LoggerFactory;
+import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import java.util.HashMap;
+import com.fasterxml.jackson.annotation.JsonFormat;
 import org.apache.commons.lang3.StringUtils;
 import java.text.NumberFormat;
 import org.computate.search.request.SiteRequest;
 import java.util.ArrayList;
-import org.apache.commons.collections.CollectionUtils;
+import java.util.Objects;
+import org.computate.search.wrap.Wrap;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import java.util.Map;
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import java.math.RoundingMode;
-import org.slf4j.Logger;
-import java.math.MathContext;
-import io.vertx.core.Promise;
-import org.apache.commons.text.StringEscapeUtils;
-import com.fasterxml.jackson.annotation.JsonInclude.Include;
-import com.fasterxml.jackson.annotation.JsonFormat;
-import io.vertx.core.Future;
-import java.util.Objects;
-import io.vertx.core.json.JsonArray;
-import org.computate.search.wrap.Wrap;
 import org.apache.commons.lang3.math.NumberUtils;
 import java.util.Optional;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import java.lang.Object;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import java.math.RoundingMode;
 
 /**	
  * <br/><a href="http://localhost:8983/solr/computate/select?q=*:*&fq=partEstClasse_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.computate.search.request.SiteRequest&fq=classeEtendGen_indexed_boolean:true">Find the class  in Solr. </a>

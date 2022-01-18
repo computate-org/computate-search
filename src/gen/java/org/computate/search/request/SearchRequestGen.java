@@ -243,20 +243,20 @@ public abstract class SearchRequestGen<DEV> extends Object {
 	///////////
 
 	/**	 The entity start
-	 *	Il est construit avant d'être initialisé avec le constructeur par défaut Integer(). 
+	 *	 is defined as null before being initialized. 
 	 */
 	@JsonProperty
 	@JsonSerialize(using = ToStringSerializer.class)
 	@JsonInclude(Include.NON_NULL)
-	protected Integer start = new Integer();
+	protected Integer start;
 
 	/**	<br/> The entity start
-	 *  It is constructed before being initialized with the constructor by default Integer(). 
+	 *  is defined as null before being initialized. 
 	 * <br/><a href="http://localhost:8983/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.computate.search.request.SearchRequest&fq=classeEtendGen_indexed_boolean:true&fq=entiteVar_enUS_indexed_string:start">Find the entity start in Solr</a>
 	 * <br/>
-	 * @param start is the entity already constructed. 
+	 * @param w is for wrapping a value to assign to this entity during initialization. 
 	 **/
-	protected abstract void _start(Integer c);
+	protected abstract void _start(Wrap<Integer> w);
 
 	public Integer getStart() {
 		return start;
@@ -275,7 +275,11 @@ public abstract class SearchRequestGen<DEV> extends Object {
 		return null;
 	}
 	protected SearchRequest startInit() {
-		_start(start);
+		Wrap<Integer> startWrap = new Wrap<Integer>().var("start");
+		if(start == null) {
+			_start(startWrap);
+			setStart(startWrap.o);
+		}
 		return (SearchRequest)this;
 	}
 
@@ -296,20 +300,20 @@ public abstract class SearchRequestGen<DEV> extends Object {
 	//////////
 
 	/**	 The entity rows
-	 *	Il est construit avant d'être initialisé avec le constructeur par défaut Integer(). 
+	 *	 is defined as null before being initialized. 
 	 */
 	@JsonProperty
 	@JsonSerialize(using = ToStringSerializer.class)
 	@JsonInclude(Include.NON_NULL)
-	protected Integer rows = new Integer();
+	protected Integer rows;
 
 	/**	<br/> The entity rows
-	 *  It is constructed before being initialized with the constructor by default Integer(). 
+	 *  is defined as null before being initialized. 
 	 * <br/><a href="http://localhost:8983/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.computate.search.request.SearchRequest&fq=classeEtendGen_indexed_boolean:true&fq=entiteVar_enUS_indexed_string:rows">Find the entity rows in Solr</a>
 	 * <br/>
-	 * @param rows is the entity already constructed. 
+	 * @param w is for wrapping a value to assign to this entity during initialization. 
 	 **/
-	protected abstract void _rows(Integer c);
+	protected abstract void _rows(Wrap<Integer> w);
 
 	public Integer getRows() {
 		return rows;
@@ -328,7 +332,11 @@ public abstract class SearchRequestGen<DEV> extends Object {
 		return null;
 	}
 	protected SearchRequest rowsInit() {
-		_rows(rows);
+		Wrap<Integer> rowsWrap = new Wrap<Integer>().var("rows");
+		if(rows == null) {
+			_rows(rowsWrap);
+			setRows(rowsWrap.o);
+		}
 		return (SearchRequest)this;
 	}
 

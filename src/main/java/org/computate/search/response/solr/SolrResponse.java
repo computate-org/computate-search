@@ -45,7 +45,7 @@ public class SolrResponse {
 		this.facetCounts = facetCounts;
 	}
 
-	public class Doc {
+	public static class Doc {
 
 		private Map<String, Object> fields = new HashMap<>();
 
@@ -66,7 +66,7 @@ public class SolrResponse {
 		}
 	}
 
-	public class Response {
+	public static class Response {
 
 		private Integer numFound;
 		private Integer start;
@@ -109,19 +109,19 @@ public class SolrResponse {
 		}
 	}
 
-	public class FacetQueries {
+	public static class FacetQueries {
 
 		public FacetQueries() {
 		}
 	}
 
-	public class FacetFields {
+	public static class FacetFields {
 
 		public FacetFields() {
 		}
 	}
 
-	public class FacetRange {
+	public static class FacetRange {
 
 		public FacetRange() {
 		}
@@ -164,7 +164,7 @@ public class SolrResponse {
 		}
 	}
 
-	public class FacetRanges {
+	public static class FacetRanges {
 
 		public FacetRanges() {
 		}
@@ -181,7 +181,7 @@ public class SolrResponse {
 		}
 	}
 
-	public class Pivot {
+	public static class Pivot {
 
 		private String field;
 		private String value;
@@ -225,7 +225,7 @@ public class SolrResponse {
 		}
 	}
 
-	public class FacetPivot {
+	public static class FacetPivot {
 
 		private String field;
 		private String value;
@@ -279,7 +279,7 @@ public class SolrResponse {
 		}
 	}
 
-	public class FacetPivots {
+	public static class FacetPivots {
 
 		private List<FacetPivot> pivots;
 		private String[] pivotFields;
@@ -306,19 +306,19 @@ public class SolrResponse {
 		}
 	}
 
-	public class FacetIntervals {
+	public static class FacetIntervals {
 
 		public FacetIntervals() {
 		}
 	}
 
-	public class FacetHeatMaps {
+	public static class FacetHeatMaps {
 
 		public FacetHeatMaps() {
 		}
 	}
 
-	public class FacetCounts {
+	public static class FacetCounts {
 
 		public FacetCounts() {
 		}
@@ -390,7 +390,7 @@ public class SolrResponse {
 		}
 	}
 
-	public class PivotRanges {
+	public static class PivotRanges {
 
 		private Map<String, PivotRange> ranges = new HashMap<>();
 
@@ -411,12 +411,15 @@ public class SolrResponse {
 		}
 	}
 
-	public class PivotRange {
+	public static class PivotRange {
 
 		private List<Object> counts;
 		private String gap;
 		private String start;
 		private String end;
+
+		public PivotRange() {
+		}
 
 		public List<Object> getCounts() {
 			return counts;
@@ -451,7 +454,7 @@ public class SolrResponse {
 		}
 	}
 
-	public class Params {
+	public static class Params {
 
 		@JsonAlias("facet.range")
 		private String facetRange;
@@ -584,7 +587,7 @@ public class SolrResponse {
 		}
 	}
 
-	public class ResponseHeader {
+	public static class ResponseHeader {
 
 		public ResponseHeader() {
 		}

@@ -7,6 +7,7 @@
 	<version>1.0.0-SNAPSHOT</version>
 
 	<properties>
+		<build-helper-maven-plugin.version>3.0.0</build-helper-maven-plugin.version>
 		<slf4j.version>1.7.32</slf4j.version>
 		<log4j.version>2.17.1</log4j.version>
 		<jackson.version>2.13.1</jackson.version>
@@ -20,6 +21,7 @@
 			</resource>
 		</resources>
 		<plugins>
+
 			<plugin>
 				<artifactId>maven-compiler-plugin</artifactId>
 				<version>3.7.0</version>
@@ -28,10 +30,30 @@
 					<target>1.8</target>
 				</configuration>
 			</plugin>
+
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-jar-plugin</artifactId>
 				<version>3.1.0</version>
+			</plugin>
+
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>build-helper-maven-plugin</artifactId>
+				<version>${build-helper-maven-plugin.version}</version>
+				<executions>
+					<execution>
+						<phase>generate-sources</phase>
+						<goals>
+							<goal>add-source</goal>
+						</goals>
+						<configuration>
+							<sources>
+								<source>src/gen/java</source>
+							</sources>
+						</configuration>
+					</execution>
+				</executions>
 			</plugin>
 		</plugins>
 	</build>
