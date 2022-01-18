@@ -4,7 +4,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>org.computate.search</groupId>
 	<artifactId>computate-search</artifactId>
-	<version>1.0.0-SNAPSHOT</version>
+	<version>1.0.2</version>
 
 	<properties>
 		<build-helper-maven-plugin.version>3.0.0</build-helper-maven-plugin.version>
