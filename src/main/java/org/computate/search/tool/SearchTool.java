@@ -132,12 +132,11 @@ public class SearchTool {
 
 	/**
 	 * Parses a String which may be a date (in the standard ISO-8601 format)
-	 * followed by an optional math expression. The TimeZone is taken from the
-	 * {@code TZ} param retrieved via {@link SolrRequestInfo}, defaulting to UTC.
+	 * followed by an optional math expression. 
 	 * 
-	 * @param now an optional fixed date to use as "NOW". {@link SolrRequestInfo} is
-	 *            consulted if unspecified.
+	 * @param now an optional fixed date to use as "NOW". 
 	 * @param val the string to parse
+	 * @return the new date
 	 */
 	public static Date parseMath(Date now, String val) {
 		return parseMath(now, val, null);
@@ -150,6 +149,7 @@ public class SearchTool {
 	 * @param now  an optional fixed date to use as "NOW"
 	 * @param val  the string to parse
 	 * @param zone the timezone to use
+	 * @return the new date
 	 */
 	public static Date parseMath(Date now, String val, TimeZone zone) {
 		String math;
@@ -198,6 +198,10 @@ public class SearchTool {
 	 * 
 	 * @exception ParseException positions in ParseExceptions are token positions,
 	 *                           not character positions.
+	 * @param now The date now. 
+	 * @param math The date String to parse. 
+	 * @param zone The timezone. 
+	 * @return The new date. 
 	 */
 	public static Date parseMathInner(Date now, String math, TimeZone zone) throws ParseException {
 		/* check for No-Op */
@@ -264,6 +268,8 @@ public class SearchTool {
 	 * See: <a href=
 	 * "https://www.google.com/?gws_rd=ssl#q=lucene+query+parser+syntax">Lucene
 	 * query parser syntax</a> for more information on Escaping Special Characters
+	 * @param s The String to be escaped. 
+	 * @return Solr escaped query String. 
 	 */
 	// NOTE: its broken to link to any lucene-queryparser.jar docs, not in
 	// classpath!!!!!
