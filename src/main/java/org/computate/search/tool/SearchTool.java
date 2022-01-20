@@ -134,6 +134,17 @@ public class SearchTool {
 	 * Parses a String which may be a date (in the standard ISO-8601 format)
 	 * followed by an optional math expression. 
 	 * 
+	 * @param val the string to parse
+	 * @return the new date
+	 */
+	public static Date parseMath(String val) {
+		return parseMath(Date.from(Instant.now()), val, null);
+	}
+
+	/**
+	 * Parses a String which may be a date (in the standard ISO-8601 format)
+	 * followed by an optional math expression. 
+	 * 
 	 * @param now an optional fixed date to use as "NOW". 
 	 * @param val the string to parse
 	 * @return the new date

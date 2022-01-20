@@ -2,10 +2,8 @@ package org.computate.search.request;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Arrays;
-import org.slf4j.Logger;
 import com.fasterxml.jackson.databind.ser.std.ToStringSerializer;
 import java.math.MathContext;
-import org.slf4j.LoggerFactory;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import java.util.HashMap;
 import com.fasterxml.jackson.annotation.JsonFormat;
@@ -30,7 +28,6 @@ import java.math.RoundingMode;
  * <br>
  **/
 public abstract class SiteRequestGen<DEV> extends Object {
-	protected static final Logger LOG = LoggerFactory.getLogger(SiteRequest.class);
 
 	//////////////
 	// initDeep //

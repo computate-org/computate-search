@@ -3,7 +3,6 @@ package org.computate.search.request;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Arrays;
 import com.fasterxml.jackson.databind.ser.std.ToStringSerializer;
-import org.slf4j.LoggerFactory;
 import java.util.HashMap;
 import org.apache.commons.lang3.StringUtils;
 import java.lang.Integer;
@@ -13,9 +12,9 @@ import java.util.ArrayList;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import java.util.Map;
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import java.lang.Boolean;
 import java.lang.String;
 import java.math.RoundingMode;
-import org.slf4j.Logger;
 import java.math.MathContext;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.fasterxml.jackson.annotation.JsonFormat;
@@ -33,7 +32,6 @@ import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
  * <br>
  **/
 public abstract class SearchRequestGen<DEV> extends Object {
-	protected static final Logger LOG = LoggerFactory.getLogger(SearchRequest.class);
 
 	//////////////////
 	// siteRequest_ //
@@ -239,6 +237,488 @@ public abstract class SearchRequestGen<DEV> extends Object {
 	}
 
 	///////////
+	// sorts //
+	///////////
+
+	/**	 The entity sorts
+	 *	 It is constructed before being initialized with the constructor by default. 
+	 */
+	@JsonProperty
+	@JsonFormat(shape = JsonFormat.Shape.ARRAY)
+	@JsonInclude(Include.NON_NULL)
+	protected List<String> sorts = new ArrayList<String>();
+
+	/**	<br> The entity sorts
+	 *  It is constructed before being initialized with the constructor by default. 
+	 * <br><a href="http://localhost:8983/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.computate.search.request.SearchRequest&fq=classeEtendGen_indexed_boolean:true&fq=entiteVar_enUS_indexed_string:sorts">Find the entity sorts in Solr</a>
+	 * <br>
+	 * @param w is the entity already constructed. 
+	 **/
+	protected abstract void _sorts(List<String> w);
+
+	public List<String> getSorts() {
+		return sorts;
+	}
+
+	public void setSorts(List<String> sorts) {
+		this.sorts = sorts;
+	}
+	public static String staticSetSorts(SiteRequest siteRequest_, String o) {
+		return o;
+	}
+	public SearchRequest addSorts(String...objets) {
+		for(String o : objets) {
+			addSorts(o);
+		}
+		return (SearchRequest)this;
+	}
+	public SearchRequest addSorts(String o) {
+		if(o != null)
+			this.sorts.add(o);
+		return (SearchRequest)this;
+	}
+	protected SearchRequest sortsInit() {
+		_sorts(sorts);
+		return (SearchRequest)this;
+	}
+
+	public static String staticSolrSorts(SiteRequest siteRequest_, String o) {
+		return o;
+	}
+
+	public static String staticSolrStrSorts(SiteRequest siteRequest_, String o) {
+		return o == null ? null : o.toString();
+	}
+
+	public static String staticSolrFqSorts(SiteRequest siteRequest_, String o) {
+		return SearchRequest.staticSolrStrSorts(siteRequest_, SearchRequest.staticSolrSorts(siteRequest_, SearchRequest.staticSetSorts(siteRequest_, o)));
+	}
+
+	/////////////////
+	// facetPivots //
+	/////////////////
+
+	/**	 The entity facetPivots
+	 *	 It is constructed before being initialized with the constructor by default. 
+	 */
+	@JsonProperty
+	@JsonFormat(shape = JsonFormat.Shape.ARRAY)
+	@JsonInclude(Include.NON_NULL)
+	protected List<String> facetPivots = new ArrayList<String>();
+
+	/**	<br> The entity facetPivots
+	 *  It is constructed before being initialized with the constructor by default. 
+	 * <br><a href="http://localhost:8983/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.computate.search.request.SearchRequest&fq=classeEtendGen_indexed_boolean:true&fq=entiteVar_enUS_indexed_string:facetPivots">Find the entity facetPivots in Solr</a>
+	 * <br>
+	 * @param w is the entity already constructed. 
+	 **/
+	protected abstract void _facetPivots(List<String> w);
+
+	public List<String> getFacetPivots() {
+		return facetPivots;
+	}
+
+	public void setFacetPivots(List<String> facetPivots) {
+		this.facetPivots = facetPivots;
+	}
+	public static String staticSetFacetPivots(SiteRequest siteRequest_, String o) {
+		return o;
+	}
+	public SearchRequest addFacetPivots(String...objets) {
+		for(String o : objets) {
+			addFacetPivots(o);
+		}
+		return (SearchRequest)this;
+	}
+	public SearchRequest addFacetPivots(String o) {
+		if(o != null)
+			this.facetPivots.add(o);
+		return (SearchRequest)this;
+	}
+	protected SearchRequest facetPivotsInit() {
+		_facetPivots(facetPivots);
+		return (SearchRequest)this;
+	}
+
+	public static String staticSolrFacetPivots(SiteRequest siteRequest_, String o) {
+		return o;
+	}
+
+	public static String staticSolrStrFacetPivots(SiteRequest siteRequest_, String o) {
+		return o == null ? null : o.toString();
+	}
+
+	public static String staticSolrFqFacetPivots(SiteRequest siteRequest_, String o) {
+		return SearchRequest.staticSolrStrFacetPivots(siteRequest_, SearchRequest.staticSolrFacetPivots(siteRequest_, SearchRequest.staticSetFacetPivots(siteRequest_, o)));
+	}
+
+	///////////
+	// facet //
+	///////////
+
+	/**	 The entity facet
+	 *	 is defined as null before being initialized. 
+	 */
+	@JsonProperty
+	@JsonInclude(Include.NON_NULL)
+	protected Boolean facet;
+
+	/**	<br> The entity facet
+	 *  is defined as null before being initialized. 
+	 * <br><a href="http://localhost:8983/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.computate.search.request.SearchRequest&fq=classeEtendGen_indexed_boolean:true&fq=entiteVar_enUS_indexed_string:facet">Find the entity facet in Solr</a>
+	 * <br>
+	 * @param w is for wrapping a value to assign to this entity during initialization. 
+	 **/
+	protected abstract void _facet(Wrap<Boolean> w);
+
+	public Boolean getFacet() {
+		return facet;
+	}
+
+	public void setFacet(Boolean facet) {
+		this.facet = facet;
+	}
+	@JsonIgnore
+	public void setFacet(String o) {
+		this.facet = SearchRequest.staticSetFacet(siteRequest_, o);
+	}
+	public static Boolean staticSetFacet(SiteRequest siteRequest_, String o) {
+		return Boolean.parseBoolean(o);
+	}
+	protected SearchRequest facetInit() {
+		Wrap<Boolean> facetWrap = new Wrap<Boolean>().var("facet");
+		if(facet == null) {
+			_facet(facetWrap);
+			setFacet(facetWrap.o);
+		}
+		return (SearchRequest)this;
+	}
+
+	public static Boolean staticSolrFacet(SiteRequest siteRequest_, Boolean o) {
+		return o;
+	}
+
+	public static String staticSolrStrFacet(SiteRequest siteRequest_, Boolean o) {
+		return o == null ? null : o.toString();
+	}
+
+	public static String staticSolrFqFacet(SiteRequest siteRequest_, String o) {
+		return SearchRequest.staticSolrStrFacet(siteRequest_, SearchRequest.staticSolrFacet(siteRequest_, SearchRequest.staticSetFacet(siteRequest_, o)));
+	}
+
+	/////////////////////
+	// facetRangeStart //
+	/////////////////////
+
+	/**	 The entity facetRangeStart
+	 *	 is defined as null before being initialized. 
+	 */
+	@JsonProperty
+	@JsonInclude(Include.NON_NULL)
+	protected String facetRangeStart;
+
+	/**	<br> The entity facetRangeStart
+	 *  is defined as null before being initialized. 
+	 * <br><a href="http://localhost:8983/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.computate.search.request.SearchRequest&fq=classeEtendGen_indexed_boolean:true&fq=entiteVar_enUS_indexed_string:facetRangeStart">Find the entity facetRangeStart in Solr</a>
+	 * <br>
+	 * @param w is for wrapping a value to assign to this entity during initialization. 
+	 **/
+	protected abstract void _facetRangeStart(Wrap<String> w);
+
+	public String getFacetRangeStart() {
+		return facetRangeStart;
+	}
+	public void setFacetRangeStart(String o) {
+		this.facetRangeStart = SearchRequest.staticSetFacetRangeStart(siteRequest_, o);
+	}
+	public static String staticSetFacetRangeStart(SiteRequest siteRequest_, String o) {
+		return o;
+	}
+	protected SearchRequest facetRangeStartInit() {
+		Wrap<String> facetRangeStartWrap = new Wrap<String>().var("facetRangeStart");
+		if(facetRangeStart == null) {
+			_facetRangeStart(facetRangeStartWrap);
+			setFacetRangeStart(facetRangeStartWrap.o);
+		}
+		return (SearchRequest)this;
+	}
+
+	public static String staticSolrFacetRangeStart(SiteRequest siteRequest_, String o) {
+		return o;
+	}
+
+	public static String staticSolrStrFacetRangeStart(SiteRequest siteRequest_, String o) {
+		return o == null ? null : o.toString();
+	}
+
+	public static String staticSolrFqFacetRangeStart(SiteRequest siteRequest_, String o) {
+		return SearchRequest.staticSolrStrFacetRangeStart(siteRequest_, SearchRequest.staticSolrFacetRangeStart(siteRequest_, SearchRequest.staticSetFacetRangeStart(siteRequest_, o)));
+	}
+
+	///////////////////
+	// facetRangeEnd //
+	///////////////////
+
+	/**	 The entity facetRangeEnd
+	 *	 is defined as null before being initialized. 
+	 */
+	@JsonProperty
+	@JsonInclude(Include.NON_NULL)
+	protected String facetRangeEnd;
+
+	/**	<br> The entity facetRangeEnd
+	 *  is defined as null before being initialized. 
+	 * <br><a href="http://localhost:8983/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.computate.search.request.SearchRequest&fq=classeEtendGen_indexed_boolean:true&fq=entiteVar_enUS_indexed_string:facetRangeEnd">Find the entity facetRangeEnd in Solr</a>
+	 * <br>
+	 * @param w is for wrapping a value to assign to this entity during initialization. 
+	 **/
+	protected abstract void _facetRangeEnd(Wrap<String> w);
+
+	public String getFacetRangeEnd() {
+		return facetRangeEnd;
+	}
+	public void setFacetRangeEnd(String o) {
+		this.facetRangeEnd = SearchRequest.staticSetFacetRangeEnd(siteRequest_, o);
+	}
+	public static String staticSetFacetRangeEnd(SiteRequest siteRequest_, String o) {
+		return o;
+	}
+	protected SearchRequest facetRangeEndInit() {
+		Wrap<String> facetRangeEndWrap = new Wrap<String>().var("facetRangeEnd");
+		if(facetRangeEnd == null) {
+			_facetRangeEnd(facetRangeEndWrap);
+			setFacetRangeEnd(facetRangeEndWrap.o);
+		}
+		return (SearchRequest)this;
+	}
+
+	public static String staticSolrFacetRangeEnd(SiteRequest siteRequest_, String o) {
+		return o;
+	}
+
+	public static String staticSolrStrFacetRangeEnd(SiteRequest siteRequest_, String o) {
+		return o == null ? null : o.toString();
+	}
+
+	public static String staticSolrFqFacetRangeEnd(SiteRequest siteRequest_, String o) {
+		return SearchRequest.staticSolrStrFacetRangeEnd(siteRequest_, SearchRequest.staticSolrFacetRangeEnd(siteRequest_, SearchRequest.staticSetFacetRangeEnd(siteRequest_, o)));
+	}
+
+	///////////////////
+	// facetRangeGap //
+	///////////////////
+
+	/**	 The entity facetRangeGap
+	 *	 is defined as null before being initialized. 
+	 */
+	@JsonProperty
+	@JsonInclude(Include.NON_NULL)
+	protected String facetRangeGap;
+
+	/**	<br> The entity facetRangeGap
+	 *  is defined as null before being initialized. 
+	 * <br><a href="http://localhost:8983/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.computate.search.request.SearchRequest&fq=classeEtendGen_indexed_boolean:true&fq=entiteVar_enUS_indexed_string:facetRangeGap">Find the entity facetRangeGap in Solr</a>
+	 * <br>
+	 * @param w is for wrapping a value to assign to this entity during initialization. 
+	 **/
+	protected abstract void _facetRangeGap(Wrap<String> w);
+
+	public String getFacetRangeGap() {
+		return facetRangeGap;
+	}
+	public void setFacetRangeGap(String o) {
+		this.facetRangeGap = SearchRequest.staticSetFacetRangeGap(siteRequest_, o);
+	}
+	public static String staticSetFacetRangeGap(SiteRequest siteRequest_, String o) {
+		return o;
+	}
+	protected SearchRequest facetRangeGapInit() {
+		Wrap<String> facetRangeGapWrap = new Wrap<String>().var("facetRangeGap");
+		if(facetRangeGap == null) {
+			_facetRangeGap(facetRangeGapWrap);
+			setFacetRangeGap(facetRangeGapWrap.o);
+		}
+		return (SearchRequest)this;
+	}
+
+	public static String staticSolrFacetRangeGap(SiteRequest siteRequest_, String o) {
+		return o;
+	}
+
+	public static String staticSolrStrFacetRangeGap(SiteRequest siteRequest_, String o) {
+		return o == null ? null : o.toString();
+	}
+
+	public static String staticSolrFqFacetRangeGap(SiteRequest siteRequest_, String o) {
+		return SearchRequest.staticSolrStrFacetRangeGap(siteRequest_, SearchRequest.staticSolrFacetRangeGap(siteRequest_, SearchRequest.staticSetFacetRangeGap(siteRequest_, o)));
+	}
+
+	////////////////
+	// cursorMark //
+	////////////////
+
+	/**	 The entity cursorMark
+	 *	 is defined as null before being initialized. 
+	 */
+	@JsonProperty
+	@JsonInclude(Include.NON_NULL)
+	protected String cursorMark;
+
+	/**	<br> The entity cursorMark
+	 *  is defined as null before being initialized. 
+	 * <br><a href="http://localhost:8983/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.computate.search.request.SearchRequest&fq=classeEtendGen_indexed_boolean:true&fq=entiteVar_enUS_indexed_string:cursorMark">Find the entity cursorMark in Solr</a>
+	 * <br>
+	 * @param w is for wrapping a value to assign to this entity during initialization. 
+	 **/
+	protected abstract void _cursorMark(Wrap<String> w);
+
+	public String getCursorMark() {
+		return cursorMark;
+	}
+	public void setCursorMark(String o) {
+		this.cursorMark = SearchRequest.staticSetCursorMark(siteRequest_, o);
+	}
+	public static String staticSetCursorMark(SiteRequest siteRequest_, String o) {
+		return o;
+	}
+	protected SearchRequest cursorMarkInit() {
+		Wrap<String> cursorMarkWrap = new Wrap<String>().var("cursorMark");
+		if(cursorMark == null) {
+			_cursorMark(cursorMarkWrap);
+			setCursorMark(cursorMarkWrap.o);
+		}
+		return (SearchRequest)this;
+	}
+
+	public static String staticSolrCursorMark(SiteRequest siteRequest_, String o) {
+		return o;
+	}
+
+	public static String staticSolrStrCursorMark(SiteRequest siteRequest_, String o) {
+		return o == null ? null : o.toString();
+	}
+
+	public static String staticSolrFqCursorMark(SiteRequest siteRequest_, String o) {
+		return SearchRequest.staticSolrStrCursorMark(siteRequest_, SearchRequest.staticSolrCursorMark(siteRequest_, SearchRequest.staticSetCursorMark(siteRequest_, o)));
+	}
+
+	/////////////////
+	// facetFields //
+	/////////////////
+
+	/**	 The entity facetFields
+	 *	 It is constructed before being initialized with the constructor by default. 
+	 */
+	@JsonProperty
+	@JsonFormat(shape = JsonFormat.Shape.ARRAY)
+	@JsonInclude(Include.NON_NULL)
+	protected List<String> facetFields = new ArrayList<String>();
+
+	/**	<br> The entity facetFields
+	 *  It is constructed before being initialized with the constructor by default. 
+	 * <br><a href="http://localhost:8983/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.computate.search.request.SearchRequest&fq=classeEtendGen_indexed_boolean:true&fq=entiteVar_enUS_indexed_string:facetFields">Find the entity facetFields in Solr</a>
+	 * <br>
+	 * @param w is the entity already constructed. 
+	 **/
+	protected abstract void _facetFields(List<String> w);
+
+	public List<String> getFacetFields() {
+		return facetFields;
+	}
+
+	public void setFacetFields(List<String> facetFields) {
+		this.facetFields = facetFields;
+	}
+	public static String staticSetFacetFields(SiteRequest siteRequest_, String o) {
+		return o;
+	}
+	public SearchRequest addFacetFields(String...objets) {
+		for(String o : objets) {
+			addFacetFields(o);
+		}
+		return (SearchRequest)this;
+	}
+	public SearchRequest addFacetFields(String o) {
+		if(o != null)
+			this.facetFields.add(o);
+		return (SearchRequest)this;
+	}
+	protected SearchRequest facetFieldsInit() {
+		_facetFields(facetFields);
+		return (SearchRequest)this;
+	}
+
+	public static String staticSolrFacetFields(SiteRequest siteRequest_, String o) {
+		return o;
+	}
+
+	public static String staticSolrStrFacetFields(SiteRequest siteRequest_, String o) {
+		return o == null ? null : o.toString();
+	}
+
+	public static String staticSolrFqFacetFields(SiteRequest siteRequest_, String o) {
+		return SearchRequest.staticSolrStrFacetFields(siteRequest_, SearchRequest.staticSolrFacetFields(siteRequest_, SearchRequest.staticSetFacetFields(siteRequest_, o)));
+	}
+
+	/////////////////
+	// facetRanges //
+	/////////////////
+
+	/**	 The entity facetRanges
+	 *	 It is constructed before being initialized with the constructor by default. 
+	 */
+	@JsonProperty
+	@JsonFormat(shape = JsonFormat.Shape.ARRAY)
+	@JsonInclude(Include.NON_NULL)
+	protected List<String> facetRanges = new ArrayList<String>();
+
+	/**	<br> The entity facetRanges
+	 *  It is constructed before being initialized with the constructor by default. 
+	 * <br><a href="http://localhost:8983/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.computate.search.request.SearchRequest&fq=classeEtendGen_indexed_boolean:true&fq=entiteVar_enUS_indexed_string:facetRanges">Find the entity facetRanges in Solr</a>
+	 * <br>
+	 * @param w is the entity already constructed. 
+	 **/
+	protected abstract void _facetRanges(List<String> w);
+
+	public List<String> getFacetRanges() {
+		return facetRanges;
+	}
+
+	public void setFacetRanges(List<String> facetRanges) {
+		this.facetRanges = facetRanges;
+	}
+	public static String staticSetFacetRanges(SiteRequest siteRequest_, String o) {
+		return o;
+	}
+	public SearchRequest addFacetRanges(String...objets) {
+		for(String o : objets) {
+			addFacetRanges(o);
+		}
+		return (SearchRequest)this;
+	}
+	public SearchRequest addFacetRanges(String o) {
+		if(o != null)
+			this.facetRanges.add(o);
+		return (SearchRequest)this;
+	}
+	protected SearchRequest facetRangesInit() {
+		_facetRanges(facetRanges);
+		return (SearchRequest)this;
+	}
+
+	public static String staticSolrFacetRanges(SiteRequest siteRequest_, String o) {
+		return o;
+	}
+
+	public static String staticSolrStrFacetRanges(SiteRequest siteRequest_, String o) {
+		return o == null ? null : o.toString();
+	}
+
+	public static String staticSolrFqFacetRanges(SiteRequest siteRequest_, String o) {
+		return SearchRequest.staticSolrStrFacetRanges(siteRequest_, SearchRequest.staticSolrFacetRanges(siteRequest_, SearchRequest.staticSetFacetRanges(siteRequest_, o)));
+	}
+
+	///////////
 	// start //
 	///////////
 
@@ -429,6 +909,15 @@ public abstract class SearchRequestGen<DEV> extends Object {
 				queryInit();
 				filterQueriesInit();
 				fieldsInit();
+				sortsInit();
+				facetPivotsInit();
+				facetInit();
+				facetRangeStartInit();
+				facetRangeEndInit();
+				facetRangeGapInit();
+				cursorMarkInit();
+				facetFieldsInit();
+				facetRangesInit();
 				startInit();
 				rowsInit();
 				queryStringInit();
@@ -477,6 +966,24 @@ public abstract class SearchRequestGen<DEV> extends Object {
 				return oSearchRequest.filterQueries;
 			case "fields":
 				return oSearchRequest.fields;
+			case "sorts":
+				return oSearchRequest.sorts;
+			case "facetPivots":
+				return oSearchRequest.facetPivots;
+			case "facet":
+				return oSearchRequest.facet;
+			case "facetRangeStart":
+				return oSearchRequest.facetRangeStart;
+			case "facetRangeEnd":
+				return oSearchRequest.facetRangeEnd;
+			case "facetRangeGap":
+				return oSearchRequest.facetRangeGap;
+			case "cursorMark":
+				return oSearchRequest.cursorMark;
+			case "facetFields":
+				return oSearchRequest.facetFields;
+			case "facetRanges":
+				return oSearchRequest.facetRanges;
 			case "start":
 				return oSearchRequest.start;
 			case "rows":
@@ -524,6 +1031,24 @@ public abstract class SearchRequestGen<DEV> extends Object {
 			return SearchRequest.staticSetFilterQueries(siteRequest_, o);
 		case "fields":
 			return SearchRequest.staticSetFields(siteRequest_, o);
+		case "sorts":
+			return SearchRequest.staticSetSorts(siteRequest_, o);
+		case "facetPivots":
+			return SearchRequest.staticSetFacetPivots(siteRequest_, o);
+		case "facet":
+			return SearchRequest.staticSetFacet(siteRequest_, o);
+		case "facetRangeStart":
+			return SearchRequest.staticSetFacetRangeStart(siteRequest_, o);
+		case "facetRangeEnd":
+			return SearchRequest.staticSetFacetRangeEnd(siteRequest_, o);
+		case "facetRangeGap":
+			return SearchRequest.staticSetFacetRangeGap(siteRequest_, o);
+		case "cursorMark":
+			return SearchRequest.staticSetCursorMark(siteRequest_, o);
+		case "facetFields":
+			return SearchRequest.staticSetFacetFields(siteRequest_, o);
+		case "facetRanges":
+			return SearchRequest.staticSetFacetRanges(siteRequest_, o);
 		case "start":
 			return SearchRequest.staticSetStart(siteRequest_, o);
 		case "rows":
@@ -550,6 +1075,24 @@ public abstract class SearchRequestGen<DEV> extends Object {
 			return SearchRequest.staticSolrFilterQueries(siteRequest_, (String)o);
 		case "fields":
 			return SearchRequest.staticSolrFields(siteRequest_, (String)o);
+		case "sorts":
+			return SearchRequest.staticSolrSorts(siteRequest_, (String)o);
+		case "facetPivots":
+			return SearchRequest.staticSolrFacetPivots(siteRequest_, (String)o);
+		case "facet":
+			return SearchRequest.staticSolrFacet(siteRequest_, (Boolean)o);
+		case "facetRangeStart":
+			return SearchRequest.staticSolrFacetRangeStart(siteRequest_, (String)o);
+		case "facetRangeEnd":
+			return SearchRequest.staticSolrFacetRangeEnd(siteRequest_, (String)o);
+		case "facetRangeGap":
+			return SearchRequest.staticSolrFacetRangeGap(siteRequest_, (String)o);
+		case "cursorMark":
+			return SearchRequest.staticSolrCursorMark(siteRequest_, (String)o);
+		case "facetFields":
+			return SearchRequest.staticSolrFacetFields(siteRequest_, (String)o);
+		case "facetRanges":
+			return SearchRequest.staticSolrFacetRanges(siteRequest_, (String)o);
 		case "start":
 			return SearchRequest.staticSolrStart(siteRequest_, (Integer)o);
 		case "rows":
@@ -576,6 +1119,24 @@ public abstract class SearchRequestGen<DEV> extends Object {
 			return SearchRequest.staticSolrStrFilterQueries(siteRequest_, (String)o);
 		case "fields":
 			return SearchRequest.staticSolrStrFields(siteRequest_, (String)o);
+		case "sorts":
+			return SearchRequest.staticSolrStrSorts(siteRequest_, (String)o);
+		case "facetPivots":
+			return SearchRequest.staticSolrStrFacetPivots(siteRequest_, (String)o);
+		case "facet":
+			return SearchRequest.staticSolrStrFacet(siteRequest_, (Boolean)o);
+		case "facetRangeStart":
+			return SearchRequest.staticSolrStrFacetRangeStart(siteRequest_, (String)o);
+		case "facetRangeEnd":
+			return SearchRequest.staticSolrStrFacetRangeEnd(siteRequest_, (String)o);
+		case "facetRangeGap":
+			return SearchRequest.staticSolrStrFacetRangeGap(siteRequest_, (String)o);
+		case "cursorMark":
+			return SearchRequest.staticSolrStrCursorMark(siteRequest_, (String)o);
+		case "facetFields":
+			return SearchRequest.staticSolrStrFacetFields(siteRequest_, (String)o);
+		case "facetRanges":
+			return SearchRequest.staticSolrStrFacetRanges(siteRequest_, (String)o);
 		case "start":
 			return SearchRequest.staticSolrStrStart(siteRequest_, (Integer)o);
 		case "rows":
@@ -602,6 +1163,24 @@ public abstract class SearchRequestGen<DEV> extends Object {
 			return SearchRequest.staticSolrFqFilterQueries(siteRequest_, o);
 		case "fields":
 			return SearchRequest.staticSolrFqFields(siteRequest_, o);
+		case "sorts":
+			return SearchRequest.staticSolrFqSorts(siteRequest_, o);
+		case "facetPivots":
+			return SearchRequest.staticSolrFqFacetPivots(siteRequest_, o);
+		case "facet":
+			return SearchRequest.staticSolrFqFacet(siteRequest_, o);
+		case "facetRangeStart":
+			return SearchRequest.staticSolrFqFacetRangeStart(siteRequest_, o);
+		case "facetRangeEnd":
+			return SearchRequest.staticSolrFqFacetRangeEnd(siteRequest_, o);
+		case "facetRangeGap":
+			return SearchRequest.staticSolrFqFacetRangeGap(siteRequest_, o);
+		case "cursorMark":
+			return SearchRequest.staticSolrFqCursorMark(siteRequest_, o);
+		case "facetFields":
+			return SearchRequest.staticSolrFqFacetFields(siteRequest_, o);
+		case "facetRanges":
+			return SearchRequest.staticSolrFqFacetRanges(siteRequest_, o);
 		case "start":
 			return SearchRequest.staticSolrFqStart(siteRequest_, o);
 		case "rows":
@@ -648,6 +1227,15 @@ public abstract class SearchRequestGen<DEV> extends Object {
 	public static final String VAR_query = "query";
 	public static final String VAR_filterQueries = "filterQueries";
 	public static final String VAR_fields = "fields";
+	public static final String VAR_sorts = "sorts";
+	public static final String VAR_facetPivots = "facetPivots";
+	public static final String VAR_facet = "facet";
+	public static final String VAR_facetRangeStart = "facetRangeStart";
+	public static final String VAR_facetRangeEnd = "facetRangeEnd";
+	public static final String VAR_facetRangeGap = "facetRangeGap";
+	public static final String VAR_cursorMark = "cursorMark";
+	public static final String VAR_facetFields = "facetFields";
+	public static final String VAR_facetRanges = "facetRanges";
 	public static final String VAR_start = "start";
 	public static final String VAR_rows = "rows";
 	public static final String VAR_queryString = "queryString";
@@ -656,6 +1244,15 @@ public abstract class SearchRequestGen<DEV> extends Object {
 	public static final String DISPLAY_NAME_query = "";
 	public static final String DISPLAY_NAME_filterQueries = "";
 	public static final String DISPLAY_NAME_fields = "";
+	public static final String DISPLAY_NAME_sorts = "";
+	public static final String DISPLAY_NAME_facetPivots = "";
+	public static final String DISPLAY_NAME_facet = "";
+	public static final String DISPLAY_NAME_facetRangeStart = "";
+	public static final String DISPLAY_NAME_facetRangeEnd = "";
+	public static final String DISPLAY_NAME_facetRangeGap = "";
+	public static final String DISPLAY_NAME_cursorMark = "";
+	public static final String DISPLAY_NAME_facetFields = "";
+	public static final String DISPLAY_NAME_facetRanges = "";
 	public static final String DISPLAY_NAME_start = "";
 	public static final String DISPLAY_NAME_rows = "";
 	public static final String DISPLAY_NAME_queryString = "";
@@ -673,6 +1270,24 @@ public abstract class SearchRequestGen<DEV> extends Object {
 			return DISPLAY_NAME_filterQueries;
 		case VAR_fields:
 			return DISPLAY_NAME_fields;
+		case VAR_sorts:
+			return DISPLAY_NAME_sorts;
+		case VAR_facetPivots:
+			return DISPLAY_NAME_facetPivots;
+		case VAR_facet:
+			return DISPLAY_NAME_facet;
+		case VAR_facetRangeStart:
+			return DISPLAY_NAME_facetRangeStart;
+		case VAR_facetRangeEnd:
+			return DISPLAY_NAME_facetRangeEnd;
+		case VAR_facetRangeGap:
+			return DISPLAY_NAME_facetRangeGap;
+		case VAR_cursorMark:
+			return DISPLAY_NAME_cursorMark;
+		case VAR_facetFields:
+			return DISPLAY_NAME_facetFields;
+		case VAR_facetRanges:
+			return DISPLAY_NAME_facetRanges;
 		case VAR_start:
 			return DISPLAY_NAME_start;
 		case VAR_rows:
