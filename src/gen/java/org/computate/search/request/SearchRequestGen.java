@@ -5,10 +5,10 @@ import java.util.Arrays;
 import com.fasterxml.jackson.databind.ser.std.ToStringSerializer;
 import java.util.HashMap;
 import org.apache.commons.lang3.StringUtils;
-import java.lang.Integer;
 import java.text.NumberFormat;
 import org.computate.search.request.SiteRequest;
 import java.util.ArrayList;
+import java.lang.Long;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import java.util.Map;
 import com.fasterxml.jackson.annotation.JsonIgnore;
@@ -728,7 +728,7 @@ public abstract class SearchRequestGen<DEV> extends Object {
 	@JsonProperty
 	@JsonSerialize(using = ToStringSerializer.class)
 	@JsonInclude(Include.NON_NULL)
-	protected Integer start;
+	protected Long start;
 
 	/**	<br> The entity start
 	 *  is defined as null before being initialized. 
@@ -736,26 +736,26 @@ public abstract class SearchRequestGen<DEV> extends Object {
 	 * <br>
 	 * @param w is for wrapping a value to assign to this entity during initialization. 
 	 **/
-	protected abstract void _start(Wrap<Integer> w);
+	protected abstract void _start(Wrap<Long> w);
 
-	public Integer getStart() {
+	public Long getStart() {
 		return start;
 	}
 
-	public void setStart(Integer start) {
+	public void setStart(Long start) {
 		this.start = start;
 	}
 	@JsonIgnore
 	public void setStart(String o) {
 		this.start = SearchRequest.staticSetStart(siteRequest_, o);
 	}
-	public static Integer staticSetStart(SiteRequest siteRequest_, String o) {
+	public static Long staticSetStart(SiteRequest siteRequest_, String o) {
 		if(NumberUtils.isParsable(o))
-			return Integer.parseInt(o);
+			return Long.parseLong(o);
 		return null;
 	}
 	protected SearchRequest startInit() {
-		Wrap<Integer> startWrap = new Wrap<Integer>().var("start");
+		Wrap<Long> startWrap = new Wrap<Long>().var("start");
 		if(start == null) {
 			_start(startWrap);
 			setStart(startWrap.o);
@@ -763,11 +763,11 @@ public abstract class SearchRequestGen<DEV> extends Object {
 		return (SearchRequest)this;
 	}
 
-	public static Integer staticSolrStart(SiteRequest siteRequest_, Integer o) {
+	public static Long staticSolrStart(SiteRequest siteRequest_, Long o) {
 		return o;
 	}
 
-	public static String staticSolrStrStart(SiteRequest siteRequest_, Integer o) {
+	public static String staticSolrStrStart(SiteRequest siteRequest_, Long o) {
 		return o == null ? null : o.toString();
 	}
 
@@ -785,7 +785,7 @@ public abstract class SearchRequestGen<DEV> extends Object {
 	@JsonProperty
 	@JsonSerialize(using = ToStringSerializer.class)
 	@JsonInclude(Include.NON_NULL)
-	protected Integer rows;
+	protected Long rows;
 
 	/**	<br> The entity rows
 	 *  is defined as null before being initialized. 
@@ -793,26 +793,26 @@ public abstract class SearchRequestGen<DEV> extends Object {
 	 * <br>
 	 * @param w is for wrapping a value to assign to this entity during initialization. 
 	 **/
-	protected abstract void _rows(Wrap<Integer> w);
+	protected abstract void _rows(Wrap<Long> w);
 
-	public Integer getRows() {
+	public Long getRows() {
 		return rows;
 	}
 
-	public void setRows(Integer rows) {
+	public void setRows(Long rows) {
 		this.rows = rows;
 	}
 	@JsonIgnore
 	public void setRows(String o) {
 		this.rows = SearchRequest.staticSetRows(siteRequest_, o);
 	}
-	public static Integer staticSetRows(SiteRequest siteRequest_, String o) {
+	public static Long staticSetRows(SiteRequest siteRequest_, String o) {
 		if(NumberUtils.isParsable(o))
-			return Integer.parseInt(o);
+			return Long.parseLong(o);
 		return null;
 	}
 	protected SearchRequest rowsInit() {
-		Wrap<Integer> rowsWrap = new Wrap<Integer>().var("rows");
+		Wrap<Long> rowsWrap = new Wrap<Long>().var("rows");
 		if(rows == null) {
 			_rows(rowsWrap);
 			setRows(rowsWrap.o);
@@ -820,11 +820,11 @@ public abstract class SearchRequestGen<DEV> extends Object {
 		return (SearchRequest)this;
 	}
 
-	public static Integer staticSolrRows(SiteRequest siteRequest_, Integer o) {
+	public static Long staticSolrRows(SiteRequest siteRequest_, Long o) {
 		return o;
 	}
 
-	public static String staticSolrStrRows(SiteRequest siteRequest_, Integer o) {
+	public static String staticSolrStrRows(SiteRequest siteRequest_, Long o) {
 		return o == null ? null : o.toString();
 	}
 
@@ -837,44 +837,35 @@ public abstract class SearchRequestGen<DEV> extends Object {
 	/////////////////
 
 	/**	 The entity queryString
-	 *	 It is constructed before being initialized with the constructor by default. 
+	 *	 is defined as null before being initialized. 
 	 */
 	@JsonProperty
-	@JsonFormat(shape = JsonFormat.Shape.ARRAY)
 	@JsonInclude(Include.NON_NULL)
-	protected List<String> queryString = new ArrayList<String>();
+	protected String queryString;
 
 	/**	<br> The entity queryString
-	 *  It is constructed before being initialized with the constructor by default. 
+	 *  is defined as null before being initialized. 
 	 * <br><a href="http://localhost:8983/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.computate.search.request.SearchRequest&fq=classeEtendGen_indexed_boolean:true&fq=entiteVar_enUS_indexed_string:queryString">Find the entity queryString in Solr</a>
 	 * <br>
-	 * @param c is the entity already constructed. 
+	 * @param w is for wrapping a value to assign to this entity during initialization. 
 	 **/
-	protected abstract void _queryString(List<String> c);
+	protected abstract void _queryString(Wrap<String> w);
 
-	public List<String> getQueryString() {
+	public String getQueryString() {
 		return queryString;
 	}
-
-	public void setQueryString(List<String> queryString) {
-		this.queryString = queryString;
+	public void setQueryString(String o) {
+		this.queryString = SearchRequest.staticSetQueryString(siteRequest_, o);
 	}
 	public static String staticSetQueryString(SiteRequest siteRequest_, String o) {
 		return o;
 	}
-	public SearchRequest addQueryString(String...objets) {
-		for(String o : objets) {
-			addQueryString(o);
-		}
-		return (SearchRequest)this;
-	}
-	public SearchRequest addQueryString(String o) {
-		if(o != null)
-			this.queryString.add(o);
-		return (SearchRequest)this;
-	}
 	protected SearchRequest queryStringInit() {
-		_queryString(queryString);
+		Wrap<String> queryStringWrap = new Wrap<String>().var("queryString");
+		if(queryString == null) {
+			_queryString(queryStringWrap);
+			setQueryString(queryStringWrap.o);
+		}
 		return (SearchRequest)this;
 	}
 
@@ -1094,9 +1085,9 @@ public abstract class SearchRequestGen<DEV> extends Object {
 		case "facetRanges":
 			return SearchRequest.staticSolrFacetRanges(siteRequest_, (String)o);
 		case "start":
-			return SearchRequest.staticSolrStart(siteRequest_, (Integer)o);
+			return SearchRequest.staticSolrStart(siteRequest_, (Long)o);
 		case "rows":
-			return SearchRequest.staticSolrRows(siteRequest_, (Integer)o);
+			return SearchRequest.staticSolrRows(siteRequest_, (Long)o);
 		case "queryString":
 			return SearchRequest.staticSolrQueryString(siteRequest_, (String)o);
 			default:
@@ -1138,9 +1129,9 @@ public abstract class SearchRequestGen<DEV> extends Object {
 		case "facetRanges":
 			return SearchRequest.staticSolrStrFacetRanges(siteRequest_, (String)o);
 		case "start":
-			return SearchRequest.staticSolrStrStart(siteRequest_, (Integer)o);
+			return SearchRequest.staticSolrStrStart(siteRequest_, (Long)o);
 		case "rows":
-			return SearchRequest.staticSolrStrRows(siteRequest_, (Integer)o);
+			return SearchRequest.staticSolrStrRows(siteRequest_, (Long)o);
 		case "queryString":
 			return SearchRequest.staticSolrStrQueryString(siteRequest_, (String)o);
 			default:

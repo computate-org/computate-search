@@ -174,31 +174,41 @@ public class SearchRequest extends SearchRequestGen<Object> {
 	/**
 	 * {@inheritDoc}
 	 */
-	protected void _start(Wrap<Integer> w) {
+	protected void _start(Wrap<Long> w) {
+		w.o(0L);
 	}
-	public SearchRequest start(Integer start) {
+	public SearchRequest start(Long start) {
 		setStart(start);
 		return this;
 	}
-
-	/**
-	 * {@inheritDoc}
-	 */
-	protected void _rows(Wrap<Integer> w) {
-	}
-	public SearchRequest rows(Integer rows) {
-		setRows(rows);
+	public SearchRequest start(Integer start) {
+		setStart(start.longValue());
 		return this;
 	}
 
 	/**
 	 * {@inheritDoc}
 	 */
-	protected void _queryString(List<String> c) {
+	protected void _rows(Wrap<Long> w) {
+		w.o(10L);
+	}
+	public SearchRequest rows(Long rows) {
+		setRows(rows);
+		return this;
+	}
+	public SearchRequest rows(Integer rows) {
+		setRows(rows.longValue());
+		return this;
+	}
+
+	/**
+	 * {@inheritDoc}
+	 */
+	protected void _queryString(Wrap<String> w) {
 		StringBuilder b = new StringBuilder();
 		try {
 			if(query != null) {
-				b.append(b.length() == 0 ? "?" : "&").append(URLEncoder.encode(query, UTF_8));
+				b.append(b.length() == 0 ? "?" : "&").append("q=").append(URLEncoder.encode(query, UTF_8));
 			}
 			if(filterQueries.size() > 0) {
 				for(int i = 0; i < filterQueries.size(); i++) {
@@ -268,6 +278,7 @@ public class SearchRequest extends SearchRequestGen<Object> {
 					b.append("facet.range=").append(URLEncoder.encode(facetRange, UTF_8));
 				}
 			}
+			w.o(b.toString());
 		} catch (UnsupportedEncodingException ex) {
 			ExceptionUtils.rethrow(ex);
 		}

@@ -73,27 +73,27 @@ public class SolrResponse {
 
 	public static class Response {
 
-		private Integer numFound;
-		private Integer start;
+		private Long numFound;
+		private Long start;
 		private Boolean numFoundExact;
 		private List<Doc> docs;
 
 		public Response() {
 		}
 
-		public Integer getNumFound() {
+		public Long getNumFound() {
 			return numFound;
 		}
 
-		public void setNumFound(Integer numFound) {
+		public void setNumFound(Long numFound) {
 			this.numFound = numFound;
 		}
 
-		public Integer getStart() {
+		public Long getStart() {
 			return start;
 		}
 
-		public void setStart(Integer start) {
+		public void setStart(Long start) {
 			this.start = start;
 		}
 

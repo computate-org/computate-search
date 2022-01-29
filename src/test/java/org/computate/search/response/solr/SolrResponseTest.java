@@ -6,6 +6,7 @@ import java.io.IOException;
 import java.io.UnsupportedEncodingException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
+import java.time.ZoneId;
 
 import org.computate.search.request.SearchRequest;
 import org.junit.Test;
@@ -20,6 +21,7 @@ public class SolrResponseTest {
 		String json1 = new String(Files.readAllBytes(Paths.get("src", "test", "resources", "solr-response.json").toAbsolutePath()), SearchRequest.UTF_8);
 		SolrResponse solrResponse = mapper.readValue(json1, SolrResponse.class);
 		System.out.println(solrResponse);
+		ZoneId.of("Asia/Kolkata");
 	}
 
 }
