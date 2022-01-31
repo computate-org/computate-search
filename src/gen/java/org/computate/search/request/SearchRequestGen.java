@@ -3,10 +3,10 @@ package org.computate.search.request;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Arrays;
 import com.fasterxml.jackson.databind.ser.std.ToStringSerializer;
+import org.computate.search.serialize.ComputateLocalDateDeserializer;
 import java.util.HashMap;
 import org.apache.commons.lang3.StringUtils;
 import java.text.NumberFormat;
-import org.computate.search.request.SiteRequest;
 import java.util.ArrayList;
 import java.lang.Long;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
@@ -18,13 +18,17 @@ import java.math.RoundingMode;
 import java.math.MathContext;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.fasterxml.jackson.annotation.JsonFormat;
+import org.computate.search.request.ComputateSearchSiteRequest;
+import org.computate.search.serialize.ComputateZonedDateTimeDeserializer;
 import java.util.Objects;
+import org.computate.search.serialize.ComputateLocalDateSerializer;
 import java.util.List;
 import org.computate.search.wrap.Wrap;
 import org.apache.commons.lang3.math.NumberUtils;
 import java.util.Optional;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import java.lang.Object;
+import org.computate.search.serialize.ComputateZonedDateTimeSerializer;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 
 /**	
@@ -42,7 +46,7 @@ public abstract class SearchRequestGen<DEV> extends Object {
 	 */
 	@JsonIgnore
 	@JsonInclude(Include.NON_NULL)
-	protected SiteRequest siteRequest_;
+	protected ComputateSearchSiteRequest siteRequest_;
 
 	/**	<br> The entity siteRequest_
 	 *  is defined as null before being initialized. 
@@ -50,20 +54,20 @@ public abstract class SearchRequestGen<DEV> extends Object {
 	 * <br>
 	 * @param w is for wrapping a value to assign to this entity during initialization. 
 	 **/
-	protected abstract void _siteRequest_(Wrap<SiteRequest> w);
+	protected abstract void _siteRequest_(Wrap<ComputateSearchSiteRequest> w);
 
-	public SiteRequest getSiteRequest_() {
+	public ComputateSearchSiteRequest getSiteRequest_() {
 		return siteRequest_;
 	}
 
-	public void setSiteRequest_(SiteRequest siteRequest_) {
+	public void setSiteRequest_(ComputateSearchSiteRequest siteRequest_) {
 		this.siteRequest_ = siteRequest_;
 	}
-	public static SiteRequest staticSetSiteRequest_(SiteRequest siteRequest_, String o) {
+	public static ComputateSearchSiteRequest staticSetSiteRequest_(ComputateSearchSiteRequest siteRequest_, String o) {
 		return null;
 	}
 	protected SearchRequest siteRequest_Init() {
-		Wrap<SiteRequest> siteRequest_Wrap = new Wrap<SiteRequest>().var("siteRequest_");
+		Wrap<ComputateSearchSiteRequest> siteRequest_Wrap = new Wrap<ComputateSearchSiteRequest>().var("siteRequest_");
 		if(siteRequest_ == null) {
 			_siteRequest_(siteRequest_Wrap);
 			setSiteRequest_(siteRequest_Wrap.o);
@@ -96,7 +100,7 @@ public abstract class SearchRequestGen<DEV> extends Object {
 	public void setQuery(String o) {
 		this.query = SearchRequest.staticSetQuery(siteRequest_, o);
 	}
-	public static String staticSetQuery(SiteRequest siteRequest_, String o) {
+	public static String staticSetQuery(ComputateSearchSiteRequest siteRequest_, String o) {
 		return o;
 	}
 	protected SearchRequest queryInit() {
@@ -108,16 +112,16 @@ public abstract class SearchRequestGen<DEV> extends Object {
 		return (SearchRequest)this;
 	}
 
-	public static String staticSolrQuery(SiteRequest siteRequest_, String o) {
+	public static String staticSearchQuery(ComputateSearchSiteRequest siteRequest_, String o) {
 		return o;
 	}
 
-	public static String staticSolrStrQuery(SiteRequest siteRequest_, String o) {
+	public static String staticSearchStrQuery(ComputateSearchSiteRequest siteRequest_, String o) {
 		return o == null ? null : o.toString();
 	}
 
-	public static String staticSolrFqQuery(SiteRequest siteRequest_, String o) {
-		return SearchRequest.staticSolrStrQuery(siteRequest_, SearchRequest.staticSolrQuery(siteRequest_, SearchRequest.staticSetQuery(siteRequest_, o)));
+	public static String staticSearchFqQuery(ComputateSearchSiteRequest siteRequest_, String o) {
+		return SearchRequest.staticSearchStrQuery(siteRequest_, SearchRequest.staticSearchQuery(siteRequest_, SearchRequest.staticSetQuery(siteRequest_, o)));
 	}
 
 	///////////////////
@@ -147,7 +151,7 @@ public abstract class SearchRequestGen<DEV> extends Object {
 	public void setFilterQueries(List<String> filterQueries) {
 		this.filterQueries = filterQueries;
 	}
-	public static String staticSetFilterQueries(SiteRequest siteRequest_, String o) {
+	public static String staticSetFilterQueries(ComputateSearchSiteRequest siteRequest_, String o) {
 		return o;
 	}
 	public SearchRequest addFilterQueries(String...objets) {
@@ -166,16 +170,16 @@ public abstract class SearchRequestGen<DEV> extends Object {
 		return (SearchRequest)this;
 	}
 
-	public static String staticSolrFilterQueries(SiteRequest siteRequest_, String o) {
+	public static String staticSearchFilterQueries(ComputateSearchSiteRequest siteRequest_, String o) {
 		return o;
 	}
 
-	public static String staticSolrStrFilterQueries(SiteRequest siteRequest_, String o) {
+	public static String staticSearchStrFilterQueries(ComputateSearchSiteRequest siteRequest_, String o) {
 		return o == null ? null : o.toString();
 	}
 
-	public static String staticSolrFqFilterQueries(SiteRequest siteRequest_, String o) {
-		return SearchRequest.staticSolrStrFilterQueries(siteRequest_, SearchRequest.staticSolrFilterQueries(siteRequest_, SearchRequest.staticSetFilterQueries(siteRequest_, o)));
+	public static String staticSearchFqFilterQueries(ComputateSearchSiteRequest siteRequest_, String o) {
+		return SearchRequest.staticSearchStrFilterQueries(siteRequest_, SearchRequest.staticSearchFilterQueries(siteRequest_, SearchRequest.staticSetFilterQueries(siteRequest_, o)));
 	}
 
 	////////////
@@ -205,7 +209,7 @@ public abstract class SearchRequestGen<DEV> extends Object {
 	public void setFields(List<String> fields) {
 		this.fields = fields;
 	}
-	public static String staticSetFields(SiteRequest siteRequest_, String o) {
+	public static String staticSetFields(ComputateSearchSiteRequest siteRequest_, String o) {
 		return o;
 	}
 	public SearchRequest addFields(String...objets) {
@@ -224,16 +228,16 @@ public abstract class SearchRequestGen<DEV> extends Object {
 		return (SearchRequest)this;
 	}
 
-	public static String staticSolrFields(SiteRequest siteRequest_, String o) {
+	public static String staticSearchFields(ComputateSearchSiteRequest siteRequest_, String o) {
 		return o;
 	}
 
-	public static String staticSolrStrFields(SiteRequest siteRequest_, String o) {
+	public static String staticSearchStrFields(ComputateSearchSiteRequest siteRequest_, String o) {
 		return o == null ? null : o.toString();
 	}
 
-	public static String staticSolrFqFields(SiteRequest siteRequest_, String o) {
-		return SearchRequest.staticSolrStrFields(siteRequest_, SearchRequest.staticSolrFields(siteRequest_, SearchRequest.staticSetFields(siteRequest_, o)));
+	public static String staticSearchFqFields(ComputateSearchSiteRequest siteRequest_, String o) {
+		return SearchRequest.staticSearchStrFields(siteRequest_, SearchRequest.staticSearchFields(siteRequest_, SearchRequest.staticSetFields(siteRequest_, o)));
 	}
 
 	///////////
@@ -263,7 +267,7 @@ public abstract class SearchRequestGen<DEV> extends Object {
 	public void setSorts(List<String> sorts) {
 		this.sorts = sorts;
 	}
-	public static String staticSetSorts(SiteRequest siteRequest_, String o) {
+	public static String staticSetSorts(ComputateSearchSiteRequest siteRequest_, String o) {
 		return o;
 	}
 	public SearchRequest addSorts(String...objets) {
@@ -282,16 +286,16 @@ public abstract class SearchRequestGen<DEV> extends Object {
 		return (SearchRequest)this;
 	}
 
-	public static String staticSolrSorts(SiteRequest siteRequest_, String o) {
+	public static String staticSearchSorts(ComputateSearchSiteRequest siteRequest_, String o) {
 		return o;
 	}
 
-	public static String staticSolrStrSorts(SiteRequest siteRequest_, String o) {
+	public static String staticSearchStrSorts(ComputateSearchSiteRequest siteRequest_, String o) {
 		return o == null ? null : o.toString();
 	}
 
-	public static String staticSolrFqSorts(SiteRequest siteRequest_, String o) {
-		return SearchRequest.staticSolrStrSorts(siteRequest_, SearchRequest.staticSolrSorts(siteRequest_, SearchRequest.staticSetSorts(siteRequest_, o)));
+	public static String staticSearchFqSorts(ComputateSearchSiteRequest siteRequest_, String o) {
+		return SearchRequest.staticSearchStrSorts(siteRequest_, SearchRequest.staticSearchSorts(siteRequest_, SearchRequest.staticSetSorts(siteRequest_, o)));
 	}
 
 	/////////////////
@@ -321,7 +325,7 @@ public abstract class SearchRequestGen<DEV> extends Object {
 	public void setFacetPivots(List<String> facetPivots) {
 		this.facetPivots = facetPivots;
 	}
-	public static String staticSetFacetPivots(SiteRequest siteRequest_, String o) {
+	public static String staticSetFacetPivots(ComputateSearchSiteRequest siteRequest_, String o) {
 		return o;
 	}
 	public SearchRequest addFacetPivots(String...objets) {
@@ -340,16 +344,16 @@ public abstract class SearchRequestGen<DEV> extends Object {
 		return (SearchRequest)this;
 	}
 
-	public static String staticSolrFacetPivots(SiteRequest siteRequest_, String o) {
+	public static String staticSearchFacetPivots(ComputateSearchSiteRequest siteRequest_, String o) {
 		return o;
 	}
 
-	public static String staticSolrStrFacetPivots(SiteRequest siteRequest_, String o) {
+	public static String staticSearchStrFacetPivots(ComputateSearchSiteRequest siteRequest_, String o) {
 		return o == null ? null : o.toString();
 	}
 
-	public static String staticSolrFqFacetPivots(SiteRequest siteRequest_, String o) {
-		return SearchRequest.staticSolrStrFacetPivots(siteRequest_, SearchRequest.staticSolrFacetPivots(siteRequest_, SearchRequest.staticSetFacetPivots(siteRequest_, o)));
+	public static String staticSearchFqFacetPivots(ComputateSearchSiteRequest siteRequest_, String o) {
+		return SearchRequest.staticSearchStrFacetPivots(siteRequest_, SearchRequest.staticSearchFacetPivots(siteRequest_, SearchRequest.staticSetFacetPivots(siteRequest_, o)));
 	}
 
 	///////////
@@ -382,7 +386,7 @@ public abstract class SearchRequestGen<DEV> extends Object {
 	public void setFacet(String o) {
 		this.facet = SearchRequest.staticSetFacet(siteRequest_, o);
 	}
-	public static Boolean staticSetFacet(SiteRequest siteRequest_, String o) {
+	public static Boolean staticSetFacet(ComputateSearchSiteRequest siteRequest_, String o) {
 		return Boolean.parseBoolean(o);
 	}
 	protected SearchRequest facetInit() {
@@ -394,16 +398,16 @@ public abstract class SearchRequestGen<DEV> extends Object {
 		return (SearchRequest)this;
 	}
 
-	public static Boolean staticSolrFacet(SiteRequest siteRequest_, Boolean o) {
+	public static Boolean staticSearchFacet(ComputateSearchSiteRequest siteRequest_, Boolean o) {
 		return o;
 	}
 
-	public static String staticSolrStrFacet(SiteRequest siteRequest_, Boolean o) {
+	public static String staticSearchStrFacet(ComputateSearchSiteRequest siteRequest_, Boolean o) {
 		return o == null ? null : o.toString();
 	}
 
-	public static String staticSolrFqFacet(SiteRequest siteRequest_, String o) {
-		return SearchRequest.staticSolrStrFacet(siteRequest_, SearchRequest.staticSolrFacet(siteRequest_, SearchRequest.staticSetFacet(siteRequest_, o)));
+	public static String staticSearchFqFacet(ComputateSearchSiteRequest siteRequest_, String o) {
+		return SearchRequest.staticSearchStrFacet(siteRequest_, SearchRequest.staticSearchFacet(siteRequest_, SearchRequest.staticSetFacet(siteRequest_, o)));
 	}
 
 	/////////////////////
@@ -431,7 +435,7 @@ public abstract class SearchRequestGen<DEV> extends Object {
 	public void setFacetRangeStart(String o) {
 		this.facetRangeStart = SearchRequest.staticSetFacetRangeStart(siteRequest_, o);
 	}
-	public static String staticSetFacetRangeStart(SiteRequest siteRequest_, String o) {
+	public static String staticSetFacetRangeStart(ComputateSearchSiteRequest siteRequest_, String o) {
 		return o;
 	}
 	protected SearchRequest facetRangeStartInit() {
@@ -443,16 +447,16 @@ public abstract class SearchRequestGen<DEV> extends Object {
 		return (SearchRequest)this;
 	}
 
-	public static String staticSolrFacetRangeStart(SiteRequest siteRequest_, String o) {
+	public static String staticSearchFacetRangeStart(ComputateSearchSiteRequest siteRequest_, String o) {
 		return o;
 	}
 
-	public static String staticSolrStrFacetRangeStart(SiteRequest siteRequest_, String o) {
+	public static String staticSearchStrFacetRangeStart(ComputateSearchSiteRequest siteRequest_, String o) {
 		return o == null ? null : o.toString();
 	}
 
-	public static String staticSolrFqFacetRangeStart(SiteRequest siteRequest_, String o) {
-		return SearchRequest.staticSolrStrFacetRangeStart(siteRequest_, SearchRequest.staticSolrFacetRangeStart(siteRequest_, SearchRequest.staticSetFacetRangeStart(siteRequest_, o)));
+	public static String staticSearchFqFacetRangeStart(ComputateSearchSiteRequest siteRequest_, String o) {
+		return SearchRequest.staticSearchStrFacetRangeStart(siteRequest_, SearchRequest.staticSearchFacetRangeStart(siteRequest_, SearchRequest.staticSetFacetRangeStart(siteRequest_, o)));
 	}
 
 	///////////////////
@@ -480,7 +484,7 @@ public abstract class SearchRequestGen<DEV> extends Object {
 	public void setFacetRangeEnd(String o) {
 		this.facetRangeEnd = SearchRequest.staticSetFacetRangeEnd(siteRequest_, o);
 	}
-	public static String staticSetFacetRangeEnd(SiteRequest siteRequest_, String o) {
+	public static String staticSetFacetRangeEnd(ComputateSearchSiteRequest siteRequest_, String o) {
 		return o;
 	}
 	protected SearchRequest facetRangeEndInit() {
@@ -492,16 +496,16 @@ public abstract class SearchRequestGen<DEV> extends Object {
 		return (SearchRequest)this;
 	}
 
-	public static String staticSolrFacetRangeEnd(SiteRequest siteRequest_, String o) {
+	public static String staticSearchFacetRangeEnd(ComputateSearchSiteRequest siteRequest_, String o) {
 		return o;
 	}
 
-	public static String staticSolrStrFacetRangeEnd(SiteRequest siteRequest_, String o) {
+	public static String staticSearchStrFacetRangeEnd(ComputateSearchSiteRequest siteRequest_, String o) {
 		return o == null ? null : o.toString();
 	}
 
-	public static String staticSolrFqFacetRangeEnd(SiteRequest siteRequest_, String o) {
-		return SearchRequest.staticSolrStrFacetRangeEnd(siteRequest_, SearchRequest.staticSolrFacetRangeEnd(siteRequest_, SearchRequest.staticSetFacetRangeEnd(siteRequest_, o)));
+	public static String staticSearchFqFacetRangeEnd(ComputateSearchSiteRequest siteRequest_, String o) {
+		return SearchRequest.staticSearchStrFacetRangeEnd(siteRequest_, SearchRequest.staticSearchFacetRangeEnd(siteRequest_, SearchRequest.staticSetFacetRangeEnd(siteRequest_, o)));
 	}
 
 	///////////////////
@@ -529,7 +533,7 @@ public abstract class SearchRequestGen<DEV> extends Object {
 	public void setFacetRangeGap(String o) {
 		this.facetRangeGap = SearchRequest.staticSetFacetRangeGap(siteRequest_, o);
 	}
-	public static String staticSetFacetRangeGap(SiteRequest siteRequest_, String o) {
+	public static String staticSetFacetRangeGap(ComputateSearchSiteRequest siteRequest_, String o) {
 		return o;
 	}
 	protected SearchRequest facetRangeGapInit() {
@@ -541,16 +545,16 @@ public abstract class SearchRequestGen<DEV> extends Object {
 		return (SearchRequest)this;
 	}
 
-	public static String staticSolrFacetRangeGap(SiteRequest siteRequest_, String o) {
+	public static String staticSearchFacetRangeGap(ComputateSearchSiteRequest siteRequest_, String o) {
 		return o;
 	}
 
-	public static String staticSolrStrFacetRangeGap(SiteRequest siteRequest_, String o) {
+	public static String staticSearchStrFacetRangeGap(ComputateSearchSiteRequest siteRequest_, String o) {
 		return o == null ? null : o.toString();
 	}
 
-	public static String staticSolrFqFacetRangeGap(SiteRequest siteRequest_, String o) {
-		return SearchRequest.staticSolrStrFacetRangeGap(siteRequest_, SearchRequest.staticSolrFacetRangeGap(siteRequest_, SearchRequest.staticSetFacetRangeGap(siteRequest_, o)));
+	public static String staticSearchFqFacetRangeGap(ComputateSearchSiteRequest siteRequest_, String o) {
+		return SearchRequest.staticSearchStrFacetRangeGap(siteRequest_, SearchRequest.staticSearchFacetRangeGap(siteRequest_, SearchRequest.staticSetFacetRangeGap(siteRequest_, o)));
 	}
 
 	////////////////
@@ -578,7 +582,7 @@ public abstract class SearchRequestGen<DEV> extends Object {
 	public void setCursorMark(String o) {
 		this.cursorMark = SearchRequest.staticSetCursorMark(siteRequest_, o);
 	}
-	public static String staticSetCursorMark(SiteRequest siteRequest_, String o) {
+	public static String staticSetCursorMark(ComputateSearchSiteRequest siteRequest_, String o) {
 		return o;
 	}
 	protected SearchRequest cursorMarkInit() {
@@ -590,16 +594,16 @@ public abstract class SearchRequestGen<DEV> extends Object {
 		return (SearchRequest)this;
 	}
 
-	public static String staticSolrCursorMark(SiteRequest siteRequest_, String o) {
+	public static String staticSearchCursorMark(ComputateSearchSiteRequest siteRequest_, String o) {
 		return o;
 	}
 
-	public static String staticSolrStrCursorMark(SiteRequest siteRequest_, String o) {
+	public static String staticSearchStrCursorMark(ComputateSearchSiteRequest siteRequest_, String o) {
 		return o == null ? null : o.toString();
 	}
 
-	public static String staticSolrFqCursorMark(SiteRequest siteRequest_, String o) {
-		return SearchRequest.staticSolrStrCursorMark(siteRequest_, SearchRequest.staticSolrCursorMark(siteRequest_, SearchRequest.staticSetCursorMark(siteRequest_, o)));
+	public static String staticSearchFqCursorMark(ComputateSearchSiteRequest siteRequest_, String o) {
+		return SearchRequest.staticSearchStrCursorMark(siteRequest_, SearchRequest.staticSearchCursorMark(siteRequest_, SearchRequest.staticSetCursorMark(siteRequest_, o)));
 	}
 
 	/////////////////
@@ -629,7 +633,7 @@ public abstract class SearchRequestGen<DEV> extends Object {
 	public void setFacetFields(List<String> facetFields) {
 		this.facetFields = facetFields;
 	}
-	public static String staticSetFacetFields(SiteRequest siteRequest_, String o) {
+	public static String staticSetFacetFields(ComputateSearchSiteRequest siteRequest_, String o) {
 		return o;
 	}
 	public SearchRequest addFacetFields(String...objets) {
@@ -648,16 +652,16 @@ public abstract class SearchRequestGen<DEV> extends Object {
 		return (SearchRequest)this;
 	}
 
-	public static String staticSolrFacetFields(SiteRequest siteRequest_, String o) {
+	public static String staticSearchFacetFields(ComputateSearchSiteRequest siteRequest_, String o) {
 		return o;
 	}
 
-	public static String staticSolrStrFacetFields(SiteRequest siteRequest_, String o) {
+	public static String staticSearchStrFacetFields(ComputateSearchSiteRequest siteRequest_, String o) {
 		return o == null ? null : o.toString();
 	}
 
-	public static String staticSolrFqFacetFields(SiteRequest siteRequest_, String o) {
-		return SearchRequest.staticSolrStrFacetFields(siteRequest_, SearchRequest.staticSolrFacetFields(siteRequest_, SearchRequest.staticSetFacetFields(siteRequest_, o)));
+	public static String staticSearchFqFacetFields(ComputateSearchSiteRequest siteRequest_, String o) {
+		return SearchRequest.staticSearchStrFacetFields(siteRequest_, SearchRequest.staticSearchFacetFields(siteRequest_, SearchRequest.staticSetFacetFields(siteRequest_, o)));
 	}
 
 	/////////////////
@@ -687,7 +691,7 @@ public abstract class SearchRequestGen<DEV> extends Object {
 	public void setFacetRanges(List<String> facetRanges) {
 		this.facetRanges = facetRanges;
 	}
-	public static String staticSetFacetRanges(SiteRequest siteRequest_, String o) {
+	public static String staticSetFacetRanges(ComputateSearchSiteRequest siteRequest_, String o) {
 		return o;
 	}
 	public SearchRequest addFacetRanges(String...objets) {
@@ -706,16 +710,16 @@ public abstract class SearchRequestGen<DEV> extends Object {
 		return (SearchRequest)this;
 	}
 
-	public static String staticSolrFacetRanges(SiteRequest siteRequest_, String o) {
+	public static String staticSearchFacetRanges(ComputateSearchSiteRequest siteRequest_, String o) {
 		return o;
 	}
 
-	public static String staticSolrStrFacetRanges(SiteRequest siteRequest_, String o) {
+	public static String staticSearchStrFacetRanges(ComputateSearchSiteRequest siteRequest_, String o) {
 		return o == null ? null : o.toString();
 	}
 
-	public static String staticSolrFqFacetRanges(SiteRequest siteRequest_, String o) {
-		return SearchRequest.staticSolrStrFacetRanges(siteRequest_, SearchRequest.staticSolrFacetRanges(siteRequest_, SearchRequest.staticSetFacetRanges(siteRequest_, o)));
+	public static String staticSearchFqFacetRanges(ComputateSearchSiteRequest siteRequest_, String o) {
+		return SearchRequest.staticSearchStrFacetRanges(siteRequest_, SearchRequest.staticSearchFacetRanges(siteRequest_, SearchRequest.staticSetFacetRanges(siteRequest_, o)));
 	}
 
 	///////////
@@ -749,7 +753,7 @@ public abstract class SearchRequestGen<DEV> extends Object {
 	public void setStart(String o) {
 		this.start = SearchRequest.staticSetStart(siteRequest_, o);
 	}
-	public static Long staticSetStart(SiteRequest siteRequest_, String o) {
+	public static Long staticSetStart(ComputateSearchSiteRequest siteRequest_, String o) {
 		if(NumberUtils.isParsable(o))
 			return Long.parseLong(o);
 		return null;
@@ -763,16 +767,16 @@ public abstract class SearchRequestGen<DEV> extends Object {
 		return (SearchRequest)this;
 	}
 
-	public static Long staticSolrStart(SiteRequest siteRequest_, Long o) {
+	public static Long staticSearchStart(ComputateSearchSiteRequest siteRequest_, Long o) {
 		return o;
 	}
 
-	public static String staticSolrStrStart(SiteRequest siteRequest_, Long o) {
+	public static String staticSearchStrStart(ComputateSearchSiteRequest siteRequest_, Long o) {
 		return o == null ? null : o.toString();
 	}
 
-	public static String staticSolrFqStart(SiteRequest siteRequest_, String o) {
-		return SearchRequest.staticSolrStrStart(siteRequest_, SearchRequest.staticSolrStart(siteRequest_, SearchRequest.staticSetStart(siteRequest_, o)));
+	public static String staticSearchFqStart(ComputateSearchSiteRequest siteRequest_, String o) {
+		return SearchRequest.staticSearchStrStart(siteRequest_, SearchRequest.staticSearchStart(siteRequest_, SearchRequest.staticSetStart(siteRequest_, o)));
 	}
 
 	//////////
@@ -806,7 +810,7 @@ public abstract class SearchRequestGen<DEV> extends Object {
 	public void setRows(String o) {
 		this.rows = SearchRequest.staticSetRows(siteRequest_, o);
 	}
-	public static Long staticSetRows(SiteRequest siteRequest_, String o) {
+	public static Long staticSetRows(ComputateSearchSiteRequest siteRequest_, String o) {
 		if(NumberUtils.isParsable(o))
 			return Long.parseLong(o);
 		return null;
@@ -820,16 +824,16 @@ public abstract class SearchRequestGen<DEV> extends Object {
 		return (SearchRequest)this;
 	}
 
-	public static Long staticSolrRows(SiteRequest siteRequest_, Long o) {
+	public static Long staticSearchRows(ComputateSearchSiteRequest siteRequest_, Long o) {
 		return o;
 	}
 
-	public static String staticSolrStrRows(SiteRequest siteRequest_, Long o) {
+	public static String staticSearchStrRows(ComputateSearchSiteRequest siteRequest_, Long o) {
 		return o == null ? null : o.toString();
 	}
 
-	public static String staticSolrFqRows(SiteRequest siteRequest_, String o) {
-		return SearchRequest.staticSolrStrRows(siteRequest_, SearchRequest.staticSolrRows(siteRequest_, SearchRequest.staticSetRows(siteRequest_, o)));
+	public static String staticSearchFqRows(ComputateSearchSiteRequest siteRequest_, String o) {
+		return SearchRequest.staticSearchStrRows(siteRequest_, SearchRequest.staticSearchRows(siteRequest_, SearchRequest.staticSetRows(siteRequest_, o)));
 	}
 
 	/////////////////
@@ -857,7 +861,7 @@ public abstract class SearchRequestGen<DEV> extends Object {
 	public void setQueryString(String o) {
 		this.queryString = SearchRequest.staticSetQueryString(siteRequest_, o);
 	}
-	public static String staticSetQueryString(SiteRequest siteRequest_, String o) {
+	public static String staticSetQueryString(ComputateSearchSiteRequest siteRequest_, String o) {
 		return o;
 	}
 	protected SearchRequest queryStringInit() {
@@ -869,23 +873,23 @@ public abstract class SearchRequestGen<DEV> extends Object {
 		return (SearchRequest)this;
 	}
 
-	public static String staticSolrQueryString(SiteRequest siteRequest_, String o) {
+	public static String staticSearchQueryString(ComputateSearchSiteRequest siteRequest_, String o) {
 		return o;
 	}
 
-	public static String staticSolrStrQueryString(SiteRequest siteRequest_, String o) {
+	public static String staticSearchStrQueryString(ComputateSearchSiteRequest siteRequest_, String o) {
 		return o == null ? null : o.toString();
 	}
 
-	public static String staticSolrFqQueryString(SiteRequest siteRequest_, String o) {
-		return SearchRequest.staticSolrStrQueryString(siteRequest_, SearchRequest.staticSolrQueryString(siteRequest_, SearchRequest.staticSetQueryString(siteRequest_, o)));
+	public static String staticSearchFqQueryString(ComputateSearchSiteRequest siteRequest_, String o) {
+		return SearchRequest.staticSearchStrQueryString(siteRequest_, SearchRequest.staticSearchQueryString(siteRequest_, SearchRequest.staticSetQueryString(siteRequest_, o)));
 	}
 
 	//////////////
 	// initDeep //
 	//////////////
 
-	public SearchRequest initDeepSearchRequest(SiteRequest siteRequest_) {
+	public SearchRequest initDeepSearchRequest(ComputateSearchSiteRequest siteRequest_) {
 		setSiteRequest_(siteRequest_);
 		initDeepSearchRequest();
 		return (SearchRequest)this;
@@ -914,7 +918,7 @@ public abstract class SearchRequestGen<DEV> extends Object {
 				queryStringInit();
 	}
 
-	public void initDeepForClass(SiteRequest siteRequest_) {
+	public void initDeepForClass(ComputateSearchSiteRequest siteRequest_) {
 		initDeepSearchRequest(siteRequest_);
 	}
 
@@ -922,10 +926,10 @@ public abstract class SearchRequestGen<DEV> extends Object {
 	// siteRequest //
 	/////////////////
 
-	public void siteRequestSearchRequest(SiteRequest siteRequest_) {
+	public void siteRequestSearchRequest(ComputateSearchSiteRequest siteRequest_) {
 	}
 
-	public void siteRequestForClass(SiteRequest siteRequest_) {
+	public void siteRequestForClass(ComputateSearchSiteRequest siteRequest_) {
 		siteRequestSearchRequest(siteRequest_);
 	}
 
@@ -1011,10 +1015,10 @@ public abstract class SearchRequestGen<DEV> extends Object {
 	// staticSet //
 	///////////////
 
-	public static Object staticSetForClass(String entityVar, SiteRequest siteRequest_, String o) {
+	public static Object staticSetForClass(String entityVar, ComputateSearchSiteRequest siteRequest_, String o) {
 		return staticSetSearchRequest(entityVar,  siteRequest_, o);
 	}
-	public static Object staticSetSearchRequest(String entityVar, SiteRequest siteRequest_, String o) {
+	public static Object staticSetSearchRequest(String entityVar, ComputateSearchSiteRequest siteRequest_, String o) {
 		switch(entityVar) {
 		case "query":
 			return SearchRequest.staticSetQuery(siteRequest_, o);
@@ -1052,132 +1056,132 @@ public abstract class SearchRequestGen<DEV> extends Object {
 	}
 
 	////////////////
-	// staticSolr //
+	// staticSearch //
 	////////////////
 
-	public static Object staticSolrForClass(String entityVar, SiteRequest siteRequest_, Object o) {
-		return staticSolrSearchRequest(entityVar,  siteRequest_, o);
+	public static Object staticSearchForClass(String entityVar, ComputateSearchSiteRequest siteRequest_, Object o) {
+		return staticSearchSearchRequest(entityVar,  siteRequest_, o);
 	}
-	public static Object staticSolrSearchRequest(String entityVar, SiteRequest siteRequest_, Object o) {
+	public static Object staticSearchSearchRequest(String entityVar, ComputateSearchSiteRequest siteRequest_, Object o) {
 		switch(entityVar) {
 		case "query":
-			return SearchRequest.staticSolrQuery(siteRequest_, (String)o);
+			return SearchRequest.staticSearchQuery(siteRequest_, (String)o);
 		case "filterQueries":
-			return SearchRequest.staticSolrFilterQueries(siteRequest_, (String)o);
+			return SearchRequest.staticSearchFilterQueries(siteRequest_, (String)o);
 		case "fields":
-			return SearchRequest.staticSolrFields(siteRequest_, (String)o);
+			return SearchRequest.staticSearchFields(siteRequest_, (String)o);
 		case "sorts":
-			return SearchRequest.staticSolrSorts(siteRequest_, (String)o);
+			return SearchRequest.staticSearchSorts(siteRequest_, (String)o);
 		case "facetPivots":
-			return SearchRequest.staticSolrFacetPivots(siteRequest_, (String)o);
+			return SearchRequest.staticSearchFacetPivots(siteRequest_, (String)o);
 		case "facet":
-			return SearchRequest.staticSolrFacet(siteRequest_, (Boolean)o);
+			return SearchRequest.staticSearchFacet(siteRequest_, (Boolean)o);
 		case "facetRangeStart":
-			return SearchRequest.staticSolrFacetRangeStart(siteRequest_, (String)o);
+			return SearchRequest.staticSearchFacetRangeStart(siteRequest_, (String)o);
 		case "facetRangeEnd":
-			return SearchRequest.staticSolrFacetRangeEnd(siteRequest_, (String)o);
+			return SearchRequest.staticSearchFacetRangeEnd(siteRequest_, (String)o);
 		case "facetRangeGap":
-			return SearchRequest.staticSolrFacetRangeGap(siteRequest_, (String)o);
+			return SearchRequest.staticSearchFacetRangeGap(siteRequest_, (String)o);
 		case "cursorMark":
-			return SearchRequest.staticSolrCursorMark(siteRequest_, (String)o);
+			return SearchRequest.staticSearchCursorMark(siteRequest_, (String)o);
 		case "facetFields":
-			return SearchRequest.staticSolrFacetFields(siteRequest_, (String)o);
+			return SearchRequest.staticSearchFacetFields(siteRequest_, (String)o);
 		case "facetRanges":
-			return SearchRequest.staticSolrFacetRanges(siteRequest_, (String)o);
+			return SearchRequest.staticSearchFacetRanges(siteRequest_, (String)o);
 		case "start":
-			return SearchRequest.staticSolrStart(siteRequest_, (Long)o);
+			return SearchRequest.staticSearchStart(siteRequest_, (Long)o);
 		case "rows":
-			return SearchRequest.staticSolrRows(siteRequest_, (Long)o);
+			return SearchRequest.staticSearchRows(siteRequest_, (Long)o);
 		case "queryString":
-			return SearchRequest.staticSolrQueryString(siteRequest_, (String)o);
+			return SearchRequest.staticSearchQueryString(siteRequest_, (String)o);
 			default:
 				return null;
 		}
 	}
 
 	///////////////////
-	// staticSolrStr //
+	// staticSearchStr //
 	///////////////////
 
-	public static String staticSolrStrForClass(String entityVar, SiteRequest siteRequest_, Object o) {
-		return staticSolrStrSearchRequest(entityVar,  siteRequest_, o);
+	public static String staticSearchStrForClass(String entityVar, ComputateSearchSiteRequest siteRequest_, Object o) {
+		return staticSearchStrSearchRequest(entityVar,  siteRequest_, o);
 	}
-	public static String staticSolrStrSearchRequest(String entityVar, SiteRequest siteRequest_, Object o) {
+	public static String staticSearchStrSearchRequest(String entityVar, ComputateSearchSiteRequest siteRequest_, Object o) {
 		switch(entityVar) {
 		case "query":
-			return SearchRequest.staticSolrStrQuery(siteRequest_, (String)o);
+			return SearchRequest.staticSearchStrQuery(siteRequest_, (String)o);
 		case "filterQueries":
-			return SearchRequest.staticSolrStrFilterQueries(siteRequest_, (String)o);
+			return SearchRequest.staticSearchStrFilterQueries(siteRequest_, (String)o);
 		case "fields":
-			return SearchRequest.staticSolrStrFields(siteRequest_, (String)o);
+			return SearchRequest.staticSearchStrFields(siteRequest_, (String)o);
 		case "sorts":
-			return SearchRequest.staticSolrStrSorts(siteRequest_, (String)o);
+			return SearchRequest.staticSearchStrSorts(siteRequest_, (String)o);
 		case "facetPivots":
-			return SearchRequest.staticSolrStrFacetPivots(siteRequest_, (String)o);
+			return SearchRequest.staticSearchStrFacetPivots(siteRequest_, (String)o);
 		case "facet":
-			return SearchRequest.staticSolrStrFacet(siteRequest_, (Boolean)o);
+			return SearchRequest.staticSearchStrFacet(siteRequest_, (Boolean)o);
 		case "facetRangeStart":
-			return SearchRequest.staticSolrStrFacetRangeStart(siteRequest_, (String)o);
+			return SearchRequest.staticSearchStrFacetRangeStart(siteRequest_, (String)o);
 		case "facetRangeEnd":
-			return SearchRequest.staticSolrStrFacetRangeEnd(siteRequest_, (String)o);
+			return SearchRequest.staticSearchStrFacetRangeEnd(siteRequest_, (String)o);
 		case "facetRangeGap":
-			return SearchRequest.staticSolrStrFacetRangeGap(siteRequest_, (String)o);
+			return SearchRequest.staticSearchStrFacetRangeGap(siteRequest_, (String)o);
 		case "cursorMark":
-			return SearchRequest.staticSolrStrCursorMark(siteRequest_, (String)o);
+			return SearchRequest.staticSearchStrCursorMark(siteRequest_, (String)o);
 		case "facetFields":
-			return SearchRequest.staticSolrStrFacetFields(siteRequest_, (String)o);
+			return SearchRequest.staticSearchStrFacetFields(siteRequest_, (String)o);
 		case "facetRanges":
-			return SearchRequest.staticSolrStrFacetRanges(siteRequest_, (String)o);
+			return SearchRequest.staticSearchStrFacetRanges(siteRequest_, (String)o);
 		case "start":
-			return SearchRequest.staticSolrStrStart(siteRequest_, (Long)o);
+			return SearchRequest.staticSearchStrStart(siteRequest_, (Long)o);
 		case "rows":
-			return SearchRequest.staticSolrStrRows(siteRequest_, (Long)o);
+			return SearchRequest.staticSearchStrRows(siteRequest_, (Long)o);
 		case "queryString":
-			return SearchRequest.staticSolrStrQueryString(siteRequest_, (String)o);
+			return SearchRequest.staticSearchStrQueryString(siteRequest_, (String)o);
 			default:
 				return null;
 		}
 	}
 
 	//////////////////
-	// staticSolrFq //
+	// staticSearchFq //
 	//////////////////
 
-	public static String staticSolrFqForClass(String entityVar, SiteRequest siteRequest_, String o) {
-		return staticSolrFqSearchRequest(entityVar,  siteRequest_, o);
+	public static String staticSearchFqForClass(String entityVar, ComputateSearchSiteRequest siteRequest_, String o) {
+		return staticSearchFqSearchRequest(entityVar,  siteRequest_, o);
 	}
-	public static String staticSolrFqSearchRequest(String entityVar, SiteRequest siteRequest_, String o) {
+	public static String staticSearchFqSearchRequest(String entityVar, ComputateSearchSiteRequest siteRequest_, String o) {
 		switch(entityVar) {
 		case "query":
-			return SearchRequest.staticSolrFqQuery(siteRequest_, o);
+			return SearchRequest.staticSearchFqQuery(siteRequest_, o);
 		case "filterQueries":
-			return SearchRequest.staticSolrFqFilterQueries(siteRequest_, o);
+			return SearchRequest.staticSearchFqFilterQueries(siteRequest_, o);
 		case "fields":
-			return SearchRequest.staticSolrFqFields(siteRequest_, o);
+			return SearchRequest.staticSearchFqFields(siteRequest_, o);
 		case "sorts":
-			return SearchRequest.staticSolrFqSorts(siteRequest_, o);
+			return SearchRequest.staticSearchFqSorts(siteRequest_, o);
 		case "facetPivots":
-			return SearchRequest.staticSolrFqFacetPivots(siteRequest_, o);
+			return SearchRequest.staticSearchFqFacetPivots(siteRequest_, o);
 		case "facet":
-			return SearchRequest.staticSolrFqFacet(siteRequest_, o);
+			return SearchRequest.staticSearchFqFacet(siteRequest_, o);
 		case "facetRangeStart":
-			return SearchRequest.staticSolrFqFacetRangeStart(siteRequest_, o);
+			return SearchRequest.staticSearchFqFacetRangeStart(siteRequest_, o);
 		case "facetRangeEnd":
-			return SearchRequest.staticSolrFqFacetRangeEnd(siteRequest_, o);
+			return SearchRequest.staticSearchFqFacetRangeEnd(siteRequest_, o);
 		case "facetRangeGap":
-			return SearchRequest.staticSolrFqFacetRangeGap(siteRequest_, o);
+			return SearchRequest.staticSearchFqFacetRangeGap(siteRequest_, o);
 		case "cursorMark":
-			return SearchRequest.staticSolrFqCursorMark(siteRequest_, o);
+			return SearchRequest.staticSearchFqCursorMark(siteRequest_, o);
 		case "facetFields":
-			return SearchRequest.staticSolrFqFacetFields(siteRequest_, o);
+			return SearchRequest.staticSearchFqFacetFields(siteRequest_, o);
 		case "facetRanges":
-			return SearchRequest.staticSolrFqFacetRanges(siteRequest_, o);
+			return SearchRequest.staticSearchFqFacetRanges(siteRequest_, o);
 		case "start":
-			return SearchRequest.staticSolrFqStart(siteRequest_, o);
+			return SearchRequest.staticSearchFqStart(siteRequest_, o);
 		case "rows":
-			return SearchRequest.staticSolrFqRows(siteRequest_, o);
+			return SearchRequest.staticSearchFqRows(siteRequest_, o);
 		case "queryString":
-			return SearchRequest.staticSolrFqQueryString(siteRequest_, o);
+			return SearchRequest.staticSearchFqQueryString(siteRequest_, o);
 			default:
 				return null;
 		}

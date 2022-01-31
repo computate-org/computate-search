@@ -21,7 +21,7 @@ public class SearchRequest extends SearchRequestGen<Object> {
 	 * {@inheritDoc}
 	 * Ignore: true
 	 */
-	protected void _siteRequest_(Wrap<SiteRequest> w) {
+	protected void _siteRequest_(Wrap<ComputateSearchSiteRequest> w) {
 	}
 
 	/**
