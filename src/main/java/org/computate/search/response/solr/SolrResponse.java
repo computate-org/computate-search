@@ -14,9 +14,11 @@
 package org.computate.search.response.solr;
 
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 
 import com.fasterxml.jackson.annotation.JsonAlias;
 import com.fasterxml.jackson.annotation.JsonAnySetter;
@@ -163,6 +165,15 @@ public class SolrResponse {
 
 	public static class FacetField {
 
+		public FacetField() {
+			setCounts(new HashMap<>());
+		}
+
+		public FacetField(String name) {
+			setName(name);
+			setCounts(new HashMap<>());
+		}
+
 		private String name;
 
 		private Map<String, Integer> counts;
@@ -181,6 +192,10 @@ public class SolrResponse {
 
 		public void setCounts(Map<String, Integer> fields) {
 			this.counts = fields;
+		}
+
+		public int getValueCount() {
+			return Optional.ofNullable(counts).map(c -> c.size()).orElse(0);
 		}
 	}
 
@@ -671,5 +686,9 @@ public class SolrResponse {
 
 	public void setNextCursorMark(String nextCursorMark) {
 		this.nextCursorMark = nextCursorMark;
+	}
+
+	public FacetField getFacetField(String var) {
+		return Optional.ofNullable(facetCounts).map(fc -> fc.getFacetFields()).map(ff -> ff.getFacets()).map(r ->  r.get(var)).orElse(null);
 	}
 }

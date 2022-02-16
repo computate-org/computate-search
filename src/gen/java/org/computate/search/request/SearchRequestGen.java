@@ -19,6 +19,7 @@ import com.fasterxml.jackson.databind.ser.std.ToStringSerializer;
 import org.computate.search.serialize.ComputateLocalDateDeserializer;
 import java.util.HashMap;
 import org.apache.commons.lang3.StringUtils;
+import java.lang.Integer;
 import java.text.NumberFormat;
 import java.util.ArrayList;
 import java.lang.Long;
@@ -421,6 +422,177 @@ public abstract class SearchRequestGen<DEV> extends Object {
 
 	public static String staticSearchFqFacet(ComputateSearchSiteRequest siteRequest_, String o) {
 		return SearchRequest.staticSearchStrFacet(siteRequest_, SearchRequest.staticSearchFacet(siteRequest_, SearchRequest.staticSetFacet(siteRequest_, o)));
+	}
+
+	////////////////
+	// facetLimit //
+	////////////////
+
+	/**	 The entity facetLimit
+	 *	 is defined as null before being initialized. 
+	 */
+	@JsonProperty
+	@JsonSerialize(using = ToStringSerializer.class)
+	@JsonInclude(Include.NON_NULL)
+	protected Integer facetLimit;
+
+	/**	<br> The entity facetLimit
+	 *  is defined as null before being initialized. 
+	 * <br><a href="http://localhost:8983/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.computate.search.request.SearchRequest&fq=classeEtendGen_indexed_boolean:true&fq=entiteVar_enUS_indexed_string:facetLimit">Find the entity facetLimit in Solr</a>
+	 * <br>
+	 * @param w is for wrapping a value to assign to this entity during initialization. 
+	 **/
+	protected abstract void _facetLimit(Wrap<Integer> w);
+
+	public Integer getFacetLimit() {
+		return facetLimit;
+	}
+
+	public void setFacetLimit(Integer facetLimit) {
+		this.facetLimit = facetLimit;
+	}
+	@JsonIgnore
+	public void setFacetLimit(String o) {
+		this.facetLimit = SearchRequest.staticSetFacetLimit(siteRequest_, o);
+	}
+	public static Integer staticSetFacetLimit(ComputateSearchSiteRequest siteRequest_, String o) {
+		if(NumberUtils.isParsable(o))
+			return Integer.parseInt(o);
+		return null;
+	}
+	protected SearchRequest facetLimitInit() {
+		Wrap<Integer> facetLimitWrap = new Wrap<Integer>().var("facetLimit");
+		if(facetLimit == null) {
+			_facetLimit(facetLimitWrap);
+			setFacetLimit(facetLimitWrap.o);
+		}
+		return (SearchRequest)this;
+	}
+
+	public static Integer staticSearchFacetLimit(ComputateSearchSiteRequest siteRequest_, Integer o) {
+		return o;
+	}
+
+	public static String staticSearchStrFacetLimit(ComputateSearchSiteRequest siteRequest_, Integer o) {
+		return o == null ? null : o.toString();
+	}
+
+	public static String staticSearchFqFacetLimit(ComputateSearchSiteRequest siteRequest_, String o) {
+		return SearchRequest.staticSearchStrFacetLimit(siteRequest_, SearchRequest.staticSearchFacetLimit(siteRequest_, SearchRequest.staticSetFacetLimit(siteRequest_, o)));
+	}
+
+	///////////////////
+	// facetMinCount //
+	///////////////////
+
+	/**	 The entity facetMinCount
+	 *	 is defined as null before being initialized. 
+	 */
+	@JsonProperty
+	@JsonSerialize(using = ToStringSerializer.class)
+	@JsonInclude(Include.NON_NULL)
+	protected Integer facetMinCount;
+
+	/**	<br> The entity facetMinCount
+	 *  is defined as null before being initialized. 
+	 * <br><a href="http://localhost:8983/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.computate.search.request.SearchRequest&fq=classeEtendGen_indexed_boolean:true&fq=entiteVar_enUS_indexed_string:facetMinCount">Find the entity facetMinCount in Solr</a>
+	 * <br>
+	 * @param w is for wrapping a value to assign to this entity during initialization. 
+	 **/
+	protected abstract void _facetMinCount(Wrap<Integer> w);
+
+	public Integer getFacetMinCount() {
+		return facetMinCount;
+	}
+
+	public void setFacetMinCount(Integer facetMinCount) {
+		this.facetMinCount = facetMinCount;
+	}
+	@JsonIgnore
+	public void setFacetMinCount(String o) {
+		this.facetMinCount = SearchRequest.staticSetFacetMinCount(siteRequest_, o);
+	}
+	public static Integer staticSetFacetMinCount(ComputateSearchSiteRequest siteRequest_, String o) {
+		if(NumberUtils.isParsable(o))
+			return Integer.parseInt(o);
+		return null;
+	}
+	protected SearchRequest facetMinCountInit() {
+		Wrap<Integer> facetMinCountWrap = new Wrap<Integer>().var("facetMinCount");
+		if(facetMinCount == null) {
+			_facetMinCount(facetMinCountWrap);
+			setFacetMinCount(facetMinCountWrap.o);
+		}
+		return (SearchRequest)this;
+	}
+
+	public static Integer staticSearchFacetMinCount(ComputateSearchSiteRequest siteRequest_, Integer o) {
+		return o;
+	}
+
+	public static String staticSearchStrFacetMinCount(ComputateSearchSiteRequest siteRequest_, Integer o) {
+		return o == null ? null : o.toString();
+	}
+
+	public static String staticSearchFqFacetMinCount(ComputateSearchSiteRequest siteRequest_, String o) {
+		return SearchRequest.staticSearchStrFacetMinCount(siteRequest_, SearchRequest.staticSearchFacetMinCount(siteRequest_, SearchRequest.staticSetFacetMinCount(siteRequest_, o)));
+	}
+
+	/////////////////
+	// facetOffset //
+	/////////////////
+
+	/**	 The entity facetOffset
+	 *	 is defined as null before being initialized. 
+	 */
+	@JsonProperty
+	@JsonSerialize(using = ToStringSerializer.class)
+	@JsonInclude(Include.NON_NULL)
+	protected Integer facetOffset;
+
+	/**	<br> The entity facetOffset
+	 *  is defined as null before being initialized. 
+	 * <br><a href="http://localhost:8983/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.computate.search.request.SearchRequest&fq=classeEtendGen_indexed_boolean:true&fq=entiteVar_enUS_indexed_string:facetOffset">Find the entity facetOffset in Solr</a>
+	 * <br>
+	 * @param w is for wrapping a value to assign to this entity during initialization. 
+	 **/
+	protected abstract void _facetOffset(Wrap<Integer> w);
+
+	public Integer getFacetOffset() {
+		return facetOffset;
+	}
+
+	public void setFacetOffset(Integer facetOffset) {
+		this.facetOffset = facetOffset;
+	}
+	@JsonIgnore
+	public void setFacetOffset(String o) {
+		this.facetOffset = SearchRequest.staticSetFacetOffset(siteRequest_, o);
+	}
+	public static Integer staticSetFacetOffset(ComputateSearchSiteRequest siteRequest_, String o) {
+		if(NumberUtils.isParsable(o))
+			return Integer.parseInt(o);
+		return null;
+	}
+	protected SearchRequest facetOffsetInit() {
+		Wrap<Integer> facetOffsetWrap = new Wrap<Integer>().var("facetOffset");
+		if(facetOffset == null) {
+			_facetOffset(facetOffsetWrap);
+			setFacetOffset(facetOffsetWrap.o);
+		}
+		return (SearchRequest)this;
+	}
+
+	public static Integer staticSearchFacetOffset(ComputateSearchSiteRequest siteRequest_, Integer o) {
+		return o;
+	}
+
+	public static String staticSearchStrFacetOffset(ComputateSearchSiteRequest siteRequest_, Integer o) {
+		return o == null ? null : o.toString();
+	}
+
+	public static String staticSearchFqFacetOffset(ComputateSearchSiteRequest siteRequest_, String o) {
+		return SearchRequest.staticSearchStrFacetOffset(siteRequest_, SearchRequest.staticSearchFacetOffset(siteRequest_, SearchRequest.staticSetFacetOffset(siteRequest_, o)));
 	}
 
 	/////////////////////
@@ -920,6 +1092,9 @@ public abstract class SearchRequestGen<DEV> extends Object {
 				sortsInit();
 				facetPivotsInit();
 				facetInit();
+				facetLimitInit();
+				facetMinCountInit();
+				facetOffsetInit();
 				facetRangeStartInit();
 				facetRangeEndInit();
 				facetRangeGapInit();
@@ -980,6 +1155,12 @@ public abstract class SearchRequestGen<DEV> extends Object {
 				return oSearchRequest.facetPivots;
 			case "facet":
 				return oSearchRequest.facet;
+			case "facetLimit":
+				return oSearchRequest.facetLimit;
+			case "facetMinCount":
+				return oSearchRequest.facetMinCount;
+			case "facetOffset":
+				return oSearchRequest.facetOffset;
 			case "facetRangeStart":
 				return oSearchRequest.facetRangeStart;
 			case "facetRangeEnd":
@@ -1045,6 +1226,12 @@ public abstract class SearchRequestGen<DEV> extends Object {
 			return SearchRequest.staticSetFacetPivots(siteRequest_, o);
 		case "facet":
 			return SearchRequest.staticSetFacet(siteRequest_, o);
+		case "facetLimit":
+			return SearchRequest.staticSetFacetLimit(siteRequest_, o);
+		case "facetMinCount":
+			return SearchRequest.staticSetFacetMinCount(siteRequest_, o);
+		case "facetOffset":
+			return SearchRequest.staticSetFacetOffset(siteRequest_, o);
 		case "facetRangeStart":
 			return SearchRequest.staticSetFacetRangeStart(siteRequest_, o);
 		case "facetRangeEnd":
@@ -1089,6 +1276,12 @@ public abstract class SearchRequestGen<DEV> extends Object {
 			return SearchRequest.staticSearchFacetPivots(siteRequest_, (String)o);
 		case "facet":
 			return SearchRequest.staticSearchFacet(siteRequest_, (Boolean)o);
+		case "facetLimit":
+			return SearchRequest.staticSearchFacetLimit(siteRequest_, (Integer)o);
+		case "facetMinCount":
+			return SearchRequest.staticSearchFacetMinCount(siteRequest_, (Integer)o);
+		case "facetOffset":
+			return SearchRequest.staticSearchFacetOffset(siteRequest_, (Integer)o);
 		case "facetRangeStart":
 			return SearchRequest.staticSearchFacetRangeStart(siteRequest_, (String)o);
 		case "facetRangeEnd":
@@ -1133,6 +1326,12 @@ public abstract class SearchRequestGen<DEV> extends Object {
 			return SearchRequest.staticSearchStrFacetPivots(siteRequest_, (String)o);
 		case "facet":
 			return SearchRequest.staticSearchStrFacet(siteRequest_, (Boolean)o);
+		case "facetLimit":
+			return SearchRequest.staticSearchStrFacetLimit(siteRequest_, (Integer)o);
+		case "facetMinCount":
+			return SearchRequest.staticSearchStrFacetMinCount(siteRequest_, (Integer)o);
+		case "facetOffset":
+			return SearchRequest.staticSearchStrFacetOffset(siteRequest_, (Integer)o);
 		case "facetRangeStart":
 			return SearchRequest.staticSearchStrFacetRangeStart(siteRequest_, (String)o);
 		case "facetRangeEnd":
@@ -1177,6 +1376,12 @@ public abstract class SearchRequestGen<DEV> extends Object {
 			return SearchRequest.staticSearchFqFacetPivots(siteRequest_, o);
 		case "facet":
 			return SearchRequest.staticSearchFqFacet(siteRequest_, o);
+		case "facetLimit":
+			return SearchRequest.staticSearchFqFacetLimit(siteRequest_, o);
+		case "facetMinCount":
+			return SearchRequest.staticSearchFqFacetMinCount(siteRequest_, o);
+		case "facetOffset":
+			return SearchRequest.staticSearchFqFacetOffset(siteRequest_, o);
 		case "facetRangeStart":
 			return SearchRequest.staticSearchFqFacetRangeStart(siteRequest_, o);
 		case "facetRangeEnd":
@@ -1238,6 +1443,9 @@ public abstract class SearchRequestGen<DEV> extends Object {
 	public static final String VAR_sorts = "sorts";
 	public static final String VAR_facetPivots = "facetPivots";
 	public static final String VAR_facet = "facet";
+	public static final String VAR_facetLimit = "facetLimit";
+	public static final String VAR_facetMinCount = "facetMinCount";
+	public static final String VAR_facetOffset = "facetOffset";
 	public static final String VAR_facetRangeStart = "facetRangeStart";
 	public static final String VAR_facetRangeEnd = "facetRangeEnd";
 	public static final String VAR_facetRangeGap = "facetRangeGap";
@@ -1255,6 +1463,9 @@ public abstract class SearchRequestGen<DEV> extends Object {
 	public static final String DISPLAY_NAME_sorts = "";
 	public static final String DISPLAY_NAME_facetPivots = "";
 	public static final String DISPLAY_NAME_facet = "";
+	public static final String DISPLAY_NAME_facetLimit = "";
+	public static final String DISPLAY_NAME_facetMinCount = "";
+	public static final String DISPLAY_NAME_facetOffset = "";
 	public static final String DISPLAY_NAME_facetRangeStart = "";
 	public static final String DISPLAY_NAME_facetRangeEnd = "";
 	public static final String DISPLAY_NAME_facetRangeGap = "";
@@ -1284,6 +1495,12 @@ public abstract class SearchRequestGen<DEV> extends Object {
 			return DISPLAY_NAME_facetPivots;
 		case VAR_facet:
 			return DISPLAY_NAME_facet;
+		case VAR_facetLimit:
+			return DISPLAY_NAME_facetLimit;
+		case VAR_facetMinCount:
+			return DISPLAY_NAME_facetMinCount;
+		case VAR_facetOffset:
+			return DISPLAY_NAME_facetOffset;
 		case VAR_facetRangeStart:
 			return DISPLAY_NAME_facetRangeStart;
 		case VAR_facetRangeEnd:

@@ -117,6 +117,36 @@ public class SearchRequest extends SearchRequestGen<Object> {
 	/**
 	 * {@inheritDoc}
 	 */
+	protected void _facetLimit(Wrap<Integer> w) {
+	}
+	public SearchRequest facetLimit(Integer s) {
+		setFacetLimit(s);
+		return this;
+	}
+
+	/**
+	 * {@inheritDoc}
+	 */
+	protected void _facetMinCount(Wrap<Integer> w) {
+	}
+	public SearchRequest facetMinCount(Integer s) {
+		setFacetMinCount(s);
+		return this;
+	}
+
+	/**
+	 * {@inheritDoc}
+	 */
+	protected void _facetOffset(Wrap<Integer> w) {
+	}
+	public SearchRequest facetOffset(Integer s) {
+		setFacetOffset(s);
+		return this;
+	}
+
+	/**
+	 * {@inheritDoc}
+	 */
 	protected void _facetRangeStart(Wrap<String> w) {
 	}
 	public SearchRequest facetRangeStart(String s) {
@@ -256,6 +286,18 @@ public class SearchRequest extends SearchRequestGen<Object> {
 			if(facet) {
 				b.append(b.length() == 0 ? "?" : "&");
 				b.append("facet=").append(facet);
+			}
+			if(facetLimit != null) {
+				b.append(b.length() == 0 ? "?" : "&");
+				b.append("facet.limit=").append(facetLimit);
+			}
+			if(facetMinCount != null) {
+				b.append(b.length() == 0 ? "?" : "&");
+				b.append("facet.mincount=").append(facetMinCount);
+			}
+			if(facetOffset != null) {
+				b.append(b.length() == 0 ? "?" : "&");
+				b.append("facet.offset=").append(facetOffset);
 			}
 			if(facetRangeStart != null) {
 				b.append(b.length() == 0 ? "?" : "&");
