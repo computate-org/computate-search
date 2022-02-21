@@ -333,6 +333,14 @@ public class SearchRequest extends SearchRequestGen<Object> {
 					b.append("facet.range=").append(URLEncoder.encode(facetRange, UTF_8));
 				}
 			}
+			if(rows != null) {
+				b.append(b.length() == 0 ? "?" : "&");
+				b.append("rows=").append(rows);
+			}
+			if(start != null) {
+				b.append(b.length() == 0 ? "?" : "&");
+				b.append("start=").append(start);
+			}
 			w.o(b.toString());
 		} catch (UnsupportedEncodingException ex) {
 			ExceptionUtils.rethrow(ex);

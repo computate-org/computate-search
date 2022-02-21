@@ -601,6 +601,7 @@ public class SolrResponse {
 		@JsonAlias("QTime")
 		private Integer qTime;
 		private Map<String, Object> params;
+		private List<String> warnings;
 
 		public Boolean getZkConnected() {
 			return zkConnected;
@@ -633,6 +634,14 @@ public class SolrResponse {
 		@JsonAnySetter
 		public void setParams(String key, Object value) {
 			this.params = (Map<String, Object>) value;
+		}
+
+		public List<String> getWarnings() {
+			return warnings;
+		}
+
+		public void setWarnings(List<String> warnings) {
+			this.warnings = warnings;
 		}
 	}
 

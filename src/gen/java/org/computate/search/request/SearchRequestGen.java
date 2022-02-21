@@ -1405,28 +1405,6 @@ public abstract class SearchRequestGen<DEV> extends Object {
 		}
 	}
 
-	/////////////
-	// define //
-	/////////////
-
-	public boolean defineForClass(String var, Object val) {
-		String[] vars = StringUtils.split(var, ".");
-		Object o = null;
-		if(val != null) {
-			for(String v : vars) {
-				if(o == null)
-					o = defineSearchRequest(v, val);
-			}
-		}
-		return o != null;
-	}
-	public Object defineSearchRequest(String var, Object val) {
-		switch(var.toLowerCase()) {
-			default:
-				return null;
-		}
-	}
-
 	//////////////
 	// toString //
 	//////////////
