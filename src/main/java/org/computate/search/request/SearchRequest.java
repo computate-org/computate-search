@@ -106,6 +106,26 @@ public class SearchRequest extends SearchRequestGen<Object> {
 	/**
 	 * {@inheritDoc}
 	 */
+	protected void _facetPivotMinCount(Wrap<Integer> w) {
+	}
+	public SearchRequest facetPivotMinCount(Integer s) {
+		setFacetPivotMinCount(s);
+		return this;
+	}
+
+	/**
+	 * {@inheritDoc}
+	 */
+	protected void _facetSort(Wrap<String> w) {
+	}
+	public SearchRequest facetSort(String s) {
+		setFacetSort(s);
+		return this;
+	}
+
+	/**
+	 * {@inheritDoc}
+	 */
 	protected void _facet(Wrap<Boolean> w) {
 		w.o(false);
 	}
@@ -280,8 +300,16 @@ public class SearchRequest extends SearchRequestGen<Object> {
 				for(int i = 0; i < facetPivots.size(); i++) {
 					String facetPivot = facetPivots.get(i);
 					b.append(b.length() == 0 ? "?" : "&");
-					b.append("sort=").append(URLEncoder.encode(facetPivot, UTF_8));
+					b.append("facet.pivot=").append(URLEncoder.encode(facetPivot, UTF_8));
 				}
+			}
+			if(facetPivotMinCount != null) {
+				b.append(b.length() == 0 ? "?" : "&");
+				b.append("facet.pivot.mincount=").append(facetPivotMinCount);
+			}
+			if(facetSort != null) {
+				b.append(b.length() == 0 ? "?" : "&");
+				b.append("facet.sort=").append(facetSort);
 			}
 			if(facet) {
 				b.append(b.length() == 0 ? "?" : "&");
@@ -309,15 +337,11 @@ public class SearchRequest extends SearchRequestGen<Object> {
 			}
 			if(facetRangeGap != null) {
 				b.append(b.length() == 0 ? "?" : "&");
-				b.append("facet.range.gap=").append(facetRangeGap);
+				b.append("facet.range.gap=").append(URLEncoder.encode(facetRangeGap, UTF_8));
 			}
 			if(cursorMark != null) {
 				b.append(b.length() == 0 ? "?" : "&");
 				b.append("cursorMark=").append(cursorMark);
-			}
-			if(facetRangeStart != null) {
-				b.append(b.length() == 0 ? "?" : "&");
-				b.append("facet.range.start=").append(facetRangeStart);
 			}
 			if(facetFields.size() > 0) {
 				for(int i = 0; i < facetFields.size(); i++) {

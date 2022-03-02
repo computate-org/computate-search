@@ -370,6 +370,112 @@ public abstract class SearchRequestGen<DEV> extends Object {
 		return SearchRequest.staticSearchStrFacetPivots(siteRequest_, SearchRequest.staticSearchFacetPivots(siteRequest_, SearchRequest.staticSetFacetPivots(siteRequest_, o)));
 	}
 
+	////////////////////////
+	// facetPivotMinCount //
+	////////////////////////
+
+	/**	 The entity facetPivotMinCount
+	 *	 is defined as null before being initialized. 
+	 */
+	@JsonProperty
+	@JsonSerialize(using = ToStringSerializer.class)
+	@JsonInclude(Include.NON_NULL)
+	protected Integer facetPivotMinCount;
+
+	/**	<br> The entity facetPivotMinCount
+	 *  is defined as null before being initialized. 
+	 * <br><a href="http://localhost:8983/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.computate.search.request.SearchRequest&fq=classeEtendGen_indexed_boolean:true&fq=entiteVar_enUS_indexed_string:facetPivotMinCount">Find the entity facetPivotMinCount in Solr</a>
+	 * <br>
+	 * @param w is for wrapping a value to assign to this entity during initialization. 
+	 **/
+	protected abstract void _facetPivotMinCount(Wrap<Integer> w);
+
+	public Integer getFacetPivotMinCount() {
+		return facetPivotMinCount;
+	}
+
+	public void setFacetPivotMinCount(Integer facetPivotMinCount) {
+		this.facetPivotMinCount = facetPivotMinCount;
+	}
+	@JsonIgnore
+	public void setFacetPivotMinCount(String o) {
+		this.facetPivotMinCount = SearchRequest.staticSetFacetPivotMinCount(siteRequest_, o);
+	}
+	public static Integer staticSetFacetPivotMinCount(ComputateSearchSiteRequest siteRequest_, String o) {
+		if(NumberUtils.isParsable(o))
+			return Integer.parseInt(o);
+		return null;
+	}
+	protected SearchRequest facetPivotMinCountInit() {
+		Wrap<Integer> facetPivotMinCountWrap = new Wrap<Integer>().var("facetPivotMinCount");
+		if(facetPivotMinCount == null) {
+			_facetPivotMinCount(facetPivotMinCountWrap);
+			setFacetPivotMinCount(facetPivotMinCountWrap.o);
+		}
+		return (SearchRequest)this;
+	}
+
+	public static Integer staticSearchFacetPivotMinCount(ComputateSearchSiteRequest siteRequest_, Integer o) {
+		return o;
+	}
+
+	public static String staticSearchStrFacetPivotMinCount(ComputateSearchSiteRequest siteRequest_, Integer o) {
+		return o == null ? null : o.toString();
+	}
+
+	public static String staticSearchFqFacetPivotMinCount(ComputateSearchSiteRequest siteRequest_, String o) {
+		return SearchRequest.staticSearchStrFacetPivotMinCount(siteRequest_, SearchRequest.staticSearchFacetPivotMinCount(siteRequest_, SearchRequest.staticSetFacetPivotMinCount(siteRequest_, o)));
+	}
+
+	///////////////
+	// facetSort //
+	///////////////
+
+	/**	 The entity facetSort
+	 *	 is defined as null before being initialized. 
+	 */
+	@JsonProperty
+	@JsonInclude(Include.NON_NULL)
+	protected String facetSort;
+
+	/**	<br> The entity facetSort
+	 *  is defined as null before being initialized. 
+	 * <br><a href="http://localhost:8983/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.computate.search.request.SearchRequest&fq=classeEtendGen_indexed_boolean:true&fq=entiteVar_enUS_indexed_string:facetSort">Find the entity facetSort in Solr</a>
+	 * <br>
+	 * @param w is for wrapping a value to assign to this entity during initialization. 
+	 **/
+	protected abstract void _facetSort(Wrap<String> w);
+
+	public String getFacetSort() {
+		return facetSort;
+	}
+	public void setFacetSort(String o) {
+		this.facetSort = SearchRequest.staticSetFacetSort(siteRequest_, o);
+	}
+	public static String staticSetFacetSort(ComputateSearchSiteRequest siteRequest_, String o) {
+		return o;
+	}
+	protected SearchRequest facetSortInit() {
+		Wrap<String> facetSortWrap = new Wrap<String>().var("facetSort");
+		if(facetSort == null) {
+			_facetSort(facetSortWrap);
+			setFacetSort(facetSortWrap.o);
+		}
+		return (SearchRequest)this;
+	}
+
+	public static String staticSearchFacetSort(ComputateSearchSiteRequest siteRequest_, String o) {
+		return o;
+	}
+
+	public static String staticSearchStrFacetSort(ComputateSearchSiteRequest siteRequest_, String o) {
+		return o == null ? null : o.toString();
+	}
+
+	public static String staticSearchFqFacetSort(ComputateSearchSiteRequest siteRequest_, String o) {
+		return SearchRequest.staticSearchStrFacetSort(siteRequest_, SearchRequest.staticSearchFacetSort(siteRequest_, SearchRequest.staticSetFacetSort(siteRequest_, o)));
+	}
+
 	///////////
 	// facet //
 	///////////
@@ -1091,6 +1197,8 @@ public abstract class SearchRequestGen<DEV> extends Object {
 				fieldsInit();
 				sortsInit();
 				facetPivotsInit();
+				facetPivotMinCountInit();
+				facetSortInit();
 				facetInit();
 				facetLimitInit();
 				facetMinCountInit();
@@ -1153,6 +1261,10 @@ public abstract class SearchRequestGen<DEV> extends Object {
 				return oSearchRequest.sorts;
 			case "facetPivots":
 				return oSearchRequest.facetPivots;
+			case "facetPivotMinCount":
+				return oSearchRequest.facetPivotMinCount;
+			case "facetSort":
+				return oSearchRequest.facetSort;
 			case "facet":
 				return oSearchRequest.facet;
 			case "facetLimit":
@@ -1224,6 +1336,10 @@ public abstract class SearchRequestGen<DEV> extends Object {
 			return SearchRequest.staticSetSorts(siteRequest_, o);
 		case "facetPivots":
 			return SearchRequest.staticSetFacetPivots(siteRequest_, o);
+		case "facetPivotMinCount":
+			return SearchRequest.staticSetFacetPivotMinCount(siteRequest_, o);
+		case "facetSort":
+			return SearchRequest.staticSetFacetSort(siteRequest_, o);
 		case "facet":
 			return SearchRequest.staticSetFacet(siteRequest_, o);
 		case "facetLimit":
@@ -1274,6 +1390,10 @@ public abstract class SearchRequestGen<DEV> extends Object {
 			return SearchRequest.staticSearchSorts(siteRequest_, (String)o);
 		case "facetPivots":
 			return SearchRequest.staticSearchFacetPivots(siteRequest_, (String)o);
+		case "facetPivotMinCount":
+			return SearchRequest.staticSearchFacetPivotMinCount(siteRequest_, (Integer)o);
+		case "facetSort":
+			return SearchRequest.staticSearchFacetSort(siteRequest_, (String)o);
 		case "facet":
 			return SearchRequest.staticSearchFacet(siteRequest_, (Boolean)o);
 		case "facetLimit":
@@ -1324,6 +1444,10 @@ public abstract class SearchRequestGen<DEV> extends Object {
 			return SearchRequest.staticSearchStrSorts(siteRequest_, (String)o);
 		case "facetPivots":
 			return SearchRequest.staticSearchStrFacetPivots(siteRequest_, (String)o);
+		case "facetPivotMinCount":
+			return SearchRequest.staticSearchStrFacetPivotMinCount(siteRequest_, (Integer)o);
+		case "facetSort":
+			return SearchRequest.staticSearchStrFacetSort(siteRequest_, (String)o);
 		case "facet":
 			return SearchRequest.staticSearchStrFacet(siteRequest_, (Boolean)o);
 		case "facetLimit":
@@ -1374,6 +1498,10 @@ public abstract class SearchRequestGen<DEV> extends Object {
 			return SearchRequest.staticSearchFqSorts(siteRequest_, o);
 		case "facetPivots":
 			return SearchRequest.staticSearchFqFacetPivots(siteRequest_, o);
+		case "facetPivotMinCount":
+			return SearchRequest.staticSearchFqFacetPivotMinCount(siteRequest_, o);
+		case "facetSort":
+			return SearchRequest.staticSearchFqFacetSort(siteRequest_, o);
 		case "facet":
 			return SearchRequest.staticSearchFqFacet(siteRequest_, o);
 		case "facetLimit":
@@ -1420,6 +1548,8 @@ public abstract class SearchRequestGen<DEV> extends Object {
 	public static final String VAR_fields = "fields";
 	public static final String VAR_sorts = "sorts";
 	public static final String VAR_facetPivots = "facetPivots";
+	public static final String VAR_facetPivotMinCount = "facetPivotMinCount";
+	public static final String VAR_facetSort = "facetSort";
 	public static final String VAR_facet = "facet";
 	public static final String VAR_facetLimit = "facetLimit";
 	public static final String VAR_facetMinCount = "facetMinCount";
@@ -1440,6 +1570,8 @@ public abstract class SearchRequestGen<DEV> extends Object {
 	public static final String DISPLAY_NAME_fields = "";
 	public static final String DISPLAY_NAME_sorts = "";
 	public static final String DISPLAY_NAME_facetPivots = "";
+	public static final String DISPLAY_NAME_facetPivotMinCount = "";
+	public static final String DISPLAY_NAME_facetSort = "";
 	public static final String DISPLAY_NAME_facet = "";
 	public static final String DISPLAY_NAME_facetLimit = "";
 	public static final String DISPLAY_NAME_facetMinCount = "";
@@ -1471,6 +1603,10 @@ public abstract class SearchRequestGen<DEV> extends Object {
 			return DISPLAY_NAME_sorts;
 		case VAR_facetPivots:
 			return DISPLAY_NAME_facetPivots;
+		case VAR_facetPivotMinCount:
+			return DISPLAY_NAME_facetPivotMinCount;
+		case VAR_facetSort:
+			return DISPLAY_NAME_facetSort;
 		case VAR_facet:
 			return DISPLAY_NAME_facet;
 		case VAR_facetLimit:
