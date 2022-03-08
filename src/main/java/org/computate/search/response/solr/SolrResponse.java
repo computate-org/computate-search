@@ -22,6 +22,7 @@ import java.util.Optional;
 
 import com.fasterxml.jackson.annotation.JsonAlias;
 import com.fasterxml.jackson.annotation.JsonAnySetter;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonSetter;
 
@@ -205,12 +206,12 @@ public class SolrResponse {
 		}
 
 		private String name;
-		private Map<String, Integer> counts;
+		private Map<String, RangeCount> counts;
 		private String gap;
 		private String start;
 		private String end;
 
-		public Map<String, Integer> getCounts() {
+		public Map<String, RangeCount> getCounts() {
 			return counts;
 		}
 
@@ -219,8 +220,11 @@ public class SolrResponse {
 			counts = new LinkedHashMap<>();
 			for(int i=0; i < list.size(); i+=2) {
 				String k = (String)list.get(i);
-				Integer v = (Integer)list.get(i + 1);
-				counts.put(k, v);
+				Long v = ((Integer)list.get(i + 1)).longValue();
+				RangeCount rangeCount = new RangeCount();
+				rangeCount.setName(k);
+				rangeCount.setCount(v);
+				counts.put(k, rangeCount);
 			}
 		}
 
@@ -257,6 +261,40 @@ public class SolrResponse {
 		}
 	}
 
+	public static class RangeCount {
+
+		private String name;
+		private Long count;
+		private Map<String, Object> vars = new HashMap<>();
+
+		public RangeCount() {
+		}
+
+		public String getName() {
+			return name;
+		}
+
+		public void setName(String name) {
+			this.name = name;
+		}
+
+		public Long getCount() {
+			return count;
+		}
+
+		public void setCount(Long count) {
+			this.count = count;
+		}
+
+		public Map<String, Object> getVars() {
+			return vars;
+		}
+
+		public void setVars(Map<String, Object> vars) {
+			this.vars = vars;
+		}
+	}
+
 	public static class FacetRanges {
 
 		public FacetRanges() {
@@ -279,13 +317,25 @@ public class SolrResponse {
 
 	public static class Pivot {
 
+		private String name;
+		private List<String> fields;
 		private String field;
 		private String value;
 		private Integer count;
 		private Map<String, PivotRange> ranges = new LinkedHashMap<>();
-		private List<Pivot> pivot;
+		@JsonAlias("pivot")
+		private List<Pivot> internalPivot;
+		private Map<String, Pivot> pivot = new LinkedHashMap<>();
 
 		public Pivot() {
+		}
+
+		public String getName() {
+			return name;
+		}
+
+		public void setName(String name) {
+			this.name = name;
 		}
 
 		public String getField() {
@@ -312,7 +362,10 @@ public class SolrResponse {
 			this.count = count;
 		}
 
-		@JsonAnySetter
+		public void setRanges(Map<String, PivotRange> ranges) {
+			this.ranges = ranges;
+		}
+
 		public void setRanges(String key, PivotRange value) {
 			ranges.put(key, value);
 			ranges.forEach((name, range) -> {
@@ -324,106 +377,57 @@ public class SolrResponse {
 			return ranges;
 		}
 
-		public List<Pivot> getPivot() {
+		public List<Pivot> getInternalPivot() {
+			return internalPivot;
+		}
+
+		public void setInternalPivot(List<Pivot> internalPivot) {
+			this.internalPivot = internalPivot;
+			for(Pivot value : internalPivot) {
+				value.setFields(Arrays.asList(value.getField()));
+				pivot.put(value.getField(), value);
+				value.setName(value.getField());
+			}
+		}
+
+		@JsonIgnore
+		public Map<String, Pivot> getPivot() {
 			return pivot;
 		}
 
-		public void setPivot(List<Pivot> pivot) {
+		@JsonIgnore
+		public void setPivot(Map<String, Pivot> pivot) {
 			this.pivot = pivot;
+		}
+
+		public List<String> getFields() {
+			return fields;
+		}
+
+		public void setFields(List<String> fields) {
+			this.fields = fields;
 		}
 	}
 
 	public static class FacetPivot {
 
-		private String name;
-		private String field;
-		private String value;
-		private Integer count;
-		@JsonProperty("ranges")
-		private PivotRanges pivotRanges;
-		private List<String> pivotFields;
+		private Map<String, Pivot> pivot = new LinkedHashMap<>();
 
 		public FacetPivot() {
 		}
 
-		private List<Pivot> pivot;
-
-		public String getField() {
-			return field;
-		}
-
-		public void setField(String field) {
-			this.field = field;
-		}
-
-		public String getValue() {
-			return value;
-		}
-
-		public void setValue(String value) {
-			this.value = value;
-		}
-
-		public Integer getCount() {
-			return count;
-		}
-
-		public void setCount(Integer count) {
-			this.count = count;
-		}
-
-		public PivotRanges getPivotRanges() {
-			return pivotRanges;
-		}
-
-		public void setPivotRanges(PivotRanges pivotRanges) {
-			this.pivotRanges = pivotRanges;
-		}
-
-		public List<Pivot> getPivot() {
+		public Map<String, Pivot> getPivot() {
 			return pivot;
 		}
 
-		public void setPivot(List<Pivot> pivot) {
-			this.pivot = pivot;
-		}
-
-		public List<String> getPivotFields() {
-			return pivotFields;
-		}
-
-		public void setPivotFields(List<String> pivotFields) {
-			this.pivotFields = pivotFields;
-		}
-
-		public String getName() {
-			return name;
-		}
-
-		public void setName(String name) {
-			this.name = name;
-		}
-	}
-
-	public static class FacetPivots {
-
-		private Map<String, FacetPivot> pivots = new LinkedHashMap<>();
-
-		public FacetPivots() {
-		}
-
-		public Map<String, FacetPivot> getPivots() {
-			return pivots;
-		}
-
 		@JsonAnySetter
-		public void setPivots(String key, List<FacetPivot> list) {
-			for(FacetPivot value : list) {
-				value.setPivotFields(Arrays.asList(key.split(",")));
-				pivots.put(key, value);
-				pivots.forEach((name, pivot) -> {
-					pivot.setName(name);
-				});
+		public void setPivots(String key, List<Pivot> list) {
+			Pivot fieldPivot = new Pivot();
+			fieldPivot.setName(key);
+			pivot.put(key, fieldPivot);
+			for(Pivot valuePivot : list) {
+				valuePivot.setFields(Arrays.asList(key.split(",")));
+				fieldPivot.getPivot().put(valuePivot.getValue(), valuePivot);
 			}
 		}
 	}
@@ -461,7 +465,7 @@ public class SolrResponse {
 		private FacetHeatMaps facetHeatMaps;
 
 		@JsonAlias("facet_pivot")
-		private FacetPivots facetPivots;
+		private FacetPivot facetPivot;
 
 		public FacetQueries getFacetQueries() {
 			return facetQueries;
@@ -503,12 +507,12 @@ public class SolrResponse {
 			this.facetHeatMaps = facetHeatMaps;
 		}
 
-		public FacetPivots getFacetPivots() {
-			return facetPivots;
+		public FacetPivot getFacetPivot() {
+			return facetPivot;
 		}
 
-		public void setFacetPivots(FacetPivots facetPivots) {
-			this.facetPivots = facetPivots;
+		public void setFacetPivots(FacetPivot facetPivot) {
+			this.facetPivot = facetPivot;
 		}
 	}
 
