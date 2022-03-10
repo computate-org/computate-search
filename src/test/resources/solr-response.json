@@ -301,7 +301,9 @@
   },
   "nextCursorMark":"AoE1Q3VycmlraVJlc291cmNlXzk5OTk0",
   "facet_counts":{
-    "facet_queries":{},
+    "facet_queries":{
+      "classSimpleName_docvalues_string":273181
+    },
     "facet_fields":{
       "classSimpleName_docvalues_string":[
         "CurrikiResource",273177,

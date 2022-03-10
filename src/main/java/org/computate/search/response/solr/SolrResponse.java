@@ -134,6 +134,18 @@ public class SolrResponse {
 
 		public FacetQueries() {
 		}
+
+		private Map<String, Long> facets;
+
+		public Map<String, Long> getFacets() {
+			return facets;
+		}
+
+		@JsonAnySetter
+		public void setFacets(String key, Long value) {
+			facets = new LinkedHashMap<>();
+			facets.put(key, value);
+		}
 	}
 
 	public static class FacetFields {
@@ -385,7 +397,7 @@ public class SolrResponse {
 			this.internalPivot = internalPivot;
 			for(Pivot value : internalPivot) {
 				value.setFields(Arrays.asList(value.getField()));
-				pivot.put(value.getField(), value);
+				pivot.put(value.getValue(), value);
 				value.setName(value.getField());
 			}
 		}

@@ -208,6 +208,21 @@ public class SearchRequest extends SearchRequestGen<Object> {
 	/**
 	 * {@inheritDoc}
 	 */
+	protected void _facetQueries(List<String> w) {
+	}
+	public SearchRequest facetQuery(String s) {
+		addFacetQueries(s);
+		return this;
+	}
+	@Override
+	public SearchRequest addFacetQueries(String o) {
+		setFacet(true);
+		return super.addFacetQueries(o);
+	}
+
+	/**
+	 * {@inheritDoc}
+	 */
 	protected void _facetFields(List<String> w) {
 	}
 	public SearchRequest facetField(String s) {
@@ -343,6 +358,13 @@ public class SearchRequest extends SearchRequestGen<Object> {
 			if(cursorMark != null) {
 				b.append(b.length() == 0 ? "?" : "&");
 				b.append("cursorMark=").append(cursorMark);
+			}
+			if(facetQueries.size() > 0) {
+				for(int i = 0; i < facetQueries.size(); i++) {
+					String facetQuery = facetQueries.get(i);
+					b.append(b.length() == 0 ? "?" : "&");
+					b.append("facet.query=").append(URLEncoder.encode(facetQuery, UTF_8));
+				}
 			}
 			if(facetFields.size() > 0) {
 				for(int i = 0; i < facetFields.size(); i++) {
