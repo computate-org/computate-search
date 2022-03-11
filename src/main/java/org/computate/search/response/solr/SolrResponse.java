@@ -153,7 +153,7 @@ public class SolrResponse {
 		public FacetFields() {
 		}
 
-		private Map<String, FacetField> facets;
+		private Map<String, FacetField> facets = new LinkedHashMap<>();
 
 		public Map<String, FacetField> getFacets() {
 			return facets;
@@ -161,7 +161,6 @@ public class SolrResponse {
 
 		@JsonAnySetter
 		public void setFacets(String key, Object value) {
-			facets = new LinkedHashMap<>();
 			FacetField facetField = new FacetField();
 			facetField.setName(key);
 			List<Object> list = (List<Object>)value;
