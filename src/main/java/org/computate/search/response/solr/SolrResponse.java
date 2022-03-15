@@ -335,8 +335,8 @@ public class SolrResponse {
 		private Integer count;
 		private Map<String, PivotRange> ranges = new LinkedHashMap<>();
 		@JsonAlias("pivot")
-		private List<Pivot> internalPivot;
-		private Map<String, Pivot> pivot = new LinkedHashMap<>();
+		private List<Pivot> pivotList;
+		private Map<String, Pivot> pivotMap = new LinkedHashMap<>();
 
 		public Pivot() {
 		}
@@ -388,27 +388,25 @@ public class SolrResponse {
 			return ranges;
 		}
 
-		public List<Pivot> getInternalPivot() {
-			return internalPivot;
+		public List<Pivot> getPivotList() {
+			return pivotList;
 		}
 
-		public void setInternalPivot(List<Pivot> internalPivot) {
-			this.internalPivot = internalPivot;
-			for(Pivot value : internalPivot) {
+		public void setPivotList(List<Pivot> pivotList) {
+			this.pivotList = pivotList;
+			for(Pivot value : pivotList) {
 				value.setFields(Arrays.asList(value.getField()));
-				pivot.put(value.getValue(), value);
+				pivotMap.put(value.getValue(), value);
 				value.setName(value.getField());
 			}
 		}
 
-		@JsonIgnore
-		public Map<String, Pivot> getPivot() {
-			return pivot;
+		public Map<String, Pivot> getPivotMap() {
+			return pivotMap;
 		}
 
-		@JsonIgnore
-		public void setPivot(Map<String, Pivot> pivot) {
-			this.pivot = pivot;
+		public void setPivotMap(Map<String, Pivot> pivotMap) {
+			this.pivotMap = pivotMap;
 		}
 
 		public List<String> getFields() {
@@ -422,23 +420,23 @@ public class SolrResponse {
 
 	public static class FacetPivot {
 
-		private Map<String, Pivot> pivot = new LinkedHashMap<>();
+		private Map<String, Pivot> pivotMap = new LinkedHashMap<>();
 
 		public FacetPivot() {
 		}
 
-		public Map<String, Pivot> getPivot() {
-			return pivot;
+		public Map<String, Pivot> getPivotMap() {
+			return pivotMap;
 		}
 
 		@JsonAnySetter
-		public void setPivots(String key, List<Pivot> list) {
+		public void setPivotMap(String key, List<Pivot> list) {
 			Pivot fieldPivot = new Pivot();
 			fieldPivot.setName(key);
-			pivot.put(key, fieldPivot);
+			pivotMap.put(key, fieldPivot);
 			for(Pivot valuePivot : list) {
 				valuePivot.setFields(Arrays.asList(key.split(",")));
-				fieldPivot.getPivot().put(valuePivot.getValue(), valuePivot);
+				fieldPivot.getPivotMap().put(valuePivot.getValue(), valuePivot);
 			}
 		}
 	}
@@ -447,11 +445,53 @@ public class SolrResponse {
 
 		public FacetIntervals() {
 		}
+
+		private Map<String, FacetField> facets = new LinkedHashMap<>();
+
+		public Map<String, FacetField> getFacets() {
+			return facets;
+		}
+
+		@JsonAnySetter
+		public void setFacets(String key, Object value) {
+			FacetField facetField = new FacetField();
+			facetField.setName(key);
+			List<Object> list = (List<Object>)value;
+			Map<String, Integer> fields = new LinkedHashMap<>();
+			facetField.setCounts(fields);
+			facets.put(key, facetField);
+			for(int i=0; i < list.size(); i+=2) {
+				String k = (String)list.get(i);
+				Integer v = (Integer)list.get(i + 1);
+				fields.put(k, v);
+			}
+		}
 	}
 
 	public static class FacetHeatMaps {
 
 		public FacetHeatMaps() {
+		}
+
+		private Map<String, FacetField> facets = new LinkedHashMap<>();
+
+		public Map<String, FacetField> getFacets() {
+			return facets;
+		}
+
+		@JsonAnySetter
+		public void setFacets(String key, Object value) {
+			FacetField facetField = new FacetField();
+			facetField.setName(key);
+			List<Object> list = (List<Object>)value;
+			Map<String, Integer> fields = new LinkedHashMap<>();
+			facetField.setCounts(fields);
+			facets.put(key, facetField);
+			for(int i=0; i < list.size(); i+=2) {
+				String k = (String)list.get(i);
+				Integer v = (Integer)list.get(i + 1);
+				fields.put(k, v);
+			}
 		}
 	}
 
@@ -559,10 +599,6 @@ public class SolrResponse {
 		public PivotRange() {
 		}
 
-		public Map<String, Integer> getCounts() {
-			return counts;
-		}
-
 		@JsonSetter
 		public void setCounts(List<Object> list) {
 			counts = new LinkedHashMap<>();
@@ -603,6 +639,14 @@ public class SolrResponse {
 
 		public void setName(String name) {
 			this.name = name;
+		}
+
+		public Map<String, Integer> getCounts() {
+			return counts;
+		}
+
+		public void setCounts(Map<String, Integer> counts) {
+			this.counts = counts;
 		}
 	}
 
