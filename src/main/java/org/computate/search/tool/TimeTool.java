@@ -15,11 +15,16 @@ package org.computate.search.tool;
 
 import java.math.BigDecimal;
 import java.time.Duration;
+import java.time.Instant;
 import java.time.LocalDate;
+import java.time.ZoneId;
 import java.time.ZonedDateTime;
 import java.time.format.DateTimeFormatter;
 import java.time.temporal.ChronoUnit;
 import java.util.Optional;
+
+import org.apache.commons.lang3.StringUtils;
+import org.computate.search.serialize.ComputateZonedDateTimeSerializer;
 
 public class TimeTool {
 
@@ -73,5 +78,14 @@ public class TimeTool {
 		ChronoUnit periodUnit = ChronoUnit.valueOf(periodUnitStr);
 		Duration duration = Duration.of(periodNumber.longValue(), periodUnit);
 		return duration;
+	}
+
+	public static ZonedDateTime parseZonedDateTime(ZoneId timeZone, String o) {
+		if(StringUtils.endsWith(o, "]"))
+			return o == null ? null : ZonedDateTime.parse(o, ComputateZonedDateTimeSerializer.ZONED_DATE_TIME_FORMATTER);
+		if(StringUtils.endsWith(o, "Z"))
+			return o == null ? null : Instant.parse(o).atZone(timeZone).truncatedTo(ChronoUnit.MILLIS);
+		else
+			return o == null ? null : ZonedDateTime.parse(o, DateTimeFormatter.ISO_DATE_TIME).truncatedTo(ChronoUnit.MILLIS);
 	}
 }
