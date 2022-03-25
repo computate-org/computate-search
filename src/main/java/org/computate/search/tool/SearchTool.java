@@ -183,13 +183,15 @@ public class SearchTool {
 		} else {
 			final int zz = val.indexOf('Z');
 			if (zz == -1) {
-				throw new RuntimeException("Invalid Date String:'" + val + '\'');
-			}
-			math = val.substring(zz + 1);
-			try {
-				now = parseNoMath(val.substring(0, zz + 1));
-			} catch (DateTimeParseException e) {
-				throw new RuntimeException("Invalid Date in Date Math String:'" + val + '\'', e);
+				now = Date.from(TimeTool.parseZonedDateTime(ZoneId.of("UTC"), val).toInstant());
+				math = null;
+			} else {
+				math = val.substring(zz + 1);
+				try {
+					now = parseNoMath(val.substring(0, zz + 1));
+				} catch (DateTimeParseException e) {
+					throw new RuntimeException("Invalid Date in Date Math String:'" + val + '\'', e);
+				}
 			}
 		}
 
