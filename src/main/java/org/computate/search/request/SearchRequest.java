@@ -100,6 +100,7 @@ public class SearchRequest extends SearchRequestGen<Object> {
 	protected void _facetPivots(List<String> w) {
 	}
 	public SearchRequest facetPivot(String s) {
+		setFacet(true);
 		addFacetPivots(s);
 		return this;
 	}
@@ -110,6 +111,7 @@ public class SearchRequest extends SearchRequestGen<Object> {
 	protected void _facetPivotMinCount(Wrap<Integer> w) {
 	}
 	public SearchRequest facetPivotMinCount(Integer s) {
+		setFacet(true);
 		setFacetPivotMinCount(s);
 		return this;
 	}
@@ -120,6 +122,7 @@ public class SearchRequest extends SearchRequestGen<Object> {
 	protected void _facetSort(Wrap<String> w) {
 	}
 	public SearchRequest facetSort(String s) {
+		setFacet(true);
 		setFacetSort(s);
 		return this;
 	}
@@ -141,6 +144,7 @@ public class SearchRequest extends SearchRequestGen<Object> {
 	protected void _facetLimit(Wrap<Integer> w) {
 	}
 	public SearchRequest facetLimit(Integer s) {
+		setFacet(true);
 		setFacetLimit(s);
 		return this;
 	}
@@ -151,6 +155,7 @@ public class SearchRequest extends SearchRequestGen<Object> {
 	protected void _facetMinCount(Wrap<Integer> w) {
 	}
 	public SearchRequest facetMinCount(Integer s) {
+		setFacet(true);
 		setFacetMinCount(s);
 		return this;
 	}
@@ -161,6 +166,7 @@ public class SearchRequest extends SearchRequestGen<Object> {
 	protected void _facetOffset(Wrap<Integer> w) {
 	}
 	public SearchRequest facetOffset(Integer s) {
+		setFacet(true);
 		setFacetOffset(s);
 		return this;
 	}
@@ -171,6 +177,7 @@ public class SearchRequest extends SearchRequestGen<Object> {
 	protected void _facetRangeStart(Wrap<String> w) {
 	}
 	public SearchRequest facetRangeStart(String s) {
+		setFacet(true);
 		setFacetRangeStart(s);
 		return this;
 	}
@@ -181,6 +188,7 @@ public class SearchRequest extends SearchRequestGen<Object> {
 	protected void _facetRangeEnd(Wrap<String> w) {
 	}
 	public SearchRequest facetRangeEnd(String s) {
+		setFacet(true);
 		setFacetRangeEnd(s);
 		return this;
 	}
@@ -191,6 +199,7 @@ public class SearchRequest extends SearchRequestGen<Object> {
 	protected void _facetRangeGap(Wrap<String> w) {
 	}
 	public SearchRequest facetRangeGap(String s) {
+		setFacet(true);
 		setFacetRangeGap(s);
 		return this;
 	}
@@ -226,6 +235,7 @@ public class SearchRequest extends SearchRequestGen<Object> {
 	protected void _facetFields(List<String> w) {
 	}
 	public SearchRequest facetField(String s) {
+		setFacet(true);
 		addFacetFields(s);
 		return this;
 	}
@@ -241,6 +251,7 @@ public class SearchRequest extends SearchRequestGen<Object> {
 	protected void _facetRanges(List<String> w) {
 	}
 	public SearchRequest facetRange(String s) {
+		setFacet(true);
 		addFacetRanges(s);
 		return this;
 	}
