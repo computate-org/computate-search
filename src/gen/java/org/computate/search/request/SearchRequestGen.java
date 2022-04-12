@@ -18,6 +18,7 @@ import java.util.Arrays;
 import com.fasterxml.jackson.databind.ser.std.ToStringSerializer;
 import org.computate.search.serialize.ComputateLocalDateDeserializer;
 import java.util.HashMap;
+import org.computate.search.serialize.ComputateLocalTimeDeserializer;
 import org.apache.commons.lang3.StringUtils;
 import java.lang.Integer;
 import java.text.NumberFormat;
@@ -33,7 +34,6 @@ import java.math.MathContext;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import org.computate.search.request.ComputateSearchSiteRequest;
-import org.computate.search.serialize.ComputateZonedDateTimeDeserializer;
 import java.util.Objects;
 import org.computate.search.serialize.ComputateLocalDateSerializer;
 import java.util.List;
@@ -955,6 +955,64 @@ public abstract class SearchRequestGen<DEV> extends Object {
 		return SearchRequest.staticSearchStrFacetQueries(siteRequest_, SearchRequest.staticSearchFacetQueries(siteRequest_, SearchRequest.staticSetFacetQueries(siteRequest_, o)));
 	}
 
+	////////////////
+	// jsonFacets //
+	////////////////
+
+	/**	 The entity jsonFacets
+	 *	 It is constructed before being initialized with the constructor by default. 
+	 */
+	@JsonProperty
+	@JsonFormat(shape = JsonFormat.Shape.ARRAY)
+	@JsonInclude(Include.NON_NULL)
+	protected List<String> jsonFacets = new ArrayList<String>();
+
+	/**	<br> The entity jsonFacets
+	 *  It is constructed before being initialized with the constructor by default. 
+	 * <br><a href="http://localhost:8983/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.computate.search.request.SearchRequest&fq=classeEtendGen_indexed_boolean:true&fq=entiteVar_enUS_indexed_string:jsonFacets">Find the entity jsonFacets in Solr</a>
+	 * <br>
+	 * @param w is the entity already constructed. 
+	 **/
+	protected abstract void _jsonFacets(List<String> w);
+
+	public List<String> getJsonFacets() {
+		return jsonFacets;
+	}
+
+	public void setJsonFacets(List<String> jsonFacets) {
+		this.jsonFacets = jsonFacets;
+	}
+	public static String staticSetJsonFacets(ComputateSearchSiteRequest siteRequest_, String o) {
+		return o;
+	}
+	public SearchRequest addJsonFacets(String...objets) {
+		for(String o : objets) {
+			addJsonFacets(o);
+		}
+		return (SearchRequest)this;
+	}
+	public SearchRequest addJsonFacets(String o) {
+		if(o != null)
+			this.jsonFacets.add(o);
+		return (SearchRequest)this;
+	}
+	protected SearchRequest jsonFacetsInit() {
+		_jsonFacets(jsonFacets);
+		return (SearchRequest)this;
+	}
+
+	public static String staticSearchJsonFacets(ComputateSearchSiteRequest siteRequest_, String o) {
+		return o;
+	}
+
+	public static String staticSearchStrJsonFacets(ComputateSearchSiteRequest siteRequest_, String o) {
+		return o == null ? null : o.toString();
+	}
+
+	public static String staticSearchFqJsonFacets(ComputateSearchSiteRequest siteRequest_, String o) {
+		return SearchRequest.staticSearchStrJsonFacets(siteRequest_, SearchRequest.staticSearchJsonFacets(siteRequest_, SearchRequest.staticSetJsonFacets(siteRequest_, o)));
+	}
+
 	/////////////////
 	// facetFields //
 	/////////////////
@@ -1266,6 +1324,7 @@ public abstract class SearchRequestGen<DEV> extends Object {
 				facetRangeGapInit();
 				cursorMarkInit();
 				facetQueriesInit();
+				jsonFacetsInit();
 				facetFieldsInit();
 				facetRangesInit();
 				startInit();
@@ -1342,6 +1401,8 @@ public abstract class SearchRequestGen<DEV> extends Object {
 				return oSearchRequest.cursorMark;
 			case "facetQueries":
 				return oSearchRequest.facetQueries;
+			case "jsonFacets":
+				return oSearchRequest.jsonFacets;
 			case "facetFields":
 				return oSearchRequest.facetFields;
 			case "facetRanges":
@@ -1419,6 +1480,8 @@ public abstract class SearchRequestGen<DEV> extends Object {
 			return SearchRequest.staticSetCursorMark(siteRequest_, o);
 		case "facetQueries":
 			return SearchRequest.staticSetFacetQueries(siteRequest_, o);
+		case "jsonFacets":
+			return SearchRequest.staticSetJsonFacets(siteRequest_, o);
 		case "facetFields":
 			return SearchRequest.staticSetFacetFields(siteRequest_, o);
 		case "facetRanges":
@@ -1475,6 +1538,8 @@ public abstract class SearchRequestGen<DEV> extends Object {
 			return SearchRequest.staticSearchCursorMark(siteRequest_, (String)o);
 		case "facetQueries":
 			return SearchRequest.staticSearchFacetQueries(siteRequest_, (String)o);
+		case "jsonFacets":
+			return SearchRequest.staticSearchJsonFacets(siteRequest_, (String)o);
 		case "facetFields":
 			return SearchRequest.staticSearchFacetFields(siteRequest_, (String)o);
 		case "facetRanges":
@@ -1531,6 +1596,8 @@ public abstract class SearchRequestGen<DEV> extends Object {
 			return SearchRequest.staticSearchStrCursorMark(siteRequest_, (String)o);
 		case "facetQueries":
 			return SearchRequest.staticSearchStrFacetQueries(siteRequest_, (String)o);
+		case "jsonFacets":
+			return SearchRequest.staticSearchStrJsonFacets(siteRequest_, (String)o);
 		case "facetFields":
 			return SearchRequest.staticSearchStrFacetFields(siteRequest_, (String)o);
 		case "facetRanges":
@@ -1587,6 +1654,8 @@ public abstract class SearchRequestGen<DEV> extends Object {
 			return SearchRequest.staticSearchFqCursorMark(siteRequest_, o);
 		case "facetQueries":
 			return SearchRequest.staticSearchFqFacetQueries(siteRequest_, o);
+		case "jsonFacets":
+			return SearchRequest.staticSearchFqJsonFacets(siteRequest_, o);
 		case "facetFields":
 			return SearchRequest.staticSearchFqFacetFields(siteRequest_, o);
 		case "facetRanges":
@@ -1628,6 +1697,7 @@ public abstract class SearchRequestGen<DEV> extends Object {
 	public static final String VAR_facetRangeGap = "facetRangeGap";
 	public static final String VAR_cursorMark = "cursorMark";
 	public static final String VAR_facetQueries = "facetQueries";
+	public static final String VAR_jsonFacets = "jsonFacets";
 	public static final String VAR_facetFields = "facetFields";
 	public static final String VAR_facetRanges = "facetRanges";
 	public static final String VAR_start = "start";
@@ -1651,6 +1721,7 @@ public abstract class SearchRequestGen<DEV> extends Object {
 	public static final String DISPLAY_NAME_facetRangeGap = "";
 	public static final String DISPLAY_NAME_cursorMark = "";
 	public static final String DISPLAY_NAME_facetQueries = "";
+	public static final String DISPLAY_NAME_jsonFacets = "";
 	public static final String DISPLAY_NAME_facetFields = "";
 	public static final String DISPLAY_NAME_facetRanges = "";
 	public static final String DISPLAY_NAME_start = "";
@@ -1696,6 +1767,8 @@ public abstract class SearchRequestGen<DEV> extends Object {
 			return DISPLAY_NAME_cursorMark;
 		case VAR_facetQueries:
 			return DISPLAY_NAME_facetQueries;
+		case VAR_jsonFacets:
+			return DISPLAY_NAME_jsonFacets;
 		case VAR_facetFields:
 			return DISPLAY_NAME_facetFields;
 		case VAR_facetRanges:

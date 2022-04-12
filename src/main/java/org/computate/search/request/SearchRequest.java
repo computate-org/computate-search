@@ -232,6 +232,16 @@ public class SearchRequest extends SearchRequestGen<Object> {
 	/**
 	 * {@inheritDoc}
 	 */
+	protected void _jsonFacets(List<String> w) {
+	}
+	public SearchRequest jsonFacet(String s) {
+		addJsonFacets(s);
+		return this;
+	}
+
+	/**
+	 * {@inheritDoc}
+	 */
 	protected void _facetFields(List<String> w) {
 	}
 	public SearchRequest facetField(String s) {
@@ -389,6 +399,13 @@ public class SearchRequest extends SearchRequestGen<Object> {
 					String facetRange = facetRanges.get(i);
 					b.append(b.length() == 0 ? "?" : "&");
 					b.append("facet.range=").append(URLEncoder.encode(facetRange, UTF_8));
+				}
+			}
+			if(jsonFacets.size() > 0) {
+				for(int i = 0; i < jsonFacets.size(); i++) {
+					String facetField = jsonFacets.get(i);
+					b.append(b.length() == 0 ? "?" : "&");
+					b.append("json.facet=").append(URLEncoder.encode(facetField, UTF_8));
 				}
 			}
 			if(rows != null) {

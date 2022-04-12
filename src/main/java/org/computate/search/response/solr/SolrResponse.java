@@ -39,6 +39,8 @@ public class SolrResponse {
 
 	private String nextCursorMark;
 
+	private Map<String, Double> facets;
+
 	@JsonAlias("facet_counts")
 	private FacetCounts facetCounts;
 
@@ -758,5 +760,13 @@ public class SolrResponse {
 
 	public FacetField getFacetField(String var) {
 		return Optional.ofNullable(facetCounts).map(fc -> fc.getFacetFields()).map(ff -> ff.getFacets()).map(r ->  r.get(var)).orElse(null);
+	}
+
+	public Map<String, Double> getFacets() {
+		return facets;
+	}
+
+	public void setFacets(Map<String, Double> facets) {
+		this.facets = facets;
 	}
 }
