@@ -14,6 +14,7 @@
 package org.computate.search.request;
 
 import java.io.UnsupportedEncodingException;
+import java.math.BigDecimal;
 import java.net.URLEncoder;
 import java.util.List;
 
@@ -302,6 +303,89 @@ public class SearchRequest extends SearchRequestGen<Object> {
 
 	/**
 	 * {@inheritDoc}
+	 * Description.enUS: The radial distance, usually in kilometers. RPT & BBoxField can set other units via the setting distanceUnits. 
+	 */
+	protected void _distance(Wrap<BigDecimal> w) {
+	}
+	/**
+	 * {@inheritDoc}
+	 * Description.enUS: The radial distance, usually in kilometers. RPT & BBoxField can set other units via the setting distanceUnits. 
+	 */
+	public SearchRequest d(BigDecimal distance) {
+		setDistance(distance);
+		return this;
+	}
+	/**
+	 * {@inheritDoc}
+	 * Description.enUS: The radial distance, usually in kilometers. RPT & BBoxField can set other units via the setting distanceUnits. 
+	 */
+	public SearchRequest d(Double distance) {
+		setDistance(new BigDecimal(distance));
+		return this;
+	}
+
+	/**
+	 * {@inheritDoc}
+	 * Description.enUS: The center point using the format "lat,lon" if latitude & longitude. Otherwise, "x,y" for PointType or "x y" for RPT field types.
+	 */
+	protected void _point(Wrap<String> w) {
+	}
+	/**
+	 * {@inheritDoc}
+	 * Description.enUS: The center point using the format "lat,lon" if latitude & longitude. Otherwise, "x,y" for PointType or "x y" for RPT field types.
+	 */
+	public SearchRequest pt(String point) {
+		setPoint(point);
+		return this;
+	}
+
+	/**
+	 * {@inheritDoc}
+	 * Description.enUS: A spatial indexed field. 
+	 */
+	protected void _spatialField(Wrap<String> w) {
+	}
+	/**
+	 * {@inheritDoc}
+	 * Description.enUS: A spatial indexed field. 
+	 */
+	public SearchRequest sfield(String spacialField) {
+		setSpatialField(spatialField);
+		return this;
+	}
+
+	/**
+	 * {@inheritDoc}
+	 * Description.enUS: (Advanced option; not supported by LatLonType (deprecated) or PointType) If the query is used in a scoring context (e.g., as the main query in q), this local parameter determines what scores will be produced. Valid values are: none, kilometers, miles, degrees, distance, recipDistance, overlapRatio, area, area2D
+	 */
+	protected void _score(Wrap<String> w) {
+	}
+	/**
+	 * {@inheritDoc}
+	 * Description.enUS: (Advanced option; not supported by LatLonType (deprecated) or PointType) If the query is used in a scoring context (e.g., as the main query in q), this local parameter determines what scores will be produced. Valid values are: none, kilometers, miles, degrees, distance, recipDistance, overlapRatio, area, area2D
+	 */
+	public SearchRequest score(String score) {
+		setScore(score);
+		return this;
+	}
+
+	/**
+	 * {@inheritDoc}
+	 * Description.enUS: This is used to specify the units for distance measurements used throughout the use of this field. This can be degrees, kilometers or miles. 
+	 */
+	protected void _distanceUnits(Wrap<String> w) {
+	}
+	/**
+	 * {@inheritDoc}
+	 * Description.enUS: This is used to specify the units for distance measurements used throughout the use of this field. This can be degrees, kilometers or miles. 
+	 */
+	public SearchRequest distanceUnits(String distanceUnits) {
+		setDistanceUnits(distanceUnits);
+		return this;
+	}
+
+	/**
+	 * {@inheritDoc}
 	 */
 	protected void _queryString(Wrap<String> w) {
 		StringBuilder b = new StringBuilder();
@@ -414,6 +498,26 @@ public class SearchRequest extends SearchRequestGen<Object> {
 			if(start != null) {
 				b.append(b.length() == 0 ? "?" : "&");
 				b.append("start=").append(start);
+			}
+			if(distance != null) {
+				b.append(b.length() == 0 ? "?" : "&");
+				b.append("d=").append(distance);
+			}
+			if(point != null) {
+				b.append(b.length() == 0 ? "?" : "&");
+				b.append("pt=").append(point);
+			}
+			if(spatialField != null) {
+				b.append(b.length() == 0 ? "?" : "&");
+				b.append("sfield=").append(spatialField);
+			}
+			if(score != null) {
+				b.append(b.length() == 0 ? "?" : "&");
+				b.append("score=").append(score);
+			}
+			if(distanceUnits != null) {
+				b.append(b.length() == 0 ? "?" : "&");
+				b.append("distanceUnits=").append(distanceUnits);
 			}
 			w.o(b.toString());
 		} catch (UnsupportedEncodingException ex) {

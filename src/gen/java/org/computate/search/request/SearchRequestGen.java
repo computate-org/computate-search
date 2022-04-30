@@ -43,6 +43,7 @@ import java.lang.String;
 import java.lang.Integer;
 import java.lang.Boolean;
 import java.lang.Long;
+import java.math.BigDecimal;
 import org.computate.search.wrap.Wrap;
 
 /**	
@@ -1249,6 +1250,268 @@ public abstract class SearchRequestGen<DEV> extends Object {
 		return SearchRequest.staticSearchStrRows(siteRequest_, SearchRequest.staticSearchRows(siteRequest_, SearchRequest.staticSetRows(siteRequest_, o)));
 	}
 
+	//////////////
+	// distance //
+	//////////////
+
+	/**	 The entity distance
+	 *	 is defined as null before being initialized. 
+	 */
+	@JsonProperty
+	@JsonSerialize(using = ToStringSerializer.class)
+	@JsonInclude(Include.NON_NULL)
+	protected BigDecimal distance;
+
+	/**	<br> The entity distance
+	 *  is defined as null before being initialized. 
+	 * <br><a href="http://localhost:8983/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.computate.search.request.SearchRequest&fq=entiteVar_enUS_indexed_string:distance">Find the entity distance in Solr</a>
+	 * <br>
+	 * @param w is for wrapping a value to assign to this entity during initialization. 
+	 **/
+	protected abstract void _distance(Wrap<BigDecimal> w);
+
+	public BigDecimal getDistance() {
+		return distance;
+	}
+
+	public void setDistance(BigDecimal distance) {
+		this.distance = distance;
+	}
+	@JsonIgnore
+	public void setDistance(String o) {
+		this.distance = SearchRequest.staticSetDistance(siteRequest_, o);
+	}
+	public static BigDecimal staticSetDistance(ComputateSearchSiteRequest siteRequest_, String o) {
+		o = StringUtils.removeAll(o, "[^\\d\\.]");
+		if(NumberUtils.isParsable(o))
+			return new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
+		return null;
+	}
+	@JsonIgnore
+	public void setDistance(Double o) {
+			this.distance = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
+	}
+	@JsonIgnore
+	public void setDistance(Integer o) {
+			this.distance = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
+	}
+	protected SearchRequest distanceInit() {
+		Wrap<BigDecimal> distanceWrap = new Wrap<BigDecimal>().var("distance");
+		if(distance == null) {
+			_distance(distanceWrap);
+			setDistance(distanceWrap.o);
+		}
+		return (SearchRequest)this;
+	}
+
+	public static Double staticSearchDistance(ComputateSearchSiteRequest siteRequest_, BigDecimal o) {
+		return o == null ? null : o.doubleValue();
+	}
+
+	public static String staticSearchStrDistance(ComputateSearchSiteRequest siteRequest_, Double o) {
+		return o == null ? null : o.toString();
+	}
+
+	public static String staticSearchFqDistance(ComputateSearchSiteRequest siteRequest_, String o) {
+		return SearchRequest.staticSearchStrDistance(siteRequest_, SearchRequest.staticSearchDistance(siteRequest_, SearchRequest.staticSetDistance(siteRequest_, o)));
+	}
+
+	///////////
+	// point //
+	///////////
+
+	/**	 The entity point
+	 *	 is defined as null before being initialized. 
+	 */
+	@JsonProperty
+	@JsonInclude(Include.NON_NULL)
+	protected String point;
+
+	/**	<br> The entity point
+	 *  is defined as null before being initialized. 
+	 * <br><a href="http://localhost:8983/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.computate.search.request.SearchRequest&fq=entiteVar_enUS_indexed_string:point">Find the entity point in Solr</a>
+	 * <br>
+	 * @param w is for wrapping a value to assign to this entity during initialization. 
+	 **/
+	protected abstract void _point(Wrap<String> w);
+
+	public String getPoint() {
+		return point;
+	}
+	public void setPoint(String o) {
+		this.point = SearchRequest.staticSetPoint(siteRequest_, o);
+	}
+	public static String staticSetPoint(ComputateSearchSiteRequest siteRequest_, String o) {
+		return o;
+	}
+	protected SearchRequest pointInit() {
+		Wrap<String> pointWrap = new Wrap<String>().var("point");
+		if(point == null) {
+			_point(pointWrap);
+			setPoint(pointWrap.o);
+		}
+		return (SearchRequest)this;
+	}
+
+	public static String staticSearchPoint(ComputateSearchSiteRequest siteRequest_, String o) {
+		return o;
+	}
+
+	public static String staticSearchStrPoint(ComputateSearchSiteRequest siteRequest_, String o) {
+		return o == null ? null : o.toString();
+	}
+
+	public static String staticSearchFqPoint(ComputateSearchSiteRequest siteRequest_, String o) {
+		return SearchRequest.staticSearchStrPoint(siteRequest_, SearchRequest.staticSearchPoint(siteRequest_, SearchRequest.staticSetPoint(siteRequest_, o)));
+	}
+
+	//////////////////
+	// spatialField //
+	//////////////////
+
+	/**	 The entity spatialField
+	 *	 is defined as null before being initialized. 
+	 */
+	@JsonProperty
+	@JsonInclude(Include.NON_NULL)
+	protected String spatialField;
+
+	/**	<br> The entity spatialField
+	 *  is defined as null before being initialized. 
+	 * <br><a href="http://localhost:8983/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.computate.search.request.SearchRequest&fq=entiteVar_enUS_indexed_string:spatialField">Find the entity spatialField in Solr</a>
+	 * <br>
+	 * @param w is for wrapping a value to assign to this entity during initialization. 
+	 **/
+	protected abstract void _spatialField(Wrap<String> w);
+
+	public String getSpatialField() {
+		return spatialField;
+	}
+	public void setSpatialField(String o) {
+		this.spatialField = SearchRequest.staticSetSpatialField(siteRequest_, o);
+	}
+	public static String staticSetSpatialField(ComputateSearchSiteRequest siteRequest_, String o) {
+		return o;
+	}
+	protected SearchRequest spatialFieldInit() {
+		Wrap<String> spatialFieldWrap = new Wrap<String>().var("spatialField");
+		if(spatialField == null) {
+			_spatialField(spatialFieldWrap);
+			setSpatialField(spatialFieldWrap.o);
+		}
+		return (SearchRequest)this;
+	}
+
+	public static String staticSearchSpatialField(ComputateSearchSiteRequest siteRequest_, String o) {
+		return o;
+	}
+
+	public static String staticSearchStrSpatialField(ComputateSearchSiteRequest siteRequest_, String o) {
+		return o == null ? null : o.toString();
+	}
+
+	public static String staticSearchFqSpatialField(ComputateSearchSiteRequest siteRequest_, String o) {
+		return SearchRequest.staticSearchStrSpatialField(siteRequest_, SearchRequest.staticSearchSpatialField(siteRequest_, SearchRequest.staticSetSpatialField(siteRequest_, o)));
+	}
+
+	///////////
+	// score //
+	///////////
+
+	/**	 The entity score
+	 *	 is defined as null before being initialized. 
+	 */
+	@JsonProperty
+	@JsonInclude(Include.NON_NULL)
+	protected String score;
+
+	/**	<br> The entity score
+	 *  is defined as null before being initialized. 
+	 * <br><a href="http://localhost:8983/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.computate.search.request.SearchRequest&fq=entiteVar_enUS_indexed_string:score">Find the entity score in Solr</a>
+	 * <br>
+	 * @param w is for wrapping a value to assign to this entity during initialization. 
+	 **/
+	protected abstract void _score(Wrap<String> w);
+
+	public String getScore() {
+		return score;
+	}
+	public void setScore(String o) {
+		this.score = SearchRequest.staticSetScore(siteRequest_, o);
+	}
+	public static String staticSetScore(ComputateSearchSiteRequest siteRequest_, String o) {
+		return o;
+	}
+	protected SearchRequest scoreInit() {
+		Wrap<String> scoreWrap = new Wrap<String>().var("score");
+		if(score == null) {
+			_score(scoreWrap);
+			setScore(scoreWrap.o);
+		}
+		return (SearchRequest)this;
+	}
+
+	public static String staticSearchScore(ComputateSearchSiteRequest siteRequest_, String o) {
+		return o;
+	}
+
+	public static String staticSearchStrScore(ComputateSearchSiteRequest siteRequest_, String o) {
+		return o == null ? null : o.toString();
+	}
+
+	public static String staticSearchFqScore(ComputateSearchSiteRequest siteRequest_, String o) {
+		return SearchRequest.staticSearchStrScore(siteRequest_, SearchRequest.staticSearchScore(siteRequest_, SearchRequest.staticSetScore(siteRequest_, o)));
+	}
+
+	///////////////////
+	// distanceUnits //
+	///////////////////
+
+	/**	 The entity distanceUnits
+	 *	 is defined as null before being initialized. 
+	 */
+	@JsonProperty
+	@JsonInclude(Include.NON_NULL)
+	protected String distanceUnits;
+
+	/**	<br> The entity distanceUnits
+	 *  is defined as null before being initialized. 
+	 * <br><a href="http://localhost:8983/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.computate.search.request.SearchRequest&fq=entiteVar_enUS_indexed_string:distanceUnits">Find the entity distanceUnits in Solr</a>
+	 * <br>
+	 * @param w is for wrapping a value to assign to this entity during initialization. 
+	 **/
+	protected abstract void _distanceUnits(Wrap<String> w);
+
+	public String getDistanceUnits() {
+		return distanceUnits;
+	}
+	public void setDistanceUnits(String o) {
+		this.distanceUnits = SearchRequest.staticSetDistanceUnits(siteRequest_, o);
+	}
+	public static String staticSetDistanceUnits(ComputateSearchSiteRequest siteRequest_, String o) {
+		return o;
+	}
+	protected SearchRequest distanceUnitsInit() {
+		Wrap<String> distanceUnitsWrap = new Wrap<String>().var("distanceUnits");
+		if(distanceUnits == null) {
+			_distanceUnits(distanceUnitsWrap);
+			setDistanceUnits(distanceUnitsWrap.o);
+		}
+		return (SearchRequest)this;
+	}
+
+	public static String staticSearchDistanceUnits(ComputateSearchSiteRequest siteRequest_, String o) {
+		return o;
+	}
+
+	public static String staticSearchStrDistanceUnits(ComputateSearchSiteRequest siteRequest_, String o) {
+		return o == null ? null : o.toString();
+	}
+
+	public static String staticSearchFqDistanceUnits(ComputateSearchSiteRequest siteRequest_, String o) {
+		return SearchRequest.staticSearchStrDistanceUnits(siteRequest_, SearchRequest.staticSearchDistanceUnits(siteRequest_, SearchRequest.staticSetDistanceUnits(siteRequest_, o)));
+	}
+
 	/////////////////
 	// queryString //
 	/////////////////
@@ -1335,6 +1598,11 @@ public abstract class SearchRequestGen<DEV> extends Object {
 				facetRangesInit();
 				startInit();
 				rowsInit();
+				distanceInit();
+				pointInit();
+				spatialFieldInit();
+				scoreInit();
+				distanceUnitsInit();
 				queryStringInit();
 	}
 
@@ -1417,6 +1685,16 @@ public abstract class SearchRequestGen<DEV> extends Object {
 				return oSearchRequest.start;
 			case "rows":
 				return oSearchRequest.rows;
+			case "distance":
+				return oSearchRequest.distance;
+			case "point":
+				return oSearchRequest.point;
+			case "spatialField":
+				return oSearchRequest.spatialField;
+			case "score":
+				return oSearchRequest.score;
+			case "distanceUnits":
+				return oSearchRequest.distanceUnits;
 			case "queryString":
 				return oSearchRequest.queryString;
 			default:
@@ -1496,6 +1774,16 @@ public abstract class SearchRequestGen<DEV> extends Object {
 			return SearchRequest.staticSetStart(siteRequest_, o);
 		case "rows":
 			return SearchRequest.staticSetRows(siteRequest_, o);
+		case "distance":
+			return SearchRequest.staticSetDistance(siteRequest_, o);
+		case "point":
+			return SearchRequest.staticSetPoint(siteRequest_, o);
+		case "spatialField":
+			return SearchRequest.staticSetSpatialField(siteRequest_, o);
+		case "score":
+			return SearchRequest.staticSetScore(siteRequest_, o);
+		case "distanceUnits":
+			return SearchRequest.staticSetDistanceUnits(siteRequest_, o);
 		case "queryString":
 			return SearchRequest.staticSetQueryString(siteRequest_, o);
 			default:
@@ -1554,6 +1842,16 @@ public abstract class SearchRequestGen<DEV> extends Object {
 			return SearchRequest.staticSearchStart(siteRequest_, (Long)o);
 		case "rows":
 			return SearchRequest.staticSearchRows(siteRequest_, (Long)o);
+		case "distance":
+			return SearchRequest.staticSearchDistance(siteRequest_, (BigDecimal)o);
+		case "point":
+			return SearchRequest.staticSearchPoint(siteRequest_, (String)o);
+		case "spatialField":
+			return SearchRequest.staticSearchSpatialField(siteRequest_, (String)o);
+		case "score":
+			return SearchRequest.staticSearchScore(siteRequest_, (String)o);
+		case "distanceUnits":
+			return SearchRequest.staticSearchDistanceUnits(siteRequest_, (String)o);
 		case "queryString":
 			return SearchRequest.staticSearchQueryString(siteRequest_, (String)o);
 			default:
@@ -1612,6 +1910,16 @@ public abstract class SearchRequestGen<DEV> extends Object {
 			return SearchRequest.staticSearchStrStart(siteRequest_, (Long)o);
 		case "rows":
 			return SearchRequest.staticSearchStrRows(siteRequest_, (Long)o);
+		case "distance":
+			return SearchRequest.staticSearchStrDistance(siteRequest_, (Double)o);
+		case "point":
+			return SearchRequest.staticSearchStrPoint(siteRequest_, (String)o);
+		case "spatialField":
+			return SearchRequest.staticSearchStrSpatialField(siteRequest_, (String)o);
+		case "score":
+			return SearchRequest.staticSearchStrScore(siteRequest_, (String)o);
+		case "distanceUnits":
+			return SearchRequest.staticSearchStrDistanceUnits(siteRequest_, (String)o);
 		case "queryString":
 			return SearchRequest.staticSearchStrQueryString(siteRequest_, (String)o);
 			default:
@@ -1670,6 +1978,16 @@ public abstract class SearchRequestGen<DEV> extends Object {
 			return SearchRequest.staticSearchFqStart(siteRequest_, o);
 		case "rows":
 			return SearchRequest.staticSearchFqRows(siteRequest_, o);
+		case "distance":
+			return SearchRequest.staticSearchFqDistance(siteRequest_, o);
+		case "point":
+			return SearchRequest.staticSearchFqPoint(siteRequest_, o);
+		case "spatialField":
+			return SearchRequest.staticSearchFqSpatialField(siteRequest_, o);
+		case "score":
+			return SearchRequest.staticSearchFqScore(siteRequest_, o);
+		case "distanceUnits":
+			return SearchRequest.staticSearchFqDistanceUnits(siteRequest_, o);
 		case "queryString":
 			return SearchRequest.staticSearchFqQueryString(siteRequest_, o);
 			default:
@@ -1709,6 +2027,11 @@ public abstract class SearchRequestGen<DEV> extends Object {
 	public static final String VAR_facetRanges = "facetRanges";
 	public static final String VAR_start = "start";
 	public static final String VAR_rows = "rows";
+	public static final String VAR_distance = "distance";
+	public static final String VAR_point = "point";
+	public static final String VAR_spatialField = "spatialField";
+	public static final String VAR_score = "score";
+	public static final String VAR_distanceUnits = "distanceUnits";
 	public static final String VAR_queryString = "queryString";
 
 	public static final String DISPLAY_NAME_siteRequest_ = "";
@@ -1733,6 +2056,11 @@ public abstract class SearchRequestGen<DEV> extends Object {
 	public static final String DISPLAY_NAME_facetRanges = "";
 	public static final String DISPLAY_NAME_start = "";
 	public static final String DISPLAY_NAME_rows = "";
+	public static final String DISPLAY_NAME_distance = "";
+	public static final String DISPLAY_NAME_point = "";
+	public static final String DISPLAY_NAME_spatialField = "";
+	public static final String DISPLAY_NAME_score = "";
+	public static final String DISPLAY_NAME_distanceUnits = "";
 	public static final String DISPLAY_NAME_queryString = "";
 
 	public static String displayNameForClass(String var) {
@@ -1784,6 +2112,16 @@ public abstract class SearchRequestGen<DEV> extends Object {
 			return DISPLAY_NAME_start;
 		case VAR_rows:
 			return DISPLAY_NAME_rows;
+		case VAR_distance:
+			return DISPLAY_NAME_distance;
+		case VAR_point:
+			return DISPLAY_NAME_point;
+		case VAR_spatialField:
+			return DISPLAY_NAME_spatialField;
+		case VAR_score:
+			return DISPLAY_NAME_score;
+		case VAR_distanceUnits:
+			return DISPLAY_NAME_distanceUnits;
 		case VAR_queryString:
 			return DISPLAY_NAME_queryString;
 		default:
