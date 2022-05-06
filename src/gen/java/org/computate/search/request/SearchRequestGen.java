@@ -1415,6 +1415,118 @@ public abstract class SearchRequestGen<DEV> extends Object {
 	}
 
 	///////////
+	// stats //
+	///////////
+
+	/**	 The entity stats
+	 *	 is defined as null before being initialized. 
+	 */
+	@JsonProperty
+	@JsonInclude(Include.NON_NULL)
+	protected Boolean stats;
+
+	/**	<br> The entity stats
+	 *  is defined as null before being initialized. 
+	 * <br><a href="http://localhost:8983/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.computate.search.request.SearchRequest&fq=entiteVar_enUS_indexed_string:stats">Find the entity stats in Solr</a>
+	 * <br>
+	 * @param w is for wrapping a value to assign to this entity during initialization. 
+	 **/
+	protected abstract void _stats(Wrap<Boolean> w);
+
+	public Boolean getStats() {
+		return stats;
+	}
+
+	public void setStats(Boolean stats) {
+		this.stats = stats;
+	}
+	@JsonIgnore
+	public void setStats(String o) {
+		this.stats = SearchRequest.staticSetStats(siteRequest_, o);
+	}
+	public static Boolean staticSetStats(ComputateSearchSiteRequest siteRequest_, String o) {
+		return Boolean.parseBoolean(o);
+	}
+	protected SearchRequest statsInit() {
+		Wrap<Boolean> statsWrap = new Wrap<Boolean>().var("stats");
+		if(stats == null) {
+			_stats(statsWrap);
+			setStats(statsWrap.o);
+		}
+		return (SearchRequest)this;
+	}
+
+	public static Boolean staticSearchStats(ComputateSearchSiteRequest siteRequest_, Boolean o) {
+		return o;
+	}
+
+	public static String staticSearchStrStats(ComputateSearchSiteRequest siteRequest_, Boolean o) {
+		return o == null ? null : o.toString();
+	}
+
+	public static String staticSearchFqStats(ComputateSearchSiteRequest siteRequest_, String o) {
+		return SearchRequest.staticSearchStrStats(siteRequest_, SearchRequest.staticSearchStats(siteRequest_, SearchRequest.staticSetStats(siteRequest_, o)));
+	}
+
+	/////////////////
+	// statsFields //
+	/////////////////
+
+	/**	 The entity statsFields
+	 *	 It is constructed before being initialized with the constructor by default. 
+	 */
+	@JsonProperty
+	@JsonFormat(shape = JsonFormat.Shape.ARRAY)
+	@JsonInclude(Include.NON_NULL)
+	protected List<String> statsFields = new ArrayList<String>();
+
+	/**	<br> The entity statsFields
+	 *  It is constructed before being initialized with the constructor by default. 
+	 * <br><a href="http://localhost:8983/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.computate.search.request.SearchRequest&fq=entiteVar_enUS_indexed_string:statsFields">Find the entity statsFields in Solr</a>
+	 * <br>
+	 * @param w is the entity already constructed. 
+	 **/
+	protected abstract void _statsFields(List<String> w);
+
+	public List<String> getStatsFields() {
+		return statsFields;
+	}
+
+	public void setStatsFields(List<String> statsFields) {
+		this.statsFields = statsFields;
+	}
+	public static String staticSetStatsFields(ComputateSearchSiteRequest siteRequest_, String o) {
+		return o;
+	}
+	public SearchRequest addStatsFields(String...objets) {
+		for(String o : objets) {
+			addStatsFields(o);
+		}
+		return (SearchRequest)this;
+	}
+	public SearchRequest addStatsFields(String o) {
+		if(o != null)
+			this.statsFields.add(o);
+		return (SearchRequest)this;
+	}
+	protected SearchRequest statsFieldsInit() {
+		_statsFields(statsFields);
+		return (SearchRequest)this;
+	}
+
+	public static String staticSearchStatsFields(ComputateSearchSiteRequest siteRequest_, String o) {
+		return o;
+	}
+
+	public static String staticSearchStrStatsFields(ComputateSearchSiteRequest siteRequest_, String o) {
+		return o == null ? null : o.toString();
+	}
+
+	public static String staticSearchFqStatsFields(ComputateSearchSiteRequest siteRequest_, String o) {
+		return SearchRequest.staticSearchStrStatsFields(siteRequest_, SearchRequest.staticSearchStatsFields(siteRequest_, SearchRequest.staticSetStatsFields(siteRequest_, o)));
+	}
+
+	///////////
 	// score //
 	///////////
 
@@ -1601,6 +1713,8 @@ public abstract class SearchRequestGen<DEV> extends Object {
 				distanceInit();
 				pointInit();
 				spatialFieldInit();
+				statsInit();
+				statsFieldsInit();
 				scoreInit();
 				distanceUnitsInit();
 				queryStringInit();
@@ -1691,6 +1805,10 @@ public abstract class SearchRequestGen<DEV> extends Object {
 				return oSearchRequest.point;
 			case "spatialField":
 				return oSearchRequest.spatialField;
+			case "stats":
+				return oSearchRequest.stats;
+			case "statsFields":
+				return oSearchRequest.statsFields;
 			case "score":
 				return oSearchRequest.score;
 			case "distanceUnits":
@@ -1780,6 +1898,10 @@ public abstract class SearchRequestGen<DEV> extends Object {
 			return SearchRequest.staticSetPoint(siteRequest_, o);
 		case "spatialField":
 			return SearchRequest.staticSetSpatialField(siteRequest_, o);
+		case "stats":
+			return SearchRequest.staticSetStats(siteRequest_, o);
+		case "statsFields":
+			return SearchRequest.staticSetStatsFields(siteRequest_, o);
 		case "score":
 			return SearchRequest.staticSetScore(siteRequest_, o);
 		case "distanceUnits":
@@ -1848,6 +1970,10 @@ public abstract class SearchRequestGen<DEV> extends Object {
 			return SearchRequest.staticSearchPoint(siteRequest_, (String)o);
 		case "spatialField":
 			return SearchRequest.staticSearchSpatialField(siteRequest_, (String)o);
+		case "stats":
+			return SearchRequest.staticSearchStats(siteRequest_, (Boolean)o);
+		case "statsFields":
+			return SearchRequest.staticSearchStatsFields(siteRequest_, (String)o);
 		case "score":
 			return SearchRequest.staticSearchScore(siteRequest_, (String)o);
 		case "distanceUnits":
@@ -1916,6 +2042,10 @@ public abstract class SearchRequestGen<DEV> extends Object {
 			return SearchRequest.staticSearchStrPoint(siteRequest_, (String)o);
 		case "spatialField":
 			return SearchRequest.staticSearchStrSpatialField(siteRequest_, (String)o);
+		case "stats":
+			return SearchRequest.staticSearchStrStats(siteRequest_, (Boolean)o);
+		case "statsFields":
+			return SearchRequest.staticSearchStrStatsFields(siteRequest_, (String)o);
 		case "score":
 			return SearchRequest.staticSearchStrScore(siteRequest_, (String)o);
 		case "distanceUnits":
@@ -1984,6 +2114,10 @@ public abstract class SearchRequestGen<DEV> extends Object {
 			return SearchRequest.staticSearchFqPoint(siteRequest_, o);
 		case "spatialField":
 			return SearchRequest.staticSearchFqSpatialField(siteRequest_, o);
+		case "stats":
+			return SearchRequest.staticSearchFqStats(siteRequest_, o);
+		case "statsFields":
+			return SearchRequest.staticSearchFqStatsFields(siteRequest_, o);
 		case "score":
 			return SearchRequest.staticSearchFqScore(siteRequest_, o);
 		case "distanceUnits":
@@ -2030,6 +2164,8 @@ public abstract class SearchRequestGen<DEV> extends Object {
 	public static final String VAR_distance = "distance";
 	public static final String VAR_point = "point";
 	public static final String VAR_spatialField = "spatialField";
+	public static final String VAR_stats = "stats";
+	public static final String VAR_statsFields = "statsFields";
 	public static final String VAR_score = "score";
 	public static final String VAR_distanceUnits = "distanceUnits";
 	public static final String VAR_queryString = "queryString";
@@ -2059,6 +2195,8 @@ public abstract class SearchRequestGen<DEV> extends Object {
 	public static final String DISPLAY_NAME_distance = "";
 	public static final String DISPLAY_NAME_point = "";
 	public static final String DISPLAY_NAME_spatialField = "";
+	public static final String DISPLAY_NAME_stats = "";
+	public static final String DISPLAY_NAME_statsFields = "";
 	public static final String DISPLAY_NAME_score = "";
 	public static final String DISPLAY_NAME_distanceUnits = "";
 	public static final String DISPLAY_NAME_queryString = "";
@@ -2118,6 +2256,10 @@ public abstract class SearchRequestGen<DEV> extends Object {
 			return DISPLAY_NAME_point;
 		case VAR_spatialField:
 			return DISPLAY_NAME_spatialField;
+		case VAR_stats:
+			return DISPLAY_NAME_stats;
+		case VAR_statsFields:
+			return DISPLAY_NAME_statsFields;
 		case VAR_score:
 			return DISPLAY_NAME_score;
 		case VAR_distanceUnits:

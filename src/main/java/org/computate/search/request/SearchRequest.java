@@ -356,6 +356,37 @@ public class SearchRequest extends SearchRequestGen<Object> {
 
 	/**
 	 * {@inheritDoc}
+	 * Description.enUS: The Stats component returns simple statistics for numeric, string, and date fields within the document set. 
+	 */
+	protected void _stats(Wrap<Boolean> w) {
+	}
+	/**
+	 * {@inheritDoc}
+	 * Description.enUS: The Stats component returns simple statistics for numeric, string, and date fields within the document set. 
+	 */
+	public SearchRequest stats(Boolean stats) {
+		setStats(stats);
+		return this;
+	}
+
+	/**
+	 * {@inheritDoc}
+	 */
+	protected void _statsFields(List<String> w) {
+	}
+	public SearchRequest statsField(String s) {
+		setStats(true);
+		addStatsFields(s);
+		return this;
+	}
+	@Override
+	public SearchRequest addStatsFields(String o) {
+		setStats(true);
+		return super.addStatsFields(o);
+	}
+
+	/**
+	 * {@inheritDoc}
 	 * Description.enUS: (Advanced option; not supported by LatLonType (deprecated) or PointType) If the query is used in a scoring context (e.g., as the main query in q), this local parameter determines what scores will be produced. Valid values are: none, kilometers, miles, degrees, distance, recipDistance, overlapRatio, area, area2D
 	 */
 	protected void _score(Wrap<String> w) {
@@ -518,6 +549,17 @@ public class SearchRequest extends SearchRequestGen<Object> {
 			if(distanceUnits != null) {
 				b.append(b.length() == 0 ? "?" : "&");
 				b.append("distanceUnits=").append(distanceUnits);
+			}
+			if(stats != null && stats) {
+				b.append(b.length() == 0 ? "?" : "&");
+				b.append("stats=").append(stats);
+			}
+			if(statsFields.size() > 0) {
+				for(int i = 0; i < statsFields.size(); i++) {
+					String statsField = statsFields.get(i);
+					b.append(b.length() == 0 ? "?" : "&");
+					b.append("stats.field=").append(URLEncoder.encode(statsField, UTF_8));
+				}
 			}
 			w.o(b.toString());
 		} catch (UnsupportedEncodingException ex) {

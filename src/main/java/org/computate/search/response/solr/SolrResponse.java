@@ -37,6 +37,8 @@ public class SolrResponse {
 
 	private Error error;
 
+	private Stats stats;
+
 	private String nextCursorMark;
 
 	private Map<String, Double> facets;
@@ -742,12 +744,433 @@ public class SolrResponse {
 		}
 	}
 
+	public static class Stats {
+
+		@JsonAlias("stats_fields")
+		private StatsFields statsFields;
+
+		public Stats() {
+		}
+
+		public StatsFields getStatsFields() {
+			return statsFields;
+		}
+
+		public void setStatsFields(StatsFields statsFields) {
+			this.statsFields = statsFields;
+		}
+
+		public StatsField get(String field) {
+			if(statsFields == null)
+				return null;
+			else
+				return statsFields.get(field);
+		}
+	}
+
+	public static class StatsFields {
+
+		private Map<String, StatsField> fields = new LinkedHashMap<>();
+
+		public Map<String, StatsField> getFields() {
+			return fields;
+		}
+
+		@JsonAnySetter
+		public void setFields(String key, StatsField value) {
+			fields.put(key, value);
+			fields.forEach((name, field) -> {
+				field.setName(name);
+			});
+		}
+
+		public StatsField get(String field) {
+			return fields.get(field);
+		}
+	}
+
+	public static class StatsField {
+
+		private String name;
+		private Object min;
+		private Object max;
+		private Long count;
+		private Long missing;
+		private Object sum;
+		private Object sumOfSquares;
+		private Object mean;
+		private Object stddev;
+
+		public StatsField() {
+		}
+
+		public String getName() {
+			return name;
+		}
+
+		public void setName(String name) {
+			this.name = name;
+		}
+
+		public Object getMin() {
+			return min;
+		}
+
+		public void setMin(Object min) {
+			this.min = min;
+		}
+
+		public Object getMax() {
+			return max;
+		}
+
+		public void setMax(Object max) {
+			this.max = max;
+		}
+
+		public Long getCount() {
+			return count;
+		}
+
+		public void setCount(Long count) {
+			this.count = count;
+		}
+
+		public Long getMissing() {
+			return missing;
+		}
+
+		public void setMissing(Long missing) {
+			this.missing = missing;
+		}
+
+		public Object getSum() {
+			return sum;
+		}
+
+		public void setSum(Object sum) {
+			this.sum = sum;
+		}
+
+		public Object getSumOfSquares() {
+			return sumOfSquares;
+		}
+
+		public void setSumOfSquares(Object sumOfSquares) {
+			this.sumOfSquares = sumOfSquares;
+		}
+
+		public Object getMean() {
+			return mean;
+		}
+
+		public void setMean(Object mean) {
+			this.mean = mean;
+		}
+
+		public Object getStddev() {
+			return stddev;
+		}
+
+		public void setStddev(Object stddev) {
+			this.stddev = stddev;
+		}
+	}
+//
+//	public static class StatsDouble {
+//
+//		private Double min;
+//		private Double max;
+//		private Long count;
+//		private Long missing;
+//		private Double sum;
+//		private Double sumOfSquares;
+//		private Double mean;
+//		private Double stddev;
+//
+//		public StatsDouble() {
+//		}
+//
+//		public Double getMin() {
+//			return min;
+//		}
+//
+//		public void setMin(Double min) {
+//			this.min = min;
+//		}
+//
+//		public Double getMax() {
+//			return max;
+//		}
+//
+//		public void setMax(Double max) {
+//			this.max = max;
+//		}
+//
+//		public Long getCount() {
+//			return count;
+//		}
+//
+//		public void setCount(Long count) {
+//			this.count = count;
+//		}
+//
+//		public Long getMissing() {
+//			return missing;
+//		}
+//
+//		public void setMissing(Long missing) {
+//			this.missing = missing;
+//		}
+//
+//		public Double getSum() {
+//			return sum;
+//		}
+//
+//		public void setSum(Double sum) {
+//			this.sum = sum;
+//		}
+//
+//		public Double getSumOfSquares() {
+//			return sumOfSquares;
+//		}
+//
+//		public void setSumOfSquares(Double sumOfSquares) {
+//			this.sumOfSquares = sumOfSquares;
+//		}
+//
+//		public Double getMean() {
+//			return mean;
+//		}
+//
+//		public void setMean(Double mean) {
+//			this.mean = mean;
+//		}
+//
+//		public Double getStddev() {
+//			return stddev;
+//		}
+//
+//		public void setStddev(Double stddev) {
+//			this.stddev = stddev;
+//		}
+//	}
+//
+//	public static class StatsInteger {
+//
+//		private Integer min;
+//		private Integer max;
+//		private Long count;
+//		private Long missing;
+//		private Integer sum;
+//		private Double sumOfSquares;
+//		private Double mean;
+//		private Double stddev;
+//
+//		public StatsInteger() {
+//		}
+//
+//		public Integer getMin() {
+//			return min;
+//		}
+//
+//		public void setMin(Integer min) {
+//			this.min = min;
+//		}
+//
+//		public Integer getMax() {
+//			return max;
+//		}
+//
+//		public void setMax(Integer max) {
+//			this.max = max;
+//		}
+//
+//		public Long getCount() {
+//			return count;
+//		}
+//
+//		public void setCount(Long count) {
+//			this.count = count;
+//		}
+//
+//		public Long getMissing() {
+//			return missing;
+//		}
+//
+//		public void setMissing(Long missing) {
+//			this.missing = missing;
+//		}
+//
+//		public Integer getSum() {
+//			return sum;
+//		}
+//
+//		public void setSum(Integer sum) {
+//			this.sum = sum;
+//		}
+//
+//		public Double getSumOfSquares() {
+//			return sumOfSquares;
+//		}
+//
+//		public void setSumOfSquares(Double sumOfSquares) {
+//			this.sumOfSquares = sumOfSquares;
+//		}
+//
+//		public Double getMean() {
+//			return mean;
+//		}
+//
+//		public void setMean(Double mean) {
+//			this.mean = mean;
+//		}
+//
+//		public Double getStddev() {
+//			return stddev;
+//		}
+//
+//		public void setStddev(Double stddev) {
+//			this.stddev = stddev;
+//		}
+//	}
+//
+//	public static class StatsLong {
+//
+//		private Long min;
+//		private Long max;
+//		private Long count;
+//		private Long missing;
+//		private Long sum;
+//		private Double sumOfSquares;
+//		private Double mean;
+//		private Double stddev;
+//
+//		public StatsLong() {
+//		}
+//
+//		public Long getMin() {
+//			return min;
+//		}
+//
+//		public void setMin(Long min) {
+//			this.min = min;
+//		}
+//
+//		public Long getMax() {
+//			return max;
+//		}
+//
+//		public void setMax(Long max) {
+//			this.max = max;
+//		}
+//
+//		public Long getCount() {
+//			return count;
+//		}
+//
+//		public void setCount(Long count) {
+//			this.count = count;
+//		}
+//
+//		public Long getMissing() {
+//			return missing;
+//		}
+//
+//		public void setMissing(Long missing) {
+//			this.missing = missing;
+//		}
+//
+//		public Long getSum() {
+//			return sum;
+//		}
+//
+//		public void setSum(Long sum) {
+//			this.sum = sum;
+//		}
+//
+//		public Double getSumOfSquares() {
+//			return sumOfSquares;
+//		}
+//
+//		public void setSumOfSquares(Double sumOfSquares) {
+//			this.sumOfSquares = sumOfSquares;
+//		}
+//
+//		public Double getMean() {
+//			return mean;
+//		}
+//
+//		public void setMean(Double mean) {
+//			this.mean = mean;
+//		}
+//
+//		public Double getStddev() {
+//			return stddev;
+//		}
+//
+//		public void setStddev(Double stddev) {
+//			this.stddev = stddev;
+//		}
+//	}
+//
+//	public static class StatsString {
+//
+//		private String min;
+//		private String max;
+//		private Long count;
+//		private Long missing;
+//
+//		public StatsString() {
+//		}
+//
+//		public String getMin() {
+//			return min;
+//		}
+//
+//		public void setMin(String min) {
+//			this.min = min;
+//		}
+//
+//		public String getMax() {
+//			return max;
+//		}
+//
+//		public void setMax(String max) {
+//			this.max = max;
+//		}
+//
+//		public Long getCount() {
+//			return count;
+//		}
+//
+//		public void setCount(Long count) {
+//			this.count = count;
+//		}
+//
+//		public Long getMissing() {
+//			return missing;
+//		}
+//
+//		public void setMissing(Long missing) {
+//			this.missing = missing;
+//		}
+//	}
+
 	public Error getError() {
 		return error;
 	}
 
 	public void setError(Error error) {
 		this.error = error;
+	}
+
+	public Stats getStats() {
+		return stats;
+	}
+
+	public void setStats(Stats stats) {
+		this.stats = stats;
 	}
 
 	public String getNextCursorMark() {
