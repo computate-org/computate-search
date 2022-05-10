@@ -22,8 +22,8 @@ import java.util.Optional;
 
 import com.fasterxml.jackson.annotation.JsonAlias;
 import com.fasterxml.jackson.annotation.JsonAnySetter;
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.fasterxml.jackson.annotation.JsonSetter;
 
 public class SolrResponse {
@@ -791,14 +791,23 @@ public class SolrResponse {
 
 	public static class StatsField {
 
+		@JsonInclude(Include.NON_NULL)
 		private String name;
+		@JsonInclude(Include.NON_NULL)
 		private Object min;
+		@JsonInclude(Include.NON_NULL)
 		private Object max;
+		@JsonInclude(Include.NON_NULL)
 		private Long count;
+		@JsonInclude(Include.NON_NULL)
 		private Long missing;
+		@JsonInclude(Include.NON_NULL)
 		private Object sum;
+		@JsonInclude(Include.NON_NULL)
 		private Object sumOfSquares;
+		@JsonInclude(Include.NON_NULL)
 		private Object mean;
+		@JsonInclude(Include.NON_NULL)
 		private Object stddev;
 
 		public StatsField() {
