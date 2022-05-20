@@ -1,0 +1,16 @@
+SITE_NAME: "computate-search"
+
+LANGUAGE_NAME: "enUS"
+SITE_PATH_enUS: "/home/ctate/.local/src/computate-search"
+DOMAIN_NAME: "example.com"
+DOMAIN_PACKAGE_NAME: "org.computate.search"
+SUFFIX_SRC_MAIN_JAVA: "/src/main/java"
+SUFFIX_SRC_GEN_JAVA: "/src/gen/java"
+RELATIVE_PATHS_TO_WATCH: "src/main/java/org/computate/search"
+
+SOLR_URL: "http://localhost:8983/solr/computate-search"
+SOLR_URL_COMPUTATE: "http://localhost:8983/solr/computate"
+ENABLE_LOG: false
+ENABLE_VERTX: false
+ENABLE_QUARKUS: false
+COMPUTATE_PACKAGE_SEARCH_PREFIX: org.computate.search 
