@@ -1,5 +1,6 @@
-touch ~/.local/src/computate-search/src/main/java/org/computate/search/request/SearchRequest.java
 touch ~/.local/src/computate-search/src/main/java/org/computate/search/wrap/Wrap.java
+touch ~/.local/src/computate-search/src/main/java/org/computate/search/request/ComputateSearchSiteRequest.java
+touch ~/.local/src/computate-search/src/main/java/org/computate/search/request/SearchRequest.java
 touch ~/.local/src/computate-search/src/main/java/org/computate/search/computate/enus/ComputateEnUSClass.java
 touch ~/.local/src/computate-search/src/main/java/org/computate/search/request/SearchRequest.java
 touch ~/.local/src/computate-search/src/main/java/org/computate/search/serialize/ComputateLocalDateDeserializer.java
