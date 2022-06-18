@@ -13,6 +13,8 @@
  */
 package org.computate.search.tool;
 
+import java.io.UnsupportedEncodingException;
+import java.net.URLEncoder;
 import java.text.ParseException;
 import java.time.Instant;
 import java.time.LocalDate;
@@ -31,6 +33,8 @@ import java.util.Locale;
 import java.util.Map;
 import java.util.TimeZone;
 import java.util.regex.Pattern;
+
+import org.apache.commons.lang3.exception.ExceptionUtils;
 
 /**
  * Keyword: classSimpleNameSearchTool
@@ -312,5 +316,14 @@ public class SearchTool {
 			sb.append(c);
 		}
 		return sb.toString();
+	}
+
+	public static String urlEncode(String s) {
+		try {
+			return URLEncoder.encode(s, "UTF-8");
+		} catch (UnsupportedEncodingException ex) {
+			ExceptionUtils.rethrow(ex);
+		}
+		return null;
 	}
 }
