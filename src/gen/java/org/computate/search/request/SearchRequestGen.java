@@ -26,7 +26,6 @@ import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import org.computate.search.serialize.ComputateLocalDateSerializer;
 import org.computate.search.serialize.ComputateLocalDateDeserializer;
 import org.computate.search.serialize.ComputateZonedDateTimeSerializer;
-import org.computate.search.serialize.ComputateZonedDateTimeDeserializer;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.fasterxml.jackson.databind.ser.std.ToStringSerializer;
@@ -175,8 +174,8 @@ public abstract class SearchRequestGen<DEV> extends Object {
 	public static String staticSetFilterQueries(ComputateSearchSiteRequest siteRequest_, String o) {
 		return o;
 	}
-	public SearchRequest addFilterQueries(String...objets) {
-		for(String o : objets) {
+	public SearchRequest addFilterQueries(String...objects) {
+		for(String o : objects) {
 			addFilterQueries(o);
 		}
 		return (SearchRequest)this;
@@ -233,8 +232,8 @@ public abstract class SearchRequestGen<DEV> extends Object {
 	public static String staticSetFields(ComputateSearchSiteRequest siteRequest_, String o) {
 		return o;
 	}
-	public SearchRequest addFields(String...objets) {
-		for(String o : objets) {
+	public SearchRequest addFields(String...objects) {
+		for(String o : objects) {
 			addFields(o);
 		}
 		return (SearchRequest)this;
@@ -291,8 +290,8 @@ public abstract class SearchRequestGen<DEV> extends Object {
 	public static String staticSetSorts(ComputateSearchSiteRequest siteRequest_, String o) {
 		return o;
 	}
-	public SearchRequest addSorts(String...objets) {
-		for(String o : objets) {
+	public SearchRequest addSorts(String...objects) {
+		for(String o : objects) {
 			addSorts(o);
 		}
 		return (SearchRequest)this;
@@ -349,8 +348,8 @@ public abstract class SearchRequestGen<DEV> extends Object {
 	public static String staticSetFacetPivots(ComputateSearchSiteRequest siteRequest_, String o) {
 		return o;
 	}
-	public SearchRequest addFacetPivots(String...objets) {
-		for(String o : objets) {
+	public SearchRequest addFacetPivots(String...objects) {
+		for(String o : objects) {
 			addFacetPivots(o);
 		}
 		return (SearchRequest)this;
@@ -934,8 +933,8 @@ public abstract class SearchRequestGen<DEV> extends Object {
 	public static String staticSetFacetQueries(ComputateSearchSiteRequest siteRequest_, String o) {
 		return o;
 	}
-	public SearchRequest addFacetQueries(String...objets) {
-		for(String o : objets) {
+	public SearchRequest addFacetQueries(String...objects) {
+		for(String o : objects) {
 			addFacetQueries(o);
 		}
 		return (SearchRequest)this;
@@ -992,8 +991,8 @@ public abstract class SearchRequestGen<DEV> extends Object {
 	public static String staticSetJsonFacets(ComputateSearchSiteRequest siteRequest_, String o) {
 		return o;
 	}
-	public SearchRequest addJsonFacets(String...objets) {
-		for(String o : objets) {
+	public SearchRequest addJsonFacets(String...objects) {
+		for(String o : objects) {
 			addJsonFacets(o);
 		}
 		return (SearchRequest)this;
@@ -1050,8 +1049,8 @@ public abstract class SearchRequestGen<DEV> extends Object {
 	public static String staticSetFacetFields(ComputateSearchSiteRequest siteRequest_, String o) {
 		return o;
 	}
-	public SearchRequest addFacetFields(String...objets) {
-		for(String o : objets) {
+	public SearchRequest addFacetFields(String...objects) {
+		for(String o : objects) {
 			addFacetFields(o);
 		}
 		return (SearchRequest)this;
@@ -1108,8 +1107,8 @@ public abstract class SearchRequestGen<DEV> extends Object {
 	public static String staticSetFacetRanges(ComputateSearchSiteRequest siteRequest_, String o) {
 		return o;
 	}
-	public SearchRequest addFacetRanges(String...objets) {
-		for(String o : objets) {
+	public SearchRequest addFacetRanges(String...objects) {
+		for(String o : objects) {
 			addFacetRanges(o);
 		}
 		return (SearchRequest)this;
@@ -1498,8 +1497,8 @@ public abstract class SearchRequestGen<DEV> extends Object {
 	public static String staticSetStatsFields(ComputateSearchSiteRequest siteRequest_, String o) {
 		return o;
 	}
-	public SearchRequest addStatsFields(String...objets) {
-		for(String o : objets) {
+	public SearchRequest addStatsFields(String...objects) {
+		for(String o : objects) {
 			addStatsFields(o);
 		}
 		return (SearchRequest)this;
