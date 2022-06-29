@@ -9,13 +9,6 @@
 		<version>${revision}</version>
 	</parent>
 
-	<properties>
-		<build-helper-maven-plugin.version>3.0.0</build-helper-maven-plugin.version>
-		<jackson.version>2.13.1</jackson.version>
-		<commons-lang3.version>3.12.0</commons-lang3.version>
-		<junit.version>4.13.1</junit.version>
-	</properties>
-
 	<modelVersion>4.0.0</modelVersion>
 	<artifactId>computate-search</artifactId>
 	<packaging>jar</packaging>
@@ -44,6 +37,20 @@
 		<url>http://github.com/computate-org/computate-search/tree/master</url>
 	</scm>
 
+	<repositories>
+		<repository>
+			<id>redhat-ga</id>
+			<name>Red Hat GA</name>
+			<url>https://maven.repository.redhat.com/ga/</url>
+			<releases>
+				<enabled>true</enabled>
+			</releases>
+			<snapshots>
+				<enabled>false</enabled>
+			</snapshots>
+		</repository>
+	</repositories>
+
 	<dependencies>
 
 		<!-- Apache Commons -->
@@ -64,7 +71,7 @@
 		<dependency>
 			<groupId>com.fasterxml.jackson.core</groupId>
 			<artifactId>jackson-databind</artifactId>
-			<version>${jackson.version}</version>
+			<version>${jackson-databind.version}</version>
 		</dependency>
 
 		<!-- Tests -->
