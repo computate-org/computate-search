@@ -341,6 +341,7 @@ public class SolrResponse {
 		@JsonAlias("pivot")
 		private List<Pivot> pivotList;
 		private Map<String, Pivot> pivotMap = new LinkedHashMap<>();
+		private Stats stats;
 
 		public Pivot() {
 		}
@@ -419,6 +420,14 @@ public class SolrResponse {
 
 		public void setFields(List<String> fields) {
 			this.fields = fields;
+		}
+
+		public Stats getStats() {
+			return stats;
+		}
+
+		public void setStats(Stats stats) {
+			this.stats = stats;
 		}
 	}
 
