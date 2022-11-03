@@ -40,6 +40,7 @@ public class SearchRequest extends SearchRequestGen<Object> {
 
 	/**
 	 * {@inheritDoc}
+	 * Description.enUS: The main query parameter for full-text search. 
 	 */
 	protected void _query(Wrap<String> w) {
 	}
@@ -50,6 +51,9 @@ public class SearchRequest extends SearchRequestGen<Object> {
 
 	/**
 	 * {@inheritDoc}
+	 * Description.enUS: The fq parameter defines a query that can be used to restrict the superset of documents that can be returned, without influencing score. 
+	 * Description.enUS: It can be very useful for speeding up complex queries, since the queries specified with fq are cached independently of the main query. 
+	 * Description.enUS: When a later query uses the same filter, there’s a cache hit, and filter results are returned quickly from the cache. 
 	 */
 	protected void _filterQueries(List<String> w) {
 	}
@@ -60,6 +64,11 @@ public class SearchRequest extends SearchRequestGen<Object> {
 
 	/**
 	 * {@inheritDoc}
+	 * Description.enUS: The fl parameter limits the information included in a query response to a specified list of fields. The fields must be either stored="true" or docValues="true". 
+	 * Description.enUS: The field list can be specified as a space-separated or comma-separated list of field names. 
+	 * Description.enUS: The string "score" can be used to indicate that the score of each document for the particular query should be returned as a field. 
+	 * Description.enUS: The wildcard character * selects all the fields in the document which are either stored="true" or docValues="true" and useDocValuesAsStored="true" (which is the default when docValues are enabled). 
+	 * Description.enUS: You can also add pseudo-fields, functions and transformers to the field list request.
 	 */
 	protected void _fields(List<String> c) {
 	}
@@ -76,6 +85,9 @@ public class SearchRequest extends SearchRequestGen<Object> {
 
 	/**
 	 * {@inheritDoc}
+	 * Description.enUS: The sort parameter arranges search results in either ascending (asc) or descending (desc) order. 
+	 * Description.enUS: The parameter can be used with either numerical or alphabetical content. 
+	 * Description.enUS: The directions can be entered in either all lowercase or all uppercase letters (i.e., both asc and ASC are accepted). 
 	 */
 	protected void _sorts(List<String> w) {
 	}
