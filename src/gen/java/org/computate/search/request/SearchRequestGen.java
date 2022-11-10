@@ -46,14 +46,16 @@ import java.math.BigDecimal;
 import org.computate.search.wrap.Wrap;
 
 /**	
- * <h1>Suggestions that can generate more code for you: </h1>
- * <ol>
+<ol>
+<li>You can add a class comment <b>"Api: true"</b> if you wish to GET, POST, PATCH or PUT these SearchRequest objects in a RESTful API. 
+</li>
+0<h3>Suggestions that can generate more code for you: </h3></ol>
  * <li>You can add a class comment <b>"Api: true"</b> if you wish to GET, POST, PATCH or PUT these SearchRequest objects in a RESTful API. 
  * </li>
- * </ol>
- * <h1>About the SearchRequest class and it's generated class SearchRequestGen&lt;Object&gt;: </h1>
+ * 0<h3>Suggestions that can generate more code for you: </h3>
+ * <h3>About the SearchRequest class and it's generated class SearchRequestGen&lt;Object&gt;: </h3>extends SearchRequestGen
  * <p>
- * This Java class extends a generated Java class built by the <a href="https://github.com/computate-org/computate">https://github.com/computate-org/computate</a> project. 
+ * This Java class extends a generated Java class SearchRequestGen built by the <a href="https://github.com/computate-org/computate">https://github.com/computate-org/computate</a> project. 
  * Whenever this Java class is modified or touched, the watch service installed as described in the README, indexes all the information about this Java class in a local Apache Solr Search Engine. 
  * If you are running the service, you can see the indexed data about this Java Class here: 
  * </p>
@@ -62,6 +64,27 @@ import org.computate.search.wrap.Wrap;
  * The extended class ending with "Gen" did not exist at first, but was automatically created by the same watch service based on the data retrieved from the local Apache Server search engine. 
  * The extended class contains many generated fields, getters, setters, initialization code, and helper methods to help build a website and API fast, reactive, and scalable. 
  * </p>
+ * extends SearchRequestGen<Object>
+ * <p>This <code>class SearchRequest extends SearchRequestGen&lt;Object&gt;</code>, which means it extends a newly generated SearchRequestGen. 
+ * The generated <code>class SearchRequestGen extends Object</code> which means that SearchRequest extends SearchRequestGen which extends Object. 
+ * This generated inheritance is a powerful feature that allows a lot of boiler plate code to be created for you automatically while still preserving inheritance through the power of Java Generic classes. 
+ * </p>
+ * Api: true
+ * ApiTag.enUS: null
+ * ApiUri.enUS: null
+ * Color: null
+ * IconGroup: null
+ * IconName: null
+ * Indexed: true
+ * {@inheritDoc}
+ * <p>By adding a class comment "{@inheritDoc}", the SearchRequest class will inherit the helpful inherited class comments from the super class SearchRequestGen. 
+ * </p>
+ * Rows: null
+ * Model: true
+ * Page: true
+ * SuperPage.enUS: null
+ * Promise: true
+ * AName: null
  * <p>
  * Delete the class SearchRequest in Solr: 
  * curl 'http://localhost:8983/solr/computate/update?commitWithin=1000&overwrite=true&wt=json' -X POST -H 'Content-type: text/xml' --data-raw '&lt;add&gt;&lt;delete&gt;&lt;query&gt;classeNomCanonique_enUS_indexed_string:org.computate.search.request.SearchRequest&lt;/query&gt;&lt;/delete&gt;&lt;/add&gt;'
@@ -80,6 +103,7 @@ public abstract class SearchRequestGen<DEV> extends Object {
 	//////////////////
 	// siteRequest_ //
 	//////////////////
+
 
 	/**	 The entity siteRequest_
 	 *	 is defined as null before being initialized. 
@@ -118,6 +142,7 @@ public abstract class SearchRequestGen<DEV> extends Object {
 	///////////
 	// query //
 	///////////
+
 
 	/**	 The entity query
 	 *	 is defined as null before being initialized. 
@@ -164,9 +189,11 @@ public abstract class SearchRequestGen<DEV> extends Object {
 		return SearchRequest.staticSearchStrQuery(siteRequest_, SearchRequest.staticSearchQuery(siteRequest_, SearchRequest.staticSetQuery(siteRequest_, o)));
 	}
 
+
 	///////////////////
 	// filterQueries //
 	///////////////////
+
 
 	/**	 The entity filterQueries
 	 *	 It is constructed before being initialized with the constructor by default. 
@@ -222,9 +249,11 @@ public abstract class SearchRequestGen<DEV> extends Object {
 		return SearchRequest.staticSearchStrFilterQueries(siteRequest_, SearchRequest.staticSearchFilterQueries(siteRequest_, SearchRequest.staticSetFilterQueries(siteRequest_, o)));
 	}
 
+
 	////////////
 	// fields //
 	////////////
+
 
 	/**	 The entity fields
 	 *	 It is constructed before being initialized with the constructor by default. 
@@ -280,9 +309,12 @@ public abstract class SearchRequestGen<DEV> extends Object {
 		return SearchRequest.staticSearchStrFields(siteRequest_, SearchRequest.staticSearchFields(siteRequest_, SearchRequest.staticSetFields(siteRequest_, o)));
 	}
 
+
+
 	///////////
 	// sorts //
 	///////////
+
 
 	/**	 The entity sorts
 	 *	 It is constructed before being initialized with the constructor by default. 
@@ -338,9 +370,13 @@ public abstract class SearchRequestGen<DEV> extends Object {
 		return SearchRequest.staticSearchStrSorts(siteRequest_, SearchRequest.staticSearchSorts(siteRequest_, SearchRequest.staticSetSorts(siteRequest_, o)));
 	}
 
+
+
+
 	/////////////////
 	// facetPivots //
 	/////////////////
+
 
 	/**	 The entity facetPivots
 	 *	 It is constructed before being initialized with the constructor by default. 
@@ -396,9 +432,11 @@ public abstract class SearchRequestGen<DEV> extends Object {
 		return SearchRequest.staticSearchStrFacetPivots(siteRequest_, SearchRequest.staticSearchFacetPivots(siteRequest_, SearchRequest.staticSetFacetPivots(siteRequest_, o)));
 	}
 
+
 	////////////////////////
 	// facetPivotMinCount //
 	////////////////////////
+
 
 	/**	 The entity facetPivotMinCount
 	 *	 is defined as null before being initialized. 
@@ -453,9 +491,11 @@ public abstract class SearchRequestGen<DEV> extends Object {
 		return SearchRequest.staticSearchStrFacetPivotMinCount(siteRequest_, SearchRequest.staticSearchFacetPivotMinCount(siteRequest_, SearchRequest.staticSetFacetPivotMinCount(siteRequest_, o)));
 	}
 
+
 	///////////////
 	// facetSort //
 	///////////////
+
 
 	/**	 The entity facetSort
 	 *	 is defined as null before being initialized. 
@@ -502,9 +542,11 @@ public abstract class SearchRequestGen<DEV> extends Object {
 		return SearchRequest.staticSearchStrFacetSort(siteRequest_, SearchRequest.staticSearchFacetSort(siteRequest_, SearchRequest.staticSetFacetSort(siteRequest_, o)));
 	}
 
+
 	///////////
 	// facet //
 	///////////
+
 
 	/**	 The entity facet
 	 *	 is defined as null before being initialized. 
@@ -556,9 +598,11 @@ public abstract class SearchRequestGen<DEV> extends Object {
 		return SearchRequest.staticSearchStrFacet(siteRequest_, SearchRequest.staticSearchFacet(siteRequest_, SearchRequest.staticSetFacet(siteRequest_, o)));
 	}
 
+
 	////////////////
 	// facetLimit //
 	////////////////
+
 
 	/**	 The entity facetLimit
 	 *	 is defined as null before being initialized. 
@@ -613,9 +657,11 @@ public abstract class SearchRequestGen<DEV> extends Object {
 		return SearchRequest.staticSearchStrFacetLimit(siteRequest_, SearchRequest.staticSearchFacetLimit(siteRequest_, SearchRequest.staticSetFacetLimit(siteRequest_, o)));
 	}
 
+
 	///////////////////
 	// facetMinCount //
 	///////////////////
+
 
 	/**	 The entity facetMinCount
 	 *	 is defined as null before being initialized. 
@@ -670,9 +716,11 @@ public abstract class SearchRequestGen<DEV> extends Object {
 		return SearchRequest.staticSearchStrFacetMinCount(siteRequest_, SearchRequest.staticSearchFacetMinCount(siteRequest_, SearchRequest.staticSetFacetMinCount(siteRequest_, o)));
 	}
 
+
 	/////////////////
 	// facetOffset //
 	/////////////////
+
 
 	/**	 The entity facetOffset
 	 *	 is defined as null before being initialized. 
@@ -727,9 +775,11 @@ public abstract class SearchRequestGen<DEV> extends Object {
 		return SearchRequest.staticSearchStrFacetOffset(siteRequest_, SearchRequest.staticSearchFacetOffset(siteRequest_, SearchRequest.staticSetFacetOffset(siteRequest_, o)));
 	}
 
+
 	/////////////////////
 	// facetRangeStart //
 	/////////////////////
+
 
 	/**	 The entity facetRangeStart
 	 *	 is defined as null before being initialized. 
@@ -776,9 +826,11 @@ public abstract class SearchRequestGen<DEV> extends Object {
 		return SearchRequest.staticSearchStrFacetRangeStart(siteRequest_, SearchRequest.staticSearchFacetRangeStart(siteRequest_, SearchRequest.staticSetFacetRangeStart(siteRequest_, o)));
 	}
 
+
 	///////////////////
 	// facetRangeEnd //
 	///////////////////
+
 
 	/**	 The entity facetRangeEnd
 	 *	 is defined as null before being initialized. 
@@ -825,9 +877,11 @@ public abstract class SearchRequestGen<DEV> extends Object {
 		return SearchRequest.staticSearchStrFacetRangeEnd(siteRequest_, SearchRequest.staticSearchFacetRangeEnd(siteRequest_, SearchRequest.staticSetFacetRangeEnd(siteRequest_, o)));
 	}
 
+
 	///////////////////
 	// facetRangeGap //
 	///////////////////
+
 
 	/**	 The entity facetRangeGap
 	 *	 is defined as null before being initialized. 
@@ -874,9 +928,11 @@ public abstract class SearchRequestGen<DEV> extends Object {
 		return SearchRequest.staticSearchStrFacetRangeGap(siteRequest_, SearchRequest.staticSearchFacetRangeGap(siteRequest_, SearchRequest.staticSetFacetRangeGap(siteRequest_, o)));
 	}
 
+
 	////////////////
 	// cursorMark //
 	////////////////
+
 
 	/**	 The entity cursorMark
 	 *	 is defined as null before being initialized. 
@@ -923,9 +979,11 @@ public abstract class SearchRequestGen<DEV> extends Object {
 		return SearchRequest.staticSearchStrCursorMark(siteRequest_, SearchRequest.staticSearchCursorMark(siteRequest_, SearchRequest.staticSetCursorMark(siteRequest_, o)));
 	}
 
+
 	//////////////////
 	// facetQueries //
 	//////////////////
+
 
 	/**	 The entity facetQueries
 	 *	 It is constructed before being initialized with the constructor by default. 
@@ -981,9 +1039,12 @@ public abstract class SearchRequestGen<DEV> extends Object {
 		return SearchRequest.staticSearchStrFacetQueries(siteRequest_, SearchRequest.staticSearchFacetQueries(siteRequest_, SearchRequest.staticSetFacetQueries(siteRequest_, o)));
 	}
 
+
+
 	////////////////
 	// jsonFacets //
 	////////////////
+
 
 	/**	 The entity jsonFacets
 	 *	 It is constructed before being initialized with the constructor by default. 
@@ -1039,9 +1100,11 @@ public abstract class SearchRequestGen<DEV> extends Object {
 		return SearchRequest.staticSearchStrJsonFacets(siteRequest_, SearchRequest.staticSearchJsonFacets(siteRequest_, SearchRequest.staticSetJsonFacets(siteRequest_, o)));
 	}
 
+
 	/////////////////
 	// facetFields //
 	/////////////////
+
 
 	/**	 The entity facetFields
 	 *	 It is constructed before being initialized with the constructor by default. 
@@ -1097,9 +1160,12 @@ public abstract class SearchRequestGen<DEV> extends Object {
 		return SearchRequest.staticSearchStrFacetFields(siteRequest_, SearchRequest.staticSearchFacetFields(siteRequest_, SearchRequest.staticSetFacetFields(siteRequest_, o)));
 	}
 
+
+
 	/////////////////
 	// facetRanges //
 	/////////////////
+
 
 	/**	 The entity facetRanges
 	 *	 It is constructed before being initialized with the constructor by default. 
@@ -1155,9 +1221,12 @@ public abstract class SearchRequestGen<DEV> extends Object {
 		return SearchRequest.staticSearchStrFacetRanges(siteRequest_, SearchRequest.staticSearchFacetRanges(siteRequest_, SearchRequest.staticSetFacetRanges(siteRequest_, o)));
 	}
 
+
+
 	///////////
 	// start //
 	///////////
+
 
 	/**	 The entity start
 	 *	 is defined as null before being initialized. 
@@ -1212,9 +1281,12 @@ public abstract class SearchRequestGen<DEV> extends Object {
 		return SearchRequest.staticSearchStrStart(siteRequest_, SearchRequest.staticSearchStart(siteRequest_, SearchRequest.staticSetStart(siteRequest_, o)));
 	}
 
+
+
 	//////////
 	// rows //
 	//////////
+
 
 	/**	 The entity rows
 	 *	 is defined as null before being initialized. 
@@ -1269,9 +1341,12 @@ public abstract class SearchRequestGen<DEV> extends Object {
 		return SearchRequest.staticSearchStrRows(siteRequest_, SearchRequest.staticSearchRows(siteRequest_, SearchRequest.staticSetRows(siteRequest_, o)));
 	}
 
+
+
 	//////////////
 	// distance //
 	//////////////
+
 
 	/**	 The entity distance
 	 *	 is defined as null before being initialized. 
@@ -1335,9 +1410,12 @@ public abstract class SearchRequestGen<DEV> extends Object {
 		return SearchRequest.staticSearchStrDistance(siteRequest_, SearchRequest.staticSearchDistance(siteRequest_, SearchRequest.staticSetDistance(siteRequest_, o)));
 	}
 
+
+
 	///////////
 	// point //
 	///////////
+
 
 	/**	 The entity point
 	 *	 is defined as null before being initialized. 
@@ -1384,9 +1462,11 @@ public abstract class SearchRequestGen<DEV> extends Object {
 		return SearchRequest.staticSearchStrPoint(siteRequest_, SearchRequest.staticSearchPoint(siteRequest_, SearchRequest.staticSetPoint(siteRequest_, o)));
 	}
 
+
 	//////////////////
 	// spatialField //
 	//////////////////
+
 
 	/**	 The entity spatialField
 	 *	 is defined as null before being initialized. 
@@ -1433,9 +1513,11 @@ public abstract class SearchRequestGen<DEV> extends Object {
 		return SearchRequest.staticSearchStrSpatialField(siteRequest_, SearchRequest.staticSearchSpatialField(siteRequest_, SearchRequest.staticSetSpatialField(siteRequest_, o)));
 	}
 
+
 	///////////
 	// stats //
 	///////////
+
 
 	/**	 The entity stats
 	 *	 is defined as null before being initialized. 
@@ -1487,9 +1569,11 @@ public abstract class SearchRequestGen<DEV> extends Object {
 		return SearchRequest.staticSearchStrStats(siteRequest_, SearchRequest.staticSearchStats(siteRequest_, SearchRequest.staticSetStats(siteRequest_, o)));
 	}
 
+
 	/////////////////
 	// statsFields //
 	/////////////////
+
 
 	/**	 The entity statsFields
 	 *	 It is constructed before being initialized with the constructor by default. 
@@ -1545,9 +1629,12 @@ public abstract class SearchRequestGen<DEV> extends Object {
 		return SearchRequest.staticSearchStrStatsFields(siteRequest_, SearchRequest.staticSearchStatsFields(siteRequest_, SearchRequest.staticSetStatsFields(siteRequest_, o)));
 	}
 
+
+
 	///////////
 	// score //
 	///////////
+
 
 	/**	 The entity score
 	 *	 is defined as null before being initialized. 
@@ -1594,9 +1681,11 @@ public abstract class SearchRequestGen<DEV> extends Object {
 		return SearchRequest.staticSearchStrScore(siteRequest_, SearchRequest.staticSearchScore(siteRequest_, SearchRequest.staticSetScore(siteRequest_, o)));
 	}
 
+
 	///////////////////
 	// distanceUnits //
 	///////////////////
+
 
 	/**	 The entity distanceUnits
 	 *	 is defined as null before being initialized. 
@@ -1643,9 +1732,11 @@ public abstract class SearchRequestGen<DEV> extends Object {
 		return SearchRequest.staticSearchStrDistanceUnits(siteRequest_, SearchRequest.staticSearchDistanceUnits(siteRequest_, SearchRequest.staticSetDistanceUnits(siteRequest_, o)));
 	}
 
+
 	/////////////////
 	// queryString //
 	/////////////////
+
 
 	/**	 The entity queryString
 	 *	 is defined as null before being initialized. 
@@ -1691,6 +1782,7 @@ public abstract class SearchRequestGen<DEV> extends Object {
 	public static String staticSearchFqQueryString(ComputateSearchSiteRequest siteRequest_, String o) {
 		return SearchRequest.staticSearchStrQueryString(siteRequest_, SearchRequest.staticSearchQueryString(siteRequest_, SearchRequest.staticSetQueryString(siteRequest_, o)));
 	}
+
 
 	//////////////
 	// initDeep //

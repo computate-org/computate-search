@@ -459,6 +459,10 @@ public class SearchRequest extends SearchRequestGen<Object> {
 					b.append("sort=").append(URLEncoder.encode(sort, UTF_8));
 				}
 			}
+			if(cursorMark != null) {
+				b.append(b.length() == 0 ? "?" : "&");
+				b.append("cursorMark=").append(cursorMark);
+			}
 			if(facetPivots.size() > 0) {
 				for(int i = 0; i < facetPivots.size(); i++) {
 					String facetPivot = facetPivots.get(i);
@@ -490,21 +494,18 @@ public class SearchRequest extends SearchRequestGen<Object> {
 				b.append(b.length() == 0 ? "?" : "&");
 				b.append("facet.offset=").append(facetOffset);
 			}
-			if(facetRangeStart != null) {
+			if(facetRanges.size() > 0 && facetRangeStart != null && facetRangeEnd != null && facetRangeGap != null) {
+				for(int i = 0; i < facetRanges.size(); i++) {
+					String facetRange = facetRanges.get(i);
+					b.append(b.length() == 0 ? "?" : "&");
+					b.append("facet.range=").append(URLEncoder.encode(facetRange, UTF_8));
+				}
 				b.append(b.length() == 0 ? "?" : "&");
 				b.append("facet.range.start=").append(facetRangeStart);
-			}
-			if(facetRangeEnd != null) {
 				b.append(b.length() == 0 ? "?" : "&");
 				b.append("facet.range.end=").append(facetRangeEnd);
-			}
-			if(facetRangeGap != null) {
 				b.append(b.length() == 0 ? "?" : "&");
 				b.append("facet.range.gap=").append(URLEncoder.encode(facetRangeGap, UTF_8));
-			}
-			if(cursorMark != null) {
-				b.append(b.length() == 0 ? "?" : "&");
-				b.append("cursorMark=").append(cursorMark);
 			}
 			if(facetQueries.size() > 0) {
 				for(int i = 0; i < facetQueries.size(); i++) {
@@ -518,13 +519,6 @@ public class SearchRequest extends SearchRequestGen<Object> {
 					String facetField = facetFields.get(i);
 					b.append(b.length() == 0 ? "?" : "&");
 					b.append("facet.field=").append(URLEncoder.encode(facetField, UTF_8));
-				}
-			}
-			if(facetRanges.size() > 0) {
-				for(int i = 0; i < facetRanges.size(); i++) {
-					String facetRange = facetRanges.get(i);
-					b.append(b.length() == 0 ? "?" : "&");
-					b.append("facet.range=").append(URLEncoder.encode(facetRange, UTF_8));
 				}
 			}
 			if(jsonFacets.size() > 0) {
