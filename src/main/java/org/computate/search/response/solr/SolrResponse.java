@@ -380,6 +380,9 @@ public class SolrResponse {
 
 		public void setRanges(Map<String, PivotRange> ranges) {
 			this.ranges = ranges;
+			ranges.forEach((name, range) -> {
+				range.setName(name);
+			});
 		}
 
 		public void setRanges(String key, PivotRange value) {
@@ -412,6 +415,10 @@ public class SolrResponse {
 
 		public void setPivotMap(Map<String, Pivot> pivotMap) {
 			this.pivotMap = pivotMap;
+			pivotMap.forEach((name, pivot) -> {
+				pivot.setName(name);
+				pivot.setField(name);
+			});
 		}
 
 		public List<String> getFields() {
@@ -446,6 +453,7 @@ public class SolrResponse {
 		public void setPivotMap(String key, List<Pivot> list) {
 			Pivot fieldPivot = new Pivot();
 			fieldPivot.setName(key);
+			fieldPivot.setField(key);
 			pivotMap.put(key, fieldPivot);
 			for(Pivot valuePivot : list) {
 				valuePivot.setFields(Arrays.asList(key.split(",")));
