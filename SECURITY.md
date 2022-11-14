@@ -11,4 +11,5 @@ currently being supported with security updates.
 
 ## Reporting a Vulnerability
 
-You can report a vulnerability to vulnerability@computate.org
+You can report a vulnerability here https://github.com/computate-org/computate-search/security/advisories?state=Triage
+
