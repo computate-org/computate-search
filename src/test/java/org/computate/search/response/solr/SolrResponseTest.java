@@ -18,7 +18,7 @@ import java.nio.file.Paths;
 import java.time.ZoneId;
 
 import org.computate.search.request.SearchRequest;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 
