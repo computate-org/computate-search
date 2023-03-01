@@ -26,6 +26,7 @@ import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import org.computate.search.serialize.ComputateLocalDateSerializer;
 import org.computate.search.serialize.ComputateLocalDateDeserializer;
 import org.computate.search.serialize.ComputateZonedDateTimeSerializer;
+import org.computate.search.serialize.ComputateZonedDateTimeDeserializer;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.fasterxml.jackson.databind.ser.std.ToStringSerializer;
@@ -47,12 +48,9 @@ import org.computate.search.wrap.Wrap;
 
 /**	
 <ol>
-<li>You can add a class comment <b>"Api: true"</b> if you wish to GET, POST, PATCH or PUT these SearchRequest objects in a RESTful API. 
-</li>
 0<h3>Suggestions that can generate more code for you: </h3></ol>
  * <li>You can add a class comment <b>"Api: true"</b> if you wish to GET, POST, PATCH or PUT these SearchRequest objects in a RESTful API. 
  * </li>
- * 0<h3>Suggestions that can generate more code for you: </h3>
  * <h3>About the SearchRequest class and it's generated class SearchRequestGen&lt;Object&gt;: </h3>extends SearchRequestGen
  * <p>
  * This Java class extends a generated Java class SearchRequestGen built by the <a href="https://github.com/computate-org/computate">https://github.com/computate-org/computate</a> project. 
@@ -70,7 +68,7 @@ import org.computate.search.wrap.Wrap;
  * This generated inheritance is a powerful feature that allows a lot of boiler plate code to be created for you automatically while still preserving inheritance through the power of Java Generic classes. 
  * </p>
  * Api: true
- * ApiTag.enUS: null
+ * ApiTag.enUS: true
  * ApiUri.enUS: null
  * Color: null
  * IconGroup: null
@@ -84,7 +82,7 @@ import org.computate.search.wrap.Wrap;
  * Page: true
  * SuperPage.enUS: null
  * Promise: true
- * AName: null
+ * AName.enUS: null
  * <p>
  * Delete the class SearchRequest in Solr: 
  * curl 'http://localhost:8983/solr/computate/update?commitWithin=1000&overwrite=true&wt=json' -X POST -H 'Content-type: text/xml' --data-raw '&lt;add&gt;&lt;delete&gt;&lt;query&gt;classeNomCanonique_enUS_indexed_string:org.computate.search.request.SearchRequest&lt;/query&gt;&lt;/delete&gt;&lt;/add&gt;'
@@ -189,7 +187,6 @@ public abstract class SearchRequestGen<DEV> extends Object {
 		return SearchRequest.staticSearchStrQuery(siteRequest_, SearchRequest.staticSearchQuery(siteRequest_, SearchRequest.staticSetQuery(siteRequest_, o)));
 	}
 
-
 	///////////////////
 	// filterQueries //
 	///////////////////
@@ -248,7 +245,6 @@ public abstract class SearchRequestGen<DEV> extends Object {
 	public static String staticSearchFqFilterQueries(ComputateSearchSiteRequest siteRequest_, String o) {
 		return SearchRequest.staticSearchStrFilterQueries(siteRequest_, SearchRequest.staticSearchFilterQueries(siteRequest_, SearchRequest.staticSetFilterQueries(siteRequest_, o)));
 	}
-
 
 	////////////
 	// fields //
@@ -309,8 +305,6 @@ public abstract class SearchRequestGen<DEV> extends Object {
 		return SearchRequest.staticSearchStrFields(siteRequest_, SearchRequest.staticSearchFields(siteRequest_, SearchRequest.staticSetFields(siteRequest_, o)));
 	}
 
-
-
 	///////////
 	// sorts //
 	///////////
@@ -369,9 +363,6 @@ public abstract class SearchRequestGen<DEV> extends Object {
 	public static String staticSearchFqSorts(ComputateSearchSiteRequest siteRequest_, String o) {
 		return SearchRequest.staticSearchStrSorts(siteRequest_, SearchRequest.staticSearchSorts(siteRequest_, SearchRequest.staticSetSorts(siteRequest_, o)));
 	}
-
-
-
 
 	/////////////////
 	// facetPivots //
@@ -432,7 +423,6 @@ public abstract class SearchRequestGen<DEV> extends Object {
 		return SearchRequest.staticSearchStrFacetPivots(siteRequest_, SearchRequest.staticSearchFacetPivots(siteRequest_, SearchRequest.staticSetFacetPivots(siteRequest_, o)));
 	}
 
-
 	////////////////////////
 	// facetPivotMinCount //
 	////////////////////////
@@ -491,7 +481,6 @@ public abstract class SearchRequestGen<DEV> extends Object {
 		return SearchRequest.staticSearchStrFacetPivotMinCount(siteRequest_, SearchRequest.staticSearchFacetPivotMinCount(siteRequest_, SearchRequest.staticSetFacetPivotMinCount(siteRequest_, o)));
 	}
 
-
 	///////////////
 	// facetSort //
 	///////////////
@@ -541,7 +530,6 @@ public abstract class SearchRequestGen<DEV> extends Object {
 	public static String staticSearchFqFacetSort(ComputateSearchSiteRequest siteRequest_, String o) {
 		return SearchRequest.staticSearchStrFacetSort(siteRequest_, SearchRequest.staticSearchFacetSort(siteRequest_, SearchRequest.staticSetFacetSort(siteRequest_, o)));
 	}
-
 
 	///////////
 	// facet //
@@ -597,7 +585,6 @@ public abstract class SearchRequestGen<DEV> extends Object {
 	public static String staticSearchFqFacet(ComputateSearchSiteRequest siteRequest_, String o) {
 		return SearchRequest.staticSearchStrFacet(siteRequest_, SearchRequest.staticSearchFacet(siteRequest_, SearchRequest.staticSetFacet(siteRequest_, o)));
 	}
-
 
 	////////////////
 	// facetLimit //
@@ -657,7 +644,6 @@ public abstract class SearchRequestGen<DEV> extends Object {
 		return SearchRequest.staticSearchStrFacetLimit(siteRequest_, SearchRequest.staticSearchFacetLimit(siteRequest_, SearchRequest.staticSetFacetLimit(siteRequest_, o)));
 	}
 
-
 	///////////////////
 	// facetMinCount //
 	///////////////////
@@ -715,7 +701,6 @@ public abstract class SearchRequestGen<DEV> extends Object {
 	public static String staticSearchFqFacetMinCount(ComputateSearchSiteRequest siteRequest_, String o) {
 		return SearchRequest.staticSearchStrFacetMinCount(siteRequest_, SearchRequest.staticSearchFacetMinCount(siteRequest_, SearchRequest.staticSetFacetMinCount(siteRequest_, o)));
 	}
-
 
 	/////////////////
 	// facetOffset //
@@ -775,7 +760,6 @@ public abstract class SearchRequestGen<DEV> extends Object {
 		return SearchRequest.staticSearchStrFacetOffset(siteRequest_, SearchRequest.staticSearchFacetOffset(siteRequest_, SearchRequest.staticSetFacetOffset(siteRequest_, o)));
 	}
 
-
 	/////////////////////
 	// facetRangeStart //
 	/////////////////////
@@ -825,7 +809,6 @@ public abstract class SearchRequestGen<DEV> extends Object {
 	public static String staticSearchFqFacetRangeStart(ComputateSearchSiteRequest siteRequest_, String o) {
 		return SearchRequest.staticSearchStrFacetRangeStart(siteRequest_, SearchRequest.staticSearchFacetRangeStart(siteRequest_, SearchRequest.staticSetFacetRangeStart(siteRequest_, o)));
 	}
-
 
 	///////////////////
 	// facetRangeEnd //
@@ -877,7 +860,6 @@ public abstract class SearchRequestGen<DEV> extends Object {
 		return SearchRequest.staticSearchStrFacetRangeEnd(siteRequest_, SearchRequest.staticSearchFacetRangeEnd(siteRequest_, SearchRequest.staticSetFacetRangeEnd(siteRequest_, o)));
 	}
 
-
 	///////////////////
 	// facetRangeGap //
 	///////////////////
@@ -928,7 +910,6 @@ public abstract class SearchRequestGen<DEV> extends Object {
 		return SearchRequest.staticSearchStrFacetRangeGap(siteRequest_, SearchRequest.staticSearchFacetRangeGap(siteRequest_, SearchRequest.staticSetFacetRangeGap(siteRequest_, o)));
 	}
 
-
 	////////////////
 	// cursorMark //
 	////////////////
@@ -978,7 +959,6 @@ public abstract class SearchRequestGen<DEV> extends Object {
 	public static String staticSearchFqCursorMark(ComputateSearchSiteRequest siteRequest_, String o) {
 		return SearchRequest.staticSearchStrCursorMark(siteRequest_, SearchRequest.staticSearchCursorMark(siteRequest_, SearchRequest.staticSetCursorMark(siteRequest_, o)));
 	}
-
 
 	//////////////////
 	// facetQueries //
@@ -1039,8 +1019,6 @@ public abstract class SearchRequestGen<DEV> extends Object {
 		return SearchRequest.staticSearchStrFacetQueries(siteRequest_, SearchRequest.staticSearchFacetQueries(siteRequest_, SearchRequest.staticSetFacetQueries(siteRequest_, o)));
 	}
 
-
-
 	////////////////
 	// jsonFacets //
 	////////////////
@@ -1099,7 +1077,6 @@ public abstract class SearchRequestGen<DEV> extends Object {
 	public static String staticSearchFqJsonFacets(ComputateSearchSiteRequest siteRequest_, String o) {
 		return SearchRequest.staticSearchStrJsonFacets(siteRequest_, SearchRequest.staticSearchJsonFacets(siteRequest_, SearchRequest.staticSetJsonFacets(siteRequest_, o)));
 	}
-
 
 	/////////////////
 	// facetFields //
@@ -1160,8 +1137,6 @@ public abstract class SearchRequestGen<DEV> extends Object {
 		return SearchRequest.staticSearchStrFacetFields(siteRequest_, SearchRequest.staticSearchFacetFields(siteRequest_, SearchRequest.staticSetFacetFields(siteRequest_, o)));
 	}
 
-
-
 	/////////////////
 	// facetRanges //
 	/////////////////
@@ -1221,8 +1196,6 @@ public abstract class SearchRequestGen<DEV> extends Object {
 		return SearchRequest.staticSearchStrFacetRanges(siteRequest_, SearchRequest.staticSearchFacetRanges(siteRequest_, SearchRequest.staticSetFacetRanges(siteRequest_, o)));
 	}
 
-
-
 	///////////
 	// start //
 	///////////
@@ -1281,8 +1254,6 @@ public abstract class SearchRequestGen<DEV> extends Object {
 		return SearchRequest.staticSearchStrStart(siteRequest_, SearchRequest.staticSearchStart(siteRequest_, SearchRequest.staticSetStart(siteRequest_, o)));
 	}
 
-
-
 	//////////
 	// rows //
 	//////////
@@ -1340,8 +1311,6 @@ public abstract class SearchRequestGen<DEV> extends Object {
 	public static String staticSearchFqRows(ComputateSearchSiteRequest siteRequest_, String o) {
 		return SearchRequest.staticSearchStrRows(siteRequest_, SearchRequest.staticSearchRows(siteRequest_, SearchRequest.staticSetRows(siteRequest_, o)));
 	}
-
-
 
 	//////////////
 	// distance //
@@ -1410,8 +1379,6 @@ public abstract class SearchRequestGen<DEV> extends Object {
 		return SearchRequest.staticSearchStrDistance(siteRequest_, SearchRequest.staticSearchDistance(siteRequest_, SearchRequest.staticSetDistance(siteRequest_, o)));
 	}
 
-
-
 	///////////
 	// point //
 	///////////
@@ -1462,7 +1429,6 @@ public abstract class SearchRequestGen<DEV> extends Object {
 		return SearchRequest.staticSearchStrPoint(siteRequest_, SearchRequest.staticSearchPoint(siteRequest_, SearchRequest.staticSetPoint(siteRequest_, o)));
 	}
 
-
 	//////////////////
 	// spatialField //
 	//////////////////
@@ -1512,7 +1478,6 @@ public abstract class SearchRequestGen<DEV> extends Object {
 	public static String staticSearchFqSpatialField(ComputateSearchSiteRequest siteRequest_, String o) {
 		return SearchRequest.staticSearchStrSpatialField(siteRequest_, SearchRequest.staticSearchSpatialField(siteRequest_, SearchRequest.staticSetSpatialField(siteRequest_, o)));
 	}
-
 
 	///////////
 	// stats //
@@ -1568,7 +1533,6 @@ public abstract class SearchRequestGen<DEV> extends Object {
 	public static String staticSearchFqStats(ComputateSearchSiteRequest siteRequest_, String o) {
 		return SearchRequest.staticSearchStrStats(siteRequest_, SearchRequest.staticSearchStats(siteRequest_, SearchRequest.staticSetStats(siteRequest_, o)));
 	}
-
 
 	/////////////////
 	// statsFields //
@@ -1629,8 +1593,6 @@ public abstract class SearchRequestGen<DEV> extends Object {
 		return SearchRequest.staticSearchStrStatsFields(siteRequest_, SearchRequest.staticSearchStatsFields(siteRequest_, SearchRequest.staticSetStatsFields(siteRequest_, o)));
 	}
 
-
-
 	///////////
 	// score //
 	///////////
@@ -1680,7 +1642,6 @@ public abstract class SearchRequestGen<DEV> extends Object {
 	public static String staticSearchFqScore(ComputateSearchSiteRequest siteRequest_, String o) {
 		return SearchRequest.staticSearchStrScore(siteRequest_, SearchRequest.staticSearchScore(siteRequest_, SearchRequest.staticSetScore(siteRequest_, o)));
 	}
-
 
 	///////////////////
 	// distanceUnits //
@@ -1732,7 +1693,6 @@ public abstract class SearchRequestGen<DEV> extends Object {
 		return SearchRequest.staticSearchStrDistanceUnits(siteRequest_, SearchRequest.staticSearchDistanceUnits(siteRequest_, SearchRequest.staticSetDistanceUnits(siteRequest_, o)));
 	}
 
-
 	/////////////////
 	// queryString //
 	/////////////////
@@ -1782,7 +1742,6 @@ public abstract class SearchRequestGen<DEV> extends Object {
 	public static String staticSearchFqQueryString(ComputateSearchSiteRequest siteRequest_, String o) {
 		return SearchRequest.staticSearchStrQueryString(siteRequest_, SearchRequest.staticSearchQueryString(siteRequest_, SearchRequest.staticSetQueryString(siteRequest_, o)));
 	}
-
 
 	//////////////
 	// initDeep //
