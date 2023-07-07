@@ -57,7 +57,7 @@ import org.computate.search.wrap.Wrap;
  * Whenever this Java class is modified or touched, the watch service installed as described in the README, indexes all the information about this Java class in a local Apache Solr Search Engine. 
  * If you are running the service, you can see the indexed data about this Java Class here: 
  * </p>
- * <p><a href="http://localhost:8983/solr/computate/select?q=*:*&fq=partEstClasse_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.computate.search.request.SearchRequest">Find the class SearchRequest in Solr. </a></p>
+ * <p><a href="https://solr-solr.apps-crc.testing/solr/computate/select?q=*:*&fq=partEstClasse_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.computate.search.request.SearchRequest">Find the class SearchRequest in Solr. </a></p>
  * <p>
  * The extended class ending with "Gen" did not exist at first, but was automatically created by the same watch service based on the data retrieved from the local Apache Server search engine. 
  * The extended class contains many generated fields, getters, setters, initialization code, and helper methods to help build a website and API fast, reactive, and scalable. 
@@ -85,15 +85,15 @@ import org.computate.search.wrap.Wrap;
  * AName.enUS: null
  * <p>
  * Delete the class SearchRequest in Solr: 
- * curl 'http://localhost:8983/solr/computate/update?commitWithin=1000&overwrite=true&wt=json' -X POST -H 'Content-type: text/xml' --data-raw '&lt;add&gt;&lt;delete&gt;&lt;query&gt;classeNomCanonique_enUS_indexed_string:org.computate.search.request.SearchRequest&lt;/query&gt;&lt;/delete&gt;&lt;/add&gt;'
+ * curl -k 'https://solr-solr.apps-crc.testing/solr/computate/update?commitWithin=1000&overwrite=true&wt=json' -X POST -H 'Content-type: text/xml' --data-raw '&lt;add&gt;&lt;delete&gt;&lt;query&gt;classeNomCanonique_enUS_indexed_string:org.computate.search.request.SearchRequest&lt;/query&gt;&lt;/delete&gt;&lt;/add&gt;'
  * </p>
  * <p>
  * Delete  the package org.computate.search.request in Solr: 
- * curl 'http://localhost:8983/solr/computate/update?commitWithin=1000&overwrite=true&wt=json' -X POST -H 'Content-type: text/xml' --data-raw '&lt;add&gt;&lt;delete&gt;&lt;query&gt;classeNomEnsemble_enUS_indexed_string:org.computate.search.request&lt;/query&gt;&lt;/delete&gt;&lt;/add&gt;'
+ * curl -k 'https://solr-solr.apps-crc.testing/solr/computate/update?commitWithin=1000&overwrite=true&wt=json' -X POST -H 'Content-type: text/xml' --data-raw '&lt;add&gt;&lt;delete&gt;&lt;query&gt;classeNomEnsemble_enUS_indexed_string:org.computate.search.request&lt;/query&gt;&lt;/delete&gt;&lt;/add&gt;'
  * </p>
  * <p>
  * Delete  the project computate-search in Solr: 
- * curl 'http://localhost:8983/solr/computate/update?commitWithin=1000&overwrite=true&wt=json' -X POST -H 'Content-type: text/xml' --data-raw '&lt;add&gt;&lt;delete&gt;&lt;query&gt;siteNom_indexed_string:computate\-search&lt;/query&gt;&lt;/delete&gt;&lt;/add&gt;'
+ * curl -k 'https://solr-solr.apps-crc.testing/solr/computate/update?commitWithin=1000&overwrite=true&wt=json' -X POST -H 'Content-type: text/xml' --data-raw '&lt;add&gt;&lt;delete&gt;&lt;query&gt;siteNom_indexed_string:computate\-search&lt;/query&gt;&lt;/delete&gt;&lt;/add&gt;'
  * </p>
  **/
 public abstract class SearchRequestGen<DEV> extends Object {
@@ -112,7 +112,7 @@ public abstract class SearchRequestGen<DEV> extends Object {
 
 	/**	<br> The entity siteRequest_
 	 *  is defined as null before being initialized. 
-	 * <br><a href="http://localhost:8983/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.computate.search.request.SearchRequest&fq=entiteVar_enUS_indexed_string:siteRequest_">Find the entity siteRequest_ in Solr</a>
+	 * <br><a href="https://solr-solr.apps-crc.testing/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.computate.search.request.SearchRequest&fq=entiteVar_enUS_indexed_string:siteRequest_">Find the entity siteRequest_ in Solr</a>
 	 * <br>
 	 * @param w is for wrapping a value to assign to this entity during initialization. 
 	 **/
@@ -132,7 +132,9 @@ public abstract class SearchRequestGen<DEV> extends Object {
 		Wrap<ComputateSearchSiteRequest> siteRequest_Wrap = new Wrap<ComputateSearchSiteRequest>().var("siteRequest_");
 		if(siteRequest_ == null) {
 			_siteRequest_(siteRequest_Wrap);
-			setSiteRequest_(siteRequest_Wrap.o);
+			Optional.ofNullable(siteRequest_Wrap.getO()).ifPresent(o -> {
+				setSiteRequest_(o);
+			});
 		}
 		return (SearchRequest)this;
 	}
@@ -151,7 +153,7 @@ public abstract class SearchRequestGen<DEV> extends Object {
 
 	/**	<br> The entity query
 	 *  is defined as null before being initialized. 
-	 * <br><a href="http://localhost:8983/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.computate.search.request.SearchRequest&fq=entiteVar_enUS_indexed_string:query">Find the entity query in Solr</a>
+	 * <br><a href="https://solr-solr.apps-crc.testing/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.computate.search.request.SearchRequest&fq=entiteVar_enUS_indexed_string:query">Find the entity query in Solr</a>
 	 * <br>
 	 * @param w is for wrapping a value to assign to this entity during initialization. 
 	 **/
@@ -170,7 +172,9 @@ public abstract class SearchRequestGen<DEV> extends Object {
 		Wrap<String> queryWrap = new Wrap<String>().var("query");
 		if(query == null) {
 			_query(queryWrap);
-			setQuery(queryWrap.o);
+			Optional.ofNullable(queryWrap.getO()).ifPresent(o -> {
+				setQuery(o);
+			});
 		}
 		return (SearchRequest)this;
 	}
@@ -202,7 +206,7 @@ public abstract class SearchRequestGen<DEV> extends Object {
 
 	/**	<br> The entity filterQueries
 	 *  It is constructed before being initialized with the constructor by default. 
-	 * <br><a href="http://localhost:8983/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.computate.search.request.SearchRequest&fq=entiteVar_enUS_indexed_string:filterQueries">Find the entity filterQueries in Solr</a>
+	 * <br><a href="https://solr-solr.apps-crc.testing/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.computate.search.request.SearchRequest&fq=entiteVar_enUS_indexed_string:filterQueries">Find the entity filterQueries in Solr</a>
 	 * <br>
 	 * @param w is the entity already constructed. 
 	 **/
@@ -211,9 +215,10 @@ public abstract class SearchRequestGen<DEV> extends Object {
 	public List<String> getFilterQueries() {
 		return filterQueries;
 	}
-
-	public void setFilterQueries(List<String> filterQueries) {
-		this.filterQueries = filterQueries;
+	public void setFilterQueries(String o) {
+		String l = SearchRequest.staticSetFilterQueries(siteRequest_, o);
+		if(l != null)
+			addFilterQueries(l);
 	}
 	public static String staticSetFilterQueries(ComputateSearchSiteRequest siteRequest_, String o) {
 		return o;
@@ -261,7 +266,7 @@ public abstract class SearchRequestGen<DEV> extends Object {
 
 	/**	<br> The entity fields
 	 *  It is constructed before being initialized with the constructor by default. 
-	 * <br><a href="http://localhost:8983/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.computate.search.request.SearchRequest&fq=entiteVar_enUS_indexed_string:fields">Find the entity fields in Solr</a>
+	 * <br><a href="https://solr-solr.apps-crc.testing/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.computate.search.request.SearchRequest&fq=entiteVar_enUS_indexed_string:fields">Find the entity fields in Solr</a>
 	 * <br>
 	 * @param c is the entity already constructed. 
 	 **/
@@ -270,9 +275,10 @@ public abstract class SearchRequestGen<DEV> extends Object {
 	public List<String> getFields() {
 		return fields;
 	}
-
-	public void setFields(List<String> fields) {
-		this.fields = fields;
+	public void setFields(String o) {
+		String l = SearchRequest.staticSetFields(siteRequest_, o);
+		if(l != null)
+			addFields(l);
 	}
 	public static String staticSetFields(ComputateSearchSiteRequest siteRequest_, String o) {
 		return o;
@@ -320,7 +326,7 @@ public abstract class SearchRequestGen<DEV> extends Object {
 
 	/**	<br> The entity sorts
 	 *  It is constructed before being initialized with the constructor by default. 
-	 * <br><a href="http://localhost:8983/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.computate.search.request.SearchRequest&fq=entiteVar_enUS_indexed_string:sorts">Find the entity sorts in Solr</a>
+	 * <br><a href="https://solr-solr.apps-crc.testing/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.computate.search.request.SearchRequest&fq=entiteVar_enUS_indexed_string:sorts">Find the entity sorts in Solr</a>
 	 * <br>
 	 * @param w is the entity already constructed. 
 	 **/
@@ -329,9 +335,10 @@ public abstract class SearchRequestGen<DEV> extends Object {
 	public List<String> getSorts() {
 		return sorts;
 	}
-
-	public void setSorts(List<String> sorts) {
-		this.sorts = sorts;
+	public void setSorts(String o) {
+		String l = SearchRequest.staticSetSorts(siteRequest_, o);
+		if(l != null)
+			addSorts(l);
 	}
 	public static String staticSetSorts(ComputateSearchSiteRequest siteRequest_, String o) {
 		return o;
@@ -379,7 +386,7 @@ public abstract class SearchRequestGen<DEV> extends Object {
 
 	/**	<br> The entity facetPivots
 	 *  It is constructed before being initialized with the constructor by default. 
-	 * <br><a href="http://localhost:8983/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.computate.search.request.SearchRequest&fq=entiteVar_enUS_indexed_string:facetPivots">Find the entity facetPivots in Solr</a>
+	 * <br><a href="https://solr-solr.apps-crc.testing/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.computate.search.request.SearchRequest&fq=entiteVar_enUS_indexed_string:facetPivots">Find the entity facetPivots in Solr</a>
 	 * <br>
 	 * @param w is the entity already constructed. 
 	 **/
@@ -388,9 +395,10 @@ public abstract class SearchRequestGen<DEV> extends Object {
 	public List<String> getFacetPivots() {
 		return facetPivots;
 	}
-
-	public void setFacetPivots(List<String> facetPivots) {
-		this.facetPivots = facetPivots;
+	public void setFacetPivots(String o) {
+		String l = SearchRequest.staticSetFacetPivots(siteRequest_, o);
+		if(l != null)
+			addFacetPivots(l);
 	}
 	public static String staticSetFacetPivots(ComputateSearchSiteRequest siteRequest_, String o) {
 		return o;
@@ -438,7 +446,7 @@ public abstract class SearchRequestGen<DEV> extends Object {
 
 	/**	<br> The entity facetPivotMinCount
 	 *  is defined as null before being initialized. 
-	 * <br><a href="http://localhost:8983/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.computate.search.request.SearchRequest&fq=entiteVar_enUS_indexed_string:facetPivotMinCount">Find the entity facetPivotMinCount in Solr</a>
+	 * <br><a href="https://solr-solr.apps-crc.testing/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.computate.search.request.SearchRequest&fq=entiteVar_enUS_indexed_string:facetPivotMinCount">Find the entity facetPivotMinCount in Solr</a>
 	 * <br>
 	 * @param w is for wrapping a value to assign to this entity during initialization. 
 	 **/
@@ -464,7 +472,9 @@ public abstract class SearchRequestGen<DEV> extends Object {
 		Wrap<Integer> facetPivotMinCountWrap = new Wrap<Integer>().var("facetPivotMinCount");
 		if(facetPivotMinCount == null) {
 			_facetPivotMinCount(facetPivotMinCountWrap);
-			setFacetPivotMinCount(facetPivotMinCountWrap.o);
+			Optional.ofNullable(facetPivotMinCountWrap.getO()).ifPresent(o -> {
+				setFacetPivotMinCount(o);
+			});
 		}
 		return (SearchRequest)this;
 	}
@@ -495,7 +505,7 @@ public abstract class SearchRequestGen<DEV> extends Object {
 
 	/**	<br> The entity facetSort
 	 *  is defined as null before being initialized. 
-	 * <br><a href="http://localhost:8983/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.computate.search.request.SearchRequest&fq=entiteVar_enUS_indexed_string:facetSort">Find the entity facetSort in Solr</a>
+	 * <br><a href="https://solr-solr.apps-crc.testing/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.computate.search.request.SearchRequest&fq=entiteVar_enUS_indexed_string:facetSort">Find the entity facetSort in Solr</a>
 	 * <br>
 	 * @param w is for wrapping a value to assign to this entity during initialization. 
 	 **/
@@ -514,7 +524,9 @@ public abstract class SearchRequestGen<DEV> extends Object {
 		Wrap<String> facetSortWrap = new Wrap<String>().var("facetSort");
 		if(facetSort == null) {
 			_facetSort(facetSortWrap);
-			setFacetSort(facetSortWrap.o);
+			Optional.ofNullable(facetSortWrap.getO()).ifPresent(o -> {
+				setFacetSort(o);
+			});
 		}
 		return (SearchRequest)this;
 	}
@@ -545,7 +557,7 @@ public abstract class SearchRequestGen<DEV> extends Object {
 
 	/**	<br> The entity facet
 	 *  is defined as null before being initialized. 
-	 * <br><a href="http://localhost:8983/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.computate.search.request.SearchRequest&fq=entiteVar_enUS_indexed_string:facet">Find the entity facet in Solr</a>
+	 * <br><a href="https://solr-solr.apps-crc.testing/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.computate.search.request.SearchRequest&fq=entiteVar_enUS_indexed_string:facet">Find the entity facet in Solr</a>
 	 * <br>
 	 * @param w is for wrapping a value to assign to this entity during initialization. 
 	 **/
@@ -569,7 +581,9 @@ public abstract class SearchRequestGen<DEV> extends Object {
 		Wrap<Boolean> facetWrap = new Wrap<Boolean>().var("facet");
 		if(facet == null) {
 			_facet(facetWrap);
-			setFacet(facetWrap.o);
+			Optional.ofNullable(facetWrap.getO()).ifPresent(o -> {
+				setFacet(o);
+			});
 		}
 		return (SearchRequest)this;
 	}
@@ -601,7 +615,7 @@ public abstract class SearchRequestGen<DEV> extends Object {
 
 	/**	<br> The entity facetLimit
 	 *  is defined as null before being initialized. 
-	 * <br><a href="http://localhost:8983/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.computate.search.request.SearchRequest&fq=entiteVar_enUS_indexed_string:facetLimit">Find the entity facetLimit in Solr</a>
+	 * <br><a href="https://solr-solr.apps-crc.testing/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.computate.search.request.SearchRequest&fq=entiteVar_enUS_indexed_string:facetLimit">Find the entity facetLimit in Solr</a>
 	 * <br>
 	 * @param w is for wrapping a value to assign to this entity during initialization. 
 	 **/
@@ -627,7 +641,9 @@ public abstract class SearchRequestGen<DEV> extends Object {
 		Wrap<Integer> facetLimitWrap = new Wrap<Integer>().var("facetLimit");
 		if(facetLimit == null) {
 			_facetLimit(facetLimitWrap);
-			setFacetLimit(facetLimitWrap.o);
+			Optional.ofNullable(facetLimitWrap.getO()).ifPresent(o -> {
+				setFacetLimit(o);
+			});
 		}
 		return (SearchRequest)this;
 	}
@@ -659,7 +675,7 @@ public abstract class SearchRequestGen<DEV> extends Object {
 
 	/**	<br> The entity facetMinCount
 	 *  is defined as null before being initialized. 
-	 * <br><a href="http://localhost:8983/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.computate.search.request.SearchRequest&fq=entiteVar_enUS_indexed_string:facetMinCount">Find the entity facetMinCount in Solr</a>
+	 * <br><a href="https://solr-solr.apps-crc.testing/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.computate.search.request.SearchRequest&fq=entiteVar_enUS_indexed_string:facetMinCount">Find the entity facetMinCount in Solr</a>
 	 * <br>
 	 * @param w is for wrapping a value to assign to this entity during initialization. 
 	 **/
@@ -685,7 +701,9 @@ public abstract class SearchRequestGen<DEV> extends Object {
 		Wrap<Integer> facetMinCountWrap = new Wrap<Integer>().var("facetMinCount");
 		if(facetMinCount == null) {
 			_facetMinCount(facetMinCountWrap);
-			setFacetMinCount(facetMinCountWrap.o);
+			Optional.ofNullable(facetMinCountWrap.getO()).ifPresent(o -> {
+				setFacetMinCount(o);
+			});
 		}
 		return (SearchRequest)this;
 	}
@@ -717,7 +735,7 @@ public abstract class SearchRequestGen<DEV> extends Object {
 
 	/**	<br> The entity facetOffset
 	 *  is defined as null before being initialized. 
-	 * <br><a href="http://localhost:8983/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.computate.search.request.SearchRequest&fq=entiteVar_enUS_indexed_string:facetOffset">Find the entity facetOffset in Solr</a>
+	 * <br><a href="https://solr-solr.apps-crc.testing/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.computate.search.request.SearchRequest&fq=entiteVar_enUS_indexed_string:facetOffset">Find the entity facetOffset in Solr</a>
 	 * <br>
 	 * @param w is for wrapping a value to assign to this entity during initialization. 
 	 **/
@@ -743,7 +761,9 @@ public abstract class SearchRequestGen<DEV> extends Object {
 		Wrap<Integer> facetOffsetWrap = new Wrap<Integer>().var("facetOffset");
 		if(facetOffset == null) {
 			_facetOffset(facetOffsetWrap);
-			setFacetOffset(facetOffsetWrap.o);
+			Optional.ofNullable(facetOffsetWrap.getO()).ifPresent(o -> {
+				setFacetOffset(o);
+			});
 		}
 		return (SearchRequest)this;
 	}
@@ -774,7 +794,7 @@ public abstract class SearchRequestGen<DEV> extends Object {
 
 	/**	<br> The entity facetRangeStart
 	 *  is defined as null before being initialized. 
-	 * <br><a href="http://localhost:8983/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.computate.search.request.SearchRequest&fq=entiteVar_enUS_indexed_string:facetRangeStart">Find the entity facetRangeStart in Solr</a>
+	 * <br><a href="https://solr-solr.apps-crc.testing/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.computate.search.request.SearchRequest&fq=entiteVar_enUS_indexed_string:facetRangeStart">Find the entity facetRangeStart in Solr</a>
 	 * <br>
 	 * @param w is for wrapping a value to assign to this entity during initialization. 
 	 **/
@@ -793,7 +813,9 @@ public abstract class SearchRequestGen<DEV> extends Object {
 		Wrap<String> facetRangeStartWrap = new Wrap<String>().var("facetRangeStart");
 		if(facetRangeStart == null) {
 			_facetRangeStart(facetRangeStartWrap);
-			setFacetRangeStart(facetRangeStartWrap.o);
+			Optional.ofNullable(facetRangeStartWrap.getO()).ifPresent(o -> {
+				setFacetRangeStart(o);
+			});
 		}
 		return (SearchRequest)this;
 	}
@@ -824,7 +846,7 @@ public abstract class SearchRequestGen<DEV> extends Object {
 
 	/**	<br> The entity facetRangeEnd
 	 *  is defined as null before being initialized. 
-	 * <br><a href="http://localhost:8983/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.computate.search.request.SearchRequest&fq=entiteVar_enUS_indexed_string:facetRangeEnd">Find the entity facetRangeEnd in Solr</a>
+	 * <br><a href="https://solr-solr.apps-crc.testing/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.computate.search.request.SearchRequest&fq=entiteVar_enUS_indexed_string:facetRangeEnd">Find the entity facetRangeEnd in Solr</a>
 	 * <br>
 	 * @param w is for wrapping a value to assign to this entity during initialization. 
 	 **/
@@ -843,7 +865,9 @@ public abstract class SearchRequestGen<DEV> extends Object {
 		Wrap<String> facetRangeEndWrap = new Wrap<String>().var("facetRangeEnd");
 		if(facetRangeEnd == null) {
 			_facetRangeEnd(facetRangeEndWrap);
-			setFacetRangeEnd(facetRangeEndWrap.o);
+			Optional.ofNullable(facetRangeEndWrap.getO()).ifPresent(o -> {
+				setFacetRangeEnd(o);
+			});
 		}
 		return (SearchRequest)this;
 	}
@@ -874,7 +898,7 @@ public abstract class SearchRequestGen<DEV> extends Object {
 
 	/**	<br> The entity facetRangeGap
 	 *  is defined as null before being initialized. 
-	 * <br><a href="http://localhost:8983/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.computate.search.request.SearchRequest&fq=entiteVar_enUS_indexed_string:facetRangeGap">Find the entity facetRangeGap in Solr</a>
+	 * <br><a href="https://solr-solr.apps-crc.testing/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.computate.search.request.SearchRequest&fq=entiteVar_enUS_indexed_string:facetRangeGap">Find the entity facetRangeGap in Solr</a>
 	 * <br>
 	 * @param w is for wrapping a value to assign to this entity during initialization. 
 	 **/
@@ -893,7 +917,9 @@ public abstract class SearchRequestGen<DEV> extends Object {
 		Wrap<String> facetRangeGapWrap = new Wrap<String>().var("facetRangeGap");
 		if(facetRangeGap == null) {
 			_facetRangeGap(facetRangeGapWrap);
-			setFacetRangeGap(facetRangeGapWrap.o);
+			Optional.ofNullable(facetRangeGapWrap.getO()).ifPresent(o -> {
+				setFacetRangeGap(o);
+			});
 		}
 		return (SearchRequest)this;
 	}
@@ -924,7 +950,7 @@ public abstract class SearchRequestGen<DEV> extends Object {
 
 	/**	<br> The entity cursorMark
 	 *  is defined as null before being initialized. 
-	 * <br><a href="http://localhost:8983/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.computate.search.request.SearchRequest&fq=entiteVar_enUS_indexed_string:cursorMark">Find the entity cursorMark in Solr</a>
+	 * <br><a href="https://solr-solr.apps-crc.testing/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.computate.search.request.SearchRequest&fq=entiteVar_enUS_indexed_string:cursorMark">Find the entity cursorMark in Solr</a>
 	 * <br>
 	 * @param w is for wrapping a value to assign to this entity during initialization. 
 	 **/
@@ -943,7 +969,9 @@ public abstract class SearchRequestGen<DEV> extends Object {
 		Wrap<String> cursorMarkWrap = new Wrap<String>().var("cursorMark");
 		if(cursorMark == null) {
 			_cursorMark(cursorMarkWrap);
-			setCursorMark(cursorMarkWrap.o);
+			Optional.ofNullable(cursorMarkWrap.getO()).ifPresent(o -> {
+				setCursorMark(o);
+			});
 		}
 		return (SearchRequest)this;
 	}
@@ -975,7 +1003,7 @@ public abstract class SearchRequestGen<DEV> extends Object {
 
 	/**	<br> The entity facetQueries
 	 *  It is constructed before being initialized with the constructor by default. 
-	 * <br><a href="http://localhost:8983/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.computate.search.request.SearchRequest&fq=entiteVar_enUS_indexed_string:facetQueries">Find the entity facetQueries in Solr</a>
+	 * <br><a href="https://solr-solr.apps-crc.testing/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.computate.search.request.SearchRequest&fq=entiteVar_enUS_indexed_string:facetQueries">Find the entity facetQueries in Solr</a>
 	 * <br>
 	 * @param w is the entity already constructed. 
 	 **/
@@ -984,9 +1012,10 @@ public abstract class SearchRequestGen<DEV> extends Object {
 	public List<String> getFacetQueries() {
 		return facetQueries;
 	}
-
-	public void setFacetQueries(List<String> facetQueries) {
-		this.facetQueries = facetQueries;
+	public void setFacetQueries(String o) {
+		String l = SearchRequest.staticSetFacetQueries(siteRequest_, o);
+		if(l != null)
+			addFacetQueries(l);
 	}
 	public static String staticSetFacetQueries(ComputateSearchSiteRequest siteRequest_, String o) {
 		return o;
@@ -1034,7 +1063,7 @@ public abstract class SearchRequestGen<DEV> extends Object {
 
 	/**	<br> The entity jsonFacets
 	 *  It is constructed before being initialized with the constructor by default. 
-	 * <br><a href="http://localhost:8983/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.computate.search.request.SearchRequest&fq=entiteVar_enUS_indexed_string:jsonFacets">Find the entity jsonFacets in Solr</a>
+	 * <br><a href="https://solr-solr.apps-crc.testing/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.computate.search.request.SearchRequest&fq=entiteVar_enUS_indexed_string:jsonFacets">Find the entity jsonFacets in Solr</a>
 	 * <br>
 	 * @param w is the entity already constructed. 
 	 **/
@@ -1043,9 +1072,10 @@ public abstract class SearchRequestGen<DEV> extends Object {
 	public List<String> getJsonFacets() {
 		return jsonFacets;
 	}
-
-	public void setJsonFacets(List<String> jsonFacets) {
-		this.jsonFacets = jsonFacets;
+	public void setJsonFacets(String o) {
+		String l = SearchRequest.staticSetJsonFacets(siteRequest_, o);
+		if(l != null)
+			addJsonFacets(l);
 	}
 	public static String staticSetJsonFacets(ComputateSearchSiteRequest siteRequest_, String o) {
 		return o;
@@ -1093,7 +1123,7 @@ public abstract class SearchRequestGen<DEV> extends Object {
 
 	/**	<br> The entity facetFields
 	 *  It is constructed before being initialized with the constructor by default. 
-	 * <br><a href="http://localhost:8983/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.computate.search.request.SearchRequest&fq=entiteVar_enUS_indexed_string:facetFields">Find the entity facetFields in Solr</a>
+	 * <br><a href="https://solr-solr.apps-crc.testing/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.computate.search.request.SearchRequest&fq=entiteVar_enUS_indexed_string:facetFields">Find the entity facetFields in Solr</a>
 	 * <br>
 	 * @param w is the entity already constructed. 
 	 **/
@@ -1102,9 +1132,10 @@ public abstract class SearchRequestGen<DEV> extends Object {
 	public List<String> getFacetFields() {
 		return facetFields;
 	}
-
-	public void setFacetFields(List<String> facetFields) {
-		this.facetFields = facetFields;
+	public void setFacetFields(String o) {
+		String l = SearchRequest.staticSetFacetFields(siteRequest_, o);
+		if(l != null)
+			addFacetFields(l);
 	}
 	public static String staticSetFacetFields(ComputateSearchSiteRequest siteRequest_, String o) {
 		return o;
@@ -1152,7 +1183,7 @@ public abstract class SearchRequestGen<DEV> extends Object {
 
 	/**	<br> The entity facetRanges
 	 *  It is constructed before being initialized with the constructor by default. 
-	 * <br><a href="http://localhost:8983/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.computate.search.request.SearchRequest&fq=entiteVar_enUS_indexed_string:facetRanges">Find the entity facetRanges in Solr</a>
+	 * <br><a href="https://solr-solr.apps-crc.testing/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.computate.search.request.SearchRequest&fq=entiteVar_enUS_indexed_string:facetRanges">Find the entity facetRanges in Solr</a>
 	 * <br>
 	 * @param w is the entity already constructed. 
 	 **/
@@ -1161,9 +1192,10 @@ public abstract class SearchRequestGen<DEV> extends Object {
 	public List<String> getFacetRanges() {
 		return facetRanges;
 	}
-
-	public void setFacetRanges(List<String> facetRanges) {
-		this.facetRanges = facetRanges;
+	public void setFacetRanges(String o) {
+		String l = SearchRequest.staticSetFacetRanges(siteRequest_, o);
+		if(l != null)
+			addFacetRanges(l);
 	}
 	public static String staticSetFacetRanges(ComputateSearchSiteRequest siteRequest_, String o) {
 		return o;
@@ -1211,7 +1243,7 @@ public abstract class SearchRequestGen<DEV> extends Object {
 
 	/**	<br> The entity start
 	 *  is defined as null before being initialized. 
-	 * <br><a href="http://localhost:8983/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.computate.search.request.SearchRequest&fq=entiteVar_enUS_indexed_string:start">Find the entity start in Solr</a>
+	 * <br><a href="https://solr-solr.apps-crc.testing/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.computate.search.request.SearchRequest&fq=entiteVar_enUS_indexed_string:start">Find the entity start in Solr</a>
 	 * <br>
 	 * @param w is for wrapping a value to assign to this entity during initialization. 
 	 **/
@@ -1237,7 +1269,9 @@ public abstract class SearchRequestGen<DEV> extends Object {
 		Wrap<Long> startWrap = new Wrap<Long>().var("start");
 		if(start == null) {
 			_start(startWrap);
-			setStart(startWrap.o);
+			Optional.ofNullable(startWrap.getO()).ifPresent(o -> {
+				setStart(o);
+			});
 		}
 		return (SearchRequest)this;
 	}
@@ -1269,7 +1303,7 @@ public abstract class SearchRequestGen<DEV> extends Object {
 
 	/**	<br> The entity rows
 	 *  is defined as null before being initialized. 
-	 * <br><a href="http://localhost:8983/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.computate.search.request.SearchRequest&fq=entiteVar_enUS_indexed_string:rows">Find the entity rows in Solr</a>
+	 * <br><a href="https://solr-solr.apps-crc.testing/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.computate.search.request.SearchRequest&fq=entiteVar_enUS_indexed_string:rows">Find the entity rows in Solr</a>
 	 * <br>
 	 * @param w is for wrapping a value to assign to this entity during initialization. 
 	 **/
@@ -1295,7 +1329,9 @@ public abstract class SearchRequestGen<DEV> extends Object {
 		Wrap<Long> rowsWrap = new Wrap<Long>().var("rows");
 		if(rows == null) {
 			_rows(rowsWrap);
-			setRows(rowsWrap.o);
+			Optional.ofNullable(rowsWrap.getO()).ifPresent(o -> {
+				setRows(o);
+			});
 		}
 		return (SearchRequest)this;
 	}
@@ -1327,7 +1363,7 @@ public abstract class SearchRequestGen<DEV> extends Object {
 
 	/**	<br> The entity distance
 	 *  is defined as null before being initialized. 
-	 * <br><a href="http://localhost:8983/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.computate.search.request.SearchRequest&fq=entiteVar_enUS_indexed_string:distance">Find the entity distance in Solr</a>
+	 * <br><a href="https://solr-solr.apps-crc.testing/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.computate.search.request.SearchRequest&fq=entiteVar_enUS_indexed_string:distance">Find the entity distance in Solr</a>
 	 * <br>
 	 * @param w is for wrapping a value to assign to this entity during initialization. 
 	 **/
@@ -1352,17 +1388,23 @@ public abstract class SearchRequestGen<DEV> extends Object {
 	}
 	@JsonIgnore
 	public void setDistance(Double o) {
-			this.distance = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
+		setDistance(new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP));
 	}
 	@JsonIgnore
 	public void setDistance(Integer o) {
-			this.distance = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
+		setDistance(new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP));
+	}
+	@JsonIgnore
+	public void setDistance(Number o) {
+		setDistance(new BigDecimal(o.doubleValue(), MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP));
 	}
 	protected SearchRequest distanceInit() {
 		Wrap<BigDecimal> distanceWrap = new Wrap<BigDecimal>().var("distance");
 		if(distance == null) {
 			_distance(distanceWrap);
-			setDistance(distanceWrap.o);
+			Optional.ofNullable(distanceWrap.getO()).ifPresent(o -> {
+				setDistance(o);
+			});
 		}
 		return (SearchRequest)this;
 	}
@@ -1393,7 +1435,7 @@ public abstract class SearchRequestGen<DEV> extends Object {
 
 	/**	<br> The entity point
 	 *  is defined as null before being initialized. 
-	 * <br><a href="http://localhost:8983/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.computate.search.request.SearchRequest&fq=entiteVar_enUS_indexed_string:point">Find the entity point in Solr</a>
+	 * <br><a href="https://solr-solr.apps-crc.testing/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.computate.search.request.SearchRequest&fq=entiteVar_enUS_indexed_string:point">Find the entity point in Solr</a>
 	 * <br>
 	 * @param w is for wrapping a value to assign to this entity during initialization. 
 	 **/
@@ -1412,7 +1454,9 @@ public abstract class SearchRequestGen<DEV> extends Object {
 		Wrap<String> pointWrap = new Wrap<String>().var("point");
 		if(point == null) {
 			_point(pointWrap);
-			setPoint(pointWrap.o);
+			Optional.ofNullable(pointWrap.getO()).ifPresent(o -> {
+				setPoint(o);
+			});
 		}
 		return (SearchRequest)this;
 	}
@@ -1443,7 +1487,7 @@ public abstract class SearchRequestGen<DEV> extends Object {
 
 	/**	<br> The entity spatialField
 	 *  is defined as null before being initialized. 
-	 * <br><a href="http://localhost:8983/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.computate.search.request.SearchRequest&fq=entiteVar_enUS_indexed_string:spatialField">Find the entity spatialField in Solr</a>
+	 * <br><a href="https://solr-solr.apps-crc.testing/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.computate.search.request.SearchRequest&fq=entiteVar_enUS_indexed_string:spatialField">Find the entity spatialField in Solr</a>
 	 * <br>
 	 * @param w is for wrapping a value to assign to this entity during initialization. 
 	 **/
@@ -1462,7 +1506,9 @@ public abstract class SearchRequestGen<DEV> extends Object {
 		Wrap<String> spatialFieldWrap = new Wrap<String>().var("spatialField");
 		if(spatialField == null) {
 			_spatialField(spatialFieldWrap);
-			setSpatialField(spatialFieldWrap.o);
+			Optional.ofNullable(spatialFieldWrap.getO()).ifPresent(o -> {
+				setSpatialField(o);
+			});
 		}
 		return (SearchRequest)this;
 	}
@@ -1493,7 +1539,7 @@ public abstract class SearchRequestGen<DEV> extends Object {
 
 	/**	<br> The entity stats
 	 *  is defined as null before being initialized. 
-	 * <br><a href="http://localhost:8983/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.computate.search.request.SearchRequest&fq=entiteVar_enUS_indexed_string:stats">Find the entity stats in Solr</a>
+	 * <br><a href="https://solr-solr.apps-crc.testing/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.computate.search.request.SearchRequest&fq=entiteVar_enUS_indexed_string:stats">Find the entity stats in Solr</a>
 	 * <br>
 	 * @param w is for wrapping a value to assign to this entity during initialization. 
 	 **/
@@ -1517,7 +1563,9 @@ public abstract class SearchRequestGen<DEV> extends Object {
 		Wrap<Boolean> statsWrap = new Wrap<Boolean>().var("stats");
 		if(stats == null) {
 			_stats(statsWrap);
-			setStats(statsWrap.o);
+			Optional.ofNullable(statsWrap.getO()).ifPresent(o -> {
+				setStats(o);
+			});
 		}
 		return (SearchRequest)this;
 	}
@@ -1549,7 +1597,7 @@ public abstract class SearchRequestGen<DEV> extends Object {
 
 	/**	<br> The entity statsFields
 	 *  It is constructed before being initialized with the constructor by default. 
-	 * <br><a href="http://localhost:8983/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.computate.search.request.SearchRequest&fq=entiteVar_enUS_indexed_string:statsFields">Find the entity statsFields in Solr</a>
+	 * <br><a href="https://solr-solr.apps-crc.testing/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.computate.search.request.SearchRequest&fq=entiteVar_enUS_indexed_string:statsFields">Find the entity statsFields in Solr</a>
 	 * <br>
 	 * @param w is the entity already constructed. 
 	 **/
@@ -1558,9 +1606,10 @@ public abstract class SearchRequestGen<DEV> extends Object {
 	public List<String> getStatsFields() {
 		return statsFields;
 	}
-
-	public void setStatsFields(List<String> statsFields) {
-		this.statsFields = statsFields;
+	public void setStatsFields(String o) {
+		String l = SearchRequest.staticSetStatsFields(siteRequest_, o);
+		if(l != null)
+			addStatsFields(l);
 	}
 	public static String staticSetStatsFields(ComputateSearchSiteRequest siteRequest_, String o) {
 		return o;
@@ -1607,7 +1656,7 @@ public abstract class SearchRequestGen<DEV> extends Object {
 
 	/**	<br> The entity score
 	 *  is defined as null before being initialized. 
-	 * <br><a href="http://localhost:8983/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.computate.search.request.SearchRequest&fq=entiteVar_enUS_indexed_string:score">Find the entity score in Solr</a>
+	 * <br><a href="https://solr-solr.apps-crc.testing/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.computate.search.request.SearchRequest&fq=entiteVar_enUS_indexed_string:score">Find the entity score in Solr</a>
 	 * <br>
 	 * @param w is for wrapping a value to assign to this entity during initialization. 
 	 **/
@@ -1626,7 +1675,9 @@ public abstract class SearchRequestGen<DEV> extends Object {
 		Wrap<String> scoreWrap = new Wrap<String>().var("score");
 		if(score == null) {
 			_score(scoreWrap);
-			setScore(scoreWrap.o);
+			Optional.ofNullable(scoreWrap.getO()).ifPresent(o -> {
+				setScore(o);
+			});
 		}
 		return (SearchRequest)this;
 	}
@@ -1657,7 +1708,7 @@ public abstract class SearchRequestGen<DEV> extends Object {
 
 	/**	<br> The entity distanceUnits
 	 *  is defined as null before being initialized. 
-	 * <br><a href="http://localhost:8983/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.computate.search.request.SearchRequest&fq=entiteVar_enUS_indexed_string:distanceUnits">Find the entity distanceUnits in Solr</a>
+	 * <br><a href="https://solr-solr.apps-crc.testing/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.computate.search.request.SearchRequest&fq=entiteVar_enUS_indexed_string:distanceUnits">Find the entity distanceUnits in Solr</a>
 	 * <br>
 	 * @param w is for wrapping a value to assign to this entity during initialization. 
 	 **/
@@ -1676,7 +1727,9 @@ public abstract class SearchRequestGen<DEV> extends Object {
 		Wrap<String> distanceUnitsWrap = new Wrap<String>().var("distanceUnits");
 		if(distanceUnits == null) {
 			_distanceUnits(distanceUnitsWrap);
-			setDistanceUnits(distanceUnitsWrap.o);
+			Optional.ofNullable(distanceUnitsWrap.getO()).ifPresent(o -> {
+				setDistanceUnits(o);
+			});
 		}
 		return (SearchRequest)this;
 	}
@@ -1707,7 +1760,7 @@ public abstract class SearchRequestGen<DEV> extends Object {
 
 	/**	<br> The entity queryString
 	 *  is defined as null before being initialized. 
-	 * <br><a href="http://localhost:8983/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.computate.search.request.SearchRequest&fq=entiteVar_enUS_indexed_string:queryString">Find the entity queryString in Solr</a>
+	 * <br><a href="https://solr-solr.apps-crc.testing/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.computate.search.request.SearchRequest&fq=entiteVar_enUS_indexed_string:queryString">Find the entity queryString in Solr</a>
 	 * <br>
 	 * @param w is for wrapping a value to assign to this entity during initialization. 
 	 **/
@@ -1726,7 +1779,9 @@ public abstract class SearchRequestGen<DEV> extends Object {
 		Wrap<String> queryStringWrap = new Wrap<String>().var("queryString");
 		if(queryString == null) {
 			_queryString(queryStringWrap);
-			setQueryString(queryStringWrap.o);
+			Optional.ofNullable(queryStringWrap.getO()).ifPresent(o -> {
+				setQueryString(o);
+			});
 		}
 		return (SearchRequest)this;
 	}

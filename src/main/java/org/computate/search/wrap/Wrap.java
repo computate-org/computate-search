@@ -20,24 +20,25 @@ import java.io.Serializable;
  **/
 public class Wrap<DEV> implements Serializable {
 
-	public String var;
+	private String var;
+	
+	public String getVar() {
+		return var;
+	}
 
 	public Wrap<DEV> var(String o) {
 		var = o;
 		return this;
 	}
 
-	public DEV o;
+	private DEV o;
+	
+	public DEV getO() {
+		return o;
+	}
 
 	public Wrap<DEV> o(DEV o) {
 		this.o = o;
-		return this;
-	}
-
-	public Boolean alreadyInitialized = false;
-
-	public Wrap<DEV> alreadyInitialized(Boolean o) {
-		alreadyInitialized = o;
 		return this;
 	}
 }
