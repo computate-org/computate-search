@@ -318,6 +318,27 @@ public class SearchTool {
 		return sb.toString();
 	}
 
+	public static String unescapeQueryChars(String s) {
+		StringBuilder sb = new StringBuilder();
+		for (int i = 0; i < s.length(); i++) {
+			char c = s.charAt(i);
+			if (c == '\\' && s.length() >= (i + 2)) {
+				char c2 = s.charAt(i + 1);
+				// These characters are part of the query syntax and must be escaped
+				if (c2 == '\\' || c2 == '+' || c2 == '-' || c2 == '!' || c2 == '(' || c2 == ')' || c2 == ':' || c2 == '^'
+						|| c2 == '[' || c2 == ']' || c2 == '\"' || c2 == '{' || c2 == '}' || c2 == '~' || c2 == '*' || c2 == '?'
+						|| c2 == '|' || c2 == '&' || c2 == ';' || c2 == '/' || Character.isWhitespace(c2)) {
+					sb.append(c2);
+					i++;
+				} else {
+				}
+			} else {
+				sb.append(c);
+			}
+		}
+		return sb.toString();
+	}
+
 	public static String urlEncode(String s) {
 		try {
 			return URLEncoder.encode(s, "UTF-8");
