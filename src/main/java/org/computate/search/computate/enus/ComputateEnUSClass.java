@@ -58,6 +58,11 @@ public class ComputateEnUSClass {
 	@JsonAlias("classeNomSimpleSuperGenerique_enUS_stored_string")
 	private String superClassGenericSimpleName;
 	/**
+	 * Example: "BaseModel"
+	 **/
+	@JsonAlias("classeDescription_enUS_stored_string")
+	private String classDescription;
+	/**
 	 * Example: false
 	 **/
 	@JsonAlias("classeEstBase_stored_boolean")
@@ -776,6 +781,12 @@ public class ComputateEnUSClass {
 	}
 	public void setSuperClassGenericSimpleName(String superClassGenericSimpleName) {
 		this.superClassGenericSimpleName = superClassGenericSimpleName;
+	}
+	public String getClassDescription() {
+		return classDescription;
+	}
+	public void setClassDescription(String classDescription) {
+		this.classDescription = classDescription;
 	}
 	public Boolean getClassIsBase() {
 		return classIsBase;
