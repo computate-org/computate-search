@@ -557,138 +557,138 @@ public class ComputateEnUSClass {
 	/**
 	 * Example: "light-green"
 	 **/
-	@JsonAlias("contexteCouleur_stored_string")
-	private String contextColor;
+	@JsonAlias("classeCouleur_stored_string")
+	private String classColor;
 	/**
 	 * Example: "duotone"
 	 **/
-	@JsonAlias("contexteIconeGroupe_stored_string")
-	private String contextIconGroup;
+	@JsonAlias("classeIconeGroupe_stored_string")
+	private String classIconGroup;
 	/**
 	 * Example: "hands-heart"
 	 **/
-	@JsonAlias("contexteIconeNom_stored_string")
-	private String contextIconName;
+	@JsonAlias("classeIconeNom_stored_string")
+	private String classIconName;
 	/**
 	 * Example: 100
 	 **/
-	@JsonAlias("contexteRows_stored_int")
-	private Integer contextRows;
+	@JsonAlias("classeRows_stored_int")
+	private Integer classRows;
 	/**
 	 * Example: "a donor"
 	 **/
-	@JsonAlias("contexteUnNom_enUS_stored_string")
+	@JsonAlias("classeUnNom_enUS_stored_string")
 	private String contextAName;
 	/**
 	 * Example: "donor"
 	 **/
-	@JsonAlias("contexteNomSingulier_enUS_stored_string")
-	private String contextNameSingular;
+	@JsonAlias("classeNomSingulier_enUS_stored_string")
+	private String classNameSingular;
 	/**
 	 * Example: "donors"
 	 **/
-	@JsonAlias("contexteNomPluriel_enUS_stored_string")
-	private String contextNamePlural;
+	@JsonAlias("classeNomPluriel_enUS_stored_string")
+	private String classNamePlural;
 	/**
 	 * Example: "donor"
 	 **/
-	@JsonAlias("contexteNomVar_enUS_stored_string")
-	private String contextNameVar;
+	@JsonAlias("classeNomVar_enUS_stored_string")
+	private String classNameVar;
 	/**
 	 * Example: "the donors"
 	 **/
-	@JsonAlias("contexteLesNoms_enUS_stored_string")
-	private String contextTheNames;
+	@JsonAlias("classeLesNoms_enUS_stored_string")
+	private String classTheNames;
 	/**
 	 * Example: "donor"
 	 **/
-	@JsonAlias("contexteNomAdjectifSingulier_enUS_stored_string")
-	private String contextNameAdjectiveSingular;
+	@JsonAlias("classeNomAdjectifSingulier_enUS_stored_string")
+	private String classNameAdjectiveSingular;
 	/**
 	 * Example: "donors"
 	 **/
-	@JsonAlias("contexteNomAdjectifPluriel_enUS_stored_string")
-	private String contextNameAdjectivePlural;
+	@JsonAlias("classeNomAdjectifPluriel_enUS_stored_string")
+	private String classNameAdjectivePlural;
 	/**
 	 * Example: "this "
 	 **/
-	@JsonAlias("contexteCe_enUS_stored_string")
-	private String contextThis;
+	@JsonAlias("classeCe_enUS_stored_string")
+	private String classThis;
 	/**
 	 * Example: "a "
 	 **/
-	@JsonAlias("contexteUn_enUS_stored_string")
-	private String contextA;
+	@JsonAlias("classeUn_enUS_stored_string")
+	private String classA;
 	/**
 	 * Example: "created "
 	 **/
-	@JsonAlias("contexteCree_enUS_stored_string")
-	private String contextCreated;
+	@JsonAlias("classeCree_enUS_stored_string")
+	private String classCreated;
 	/**
 	 * Example: "modified "
 	 **/
-	@JsonAlias("contexteModifie_enUS_stored_string")
-	private String contextModified;
+	@JsonAlias("classeModifie_enUS_stored_string")
+	private String classModified;
 	/**
 	 * Example: "current donor"
 	 **/
-	@JsonAlias("contexteNomActuel_enUS_stored_string")
-	private String contextActualName;
+	@JsonAlias("classeNomActuel_enUS_stored_string")
+	private String classActualName;
 	/**
 	 * Example: "all "
 	 **/
-	@JsonAlias("contexteTous_enUS_stored_string")
-	private String contextAll;
+	@JsonAlias("classeTous_enUS_stored_string")
+	private String classAll;
 	/**
 	 * Example: "all the donors"
 	 **/
-	@JsonAlias("contexteTousNom_enUS_stored_string")
-	private String contextAllName;
+	@JsonAlias("classeTousNom_enUS_stored_string")
+	private String classAllName;
 	/**
 	 * Example: "search donors by "
 	 **/
-	@JsonAlias("contexteRechercherTousNomPar_enUS_stored_string")
-	private String contextSearchAllNameBy;
+	@JsonAlias("classeRechercherTousNomPar_enUS_stored_string")
+	private String classSearchAllNameBy;
 	/**
 	 * Example: "search donors"
 	 **/
-	@JsonAlias("contexteRechercherTousNomr_enUS_stored_string")
-	private String contextSearchAllName;
+	@JsonAlias("classeRechercherTousNomr_enUS_stored_string")
+	private String classSearchAllName;
 	/**
 	 * Example: "no donor found"
 	 **/
-	@JsonAlias("contexteAucunNomTrouve_enUS_stored_string")
-	private String contextNoNameFound;
+	@JsonAlias("classeAucunNomTrouve_enUS_stored_string")
+	private String classNoNameFound;
 	/**
 	 * Example: "a donor"
 	 **/
-	@JsonAlias("contexteUnNomAdjectif_enUS_stored_string")
-	private String contextANameAdjective;
+	@JsonAlias("classeUnNomAdjectif_enUS_stored_string")
+	private String classANameAdjective;
 	/**
 	 * Example: "this donor"
 	 **/
-	@JsonAlias("contexteCeNom_enUS_stored_string")
-	private String contextThisName;
+	@JsonAlias("classeCeNom_enUS_stored_string")
+	private String classThisName;
 	/**
 	 * Example: "the donor"
 	 **/
-	@JsonAlias("contexteLeNom_enUS_stored_string")
-	private String contextTheName;
+	@JsonAlias("classeLeNom_enUS_stored_string")
+	private String classTheName;
 	/**
 	 * Example: "of donor"
 	 **/
-	@JsonAlias("contexteDeNom_enUS_stored_string")
-	private String contextOfName;
+	@JsonAlias("classeDeNom_enUS_stored_string")
+	private String classOfName;
 	/**
 	 * Example: "this "
 	 **/
-	@JsonAlias("contexteCeMinuscule_enUS_stored_string")
-	private String contextThisLowercase;
+	@JsonAlias("classeCeMinuscule_enUS_stored_string")
+	private String classThisLowercase;
 	/**
 	 * Example: "donors"
 	 **/
-	@JsonAlias("contexteTitre_enUS_stored_string")
-	private String contextTitle;
+	@JsonAlias("classeTitre_enUS_stored_string")
+	private String classTitle;
 	/**
 	 * Example: true
 	 **/
@@ -740,6 +740,16 @@ public class ComputateEnUSClass {
 	 */
 	@JsonAlias("_version_")
 	private Boolean version;
+
+	@JsonAlias("classeSmartDataDomain_stored_string")
+	private String classSmartDataDomain;
+
+	@JsonAlias("classeSmartDataSubModule_stored_string")
+	private String classSmartDataSubModule;
+
+	@JsonAlias("classeSmartDataModel_stored_string")
+	private String classSmartDataModel;
+
 	public String getSitePath() {
 		return sitePath;
 	}
@@ -1352,167 +1362,167 @@ public class ComputateEnUSClass {
 	public void setClassContext(Boolean classContext) {
 		this.classContext = classContext;
 	}
-	public String getContextColor() {
-		return contextColor;
+	public String getClassColor() {
+		return classColor;
 	}
-	public void setContextColor(String contextColor) {
-		this.contextColor = contextColor;
+	public void setClassColor(String contextColor) {
+		this.classColor = contextColor;
 	}
-	public String getContextIconGroup() {
-		return contextIconGroup;
+	public String getClassIconGroup() {
+		return classIconGroup;
 	}
-	public void setContextIconGroup(String contextIconGroup) {
-		this.contextIconGroup = contextIconGroup;
+	public void setClassIconGroup(String contextIconGroup) {
+		this.classIconGroup = contextIconGroup;
 	}
-	public String getContextIconName() {
-		return contextIconName;
+	public String getClassIconName() {
+		return classIconName;
 	}
-	public void setContextIconName(String contextIconName) {
-		this.contextIconName = contextIconName;
+	public void setClassIconName(String contextIconName) {
+		this.classIconName = contextIconName;
 	}
-	public Integer getContextRows() {
-		return contextRows;
+	public Integer getClassRows() {
+		return classRows;
 	}
-	public void setContextRows(Integer contextRows) {
-		this.contextRows = contextRows;
+	public void setClassRows(Integer contextRows) {
+		this.classRows = contextRows;
 	}
-	public String getContextAName() {
+	public String getClassAName() {
 		return contextAName;
 	}
-	public void setContextAName(String contextAName) {
+	public void setClassAName(String contextAName) {
 		this.contextAName = contextAName;
 	}
-	public String getContextNameSingular() {
-		return contextNameSingular;
+	public String getClassNameSingular() {
+		return classNameSingular;
 	}
-	public void setContextNameSingular(String contextNameSingular) {
-		this.contextNameSingular = contextNameSingular;
+	public void setClassNameSingular(String contextNameSingular) {
+		this.classNameSingular = contextNameSingular;
 	}
-	public String getContextNamePlural() {
-		return contextNamePlural;
+	public String getClassNamePlural() {
+		return classNamePlural;
 	}
-	public void setContextNamePlural(String contextNamePlural) {
-		this.contextNamePlural = contextNamePlural;
+	public void setClassNamePlural(String contextNamePlural) {
+		this.classNamePlural = contextNamePlural;
 	}
-	public String getContextNameVar() {
-		return contextNameVar;
+	public String getClassNameVar() {
+		return classNameVar;
 	}
-	public void setContextNameVar(String contextNameVar) {
-		this.contextNameVar = contextNameVar;
+	public void setClassNameVar(String contextNameVar) {
+		this.classNameVar = contextNameVar;
 	}
-	public String getContextTheNames() {
-		return contextTheNames;
+	public String getClassTheNames() {
+		return classTheNames;
 	}
-	public void setContextTheNames(String contextTheNames) {
-		this.contextTheNames = contextTheNames;
+	public void setClassTheNames(String contextTheNames) {
+		this.classTheNames = contextTheNames;
 	}
-	public String getContextNameAdjectiveSingular() {
-		return contextNameAdjectiveSingular;
+	public String getClassNameAdjectiveSingular() {
+		return classNameAdjectiveSingular;
 	}
-	public void setContextNameAdjectiveSingular(String contextNameAdjectiveSingular) {
-		this.contextNameAdjectiveSingular = contextNameAdjectiveSingular;
+	public void setClassNameAdjectiveSingular(String contextNameAdjectiveSingular) {
+		this.classNameAdjectiveSingular = contextNameAdjectiveSingular;
 	}
-	public String getContextNameAdjectivePlural() {
-		return contextNameAdjectivePlural;
+	public String getClassNameAdjectivePlural() {
+		return classNameAdjectivePlural;
 	}
-	public void setContextNameAdjectivePlural(String contextNameAdjectivePlural) {
-		this.contextNameAdjectivePlural = contextNameAdjectivePlural;
+	public void setClassNameAdjectivePlural(String contextNameAdjectivePlural) {
+		this.classNameAdjectivePlural = contextNameAdjectivePlural;
 	}
-	public String getContextThis() {
-		return contextThis;
+	public String getClassThis() {
+		return classThis;
 	}
-	public void setContextThis(String contextThis) {
-		this.contextThis = contextThis;
+	public void setClassThis(String contextThis) {
+		this.classThis = contextThis;
 	}
-	public String getContextA() {
-		return contextA;
+	public String getClassA() {
+		return classA;
 	}
-	public void setContextA(String contextA) {
-		this.contextA = contextA;
+	public void setClassA(String contextA) {
+		this.classA = contextA;
 	}
-	public String getContextCreated() {
-		return contextCreated;
+	public String getClassCreated() {
+		return classCreated;
 	}
-	public void setContextCreated(String contextCreated) {
-		this.contextCreated = contextCreated;
+	public void setClassCreated(String contextCreated) {
+		this.classCreated = contextCreated;
 	}
-	public String getContextModified() {
-		return contextModified;
+	public String getClassModified() {
+		return classModified;
 	}
-	public void setContextModified(String contextModified) {
-		this.contextModified = contextModified;
+	public void setClassModified(String contextModified) {
+		this.classModified = contextModified;
 	}
-	public String getContextActualName() {
-		return contextActualName;
+	public String getClassActualName() {
+		return classActualName;
 	}
-	public void setContextActualName(String contextActualName) {
-		this.contextActualName = contextActualName;
+	public void setClassActualName(String contextActualName) {
+		this.classActualName = contextActualName;
 	}
-	public String getContextAll() {
-		return contextAll;
+	public String getClassAll() {
+		return classAll;
 	}
-	public void setContextAll(String contextAll) {
-		this.contextAll = contextAll;
+	public void setClassAll(String contextAll) {
+		this.classAll = contextAll;
 	}
-	public String getContextAllName() {
-		return contextAllName;
+	public String getClassAllName() {
+		return classAllName;
 	}
-	public void setContextAllName(String contextAllName) {
-		this.contextAllName = contextAllName;
+	public void setClassAllName(String contextAllName) {
+		this.classAllName = contextAllName;
 	}
-	public String getContextSearchAllNameBy() {
-		return contextSearchAllNameBy;
+	public String getClassSearchAllNameBy() {
+		return classSearchAllNameBy;
 	}
-	public void setContextSearchAllNameBy(String contextSearchAllNameBy) {
-		this.contextSearchAllNameBy = contextSearchAllNameBy;
+	public void setClassSearchAllNameBy(String contextSearchAllNameBy) {
+		this.classSearchAllNameBy = contextSearchAllNameBy;
 	}
-	public String getContextSearchAllName() {
-		return contextSearchAllName;
+	public String getClassSearchAllName() {
+		return classSearchAllName;
 	}
-	public void setContextSearchAllName(String contextSearchAllName) {
-		this.contextSearchAllName = contextSearchAllName;
+	public void setClassSearchAllName(String contextSearchAllName) {
+		this.classSearchAllName = contextSearchAllName;
 	}
-	public String getContextNoNameFound() {
-		return contextNoNameFound;
+	public String getClassNoNameFound() {
+		return classNoNameFound;
 	}
-	public void setContextNoNameFound(String contextNoNameFound) {
-		this.contextNoNameFound = contextNoNameFound;
+	public void setClassNoNameFound(String contextNoNameFound) {
+		this.classNoNameFound = contextNoNameFound;
 	}
-	public String getContextANameAdjective() {
-		return contextANameAdjective;
+	public String getClassANameAdjective() {
+		return classANameAdjective;
 	}
-	public void setContextANameAdjective(String contextANameAdjective) {
-		this.contextANameAdjective = contextANameAdjective;
+	public void setClassANameAdjective(String contextANameAdjective) {
+		this.classANameAdjective = contextANameAdjective;
 	}
-	public String getContextThisName() {
-		return contextThisName;
+	public String getClassThisName() {
+		return classThisName;
 	}
-	public void setContextThisName(String contextThisName) {
-		this.contextThisName = contextThisName;
+	public void setClassThisName(String contextThisName) {
+		this.classThisName = contextThisName;
 	}
-	public String getContextTheName() {
-		return contextTheName;
+	public String getClassTheName() {
+		return classTheName;
 	}
-	public void setContextTheName(String contextTheName) {
-		this.contextTheName = contextTheName;
+	public void setClassTheName(String contextTheName) {
+		this.classTheName = contextTheName;
 	}
-	public String getContextOfName() {
-		return contextOfName;
+	public String getClassOfName() {
+		return classOfName;
 	}
-	public void setContextOfName(String contextOfName) {
-		this.contextOfName = contextOfName;
+	public void setClassOfName(String contextOfName) {
+		this.classOfName = contextOfName;
 	}
-	public String getContextThisLowercase() {
-		return contextThisLowercase;
+	public String getClassThisLowercase() {
+		return classThisLowercase;
 	}
-	public void setContextThisLowercase(String contextThisLowercase) {
-		this.contextThisLowercase = contextThisLowercase;
+	public void setClassThisLowercase(String contextThisLowercase) {
+		this.classThisLowercase = contextThisLowercase;
 	}
-	public String getContextTitle() {
-		return contextTitle;
+	public String getClassTitle() {
+		return classTitle;
 	}
-	public void setContextTitle(String contextTitle) {
-		this.contextTitle = contextTitle;
+	public void setClassTitle(String contextTitle) {
+		this.classTitle = contextTitle;
 	}
 	public Boolean getClassIndexed() {
 		return classIndexed;
@@ -1573,5 +1583,29 @@ public class ComputateEnUSClass {
 	}
 	public void setVersion(Boolean version) {
 		this.version = version;
+	}
+	public String getContextAName() {
+		return contextAName;
+	}
+	public void setContextAName(String contextAName) {
+		this.contextAName = contextAName;
+	}
+	public String getClassSmartDataDomain() {
+		return classSmartDataDomain;
+	}
+	public void setClassSmartDataDomain(String classSmartDataDomain) {
+		this.classSmartDataDomain = classSmartDataDomain;
+	}
+	public String getClassSmartDataSubModule() {
+		return classSmartDataSubModule;
+	}
+	public void setClassSmartDataSubModule(String classSmartDataSubModule) {
+		this.classSmartDataSubModule = classSmartDataSubModule;
+	}
+	public String getClassSmartDataModel() {
+		return classSmartDataModel;
+	}
+	public void setClassSmartDataModel(String classSmartDataModel) {
+		this.classSmartDataModel = classSmartDataModel;
 	}
 }
