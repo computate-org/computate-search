@@ -750,6 +750,15 @@ public class ComputateEnUSClass {
 	@JsonAlias("classeSmartDataModel_stored_string")
 	private String classSmartDataModel;
 
+	@JsonAlias("classeModeleAlternatif_stored_string")
+	private String classAlternateModel;
+
+	public String getClassAlternateModel() {
+		return classAlternateModel;
+	}
+	public void setClassAlternateModel(String classAlternateModel) {
+		this.classAlternateModel = classAlternateModel;
+	}
 	public String getSitePath() {
 		return sitePath;
 	}
