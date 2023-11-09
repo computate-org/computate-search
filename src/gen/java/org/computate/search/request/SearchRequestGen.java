@@ -18,6 +18,8 @@ import java.util.Optional;
 import java.util.List;
 import org.apache.commons.lang3.StringUtils;
 import java.util.Objects;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonFormat;
@@ -46,9 +48,9 @@ import java.lang.Long;
 import java.math.BigDecimal;
 import org.computate.search.wrap.Wrap;
 
-/**	
-<ol>
-0<h3>Suggestions that can generate more code for you: </h3></ol>
+/**
+ * <ol>
+<h3>Suggestions that can generate more code for you: </h3> * </ol>
  * <li>You can add a class comment <b>"Api: true"</b> if you wish to GET, POST, PATCH or PUT these SearchRequest objects in a RESTful API. 
  * </li>
  * <h3>About the SearchRequest class and it's generated class SearchRequestGen&lt;Object&gt;: </h3>extends SearchRequestGen
@@ -67,22 +69,22 @@ import org.computate.search.wrap.Wrap;
  * The generated <code>class SearchRequestGen extends Object</code> which means that SearchRequest extends SearchRequestGen which extends Object. 
  * This generated inheritance is a powerful feature that allows a lot of boiler plate code to be created for you automatically while still preserving inheritance through the power of Java Generic classes. 
  * </p>
- * Api: true
- * ApiTag.enUS: true
- * ApiUri.enUS: null
- * Color: null
- * IconGroup: null
- * IconName: null
- * Indexed: true
- * {@inheritDoc}
+ * <h2>Api: true</h2>
+ * <h2>ApiTag.enUS: true</h2>
+ * <h2>ApiUri.enUS: null</h2>
+ * <h2>Color: null</h2>
+ * <h2>IconGroup: null</h2>
+ * <h2>IconName: null</h2>
+ * <h2>Indexed: true</h2>
+ * <h2>{@inheritDoc}</h2>
  * <p>By adding a class comment "{@inheritDoc}", the SearchRequest class will inherit the helpful inherited class comments from the super class SearchRequestGen. 
  * </p>
- * Rows: null
- * Model: true
- * Page: true
- * SuperPage.enUS: null
- * Promise: true
- * AName.enUS: null
+ * <h2>Rows: null</h2>
+ * <h2>Model: true</h2>
+ * <h2>Page: true</h2>
+ * <h2>SuperPage.enUS: null</h2>
+ * <h2>Promise: true</h2>
+ * <h2>AName.enUS: null</h2>
  * <p>
  * Delete the class SearchRequest in Solr: 
  * curl -k 'https://solr-solr.apps-crc.testing/solr/computate/update?commitWithin=1000&overwrite=true&wt=json' -X POST -H 'Content-type: text/xml' --data-raw '&lt;add&gt;&lt;delete&gt;&lt;query&gt;classeNomCanonique_enUS_indexed_string:org.computate.search.request.SearchRequest&lt;/query&gt;&lt;/delete&gt;&lt;/add&gt;'
@@ -95,6 +97,7 @@ import org.computate.search.wrap.Wrap;
  * Delete  the project computate-search in Solr: 
  * curl -k 'https://solr-solr.apps-crc.testing/solr/computate/update?commitWithin=1000&overwrite=true&wt=json' -X POST -H 'Content-type: text/xml' --data-raw '&lt;add&gt;&lt;delete&gt;&lt;query&gt;siteNom_indexed_string:computate\-search&lt;/query&gt;&lt;/delete&gt;&lt;/add&gt;'
  * </p>
+ * Generated: true
  **/
 public abstract class SearchRequestGen<DEV> extends Object {
 
@@ -215,6 +218,10 @@ public abstract class SearchRequestGen<DEV> extends Object {
 	public List<String> getFilterQueries() {
 		return filterQueries;
 	}
+
+	public void setFilterQueries(List<String> filterQueries) {
+		this.filterQueries = filterQueries;
+	}
 	public void setFilterQueries(String o) {
 		String l = SearchRequest.staticSetFilterQueries(siteRequest_, o);
 		if(l != null)
@@ -274,6 +281,10 @@ public abstract class SearchRequestGen<DEV> extends Object {
 
 	public List<String> getFields() {
 		return fields;
+	}
+
+	public void setFields(List<String> fields) {
+		this.fields = fields;
 	}
 	public void setFields(String o) {
 		String l = SearchRequest.staticSetFields(siteRequest_, o);
@@ -335,6 +346,10 @@ public abstract class SearchRequestGen<DEV> extends Object {
 	public List<String> getSorts() {
 		return sorts;
 	}
+
+	public void setSorts(List<String> sorts) {
+		this.sorts = sorts;
+	}
 	public void setSorts(String o) {
 		String l = SearchRequest.staticSetSorts(siteRequest_, o);
 		if(l != null)
@@ -394,6 +409,10 @@ public abstract class SearchRequestGen<DEV> extends Object {
 
 	public List<String> getFacetPivots() {
 		return facetPivots;
+	}
+
+	public void setFacetPivots(List<String> facetPivots) {
+		this.facetPivots = facetPivots;
 	}
 	public void setFacetPivots(String o) {
 		String l = SearchRequest.staticSetFacetPivots(siteRequest_, o);
@@ -1012,6 +1031,10 @@ public abstract class SearchRequestGen<DEV> extends Object {
 	public List<String> getFacetQueries() {
 		return facetQueries;
 	}
+
+	public void setFacetQueries(List<String> facetQueries) {
+		this.facetQueries = facetQueries;
+	}
 	public void setFacetQueries(String o) {
 		String l = SearchRequest.staticSetFacetQueries(siteRequest_, o);
 		if(l != null)
@@ -1071,6 +1094,10 @@ public abstract class SearchRequestGen<DEV> extends Object {
 
 	public List<String> getJsonFacets() {
 		return jsonFacets;
+	}
+
+	public void setJsonFacets(List<String> jsonFacets) {
+		this.jsonFacets = jsonFacets;
 	}
 	public void setJsonFacets(String o) {
 		String l = SearchRequest.staticSetJsonFacets(siteRequest_, o);
@@ -1132,6 +1159,10 @@ public abstract class SearchRequestGen<DEV> extends Object {
 	public List<String> getFacetFields() {
 		return facetFields;
 	}
+
+	public void setFacetFields(List<String> facetFields) {
+		this.facetFields = facetFields;
+	}
 	public void setFacetFields(String o) {
 		String l = SearchRequest.staticSetFacetFields(siteRequest_, o);
 		if(l != null)
@@ -1191,6 +1222,10 @@ public abstract class SearchRequestGen<DEV> extends Object {
 
 	public List<String> getFacetRanges() {
 		return facetRanges;
+	}
+
+	public void setFacetRanges(List<String> facetRanges) {
+		this.facetRanges = facetRanges;
 	}
 	public void setFacetRanges(String o) {
 		String l = SearchRequest.staticSetFacetRanges(siteRequest_, o);
@@ -1605,6 +1640,10 @@ public abstract class SearchRequestGen<DEV> extends Object {
 
 	public List<String> getStatsFields() {
 		return statsFields;
+	}
+
+	public void setStatsFields(List<String> statsFields) {
+		this.statsFields = statsFields;
 	}
 	public void setStatsFields(String o) {
 		String l = SearchRequest.staticSetStatsFields(siteRequest_, o);
