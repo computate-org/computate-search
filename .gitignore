@@ -25,6 +25,8 @@ ansible/inventories/**
 .idea
 *.iml
 .flattened-pom.xml
+config/*.yml
+**/.ipynb_checkpoints
 
 # Avoid ignoring Maven wrapper jar file (.jar files are usually ignored)
 !/.mvn/wrapper/maven-wrapper.jar
