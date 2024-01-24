@@ -31,14 +31,14 @@ public class TimeTool {
 	public static final DateTimeFormatter ZONED_DATE_TIME_FORMATTER = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm VV");
 
 	/**
-	 * Parse a zoned time (HH:mm VV, example: 18:12 UTC, 13:12 AMerica/New_York, 12:12 America/Chicago). 
+	 * Parse a zoned time (HH:mm VV, example: 18:12 UTC, 13:12 America/New_York, 12:12 America/Chicago). 
 	 */
 	public static ZonedDateTime parseNextZonedTime(String zonedTimeStr) {
 		return parseNextZonedTime(zonedTimeStr, null);
 	}
 
 	/**
-	 * Parse a zoned time (HH:mm VV, example: 18:12 UTC, 13:12 AMerica/New_York, 12:12 America/Chicago). 
+	 * Parse a zoned time (HH:mm VV, example: 18:12 UTC, 13:12 America/New_York, 12:12 America/Chicago). 
 	 */
 	public static ZonedDateTime parseNextZonedTime(String zonedTimeStr, ZonedDateTime dateTimeNow) {
 		LocalDate dateNow = LocalDate.now();
