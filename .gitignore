@@ -16,7 +16,7 @@ buildNumber.properties
 *.p12
 *.jceks
 .vertx
-src/main/fabric8/*.yml
+src/main/fabric8/*.yaml
 **/*.swp
 .niogit*
 .index
@@ -25,7 +25,7 @@ ansible/inventories/**
 .idea
 *.iml
 .flattened-pom.xml
-config/*.yml
+config/*.yaml
 **/.ipynb_checkpoints
 
 # Avoid ignoring Maven wrapper jar file (.jar files are usually ignored)
