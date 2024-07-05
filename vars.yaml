@@ -1,5 +1,7 @@
 ---
 SITE_NAME: computate-search
+# The source code directory for the project. 
+SITE_SRC: "{{ lookup('env', 'HOME') }}/.local/src/{{ SITE_NAME }}"
 DOMAIN_NAME: computate.org
 SITE_POM_ARTIFACT_ID: search
 RELATIVE_PATHS_TO_WATCH: "src/main/java/org/computate/search"
