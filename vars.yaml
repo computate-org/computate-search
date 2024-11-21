@@ -4,6 +4,7 @@ SITE_NAME: computate-search
 SITE_SRC: "{{ lookup('env', 'HOME') }}/.local/src/{{ SITE_NAME }}"
 DOMAIN_NAME: computate.org
 SITE_POM_ARTIFACT_ID: search
+DOMAIN_PACKAGE_NAME: "org.computate.vertx"
 RELATIVE_PATHS_TO_WATCH: "src/main/java/org/computate/search"
 SITE_BASE_URL: "http://localhost:10200"
 SITE_ZONE: "America/Denver"
@@ -38,3 +39,5 @@ SOLR_USERNAME: admin
 SOLR_PASSWORD: "{{ query('kubernetes.core.k8s', kind='Secret', resource_name='solr', namespace='solr')[0].data['solr-password'] | b64decode }}"
 SOLR_URL: "https://solr.apps-crc.testing/solr/computate"
 SOLR_URL_COMPUTATE: "https://solr.apps-crc.testing/solr/computate"
+SOLR_ID: "solrId"
+
