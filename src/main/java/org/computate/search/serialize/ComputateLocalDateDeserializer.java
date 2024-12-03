@@ -22,7 +22,7 @@ import com.fasterxml.jackson.databind.DeserializationContext;
 import com.fasterxml.jackson.databind.JsonDeserializer;
 
 /**
- * Keyword: classSimpleNameZonedDateTimeDeserializer
+ * Keyword: classSimpleNameLocalDateDeserializer
  */
 public class ComputateLocalDateDeserializer extends JsonDeserializer<LocalDate> {
 
