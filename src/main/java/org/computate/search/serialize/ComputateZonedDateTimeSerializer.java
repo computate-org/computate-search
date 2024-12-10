@@ -31,6 +31,8 @@ public class ComputateZonedDateTimeSerializer extends JsonSerializer<ZonedDateTi
 	public static final DateTimeFormatter ZONED_DATE_TIME_FORMATTER = DateTimeFormatter.ofPattern(ZONED_DATE_TIME_FORMAT, Locale.US);
 	public static final String UTC_DATE_TIME_FORMAT = "yyyy-MM-dd'T'HH:mm:ss.SSSX";
 	public static final DateTimeFormatter UTC_DATE_TIME_FORMATTER = DateTimeFormatter.ofPattern(UTC_DATE_TIME_FORMAT, Locale.US);
+	public static final String ICAL_FORMAT = "yyyyMMdd'T'HHmmss";
+	public static final DateTimeFormatter ICAL_FORMATTER = DateTimeFormatter.ofPattern(ICAL_FORMAT, Locale.US);
 
 	@Override()
 	public void  serialize(ZonedDateTime o, JsonGenerator generator, SerializerProvider provider) throws IOException, IOException {
