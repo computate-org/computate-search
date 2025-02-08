@@ -10,6 +10,8 @@ OPENSHIFT_APPS_DOMAIN: "{{ lookup('env', 'OPENSHIFT_APPS_DOMAIN') | default('app
 USING_OPENSHIFT_AI: "{{ lookup('env', 'USING_OPENSHIFT_AI') | default('false', true) | bool }}"
 # The name of the OpenShift AI Workbench. 
 OPENSHIFT_AI_WORKBENCH: "{{ lookup('env', 'OPENSHIFT_AI_WORKBENCH') | default('', true) }}"
+# Verify SSL connections. 
+SSL_VERIFY: false
 
 ######################
 # Zookeeper defaults #
@@ -52,7 +54,7 @@ SOLR_CONFIGSET: "computate"
 # The Solr admin username
 SOLR_USERNAME: admin
 # The Solr admin password
-SOLR_PASSWORD: "{{ query('kubernetes.core.k8s', kind='Secret', resource_name='solr-secret', namespace=SOLR_NAMESPACE)[0].data['solr-password'] | b64decode }}"
+SOLR_PASSWORD: "{{ query('kubernetes.core.k8s', kind='Secret', resource_name='solr', namespace=SOLR_NAMESPACE)[0].data['solr-password'] | b64decode }}"
 # Whether to use SSL when connecting to Solr. 
 
 # Whether to use SSL when connecting to Solr. 
