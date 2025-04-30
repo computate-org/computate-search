@@ -572,7 +572,7 @@ public class ComputateEnUSClass {
 	/**
 	 * Example: 100
 	 **/
-	@JsonAlias("classeRows_stored_int")
+	@JsonAlias("classeLignes_stored_int")
 	private Integer classRows;
 	/**
 	 * Example: "a donor"
