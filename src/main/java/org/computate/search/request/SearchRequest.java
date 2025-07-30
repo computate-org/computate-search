@@ -453,10 +453,13 @@ public class SearchRequest extends SearchRequestGen<Object> {
 				}
 			}
 			if(sorts.size() > 0) {
+				b.append(b.length() == 0 ? "?" : "&");
+				b.append("sort=");
 				for(int i = 0; i < sorts.size(); i++) {
 					String sort = sorts.get(i);
-					b.append(b.length() == 0 ? "?" : "&");
-					b.append("sort=").append(URLEncoder.encode(sort, UTF_8));
+					if(i > 0)
+						b.append(",");
+					b.append(URLEncoder.encode(sort, UTF_8));
 				}
 			}
 			if(cursorMark != null) {
