@@ -51,6 +51,17 @@ public class SearchRequest extends SearchRequestGen<Object> {
 
 	/**
 	 * {@inheritDoc}
+	 * Description.enUS: The bf boost function can boost a query
+	 */
+	protected void _boostFunctions(List<String> w) {
+	}
+	public SearchRequest bf(String s) {
+		addBoostFunctions(s);
+		return this;
+	}
+
+	/**
+	 * {@inheritDoc}
 	 * Description.enUS: The fq parameter defines a query that can be used to restrict the superset of documents that can be returned, without influencing score. 
 	 * Description.enUS: It can be very useful for speeding up complex queries, since the queries specified with fq are cached independently of the main query. 
 	 * Description.enUS: When a later query uses the same filter, there’s a cache hit, and filter results are returned quickly from the cache. 
@@ -435,6 +446,13 @@ public class SearchRequest extends SearchRequestGen<Object> {
 		try {
 			if(query != null) {
 				b.append(b.length() == 0 ? "?" : "&").append("q=").append(URLEncoder.encode(query, UTF_8));
+			}
+			if(boostFunctions.size() > 0) {
+				for(int i = 0; i < boostFunctions.size(); i++) {
+					String bf = boostFunctions.get(i);
+					b.append(b.length() == 0 ? "?" : "&");
+					b.append("bf=").append(URLEncoder.encode(bf, UTF_8));
+				}
 			}
 			if(filterQueries.size() > 0) {
 				for(int i = 0; i < filterQueries.size(); i++) {
