@@ -51,6 +51,17 @@ public class SearchRequest extends SearchRequestGen<Object> {
 
 	/**
 	 * {@inheritDoc}
+	 * Description.enUS: The defType query parameter for boosting queries. 
+	 */
+	protected void _defType(Wrap<String> w) {
+	}
+	public SearchRequest defType(String s) {
+		setDefType(s);
+		return this;
+	}
+
+	/**
+	 * {@inheritDoc}
 	 * Description.enUS: The bf boost function can boost a query
 	 */
 	protected void _boostFunctions(List<String> w) {
@@ -446,6 +457,9 @@ public class SearchRequest extends SearchRequestGen<Object> {
 		try {
 			if(query != null) {
 				b.append(b.length() == 0 ? "?" : "&").append("q=").append(URLEncoder.encode(query, UTF_8));
+			}
+			if(defType != null) {
+				b.append(b.length() == 0 ? "?" : "&").append("defType=").append(URLEncoder.encode(defType, UTF_8));
 			}
 			if(boostFunctions.size() > 0) {
 				for(int i = 0; i < boostFunctions.size(); i++) {

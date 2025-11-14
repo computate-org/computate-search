@@ -195,6 +195,58 @@ public abstract class SearchRequestGen<DEV> extends Object {
     return SearchRequest.staticSearchQuery(siteRequest_, SearchRequest.staticSetQuery(siteRequest_, o)).toString();
   }
 
+	/////////////
+  // defType //
+	/////////////
+
+
+  /**   The entity defType
+   *	 is defined as null before being initialized. 
+   */
+  @JsonProperty
+  @JsonInclude(Include.NON_NULL)
+  protected String defType;
+
+  /**  <br> The entity defType
+   *  is defined as null before being initialized. 
+   * <br><a href="https://solr.apps-crc.testing/solr/#/computate/query?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.computate.search.request.SearchRequest&fq=entiteVar_enUS_indexed_string:defType">Find the entity defType in Solr</a>
+   * <br>
+   * @param w is for wrapping a value to assign to this entity during initialization. 
+   **/
+  protected abstract void _defType(Wrap<String> w);
+
+  public String getDefType() {
+    return defType;
+  }
+  public void setDefType(String o) {
+    this.defType = SearchRequest.staticSetDefType(siteRequest_, o);
+  }
+  public static String staticSetDefType(ComputateSearchSiteRequest siteRequest_, String o) {
+    return o;
+  }
+  protected SearchRequest defTypeInit() {
+    Wrap<String> defTypeWrap = new Wrap<String>().var("defType");
+    if(defType == null) {
+      _defType(defTypeWrap);
+      Optional.ofNullable(defTypeWrap.getO()).ifPresent(o -> {
+        setDefType(o);
+      });
+    }
+    return (SearchRequest)this;
+  }
+
+  public static String staticSearchDefType(ComputateSearchSiteRequest siteRequest_, String o) {
+    return o;
+  }
+
+  public static String staticSearchStrDefType(ComputateSearchSiteRequest siteRequest_, String o) {
+    return o == null ? null : o.toString();
+  }
+
+  public static String staticSearchFqDefType(ComputateSearchSiteRequest siteRequest_, String o) {
+    return SearchRequest.staticSearchDefType(siteRequest_, SearchRequest.staticSetDefType(siteRequest_, o)).toString();
+  }
+
 	////////////////////
   // boostFunctions //
 	////////////////////
@@ -1929,6 +1981,7 @@ public abstract class SearchRequestGen<DEV> extends Object {
   public void initSearchRequest() {
         siteRequest_Init();
         queryInit();
+        defTypeInit();
         boostFunctionsInit();
         filterQueriesInit();
         fieldsInit();
@@ -1999,6 +2052,8 @@ public abstract class SearchRequestGen<DEV> extends Object {
         return oSearchRequest.siteRequest_;
       case "query":
         return oSearchRequest.query;
+      case "defType":
+        return oSearchRequest.defType;
       case "boostFunctions":
         return oSearchRequest.boostFunctions;
       case "filterQueries":
@@ -2094,6 +2149,8 @@ public abstract class SearchRequestGen<DEV> extends Object {
     switch(entityVar) {
     case "query":
       return SearchRequest.staticSetQuery(siteRequest_, v);
+    case "defType":
+      return SearchRequest.staticSetDefType(siteRequest_, v);
     case "boostFunctions":
       return SearchRequest.staticSetBoostFunctions(siteRequest_, v);
     case "filterQueries":
@@ -2168,6 +2225,8 @@ public abstract class SearchRequestGen<DEV> extends Object {
     switch(entityVar) {
     case "query":
       return SearchRequest.staticSearchQuery(siteRequest_, (String)o);
+    case "defType":
+      return SearchRequest.staticSearchDefType(siteRequest_, (String)o);
     case "boostFunctions":
       return SearchRequest.staticSearchBoostFunctions(siteRequest_, (String)o);
     case "filterQueries":
@@ -2242,6 +2301,8 @@ public abstract class SearchRequestGen<DEV> extends Object {
     switch(entityVar) {
     case "query":
       return SearchRequest.staticSearchStrQuery(siteRequest_, (String)o);
+    case "defType":
+      return SearchRequest.staticSearchStrDefType(siteRequest_, (String)o);
     case "boostFunctions":
       return SearchRequest.staticSearchStrBoostFunctions(siteRequest_, (String)o);
     case "filterQueries":
@@ -2316,6 +2377,8 @@ public abstract class SearchRequestGen<DEV> extends Object {
     switch(entityVar) {
     case "query":
       return SearchRequest.staticSearchFqQuery(siteRequest_, o);
+    case "defType":
+      return SearchRequest.staticSearchFqDefType(siteRequest_, o);
     case "boostFunctions":
       return SearchRequest.staticSearchFqBoostFunctions(siteRequest_, o);
     case "filterQueries":
@@ -2393,6 +2456,7 @@ public abstract class SearchRequestGen<DEV> extends Object {
   public static final String CLASS_AUTH_RESOURCE = "";
   public static final String VAR_siteRequest_ = "siteRequest_";
   public static final String VAR_query = "query";
+  public static final String VAR_defType = "defType";
   public static final String VAR_boostFunctions = "boostFunctions";
   public static final String VAR_filterQueries = "filterQueries";
   public static final String VAR_fields = "fields";
@@ -2425,6 +2489,7 @@ public abstract class SearchRequestGen<DEV> extends Object {
 
   public static final String DISPLAY_NAME_siteRequest_ = "";
   public static final String DISPLAY_NAME_query = "";
+  public static final String DISPLAY_NAME_defType = "";
   public static final String DISPLAY_NAME_boostFunctions = "";
   public static final String DISPLAY_NAME_filterQueries = "";
   public static final String DISPLAY_NAME_fields = "";
@@ -2464,6 +2529,8 @@ public abstract class SearchRequestGen<DEV> extends Object {
       return DISPLAY_NAME_siteRequest_;
     case VAR_query:
       return DISPLAY_NAME_query;
+    case VAR_defType:
+      return DISPLAY_NAME_defType;
     case VAR_boostFunctions:
       return DISPLAY_NAME_boostFunctions;
     case VAR_filterQueries:
