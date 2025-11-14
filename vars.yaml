@@ -77,8 +77,9 @@ SITE_NAME: computate-search
 SITE_SRC: "{{ lookup('env', 'COMPUTATE_SEARCH_SRC') | default(lookup('env', 'HOME') + '/.local/src/' + SITE_NAME, true) }}"
 DOMAIN_NAME: computate.org
 SITE_POM_ARTIFACT_ID: search
-DOMAIN_PACKAGE_NAME: "org.computate.vertx"
+SITE_JAVA_PACKAGE: "org.computate.search"
 RELATIVE_PATHS_TO_WATCH: "src/main/java/org/computate/search"
+COMPUTATE_PACKAGE_SEARCH_PREFIX: "org.computate.search "
 SITE_BASE_URL: "http://localhost:10200"
 SITE_ZONE: "America/Denver"
 SITE_LOCALE: "en-US"
@@ -101,4 +102,4 @@ ENABLE_SESSION_ID: true
 ENABLE_ROLE_ADMIN: true
 ENABLE_OPENID_CONNECT: true
 ENABLE_QUARKUS: false
-ENABLE_VERTX: true
+ENABLE_VERTX: false
