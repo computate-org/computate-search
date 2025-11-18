@@ -1,10 +1,10 @@
 /*
- * Copyright (c) 2018-2022 Computate Limited Liability Company in Utah, USA. 
- *
+ * Copyright Computate Limited Liability Company in Utah, USA. 
+ * SPDX-License-Identifier: AGPL-3.0
  * This program and the accompanying materials are made available under the
- * terms of the GNU GENERAL PUBLIC LICENSE Version 3 which is available at
+ * terms of the GNU AFFERO GENERAL PUBLIC LICENSE which is available at
  * 
- * https://www.gnu.org/licenses/gpl-3.0.en.html
+ * https://www.gnu.org/licenses/agpl-3.0.html
  * 
  * You may not propagate or modify a covered work except as expressly provided 
  * under this License. Any attempt otherwise to propagate or modify it is void, 
@@ -107,14 +107,16 @@ public abstract class SearchRequestGen<DEV> extends Object {
 	//////////////////
 
 
-  /**   The entity siteRequest_
+  /**
+   *  The entity siteRequest_
    *	 is defined as null before being initialized. 
    */
   @JsonIgnore
   @JsonInclude(Include.NON_NULL)
   protected ComputateSearchSiteRequest siteRequest_;
 
-  /**  <br> The entity siteRequest_
+  /**
+   * <br> The entity siteRequest_
    *  is defined as null before being initialized. 
    * <br><a href="https://solr.apps-crc.testing/solr/#/computate/query?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.computate.search.request.SearchRequest&fq=entiteVar_enUS_indexed_string:siteRequest_">Find the entity siteRequest_ in Solr</a>
    * <br>
@@ -148,14 +150,16 @@ public abstract class SearchRequestGen<DEV> extends Object {
 	///////////
 
 
-  /**   The entity query
+  /**
+   *  The entity query
    *	 is defined as null before being initialized. 
    */
   @JsonProperty
   @JsonInclude(Include.NON_NULL)
   protected String query;
 
-  /**  <br> The entity query
+  /**
+   * <br> The entity query
    *  is defined as null before being initialized. 
    * <br><a href="https://solr.apps-crc.testing/solr/#/computate/query?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.computate.search.request.SearchRequest&fq=entiteVar_enUS_indexed_string:query">Find the entity query in Solr</a>
    * <br>
@@ -200,14 +204,16 @@ public abstract class SearchRequestGen<DEV> extends Object {
 	/////////////
 
 
-  /**   The entity defType
+  /**
+   *  The entity defType
    *	 is defined as null before being initialized. 
    */
   @JsonProperty
   @JsonInclude(Include.NON_NULL)
   protected String defType;
 
-  /**  <br> The entity defType
+  /**
+   * <br> The entity defType
    *  is defined as null before being initialized. 
    * <br><a href="https://solr.apps-crc.testing/solr/#/computate/query?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.computate.search.request.SearchRequest&fq=entiteVar_enUS_indexed_string:defType">Find the entity defType in Solr</a>
    * <br>
@@ -252,7 +258,8 @@ public abstract class SearchRequestGen<DEV> extends Object {
 	////////////////////
 
 
-  /**   The entity boostFunctions
+  /**
+   *  The entity boostFunctions
    *	 It is constructed before being initialized with the constructor by default. 
    */
   @JsonProperty
@@ -260,7 +267,8 @@ public abstract class SearchRequestGen<DEV> extends Object {
   @JsonInclude(Include.NON_NULL)
   protected List<String> boostFunctions = new ArrayList<String>();
 
-  /**  <br> The entity boostFunctions
+  /**
+   * <br> The entity boostFunctions
    *  It is constructed before being initialized with the constructor by default. 
    * <br><a href="https://solr.apps-crc.testing/solr/#/computate/query?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.computate.search.request.SearchRequest&fq=entiteVar_enUS_indexed_string:boostFunctions">Find the entity boostFunctions in Solr</a>
    * <br>
@@ -317,7 +325,8 @@ public abstract class SearchRequestGen<DEV> extends Object {
 	///////////////////
 
 
-  /**   The entity filterQueries
+  /**
+   *  The entity filterQueries
    *	 It is constructed before being initialized with the constructor by default. 
    */
   @JsonProperty
@@ -325,7 +334,8 @@ public abstract class SearchRequestGen<DEV> extends Object {
   @JsonInclude(Include.NON_NULL)
   protected List<String> filterQueries = new ArrayList<String>();
 
-  /**  <br> The entity filterQueries
+  /**
+   * <br> The entity filterQueries
    *  It is constructed before being initialized with the constructor by default. 
    * <br><a href="https://solr.apps-crc.testing/solr/#/computate/query?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.computate.search.request.SearchRequest&fq=entiteVar_enUS_indexed_string:filterQueries">Find the entity filterQueries in Solr</a>
    * <br>
@@ -382,7 +392,8 @@ public abstract class SearchRequestGen<DEV> extends Object {
 	////////////
 
 
-  /**   The entity fields
+  /**
+   *  The entity fields
    *	 It is constructed before being initialized with the constructor by default. 
    */
   @JsonProperty
@@ -390,7 +401,8 @@ public abstract class SearchRequestGen<DEV> extends Object {
   @JsonInclude(Include.NON_NULL)
   protected List<String> fields = new ArrayList<String>();
 
-  /**  <br> The entity fields
+  /**
+   * <br> The entity fields
    *  It is constructed before being initialized with the constructor by default. 
    * <br><a href="https://solr.apps-crc.testing/solr/#/computate/query?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.computate.search.request.SearchRequest&fq=entiteVar_enUS_indexed_string:fields">Find the entity fields in Solr</a>
    * <br>
@@ -447,7 +459,8 @@ public abstract class SearchRequestGen<DEV> extends Object {
 	///////////
 
 
-  /**   The entity sorts
+  /**
+   *  The entity sorts
    *	 It is constructed before being initialized with the constructor by default. 
    */
   @JsonProperty
@@ -455,7 +468,8 @@ public abstract class SearchRequestGen<DEV> extends Object {
   @JsonInclude(Include.NON_NULL)
   protected List<String> sorts = new ArrayList<String>();
 
-  /**  <br> The entity sorts
+  /**
+   * <br> The entity sorts
    *  It is constructed before being initialized with the constructor by default. 
    * <br><a href="https://solr.apps-crc.testing/solr/#/computate/query?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.computate.search.request.SearchRequest&fq=entiteVar_enUS_indexed_string:sorts">Find the entity sorts in Solr</a>
    * <br>
@@ -512,7 +526,8 @@ public abstract class SearchRequestGen<DEV> extends Object {
 	/////////////////
 
 
-  /**   The entity facetPivots
+  /**
+   *  The entity facetPivots
    *	 It is constructed before being initialized with the constructor by default. 
    */
   @JsonProperty
@@ -520,7 +535,8 @@ public abstract class SearchRequestGen<DEV> extends Object {
   @JsonInclude(Include.NON_NULL)
   protected List<String> facetPivots = new ArrayList<String>();
 
-  /**  <br> The entity facetPivots
+  /**
+   * <br> The entity facetPivots
    *  It is constructed before being initialized with the constructor by default. 
    * <br><a href="https://solr.apps-crc.testing/solr/#/computate/query?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.computate.search.request.SearchRequest&fq=entiteVar_enUS_indexed_string:facetPivots">Find the entity facetPivots in Solr</a>
    * <br>
@@ -577,7 +593,8 @@ public abstract class SearchRequestGen<DEV> extends Object {
 	////////////////////////
 
 
-  /**   The entity facetPivotMinCount
+  /**
+   *  The entity facetPivotMinCount
    *	 is defined as null before being initialized. 
    */
   @JsonProperty
@@ -585,7 +602,8 @@ public abstract class SearchRequestGen<DEV> extends Object {
   @JsonInclude(Include.NON_NULL)
   protected Integer facetPivotMinCount;
 
-  /**  <br> The entity facetPivotMinCount
+  /**
+   * <br> The entity facetPivotMinCount
    *  is defined as null before being initialized. 
    * <br><a href="https://solr.apps-crc.testing/solr/#/computate/query?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.computate.search.request.SearchRequest&fq=entiteVar_enUS_indexed_string:facetPivotMinCount">Find the entity facetPivotMinCount in Solr</a>
    * <br>
@@ -637,14 +655,16 @@ public abstract class SearchRequestGen<DEV> extends Object {
 	///////////////
 
 
-  /**   The entity facetSort
+  /**
+   *  The entity facetSort
    *	 is defined as null before being initialized. 
    */
   @JsonProperty
   @JsonInclude(Include.NON_NULL)
   protected String facetSort;
 
-  /**  <br> The entity facetSort
+  /**
+   * <br> The entity facetSort
    *  is defined as null before being initialized. 
    * <br><a href="https://solr.apps-crc.testing/solr/#/computate/query?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.computate.search.request.SearchRequest&fq=entiteVar_enUS_indexed_string:facetSort">Find the entity facetSort in Solr</a>
    * <br>
@@ -689,14 +709,16 @@ public abstract class SearchRequestGen<DEV> extends Object {
 	///////////
 
 
-  /**   The entity facet
+  /**
+   *  The entity facet
    *	 is defined as null before being initialized. 
    */
   @JsonProperty
   @JsonInclude(Include.NON_NULL)
   protected Boolean facet;
 
-  /**  <br> The entity facet
+  /**
+   * <br> The entity facet
    *  is defined as null before being initialized. 
    * <br><a href="https://solr.apps-crc.testing/solr/#/computate/query?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.computate.search.request.SearchRequest&fq=entiteVar_enUS_indexed_string:facet">Find the entity facet in Solr</a>
    * <br>
@@ -746,7 +768,8 @@ public abstract class SearchRequestGen<DEV> extends Object {
 	////////////////
 
 
-  /**   The entity facetLimit
+  /**
+   *  The entity facetLimit
    *	 is defined as null before being initialized. 
    */
   @JsonProperty
@@ -754,7 +777,8 @@ public abstract class SearchRequestGen<DEV> extends Object {
   @JsonInclude(Include.NON_NULL)
   protected Integer facetLimit;
 
-  /**  <br> The entity facetLimit
+  /**
+   * <br> The entity facetLimit
    *  is defined as null before being initialized. 
    * <br><a href="https://solr.apps-crc.testing/solr/#/computate/query?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.computate.search.request.SearchRequest&fq=entiteVar_enUS_indexed_string:facetLimit">Find the entity facetLimit in Solr</a>
    * <br>
@@ -806,7 +830,8 @@ public abstract class SearchRequestGen<DEV> extends Object {
 	///////////////////
 
 
-  /**   The entity facetMinCount
+  /**
+   *  The entity facetMinCount
    *	 is defined as null before being initialized. 
    */
   @JsonProperty
@@ -814,7 +839,8 @@ public abstract class SearchRequestGen<DEV> extends Object {
   @JsonInclude(Include.NON_NULL)
   protected Integer facetMinCount;
 
-  /**  <br> The entity facetMinCount
+  /**
+   * <br> The entity facetMinCount
    *  is defined as null before being initialized. 
    * <br><a href="https://solr.apps-crc.testing/solr/#/computate/query?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.computate.search.request.SearchRequest&fq=entiteVar_enUS_indexed_string:facetMinCount">Find the entity facetMinCount in Solr</a>
    * <br>
@@ -866,7 +892,8 @@ public abstract class SearchRequestGen<DEV> extends Object {
 	/////////////////
 
 
-  /**   The entity facetOffset
+  /**
+   *  The entity facetOffset
    *	 is defined as null before being initialized. 
    */
   @JsonProperty
@@ -874,7 +901,8 @@ public abstract class SearchRequestGen<DEV> extends Object {
   @JsonInclude(Include.NON_NULL)
   protected Integer facetOffset;
 
-  /**  <br> The entity facetOffset
+  /**
+   * <br> The entity facetOffset
    *  is defined as null before being initialized. 
    * <br><a href="https://solr.apps-crc.testing/solr/#/computate/query?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.computate.search.request.SearchRequest&fq=entiteVar_enUS_indexed_string:facetOffset">Find the entity facetOffset in Solr</a>
    * <br>
@@ -926,14 +954,16 @@ public abstract class SearchRequestGen<DEV> extends Object {
 	/////////////////////
 
 
-  /**   The entity facetRangeStart
+  /**
+   *  The entity facetRangeStart
    *	 is defined as null before being initialized. 
    */
   @JsonProperty
   @JsonInclude(Include.NON_NULL)
   protected String facetRangeStart;
 
-  /**  <br> The entity facetRangeStart
+  /**
+   * <br> The entity facetRangeStart
    *  is defined as null before being initialized. 
    * <br><a href="https://solr.apps-crc.testing/solr/#/computate/query?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.computate.search.request.SearchRequest&fq=entiteVar_enUS_indexed_string:facetRangeStart">Find the entity facetRangeStart in Solr</a>
    * <br>
@@ -978,14 +1008,16 @@ public abstract class SearchRequestGen<DEV> extends Object {
 	///////////////////
 
 
-  /**   The entity facetRangeEnd
+  /**
+   *  The entity facetRangeEnd
    *	 is defined as null before being initialized. 
    */
   @JsonProperty
   @JsonInclude(Include.NON_NULL)
   protected String facetRangeEnd;
 
-  /**  <br> The entity facetRangeEnd
+  /**
+   * <br> The entity facetRangeEnd
    *  is defined as null before being initialized. 
    * <br><a href="https://solr.apps-crc.testing/solr/#/computate/query?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.computate.search.request.SearchRequest&fq=entiteVar_enUS_indexed_string:facetRangeEnd">Find the entity facetRangeEnd in Solr</a>
    * <br>
@@ -1030,14 +1062,16 @@ public abstract class SearchRequestGen<DEV> extends Object {
 	///////////////////
 
 
-  /**   The entity facetRangeGap
+  /**
+   *  The entity facetRangeGap
    *	 is defined as null before being initialized. 
    */
   @JsonProperty
   @JsonInclude(Include.NON_NULL)
   protected String facetRangeGap;
 
-  /**  <br> The entity facetRangeGap
+  /**
+   * <br> The entity facetRangeGap
    *  is defined as null before being initialized. 
    * <br><a href="https://solr.apps-crc.testing/solr/#/computate/query?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.computate.search.request.SearchRequest&fq=entiteVar_enUS_indexed_string:facetRangeGap">Find the entity facetRangeGap in Solr</a>
    * <br>
@@ -1082,14 +1116,16 @@ public abstract class SearchRequestGen<DEV> extends Object {
 	////////////////
 
 
-  /**   The entity cursorMark
+  /**
+   *  The entity cursorMark
    *	 is defined as null before being initialized. 
    */
   @JsonProperty
   @JsonInclude(Include.NON_NULL)
   protected String cursorMark;
 
-  /**  <br> The entity cursorMark
+  /**
+   * <br> The entity cursorMark
    *  is defined as null before being initialized. 
    * <br><a href="https://solr.apps-crc.testing/solr/#/computate/query?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.computate.search.request.SearchRequest&fq=entiteVar_enUS_indexed_string:cursorMark">Find the entity cursorMark in Solr</a>
    * <br>
@@ -1134,7 +1170,8 @@ public abstract class SearchRequestGen<DEV> extends Object {
 	//////////////////
 
 
-  /**   The entity facetQueries
+  /**
+   *  The entity facetQueries
    *	 It is constructed before being initialized with the constructor by default. 
    */
   @JsonProperty
@@ -1142,7 +1179,8 @@ public abstract class SearchRequestGen<DEV> extends Object {
   @JsonInclude(Include.NON_NULL)
   protected List<String> facetQueries = new ArrayList<String>();
 
-  /**  <br> The entity facetQueries
+  /**
+   * <br> The entity facetQueries
    *  It is constructed before being initialized with the constructor by default. 
    * <br><a href="https://solr.apps-crc.testing/solr/#/computate/query?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.computate.search.request.SearchRequest&fq=entiteVar_enUS_indexed_string:facetQueries">Find the entity facetQueries in Solr</a>
    * <br>
@@ -1199,7 +1237,8 @@ public abstract class SearchRequestGen<DEV> extends Object {
 	////////////////
 
 
-  /**   The entity jsonFacets
+  /**
+   *  The entity jsonFacets
    *	 It is constructed before being initialized with the constructor by default. 
    */
   @JsonProperty
@@ -1207,7 +1246,8 @@ public abstract class SearchRequestGen<DEV> extends Object {
   @JsonInclude(Include.NON_NULL)
   protected List<String> jsonFacets = new ArrayList<String>();
 
-  /**  <br> The entity jsonFacets
+  /**
+   * <br> The entity jsonFacets
    *  It is constructed before being initialized with the constructor by default. 
    * <br><a href="https://solr.apps-crc.testing/solr/#/computate/query?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.computate.search.request.SearchRequest&fq=entiteVar_enUS_indexed_string:jsonFacets">Find the entity jsonFacets in Solr</a>
    * <br>
@@ -1264,7 +1304,8 @@ public abstract class SearchRequestGen<DEV> extends Object {
 	/////////////////
 
 
-  /**   The entity facetFields
+  /**
+   *  The entity facetFields
    *	 It is constructed before being initialized with the constructor by default. 
    */
   @JsonProperty
@@ -1272,7 +1313,8 @@ public abstract class SearchRequestGen<DEV> extends Object {
   @JsonInclude(Include.NON_NULL)
   protected List<String> facetFields = new ArrayList<String>();
 
-  /**  <br> The entity facetFields
+  /**
+   * <br> The entity facetFields
    *  It is constructed before being initialized with the constructor by default. 
    * <br><a href="https://solr.apps-crc.testing/solr/#/computate/query?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.computate.search.request.SearchRequest&fq=entiteVar_enUS_indexed_string:facetFields">Find the entity facetFields in Solr</a>
    * <br>
@@ -1329,7 +1371,8 @@ public abstract class SearchRequestGen<DEV> extends Object {
 	/////////////////
 
 
-  /**   The entity facetRanges
+  /**
+   *  The entity facetRanges
    *	 It is constructed before being initialized with the constructor by default. 
    */
   @JsonProperty
@@ -1337,7 +1380,8 @@ public abstract class SearchRequestGen<DEV> extends Object {
   @JsonInclude(Include.NON_NULL)
   protected List<String> facetRanges = new ArrayList<String>();
 
-  /**  <br> The entity facetRanges
+  /**
+   * <br> The entity facetRanges
    *  It is constructed before being initialized with the constructor by default. 
    * <br><a href="https://solr.apps-crc.testing/solr/#/computate/query?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.computate.search.request.SearchRequest&fq=entiteVar_enUS_indexed_string:facetRanges">Find the entity facetRanges in Solr</a>
    * <br>
@@ -1394,7 +1438,8 @@ public abstract class SearchRequestGen<DEV> extends Object {
 	///////////
 
 
-  /**   The entity start
+  /**
+   *  The entity start
    *	 is defined as null before being initialized. 
    */
   @JsonProperty
@@ -1402,7 +1447,8 @@ public abstract class SearchRequestGen<DEV> extends Object {
   @JsonInclude(Include.NON_NULL)
   protected Long start;
 
-  /**  <br> The entity start
+  /**
+   * <br> The entity start
    *  is defined as null before being initialized. 
    * <br><a href="https://solr.apps-crc.testing/solr/#/computate/query?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.computate.search.request.SearchRequest&fq=entiteVar_enUS_indexed_string:start">Find the entity start in Solr</a>
    * <br>
@@ -1454,7 +1500,8 @@ public abstract class SearchRequestGen<DEV> extends Object {
 	//////////
 
 
-  /**   The entity rows
+  /**
+   *  The entity rows
    *	 is defined as null before being initialized. 
    */
   @JsonProperty
@@ -1462,7 +1509,8 @@ public abstract class SearchRequestGen<DEV> extends Object {
   @JsonInclude(Include.NON_NULL)
   protected Long rows;
 
-  /**  <br> The entity rows
+  /**
+   * <br> The entity rows
    *  is defined as null before being initialized. 
    * <br><a href="https://solr.apps-crc.testing/solr/#/computate/query?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.computate.search.request.SearchRequest&fq=entiteVar_enUS_indexed_string:rows">Find the entity rows in Solr</a>
    * <br>
@@ -1514,7 +1562,8 @@ public abstract class SearchRequestGen<DEV> extends Object {
 	//////////////
 
 
-  /**   The entity distance
+  /**
+   *  The entity distance
    *	 is defined as null before being initialized. 
    */
   @JsonProperty
@@ -1522,7 +1571,8 @@ public abstract class SearchRequestGen<DEV> extends Object {
   @JsonInclude(Include.NON_NULL)
   protected BigDecimal distance;
 
-  /**  <br> The entity distance
+  /**
+   * <br> The entity distance
    *  is defined as null before being initialized. 
    * <br><a href="https://solr.apps-crc.testing/solr/#/computate/query?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.computate.search.request.SearchRequest&fq=entiteVar_enUS_indexed_string:distance">Find the entity distance in Solr</a>
    * <br>
@@ -1587,14 +1637,16 @@ public abstract class SearchRequestGen<DEV> extends Object {
 	///////////
 
 
-  /**   The entity point
+  /**
+   *  The entity point
    *	 is defined as null before being initialized. 
    */
   @JsonProperty
   @JsonInclude(Include.NON_NULL)
   protected String point;
 
-  /**  <br> The entity point
+  /**
+   * <br> The entity point
    *  is defined as null before being initialized. 
    * <br><a href="https://solr.apps-crc.testing/solr/#/computate/query?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.computate.search.request.SearchRequest&fq=entiteVar_enUS_indexed_string:point">Find the entity point in Solr</a>
    * <br>
@@ -1639,14 +1691,16 @@ public abstract class SearchRequestGen<DEV> extends Object {
 	//////////////////
 
 
-  /**   The entity spatialField
+  /**
+   *  The entity spatialField
    *	 is defined as null before being initialized. 
    */
   @JsonProperty
   @JsonInclude(Include.NON_NULL)
   protected String spatialField;
 
-  /**  <br> The entity spatialField
+  /**
+   * <br> The entity spatialField
    *  is defined as null before being initialized. 
    * <br><a href="https://solr.apps-crc.testing/solr/#/computate/query?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.computate.search.request.SearchRequest&fq=entiteVar_enUS_indexed_string:spatialField">Find the entity spatialField in Solr</a>
    * <br>
@@ -1691,14 +1745,16 @@ public abstract class SearchRequestGen<DEV> extends Object {
 	///////////
 
 
-  /**   The entity stats
+  /**
+   *  The entity stats
    *	 is defined as null before being initialized. 
    */
   @JsonProperty
   @JsonInclude(Include.NON_NULL)
   protected Boolean stats;
 
-  /**  <br> The entity stats
+  /**
+   * <br> The entity stats
    *  is defined as null before being initialized. 
    * <br><a href="https://solr.apps-crc.testing/solr/#/computate/query?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.computate.search.request.SearchRequest&fq=entiteVar_enUS_indexed_string:stats">Find the entity stats in Solr</a>
    * <br>
@@ -1748,7 +1804,8 @@ public abstract class SearchRequestGen<DEV> extends Object {
 	/////////////////
 
 
-  /**   The entity statsFields
+  /**
+   *  The entity statsFields
    *	 It is constructed before being initialized with the constructor by default. 
    */
   @JsonProperty
@@ -1756,7 +1813,8 @@ public abstract class SearchRequestGen<DEV> extends Object {
   @JsonInclude(Include.NON_NULL)
   protected List<String> statsFields = new ArrayList<String>();
 
-  /**  <br> The entity statsFields
+  /**
+   * <br> The entity statsFields
    *  It is constructed before being initialized with the constructor by default. 
    * <br><a href="https://solr.apps-crc.testing/solr/#/computate/query?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.computate.search.request.SearchRequest&fq=entiteVar_enUS_indexed_string:statsFields">Find the entity statsFields in Solr</a>
    * <br>
@@ -1813,14 +1871,16 @@ public abstract class SearchRequestGen<DEV> extends Object {
 	///////////
 
 
-  /**   The entity score
+  /**
+   *  The entity score
    *	 is defined as null before being initialized. 
    */
   @JsonProperty
   @JsonInclude(Include.NON_NULL)
   protected String score;
 
-  /**  <br> The entity score
+  /**
+   * <br> The entity score
    *  is defined as null before being initialized. 
    * <br><a href="https://solr.apps-crc.testing/solr/#/computate/query?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.computate.search.request.SearchRequest&fq=entiteVar_enUS_indexed_string:score">Find the entity score in Solr</a>
    * <br>
@@ -1865,14 +1925,16 @@ public abstract class SearchRequestGen<DEV> extends Object {
 	///////////////////
 
 
-  /**   The entity distanceUnits
+  /**
+   *  The entity distanceUnits
    *	 is defined as null before being initialized. 
    */
   @JsonProperty
   @JsonInclude(Include.NON_NULL)
   protected String distanceUnits;
 
-  /**  <br> The entity distanceUnits
+  /**
+   * <br> The entity distanceUnits
    *  is defined as null before being initialized. 
    * <br><a href="https://solr.apps-crc.testing/solr/#/computate/query?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.computate.search.request.SearchRequest&fq=entiteVar_enUS_indexed_string:distanceUnits">Find the entity distanceUnits in Solr</a>
    * <br>
@@ -1917,14 +1979,16 @@ public abstract class SearchRequestGen<DEV> extends Object {
 	/////////////////
 
 
-  /**   The entity queryString
+  /**
+   *  The entity queryString
    *	 is defined as null before being initialized. 
    */
   @JsonProperty
   @JsonInclude(Include.NON_NULL)
   protected String queryString;
 
-  /**  <br> The entity queryString
+  /**
+   * <br> The entity queryString
    *  is defined as null before being initialized. 
    * <br><a href="https://solr.apps-crc.testing/solr/#/computate/query?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.computate.search.request.SearchRequest&fq=entiteVar_enUS_indexed_string:queryString">Find the entity queryString in Solr</a>
    * <br>
