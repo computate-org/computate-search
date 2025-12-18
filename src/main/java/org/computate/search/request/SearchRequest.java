@@ -62,6 +62,17 @@ public class SearchRequest extends SearchRequestGen<Object> {
 
 	/**
 	 * {@inheritDoc}
+	 * Description.enUS: The bq boost query can boost a query
+	 */
+	protected void _boostQueries(List<String> w) {
+	}
+	public SearchRequest bq(String s) {
+		addBoostQueries(s);
+		return this;
+	}
+
+	/**
+	 * {@inheritDoc}
 	 * Description.enUS: The bf boost function can boost a query
 	 */
 	protected void _boostFunctions(List<String> w) {
@@ -460,6 +471,13 @@ public class SearchRequest extends SearchRequestGen<Object> {
 			}
 			if(defType != null) {
 				b.append(b.length() == 0 ? "?" : "&").append("defType=").append(URLEncoder.encode(defType, UTF_8));
+			}
+			if(boostQueries.size() > 0) {
+				for(int i = 0; i < boostQueries.size(); i++) {
+					String bq = boostQueries.get(i);
+					b.append(b.length() == 0 ? "?" : "&");
+					b.append("bq=").append(URLEncoder.encode(bq, UTF_8));
+				}
 			}
 			if(boostFunctions.size() > 0) {
 				for(int i = 0; i < boostFunctions.size(); i++) {

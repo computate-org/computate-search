@@ -253,6 +253,73 @@ public abstract class SearchRequestGen<DEV> extends Object {
     return SearchRequest.staticSearchDefType(siteRequest_, SearchRequest.staticSetDefType(siteRequest_, o)).toString();
   }
 
+	//////////////////
+  // boostQueries //
+	//////////////////
+
+
+  /**
+   *  The entity boostQueries
+   *	 It is constructed before being initialized with the constructor by default. 
+   */
+  @JsonProperty
+  @JsonFormat(shape = JsonFormat.Shape.ARRAY)
+  @JsonInclude(Include.NON_NULL)
+  protected List<String> boostQueries = new ArrayList<String>();
+
+  /**
+   * <br> The entity boostQueries
+   *  It is constructed before being initialized with the constructor by default. 
+   * <br><a href="https://solr.apps-crc.testing/solr/#/computate/query?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.computate.search.request.SearchRequest&fq=entiteVar_enUS_indexed_string:boostQueries">Find the entity boostQueries in Solr</a>
+   * <br>
+   * @param w is the entity already constructed. 
+   **/
+  protected abstract void _boostQueries(List<String> w);
+
+  public List<String> getBoostQueries() {
+    return boostQueries;
+  }
+
+  public void setBoostQueries(List<String> boostQueries) {
+    this.boostQueries = boostQueries;
+  }
+  @JsonIgnore
+  public void setBoostQueries(String o) {
+    String l = SearchRequest.staticSetBoostQueries(siteRequest_, o);
+    if(l != null)
+      addBoostQueries(l);
+  }
+  public static String staticSetBoostQueries(ComputateSearchSiteRequest siteRequest_, String o) {
+    return o;
+  }
+  public SearchRequest addBoostQueries(String...objects) {
+    for(String o : objects) {
+      addBoostQueries(o);
+    }
+    return (SearchRequest)this;
+  }
+  public SearchRequest addBoostQueries(String o) {
+    if(o != null)
+      this.boostQueries.add(o);
+    return (SearchRequest)this;
+  }
+  protected SearchRequest boostQueriesInit() {
+    _boostQueries(boostQueries);
+    return (SearchRequest)this;
+  }
+
+  public static String staticSearchBoostQueries(ComputateSearchSiteRequest siteRequest_, String o) {
+    return o;
+  }
+
+  public static String staticSearchStrBoostQueries(ComputateSearchSiteRequest siteRequest_, String o) {
+    return o == null ? null : o.toString();
+  }
+
+  public static String staticSearchFqBoostQueries(ComputateSearchSiteRequest siteRequest_, String o) {
+    return SearchRequest.staticSearchBoostQueries(siteRequest_, SearchRequest.staticSetBoostQueries(siteRequest_, o)).toString();
+  }
+
 	////////////////////
   // boostFunctions //
 	////////////////////
@@ -1591,23 +1658,26 @@ public abstract class SearchRequestGen<DEV> extends Object {
   public void setDistance(String o) {
     this.distance = SearchRequest.staticSetDistance(siteRequest_, o);
   }
+  public static MathContext staticMathContextDistance() {
+    return new MathContext(, RoundingMode.valueOf(""));
+  }
   public static BigDecimal staticSetDistance(ComputateSearchSiteRequest siteRequest_, String o) {
-    o = StringUtils.removeAll(o, "[^\\d\\.]");
+    o = StringUtils.removeAll(o, "[^\\d\\.-]");
     if(NumberUtils.isParsable(o))
-      return new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
+      return new BigDecimal(o, staticMathContextDistance());
     return null;
   }
   @JsonIgnore
   public void setDistance(Double o) {
-    setDistance(new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP));
+    setDistance(new BigDecimal(o, staticMathContextDistance()));
   }
   @JsonIgnore
   public void setDistance(Integer o) {
-    setDistance(new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP));
+    setDistance(new BigDecimal(o, staticMathContextDistance()));
   }
   @JsonIgnore
   public void setDistance(Number o) {
-    setDistance(new BigDecimal(o.doubleValue(), MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP));
+    setDistance(new BigDecimal(o.doubleValue(), staticMathContextDistance()));
   }
   protected SearchRequest distanceInit() {
     Wrap<BigDecimal> distanceWrap = new Wrap<BigDecimal>().var("distance");
@@ -2046,6 +2116,7 @@ public abstract class SearchRequestGen<DEV> extends Object {
         siteRequest_Init();
         queryInit();
         defTypeInit();
+        boostQueriesInit();
         boostFunctionsInit();
         filterQueriesInit();
         fieldsInit();
@@ -2118,6 +2189,8 @@ public abstract class SearchRequestGen<DEV> extends Object {
         return oSearchRequest.query;
       case "defType":
         return oSearchRequest.defType;
+      case "boostQueries":
+        return oSearchRequest.boostQueries;
       case "boostFunctions":
         return oSearchRequest.boostFunctions;
       case "filterQueries":
@@ -2215,6 +2288,8 @@ public abstract class SearchRequestGen<DEV> extends Object {
       return SearchRequest.staticSetQuery(siteRequest_, v);
     case "defType":
       return SearchRequest.staticSetDefType(siteRequest_, v);
+    case "boostQueries":
+      return SearchRequest.staticSetBoostQueries(siteRequest_, v);
     case "boostFunctions":
       return SearchRequest.staticSetBoostFunctions(siteRequest_, v);
     case "filterQueries":
@@ -2291,6 +2366,8 @@ public abstract class SearchRequestGen<DEV> extends Object {
       return SearchRequest.staticSearchQuery(siteRequest_, (String)o);
     case "defType":
       return SearchRequest.staticSearchDefType(siteRequest_, (String)o);
+    case "boostQueries":
+      return SearchRequest.staticSearchBoostQueries(siteRequest_, (String)o);
     case "boostFunctions":
       return SearchRequest.staticSearchBoostFunctions(siteRequest_, (String)o);
     case "filterQueries":
@@ -2367,6 +2444,8 @@ public abstract class SearchRequestGen<DEV> extends Object {
       return SearchRequest.staticSearchStrQuery(siteRequest_, (String)o);
     case "defType":
       return SearchRequest.staticSearchStrDefType(siteRequest_, (String)o);
+    case "boostQueries":
+      return SearchRequest.staticSearchStrBoostQueries(siteRequest_, (String)o);
     case "boostFunctions":
       return SearchRequest.staticSearchStrBoostFunctions(siteRequest_, (String)o);
     case "filterQueries":
@@ -2443,6 +2522,8 @@ public abstract class SearchRequestGen<DEV> extends Object {
       return SearchRequest.staticSearchFqQuery(siteRequest_, o);
     case "defType":
       return SearchRequest.staticSearchFqDefType(siteRequest_, o);
+    case "boostQueries":
+      return SearchRequest.staticSearchFqBoostQueries(siteRequest_, o);
     case "boostFunctions":
       return SearchRequest.staticSearchFqBoostFunctions(siteRequest_, o);
     case "filterQueries":
@@ -2521,6 +2602,7 @@ public abstract class SearchRequestGen<DEV> extends Object {
   public static final String VAR_siteRequest_ = "siteRequest_";
   public static final String VAR_query = "query";
   public static final String VAR_defType = "defType";
+  public static final String VAR_boostQueries = "boostQueries";
   public static final String VAR_boostFunctions = "boostFunctions";
   public static final String VAR_filterQueries = "filterQueries";
   public static final String VAR_fields = "fields";
@@ -2554,6 +2636,7 @@ public abstract class SearchRequestGen<DEV> extends Object {
   public static final String DISPLAY_NAME_siteRequest_ = "";
   public static final String DISPLAY_NAME_query = "";
   public static final String DISPLAY_NAME_defType = "";
+  public static final String DISPLAY_NAME_boostQueries = "";
   public static final String DISPLAY_NAME_boostFunctions = "";
   public static final String DISPLAY_NAME_filterQueries = "";
   public static final String DISPLAY_NAME_fields = "";
@@ -2595,6 +2678,8 @@ public abstract class SearchRequestGen<DEV> extends Object {
       return DISPLAY_NAME_query;
     case VAR_defType:
       return DISPLAY_NAME_defType;
+    case VAR_boostQueries:
+      return DISPLAY_NAME_boostQueries;
     case VAR_boostFunctions:
       return DISPLAY_NAME_boostFunctions;
     case VAR_filterQueries:
