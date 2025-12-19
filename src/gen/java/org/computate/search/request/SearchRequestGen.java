@@ -1659,7 +1659,7 @@ public abstract class SearchRequestGen<DEV> extends Object {
     this.distance = SearchRequest.staticSetDistance(siteRequest_, o);
   }
   public static MathContext staticMathContextDistance() {
-    return new MathContext(, RoundingMode.valueOf(""));
+    return new MathContext(2, RoundingMode.valueOf("HALF_UP"));
   }
   public static BigDecimal staticSetDistance(ComputateSearchSiteRequest siteRequest_, String o) {
     o = StringUtils.removeAll(o, "[^\\d\\.-]");
