@@ -96,6 +96,7 @@ public class SolrResponse {
 		private Long numFound;
 		private Long start;
 		private Boolean numFoundExact;
+		private Double maxScore;
 		private List<Doc> docs;
 
 		public Response() {
@@ -123,6 +124,14 @@ public class SolrResponse {
 
 		public void setNumFoundExact(Boolean numFoundExact) {
 			this.numFoundExact = numFoundExact;
+		}
+
+		public Double getMaxScore() {
+			return maxScore;
+		}
+
+		public void setMaxScore(Double maxScore) {
+			this.maxScore = maxScore;
 		}
 
 		public List<Doc> getDocs() {

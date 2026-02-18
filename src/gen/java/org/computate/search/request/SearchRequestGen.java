@@ -87,15 +87,21 @@ import org.computate.search.wrap.Wrap;
  * <h2>AName.enUS: null</h2>
  * <p>
  * Delete the class SearchRequest in Solr: 
- * curl -k 'https://solr.apps-crc.testing/update?commitWithin=1000&overwrite=true&wt=json' -X POST -H 'Content-type: text/xml' --data-raw '&lt;add&gt;&lt;delete&gt;&lt;query&gt;classeNomCanonique_enUS_indexed_string:org.computate.search.request.SearchRequest&lt;/query&gt;&lt;/delete&gt;&lt;/add&gt;'
+ * <pre>
+ * curl -k 'https://solr.apps-crc.testing/solr/computate/update?commitWithin=1000&amp;overwrite=true&amp;wt=json' -X POST -H 'Content-type: text/xml' -u "admin:$(oc -n solr get secret/solr-solrcloud-security-bootstrap -o jsonpath={.data.admin} | base64 -d)" --data-raw '&lt;delete&gt;&lt;query&gt;classeNomCanonique_enUS_indexed_string:org.computate.search.request.SearchRequest&lt;/query&gt;&lt;/delete&gt;'
+ * </pre>
  * </p>
  * <p>
  * Delete  the package org.computate.search.request in Solr: 
- * curl -k 'https://solr.apps-crc.testing/update?commitWithin=1000&overwrite=true&wt=json' -X POST -H 'Content-type: text/xml' --data-raw '&lt;add&gt;&lt;delete&gt;&lt;query&gt;classeNomEnsemble_enUS_indexed_string:org.computate.search.request&lt;/query&gt;&lt;/delete&gt;&lt;/add&gt;'
+ * <pre>
+ * curl -k 'https://solr.apps-crc.testing/solr/computate/update?commitWithin=1000&amp;overwrite=true&amp;wt=json' -X POST -H 'Content-type: text/xml' -u "admin:$(oc -n solr get secret/solr-solrcloud-security-bootstrap -o jsonpath={.data.admin} | base64 -d)" --data-raw '&lt;delete&gt;&lt;query&gt;classeNomEnsemble_enUS_indexed_string:org.computate.search.request&lt;/query&gt;&lt;/delete&gt;'
+ * </pre>
  * </p>
  * <p>
  * Delete  the project computate-search in Solr: 
- * curl -k 'https://solr.apps-crc.testing/update?commitWithin=1000&overwrite=true&wt=json' -X POST -H 'Content-type: text/xml' --data-raw '&lt;add&gt;&lt;delete&gt;&lt;query&gt;siteNom_indexed_string:computate\-search&lt;/query&gt;&lt;/delete&gt;&lt;/add&gt;'
+ * <pre>
+ * curl -k 'https://solr.apps-crc.testing/solr/computate/update?commitWithin=1000&amp;overwrite=true&amp;wt=json' -X POST -H 'Content-type: text/xml' -u "admin:$(oc -n solr get secret/solr-solrcloud-security-bootstrap -o jsonpath={.data.admin} | base64 -d)" --data-raw '&lt;delete&gt;&lt;query&gt;siteNom_indexed_string:computate\-search&lt;/query&gt;&lt;/delete&gt;'
+ * </pre>
  * </p>
  * Generated: true
  **/
@@ -1624,6 +1630,60 @@ public abstract class SearchRequestGen<DEV> extends Object {
     return SearchRequest.staticSearchRows(siteRequest_, SearchRequest.staticSetRows(siteRequest_, o)).toString();
   }
 
+	/////////
+  // qOp //
+	/////////
+
+
+  /**
+   *  The entity qOp
+   *	 is defined as null before being initialized. 
+   */
+  @JsonProperty
+  @JsonInclude(Include.NON_NULL)
+  protected String qOp;
+
+  /**
+   * <br> The entity qOp
+   *  is defined as null before being initialized. 
+   * <br><a href="https://solr.apps-crc.testing/solr/#/computate/query?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.computate.search.request.SearchRequest&fq=entiteVar_enUS_indexed_string:qOp">Find the entity qOp in Solr</a>
+   * <br>
+   * @param w is for wrapping a value to assign to this entity during initialization. 
+   **/
+  protected abstract void _qOp(Wrap<String> w);
+
+  public String getQOp() {
+    return qOp;
+  }
+  public void setQOp(String o) {
+    this.qOp = SearchRequest.staticSetQOp(siteRequest_, o);
+  }
+  public static String staticSetQOp(ComputateSearchSiteRequest siteRequest_, String o) {
+    return o;
+  }
+  protected SearchRequest qOpInit() {
+    Wrap<String> qOpWrap = new Wrap<String>().var("qOp");
+    if(qOp == null) {
+      _qOp(qOpWrap);
+      Optional.ofNullable(qOpWrap.getO()).ifPresent(o -> {
+        setQOp(o);
+      });
+    }
+    return (SearchRequest)this;
+  }
+
+  public static String staticSearchQOp(ComputateSearchSiteRequest siteRequest_, String o) {
+    return o;
+  }
+
+  public static String staticSearchStrQOp(ComputateSearchSiteRequest siteRequest_, String o) {
+    return o == null ? null : o.toString();
+  }
+
+  public static String staticSearchFqQOp(ComputateSearchSiteRequest siteRequest_, String o) {
+    return SearchRequest.staticSearchQOp(siteRequest_, SearchRequest.staticSetQOp(siteRequest_, o)).toString();
+  }
+
 	//////////////
   // distance //
 	//////////////
@@ -1754,6 +1814,65 @@ public abstract class SearchRequestGen<DEV> extends Object {
 
   public static String staticSearchFqPoint(ComputateSearchSiteRequest siteRequest_, String o) {
     return SearchRequest.staticSearchPoint(siteRequest_, SearchRequest.staticSetPoint(siteRequest_, o)).toString();
+  }
+
+	/////////////
+  // spatial //
+	/////////////
+
+
+  /**
+   *  The entity spatial
+   *	 is defined as null before being initialized. 
+   */
+  @JsonProperty
+  @JsonInclude(Include.NON_NULL)
+  protected Boolean spatial;
+
+  /**
+   * <br> The entity spatial
+   *  is defined as null before being initialized. 
+   * <br><a href="https://solr.apps-crc.testing/solr/#/computate/query?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.computate.search.request.SearchRequest&fq=entiteVar_enUS_indexed_string:spatial">Find the entity spatial in Solr</a>
+   * <br>
+   * @param w is for wrapping a value to assign to this entity during initialization. 
+   **/
+  protected abstract void _spatial(Wrap<Boolean> w);
+
+  public Boolean getSpatial() {
+    return spatial;
+  }
+
+  public void setSpatial(Boolean spatial) {
+    this.spatial = spatial;
+  }
+  @JsonIgnore
+  public void setSpatial(String o) {
+    this.spatial = SearchRequest.staticSetSpatial(siteRequest_, o);
+  }
+  public static Boolean staticSetSpatial(ComputateSearchSiteRequest siteRequest_, String o) {
+    return Boolean.parseBoolean(o);
+  }
+  protected SearchRequest spatialInit() {
+    Wrap<Boolean> spatialWrap = new Wrap<Boolean>().var("spatial");
+    if(spatial == null) {
+      _spatial(spatialWrap);
+      Optional.ofNullable(spatialWrap.getO()).ifPresent(o -> {
+        setSpatial(o);
+      });
+    }
+    return (SearchRequest)this;
+  }
+
+  public static Boolean staticSearchSpatial(ComputateSearchSiteRequest siteRequest_, Boolean o) {
+    return o;
+  }
+
+  public static String staticSearchStrSpatial(ComputateSearchSiteRequest siteRequest_, Boolean o) {
+    return o == null ? null : o.toString();
+  }
+
+  public static String staticSearchFqSpatial(ComputateSearchSiteRequest siteRequest_, String o) {
+    return SearchRequest.staticSearchSpatial(siteRequest_, SearchRequest.staticSetSpatial(siteRequest_, o)).toString();
   }
 
 	//////////////////
@@ -2138,8 +2257,10 @@ public abstract class SearchRequestGen<DEV> extends Object {
         facetRangesInit();
         startInit();
         rowsInit();
+        qOpInit();
         distanceInit();
         pointInit();
+        spatialInit();
         spatialFieldInit();
         statsInit();
         statsFieldsInit();
@@ -2233,10 +2354,14 @@ public abstract class SearchRequestGen<DEV> extends Object {
         return oSearchRequest.start;
       case "rows":
         return oSearchRequest.rows;
+      case "qOp":
+        return oSearchRequest.qOp;
       case "distance":
         return oSearchRequest.distance;
       case "point":
         return oSearchRequest.point;
+      case "spatial":
+        return oSearchRequest.spatial;
       case "spatialField":
         return oSearchRequest.spatialField;
       case "stats":
@@ -2332,10 +2457,14 @@ public abstract class SearchRequestGen<DEV> extends Object {
       return SearchRequest.staticSetStart(siteRequest_, v);
     case "rows":
       return SearchRequest.staticSetRows(siteRequest_, v);
+    case "qOp":
+      return SearchRequest.staticSetQOp(siteRequest_, v);
     case "distance":
       return SearchRequest.staticSetDistance(siteRequest_, v);
     case "point":
       return SearchRequest.staticSetPoint(siteRequest_, v);
+    case "spatial":
+      return SearchRequest.staticSetSpatial(siteRequest_, v);
     case "spatialField":
       return SearchRequest.staticSetSpatialField(siteRequest_, v);
     case "stats":
@@ -2410,10 +2539,14 @@ public abstract class SearchRequestGen<DEV> extends Object {
       return SearchRequest.staticSearchStart(siteRequest_, (Long)o);
     case "rows":
       return SearchRequest.staticSearchRows(siteRequest_, (Long)o);
+    case "qOp":
+      return SearchRequest.staticSearchQOp(siteRequest_, (String)o);
     case "distance":
       return SearchRequest.staticSearchDistance(siteRequest_, (BigDecimal)o);
     case "point":
       return SearchRequest.staticSearchPoint(siteRequest_, (String)o);
+    case "spatial":
+      return SearchRequest.staticSearchSpatial(siteRequest_, (Boolean)o);
     case "spatialField":
       return SearchRequest.staticSearchSpatialField(siteRequest_, (String)o);
     case "stats":
@@ -2488,10 +2621,14 @@ public abstract class SearchRequestGen<DEV> extends Object {
       return SearchRequest.staticSearchStrStart(siteRequest_, (Long)o);
     case "rows":
       return SearchRequest.staticSearchStrRows(siteRequest_, (Long)o);
+    case "qOp":
+      return SearchRequest.staticSearchStrQOp(siteRequest_, (String)o);
     case "distance":
       return SearchRequest.staticSearchStrDistance(siteRequest_, (Double)o);
     case "point":
       return SearchRequest.staticSearchStrPoint(siteRequest_, (String)o);
+    case "spatial":
+      return SearchRequest.staticSearchStrSpatial(siteRequest_, (Boolean)o);
     case "spatialField":
       return SearchRequest.staticSearchStrSpatialField(siteRequest_, (String)o);
     case "stats":
@@ -2566,10 +2703,14 @@ public abstract class SearchRequestGen<DEV> extends Object {
       return SearchRequest.staticSearchFqStart(siteRequest_, o);
     case "rows":
       return SearchRequest.staticSearchFqRows(siteRequest_, o);
+    case "qOp":
+      return SearchRequest.staticSearchFqQOp(siteRequest_, o);
     case "distance":
       return SearchRequest.staticSearchFqDistance(siteRequest_, o);
     case "point":
       return SearchRequest.staticSearchFqPoint(siteRequest_, o);
+    case "spatial":
+      return SearchRequest.staticSearchFqSpatial(siteRequest_, o);
     case "spatialField":
       return SearchRequest.staticSearchFqSpatialField(siteRequest_, o);
     case "stats":
@@ -2624,8 +2765,10 @@ public abstract class SearchRequestGen<DEV> extends Object {
   public static final String VAR_facetRanges = "facetRanges";
   public static final String VAR_start = "start";
   public static final String VAR_rows = "rows";
+  public static final String VAR_qOp = "qOp";
   public static final String VAR_distance = "distance";
   public static final String VAR_point = "point";
+  public static final String VAR_spatial = "spatial";
   public static final String VAR_spatialField = "spatialField";
   public static final String VAR_stats = "stats";
   public static final String VAR_statsFields = "statsFields";
@@ -2658,8 +2801,10 @@ public abstract class SearchRequestGen<DEV> extends Object {
   public static final String DISPLAY_NAME_facetRanges = "";
   public static final String DISPLAY_NAME_start = "";
   public static final String DISPLAY_NAME_rows = "";
+  public static final String DISPLAY_NAME_qOp = "";
   public static final String DISPLAY_NAME_distance = "";
   public static final String DISPLAY_NAME_point = "";
+  public static final String DISPLAY_NAME_spatial = "";
   public static final String DISPLAY_NAME_spatialField = "";
   public static final String DISPLAY_NAME_stats = "";
   public static final String DISPLAY_NAME_statsFields = "";
@@ -2722,10 +2867,14 @@ public abstract class SearchRequestGen<DEV> extends Object {
       return DISPLAY_NAME_start;
     case VAR_rows:
       return DISPLAY_NAME_rows;
+    case VAR_qOp:
+      return DISPLAY_NAME_qOp;
     case VAR_distance:
       return DISPLAY_NAME_distance;
     case VAR_point:
       return DISPLAY_NAME_point;
+    case VAR_spatial:
+      return DISPLAY_NAME_spatial;
     case VAR_spatialField:
       return DISPLAY_NAME_spatialField;
     case VAR_stats:

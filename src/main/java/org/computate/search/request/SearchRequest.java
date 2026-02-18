@@ -348,6 +348,21 @@ public class SearchRequest extends SearchRequestGen<Object> {
 
 	/**
 	 * {@inheritDoc}
+	 * Description.enUS: A query operation field. 
+	 */
+	protected void _qOp(Wrap<String> w) {
+	}
+	/**
+	 * {@inheritDoc}
+	 * Description.enUS: A query operation field. 
+	 */
+	public SearchRequest qOp(String qOp) {
+		setQOp(qOp);
+		return this;
+	}
+
+	/**
+	 * {@inheritDoc}
 	 * Description.enUS: The radial distance, usually in kilometers. RPT & BBoxField can set other units via the setting distanceUnits. 
 	 */
 	protected void _distance(Wrap<BigDecimal> w) {
@@ -386,6 +401,21 @@ public class SearchRequest extends SearchRequestGen<Object> {
 
 	/**
 	 * {@inheritDoc}
+	 * Description.enUS: A spatial boolean field. 
+	 */
+	protected void _spatial(Wrap<Boolean> w) {
+	}
+	/**
+	 * {@inheritDoc}
+	 * Description.enUS: A spatial boolean field. 
+	 */
+	public SearchRequest spatial(Boolean spatial) {
+		setSpatial(spatial);
+		return this;
+	}
+
+	/**
+	 * {@inheritDoc}
 	 * Description.enUS: A spatial indexed field. 
 	 */
 	protected void _spatialField(Wrap<String> w) {
@@ -394,8 +424,10 @@ public class SearchRequest extends SearchRequestGen<Object> {
 	 * {@inheritDoc}
 	 * Description.enUS: A spatial indexed field. 
 	 */
-	public SearchRequest sfield(String spacialField) {
+	public SearchRequest sfield(String spatialField) {
 		setSpatialField(spatialField);
+    if(spatial == null || !spatial)
+      setSpatial(true);
 		return this;
 	}
 
@@ -589,6 +621,10 @@ public class SearchRequest extends SearchRequestGen<Object> {
 				b.append(b.length() == 0 ? "?" : "&");
 				b.append("start=").append(start);
 			}
+			if(qOp != null) {
+				b.append(b.length() == 0 ? "?" : "&");
+				b.append("q.op=").append(qOp);
+			}
 			if(distance != null) {
 				b.append(b.length() == 0 ? "?" : "&");
 				b.append("d=").append(distance);
@@ -596,6 +632,10 @@ public class SearchRequest extends SearchRequestGen<Object> {
 			if(point != null) {
 				b.append(b.length() == 0 ? "?" : "&");
 				b.append("pt=").append(point);
+			}
+			if(spatial != null) {
+				b.append(b.length() == 0 ? "?" : "&");
+				b.append("spatial=").append(spatial);
 			}
 			if(spatialField != null) {
 				b.append(b.length() == 0 ? "?" : "&");
