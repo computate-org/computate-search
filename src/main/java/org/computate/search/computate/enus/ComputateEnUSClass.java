@@ -283,8 +283,8 @@ public class ComputateEnUSClass {
 	/**
 	 * Example: false
 	 **/
-	@JsonAlias("classeRoleSession_stored_boolean")
-	private Boolean classRoleSession;
+	@JsonAlias("classeAuthSession_stored_boolean")
+	private Boolean classAuthSession;
 	/**
 	 * Example: false
 	 **/
@@ -1053,11 +1053,11 @@ public class ComputateEnUSClass {
 	public void setClassPublicRead(Boolean classPublicRead) {
 		this.classPublicRead = classPublicRead;
 	}
-	public Boolean getClassRoleSession() {
-		return classRoleSession;
+	public Boolean getClassAuthSession() {
+		return classAuthSession;
 	}
-	public void setClassRoleSession(Boolean classRoleSession) {
-		this.classRoleSession = classRoleSession;
+	public void setClassAuthSession(Boolean classAuthSession) {
+		this.classAuthSession = classAuthSession;
 	}
 	public Boolean getClassRoleUser() {
 		return classRoleUser;
